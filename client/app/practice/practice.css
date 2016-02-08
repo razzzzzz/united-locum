@@ -1,0 +1,15 @@
+table.table-hover,.table-hover tbody{
+	border: 1px solid silver;
+}
+.action{
+	cursor: pointer;
+}
+.action:hover {
+    text-decoration: none;
+}
+.trash{
+	color: red;
+}
+.timer table{
+	display: inline-table;
+}

@@ -1,0 +1,29 @@
+<div class="col-lg-12">
+	<button class="btn btn-primary" ng-click="createVacancy()">Create Vacancy</button>
+	<table class="table table-hover col-lg-12">
+		<thead>
+			<th>Category</th>
+			<th>Skill</th>
+			<th>Requirement</th>
+    		<th>Date(day-month-year)</th>
+    		<th>Rate</th>
+    		<th>Action</th>
+		</thead>
+		<tr ng-repeat="vacancy in vacancyList">
+			<td>{{vacancy.category}}</td>
+			<td>{{vacancy.skill}}</td>
+			<td>{{vacancy.count}}</td>
+    		<td>{{formateDate(vacancy.date)}}</td>
+    		<td>{{vacancy.rate}}</td>
+    		<td>
+    			<a  class="action" ng-click="editVacancy(vacancy)">
+    				<i class="glyphicon glyphicon-pencil"></i>
+    			</a>
+    			&nbsp;&nbsp;&nbsp;
+    			<a class="action trash">
+    				<i class="glyphicon glyphicon-trash" ng-click="trash(vacancy)"></i>
+    			</a>
+    		</td>
+		</tr>
+	</table>
+</div>
