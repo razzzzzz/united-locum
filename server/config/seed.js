@@ -86,7 +86,13 @@ Vacancy.find({}).removeAsync()
       count: 1,
       rate: 3,
       date: new Date(),
-      time: new Date()
+      time: new Date(),
+      practiceId: "String",
+  practiceEmail:  "abd@sdfs.com",
+  practiceFname: "String",
+  practiceLname: "String",
+  practiceTel: 955,
+  practiceAdd: "dfs"
     })
     .then(() => {
       console.log('finished populating vacancy');

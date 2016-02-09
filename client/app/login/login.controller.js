@@ -8,6 +8,20 @@ angular.module('clickeatApp')
 
     //$scope.Auth = Auth;
     //$scope.$state = $state;
+    $scope.dummyUsers = [
+            {
+              email:'locum@example.com',
+              password:'locum'
+            },
+               {
+              email:'practice@example.com',
+              password:'practice'
+            },
+               {
+              email:'admin@example.com',
+              password:'admin'
+            },
+    ]
 
     $scope.login = function(form) {
       $scope.submitted = true;
@@ -18,9 +32,14 @@ angular.module('clickeatApp')
           password: $scope.user.password
         })
         .then(function(){
-          
+          if(Auth.isPractice()){
+            $state.go('practice');
+          }else if(Auth.isLocum()){
+            $state.go('locum');
+          }else if(Auth.isAdmin()){
+            $state.go('admin');
+          }
           // Logged in, redirect to home---------
-          $state.go('admin');
         })['catch'](function(err){
           $scope.errors.other = 'Eighter user name or password invalid';//err.message;
         });

@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('clickeatApp')
-  .controller('PracticeCtrl', function ($scope, $modal, $http) {
+  .controller('PracticeCtrl', function ($scope, $modal, $http, Auth) {
  /*   $scope.vacancyList = [
     						{
     							category:'cat',
@@ -56,6 +56,7 @@ angular.module('clickeatApp')
     }
     var openModal = function(vacancy){
     	$scope.items = vacancy;
+    	$scope.user = Auth.currentUser;
     	var modalInstance = $modal.open({
 	      animation: true,
 	      templateUrl: 'app/practice/practicereq.html',
@@ -64,6 +65,9 @@ angular.module('clickeatApp')
 	      resolve: {
 	        items: function () {
 	          return $scope.items;
+	        },
+	        user: function(){
+	        	return $scope.user;
 	        }
 	      }
 	    });
@@ -80,7 +84,8 @@ angular.module('clickeatApp')
 	    });
     }
 
-  }).controller('ModalInstanceCtrl', function ($scope, $modalInstance, items, $http) {
+  }).controller('ModalInstanceCtrl', function ($scope, $modalInstance, items, $http, user) {
+
 	  $scope.items = items;
 	  if($scope.items){
 	  	$scope.req = $scope.items;
@@ -118,7 +123,7 @@ angular.module('clickeatApp')
 	  $scope.hstep = 1;
 	  $scope.mstep = 15;
 	  $scope.ismeridian = true;
-
+	  $scope.user = user;
 	  $scope.makeRequest = function(form){
 	  	$scope.submitted = true;
 	  	if(form.$valid){
@@ -129,7 +134,13 @@ angular.module('clickeatApp')
 			  'count': $scope.req.count,
 			  'rate': $scope.req.rate,
 			  'date': $scope.req.date,
-			  'time': $scope.req.mytime
+			  'time': $scope.req.mytime,
+			  'practiceId': $scope.user._id,
+			  'practiceEmail': $scope.user.email ,
+			  'practiceFname': $scope.user.fname,
+			  'practiceLname':  $scope.user.lname,
+			  'practiceTel':  $scope.user.mobile,
+			  'practiceAdd':  '$scope.user.address'
 	  		};
 	  		if($scope.updateEnable){//update the existing vacancy
 	  			$http.patch('/api/vacancys/'+$scope.req._id,vacancyObj).then(

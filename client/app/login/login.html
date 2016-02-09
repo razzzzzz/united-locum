@@ -3,7 +3,16 @@
   <div class="row">
     <div class="col-sm-12">
       <!-- <h1>Login</h1> -->
-      <p>Accounts are reset on server restart from <code>server/config/seed.js</code>. Default account is <code>locum@example.com</code> / <code>locum</code>fg<code>practice@example.com</code> / <code>practice</code>Admin account is <code>admin@example.com</code> / <code>admin</code></p>
+      <!-- <p>Accounts are reset on server restart from <code>server/config/seed.js</code>. Default account is <code>locum@example.com</code> / <code>locum</code>fg<code>practice@example.com</code> / <code>practice</code>Admin account is <code>admin@example.com</code> / <code>admin</code></p> -->
+      <label>
+        <input type="radio" ng-model="user" ng-value="dummyUsers[0]"/>locum
+      </label>
+      <label>
+        <input type="radio" ng-model="user" ng-value="dummyUsers[1]"/>practice
+      </label>
+      <label>
+        <input type="radio" ng-model="user" ng-value="dummyUsers[2]"/>admin
+      </label>
     </div>
     <div class="col-sm-12">
       <form class="form form-inline" name="form" ng-submit="login(form)" novalidate>

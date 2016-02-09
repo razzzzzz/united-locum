@@ -1,6 +1,6 @@
 'use strict';
 
-class NavbarController {
+/*class NavbarController {
   //start-non-standard
   menu = [{
     'title': 'Home',
@@ -15,7 +15,14 @@ class NavbarController {
     this.isAdmin = Auth.isAdmin;
     this.getCurrentUser = Auth.getCurrentUser;
   }
-}
+}*/
 
 angular.module('clickeatApp')
-  .controller('NavbarController', NavbarController);
+  .controller('NavbarController', function($scope,Auth){
+    $scope.Auth = Auth;
+    $scope.isCollapsed = true;
+    $scope.menu = [{
+    'title': 'Home',
+    'state': 'main'
+  }];
+  });

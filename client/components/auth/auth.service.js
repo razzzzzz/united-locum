@@ -10,9 +10,9 @@
     if ($cookies.get('token') && $location.path() !== '/logout') {
       currentUser = User.get();
     }
-
+    //Auth.currentUser = currentUser;
     var Auth = {
-
+      currentUser:currentUser,
       /**
        * Authenticate user and save token
        *
@@ -159,7 +159,27 @@
        * @return {Bool|Promise}
        */
       isAdmin: function isAdmin() {
-        return Auth.hasRole.apply(Auth, [].concat.apply(['admin'], arguments));
+        return currentUser.role =='admin';
+      },
+      /**
+       * Check if a user is an admin
+       *   (synchronous|asynchronous)
+       *
+       * @param  {Function|*} callback - optional, function(is)
+       * @return {Bool|Promise}
+       */
+      isLocum: function isLocum() {
+        return currentUser.role =='locum';
+      },
+      /**
+       * Check if a user is an admin
+       *   (synchronous|asynchronous)
+       *
+       * @param  {Function|*} callback - optional, function(is)
+       * @return {Bool|Promise}
+       */
+      isPractice: function isPractice() {
+        return currentUser.role =='practice';
       },
 
       /**
