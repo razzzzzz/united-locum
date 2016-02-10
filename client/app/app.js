@@ -11,7 +11,8 @@ angular.module('clickeatApp', [
   'ui.bootstrap',
   'validation.match',
   'ngMaterial',
-  'ngAnimate'
+  'ngAnimate',
+  'ui.calendar'
 ])
   .config(function($urlRouterProvider, $locationProvider) {
     $urlRouterProvider
