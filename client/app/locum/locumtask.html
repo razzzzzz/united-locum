@@ -1,0 +1,63 @@
+        <div class="modal-header">
+            <h3 class="modal-title">Appointment</h3>
+        </div>
+        <div class="modal-body">
+            <form class="form" name="form" ng-submit="makeRequest(form)" novalidate>
+                <div class="form-group form-inline" ng-class="{ 'has-success': form.category.$valid && submitted,
+                                                    'has-error': form.category.$invalid && submitted }">
+                  <label>Practice Name</label>
+
+                  <input type="text" name="category" class="form-control" ng-model="req.category"
+                         required placeholder="Category"/>
+                  <p class="help-block" ng-show="form.category.$error.required && submitted">
+                    Category is required
+                  </p>
+                </div>
+                <div class="form-group form-inline" ng-class="{ 'has-success': form.count.$valid && submitted,
+                                                    'has-error': form.count.$invalid && submitted }">
+                  <label>Rate</label>
+
+                  <input type="number" name="count" class="form-control" ng-model="req.count"
+                         required placeholder="No. of Requirments"/>
+                  <p class="help-block" ng-show="form.count.$error.required && submitted">
+                    Count is required
+                  </p>
+                </div>
+                <div class="form-group form-inline timer" ng-class="{ 'has-success': form.mytime.$valid && submitted,
+                                                    'has-error': form.mytime.$invalid && submitted }">
+                  <label>From</label>
+                  <timepicker ng-model="req.mytime" ng-change="changed()"  hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></timepicker>
+                  <p class="help-block" ng-show="form.mytime.$error.required && submitted">
+                    Time is required
+                  </p>
+                </div>
+                <div class="form-group form-inline timer" ng-class="{ 'has-success': form.mytime.$valid && submitted,
+                                                    'has-error': form.mytime.$invalid && submitted }">
+                  <label>To</label>
+                  <timepicker ng-model="req.mytime" ng-change="changed()"  hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></timepicker>
+                  <p class="help-block" ng-show="form.mytime.$error.required && submitted">
+                    Time is required
+                  </p>
+                </div>
+                <div class="form-group form-inline" ng-class="{ 'has-success': form.rate.$valid && submitted,
+                                                    'has-error': form.rate.$invalid && submitted }">
+                  <label>Rate</label>
+
+                  <input type="number" name="rate" class="form-control" ng-model="req.rate"
+                         required placeholder="Rate"/>
+                  <p class="help-block" ng-show="form.rate.$error.required && submitted">
+                    A rate is required
+                  </p>
+                </div>
+                <button ng-hide="updateEnable" class="btn btn-inverse btn-md btn-register" type="submit">
+                    Submit
+                </button>
+                <button ng-show="updateEnable" class="btn btn-inverse btn-md btn-register" type="submit">
+                    Update
+                </button>
+            </form> 
+        </div>
+<!--         <div class="modal-footer">
+            <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
+            <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+        </div> -->

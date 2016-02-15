@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('clickeatApp')
-  .controller('LocumCtrl', function ($scope,$http,$compile,uiCalendarConfig) {
+  .controller('LocumCtrl', function ($scope,$http,$compile,uiCalendarConfig,$modal) {
     $scope.message = 'Hello';
     $http.get('/api/vacancys').then(function(res){
     	$scope.vacancyList = res.data;
@@ -26,7 +26,15 @@ angular.module('clickeatApp')
     };
     /* event source that contains custom events on the scope */
     $scope.events = [
-      {title: 'All Day Event',start: new Date(y, m, 1)},
+      {
+        title: 'All Day Event',
+        start: new Date(y, m, 1),
+        startTime:new Date(y, m, 1),
+        endTime:new Date(y,m,1),
+        rate:30,
+        locumName:"Locum name",
+        practiveName:"Practice name"
+      },
       {title: 'Long Event',start: new Date(y, m, d - 5),end: new Date(y, m, d - 2)},
       {id: 999,title: 'Repeating Event',start: new Date(y, m, d - 3, 16, 0),allDay: false},
       {id: 999,title: 'Repeating Event',start: new Date(y, m, d + 4, 16, 0),allDay: false},
@@ -54,13 +62,17 @@ angular.module('clickeatApp')
     /* alert on eventClick */
     $scope.alertOnEventClick = function( date, jsEvent, view){
         $scope.alertMessage = (date.title + ' was clicked ');
+        $scope.openModel(date);
+
     };
     /* alert on Drop */
      $scope.alertOnDrop = function(event, delta, revertFunc, jsEvent, ui, view){
+      alert("ganehs1");
        $scope.alertMessage = ('Event Droped to make dayDelta ' + delta);
     };
     /* alert on Resize */
     $scope.alertOnResize = function(event, delta, revertFunc, jsEvent, ui, view ){
+      alert("ganehs2");
        $scope.alertMessage = ('Event Resized to make dayDelta ' + delta);
     };
     /* add and removes an event source of choice */
@@ -105,22 +117,28 @@ angular.module('clickeatApp')
                      'tooltip-append-to-body': true});
         $compile(element)($scope);
     };
+    $scope.dayClick = function(date, jsEvent, view) {
+     $scope.openModel();
+    }
     /* config object */
     $scope.uiConfig = {
       calendar:{
         height: 450,
         editable: true,
         header:{
-          left: 'title',
-          center: '',
-          right: 'today prev,next'
+          left: 'today prev,next',
+          center: 'title',
+          right: 'month,agendaWeek,agendaDay'
         },
         eventClick: $scope.alertOnEventClick,
         eventDrop: $scope.alertOnDrop,
         eventResize: $scope.alertOnResize,
-        eventRender: $scope.eventRender
+        eventRender: $scope.eventRender,
+         dayClick: $scope.dayClick
+
       }
     };
+
 
     $scope.changeLang = function() {
       if($scope.changeTo === 'Hungarian'){
@@ -136,7 +154,104 @@ angular.module('clickeatApp')
     /* event sources array*/
     $scope.eventSources = [];
     $scope.eventSources2 = [];
-    $scope.eventSources = $scope.eventSources.push.apply($scope.eventSources, [$scope.events, $scope.eventSource, $scope.eventsF]);
-    $scope.eventSources2 = $scope.eventSources2.push.apply($scope.eventSources2,[$scope.calEventsExt, $scope.eventsF, $scope.events]);
+    var events = [$scope.events, $scope.eventSource, $scope.eventsF];
+    for(var i=0;i<events.length;i++){
+      $scope.eventSources.push(events[i])  
+    }
+    var events2 = [$scope.calEventsExt, $scope.eventsF, $scope.events];
+    for(var i=0;i<events2.length;i++){
+      $scope.eventSources2.push(events2[i])  
+    }
 
-  });
+
+
+
+    $scope.openModel = function(data){
+      $scope.items = data;
+      var modalInstance = $modal.open({
+        animation: true,
+        templateUrl: 'app/locum/locumtask.html',
+        controller: 'ModalInstanceCtrl1',
+        size: 'lg',
+        resolve: {
+          items: function () {
+            return $scope.items;
+          }
+        }
+      });
+
+      modalInstance.result.then(function (updatevacancy) {
+        if(updatevacancy.newvacancy){
+      $scope.vacancyList.push(updatevacancy.newvacancy);
+        }else if(updatevacancy.updatevacancy){
+          //$scope.vacancyList.filter
+        }
+       // $scope.selected = selectedItem;
+      }, function () {
+       // $log.info('Modal dismissed at: ' + new Date());
+      });
+    }
+
+  }).controller('ModalInstanceCtrl1', function ($scope, $modalInstance, items) {
+
+    $scope.items = items;
+  console.log(items);
+    $scope.selected = {
+      newvacancy: $scope.newvacancy
+    };
+
+    $scope.ok = function () {
+      $modalInstance.close($scope.selected);
+    };
+
+    $scope.cancel = function () {
+      $modalInstance.dismiss('cancel');
+    };
+  
+    $scope.maxDate = new Date(2020, 5, 22);
+
+  
+   
+    $scope.makeRequest = function(form){
+      $scope.submitted = true;
+      if(form.$valid){
+       var vacancyObj = {
+          'category': $scope.req.category,
+        'desc': $scope.req.desc,
+        'skill': $scope.req.skill,
+        'count': $scope.req.count,
+        'rate': $scope.req.rate,
+        'date': $scope.req.date,
+        'time': $scope.req.mytime,
+        'practiceId': $scope.user._id,
+        'practiceEmail': $scope.user.email ,
+        'practiceFname': $scope.user.fname,
+        'practiceLname':  $scope.user.lname,
+        'practiceTel':  $scope.user.mobile,
+        'practiceAdd':  '$scope.user.address'
+        };
+        if($scope.updateEnable){//update the existing vacancy
+          $http.patch('/api/vacancys/'+$scope.req._id,vacancyObj).then(
+            function(res){
+              $scope.updatevacancy = res.data;
+              $scope.ok();
+            },
+            function(err){
+              alert('error in /api/vacancys patch ');
+            }
+          );
+        }else{//creating new vacancy
+          $http.post('/api/vacancys',vacancyObj).then(
+            function(res){
+              $scope.selected.newvacancy = res.data;
+              $scope.ok();
+            },
+            function(err){
+              alert('error in /api/vacancys post ');
+            }
+          );
+        }
+        
+      }
+    }
+});
