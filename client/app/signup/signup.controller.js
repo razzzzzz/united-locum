@@ -1,6 +1,6 @@
 'use strict';
 angular.module('clickeatApp').controller('SignupController', function($scope, Auth, $state){
-    $scope.user = {
+/*    $scope.user = {
                     role:'locum',
                     fname:'ganesh',
                     lname:'bonangi',
@@ -10,7 +10,7 @@ angular.module('clickeatApp').controller('SignupController', function($scope, Au
                     password:'abcd',
                     confirmPassword: 'abcd'
                   };
-/*
+
     $scope.user = {
                     role:'locum'
                   }*/

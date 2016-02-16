@@ -27,19 +27,18 @@ angular.module('clickeatApp')
     /* event source that contains custom events on the scope */
     $scope.events = [
       {
-        title: 'All Day Event',
         start: new Date(y, m, 1),
         startTime:new Date(y, m, 1),
         endTime:new Date(y,m,1),
         rate:30,
         locumName:"Locum name",
-        practiveName:"Practice name"
+        pname:"Practice name"
       },
-      {title: 'Long Event',start: new Date(y, m, d - 5),end: new Date(y, m, d - 2)},
-      {id: 999,title: 'Repeating Event',start: new Date(y, m, d - 3, 16, 0),allDay: false},
-      {id: 999,title: 'Repeating Event',start: new Date(y, m, d + 4, 16, 0),allDay: false},
-      {title: 'Birthday Party',start: new Date(y, m, d + 1, 19, 0),end: new Date(y, m, d + 1, 22, 30),allDay: false},
-      {title: 'Click for Google',start: new Date(y, m, 28),end: new Date(y, m, 29),url: 'http://google.com/'}
+      {pname: 'Long Event',start: new Date(y, m, d - 5),end: new Date(y, m, d - 2)},
+      {id: 999,pname: 'Repeating Event',start: new Date(y, m, d - 3, 16, 0),allDay: false},
+      {id: 999,pname: 'Repeating Event',start: new Date(y, m, d + 4, 16, 0),allDay: false},
+      {pname: 'Birthday Party',start: new Date(y, m, d + 1, 19, 0),end: new Date(y, m, d + 1, 22, 30),allDay: false},
+      {pname: 'Click for Google',start: new Date(y, m, 28),end: new Date(y, m, 29),url: 'http://google.com/'}
     ];
     /* event source that calls a function on every view switch */
     $scope.eventsF = function (start, end, timezone, callback) {
@@ -67,12 +66,10 @@ angular.module('clickeatApp')
     };
     /* alert on Drop */
      $scope.alertOnDrop = function(event, delta, revertFunc, jsEvent, ui, view){
-      alert("ganehs1");
        $scope.alertMessage = ('Event Droped to make dayDelta ' + delta);
     };
     /* alert on Resize */
     $scope.alertOnResize = function(event, delta, revertFunc, jsEvent, ui, view ){
-      alert("ganehs2");
        $scope.alertMessage = ('Event Resized to make dayDelta ' + delta);
     };
     /* add and removes an event source of choice */
@@ -194,8 +191,11 @@ angular.module('clickeatApp')
 
   }).controller('ModalInstanceCtrl1', function ($scope, $modalInstance, items) {
 
-    $scope.items = items;
-  console.log(items);
+    $scope.dairy = items;
+    if($scope.dairy){
+      $scope.updateEnable = true;
+    }
+  //console.log(items);
     $scope.selected = {
       newvacancy: $scope.newvacancy
     };
@@ -206,11 +206,7 @@ angular.module('clickeatApp')
 
     $scope.cancel = function () {
       $modalInstance.dismiss('cancel');
-    };
-  
-    $scope.maxDate = new Date(2020, 5, 22);
-
-  
+    };  
    
     $scope.makeRequest = function(form){
       $scope.submitted = true;
