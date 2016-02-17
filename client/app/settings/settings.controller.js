@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('clickeatApp').controller('SettingsController', function($scope, Auth){
+angular.module('clickeatApp').controller('SettingsController', function($scope, Auth,$http){
     $scope.errors = {};
     $scope.submitted = false;
 
@@ -20,7 +20,12 @@ angular.module('clickeatApp').controller('SettingsController', function($scope, 
       }
     }
 
+    var currentUser = Auth.getCurrentUser();
+    $http.get('/api/profiles/'+currentUser._id).then(function(res){
+      //debugger;
+    },function(err){
 
+    });
 
 
 

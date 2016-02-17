@@ -1,13 +1,13 @@
 <div class="container">
     <div class="row">
       <form class="form" name="form" ng-submit="register(form)" novalidate>
-        <div class="form-group col-lg-12 form-inline" ng-class="{ 'has-success': form.name.$valid && submitted,
-                                            'has-error': form.name.$invalid && submitted }">
+        <div class="form-group col-lg-12 form-inline" ng-class="{ 'has-success': form.optradio.$valid && submitted,
+                                            'has-error': form.optradio.$invalid && submitted }">
           <label class="control-label">Sign up as</label>
           <label class="radio-inline"><input type="radio" ng-model="user.role" value="locum" name="optradio" ng-change="roleChange()">Locum</label>
           <label class="radio-inline"><input type="radio" ng-model="user.role" value="practice" name="optradio" ng-change="roleChange()">Practice</label>
-           <p class="help-block" ng-show="form.name.$error.required && submitted">
-            A name is required
+           <p class="help-block" ng-show="form.optradio.$error.required && submitted">
+            Role is required
           </p>
         </div>
         <div class="form-group form-inline" ng-class="{ 'has-success': form.name.$valid && submitted,
@@ -113,10 +113,10 @@
           <label class="control-label col-sm-3">Category</label>
           <div class="col-sm-9">
             <select class="form-control" name="category" id="category" ng-model="user.category" required>
-              <option value="volvo">Volvo</option>
-              <option value="saab">Saab</option>
-              <option value="mercedes">Mercedes</option>
-              <option value="audi">Audi</option>
+              <option value="GP">GP</option>
+              <option value="Dentist">Dentist</option>
+              <option value="Nurse(Dental)">Nurse(Dental)</option>
+              <option value="Nurse(Non-Dental)">Nurse(Non-Dental)</option>
             </select>
             <label ng-if="user.role=='locum'" class="checkbox-inline certified" >
               <input type="checkbox" ng-model='user.certified' />NHS CERTIFIED
@@ -132,7 +132,7 @@
             <input type="checkbox" name="tc" ng-model="user.tc" 
             required
             />
-            Please Read and Accept Terms & Conditions.
+            <a href="">Please Read and Accept Terms & Conditions.</a>
           </label>
           <p class="help-block"
              ng-show="form.tc.$error.required && submitted">
@@ -140,12 +140,13 @@
           </p>
         </div>
         <div class="col-sm-9 col-sm-offset-3">
-          <button class="btn btn-inverse btn-md btn-register" type="submit">
+          <button class="btn btn-md btn-primary" type="submit">
             Sign up
           </button>
-          <a class="btn btn-default btn-md btn-login" ui-sref="main">
+          <a class="btn btn-success btn-md btn-login" ui-sref="main">
             Login
           </a>
+          <a class="btn btn-md btn-danger" ng-click="resetForm()">Reset</a>
         </div>
 
       </form>

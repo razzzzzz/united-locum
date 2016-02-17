@@ -7,6 +7,7 @@
 import Thing from '../api/thing/thing.model';
 import User from '../api/user/user.model';
 import Vacancy from '../api/vacancy/vacancy.model';
+import Userprofile from '../api/profile/profile.model'
 
 Thing.find({}).removeAsync()
   .then(() => {
@@ -98,3 +99,52 @@ Vacancy.find({}).removeAsync()
       console.log('finished populating vacancy');
     });
   });
+Userprofile.find({}).removeAsync()
+  .then(()=> {
+   Userprofile.createAsync(
+   {
+      userId: 'k001',
+      profileSummary: 'doctor',
+      qualifications: [],
+      currentAddress:{
+        houseNumber: 'b24',
+        line1: 'c-lane',
+        line2: 'manchester',
+        line3: 'manch post',
+        town: 'manchester',
+        country: 'london',
+        zipCode : 12345
+      },
+      sa: true,
+      billingAddress:{
+        houseNumber: 'b24',
+        line1: 'c-lane',
+        line2: 'manchester',
+        line3: 'manch post',
+        town: 'manchester',
+        country: 'london',
+        zipCode : 512345
+      },
+      documents: [],
+      practices: [],
+      services: 'Basic',
+      socialAccount:{
+        fb: 'fb.com/kp',
+        linkedin: 'linkedin.com/kp',
+        skype: 'ghmc',
+        twitter: 'tweet',
+        pinterest: 'pinte'
+      },
+      references: [],
+      nhsSys:[],
+      sessionRates: {
+        session1: [{ frm: new Date(), to: new Date(), rate:120 }],
+        session2: [{ frm: new Date(), to: new Date(), rate:320 }],
+        session3: [{ frm: new Date() , to: new Date(), rate:400 }],
+        dayrate: 510,
+        outOfOffice: 300 
+      } 
+   }).then(() => {
+      console.log('finished populating profile');
+    })
+   });

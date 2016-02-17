@@ -33,9 +33,9 @@ angular.module('clickeatApp')
         })
         .then(function(){
           if(Auth.isPractice()){
-            $state.go('practice');
+            $state.go('practicedairy');
           }else if(Auth.isLocum()){
-            $state.go('locum');
+            $state.go('locumdairy');
           }else if(Auth.isAdmin()){
             $state.go('admin');
           }

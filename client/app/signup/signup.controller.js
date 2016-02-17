@@ -8,12 +8,21 @@ angular.module('clickeatApp').controller('SignupController', function($scope, Au
                     confirmemail:'ab.slkd@gma.com',
                     mobile: 7710085878,
                     password:'abcd',
-                    confirmPassword: 'abcd'
+                    confirmPassword: 'abcd',
+                    category:'GP'
                   };
-
+*/
     $scope.user = {
-                    role:'locum'
-                  }*/
+                    role:'locum',
+                    category:'GP'
+                  }
+    $scope.resetForm = function(){
+      $scope.user = {
+                    role:'locum',
+                    category:'GP'
+                  }  
+      $scope.submitted = false;
+    }
     $scope.errors = {};
     $scope.submitted = false;
     $scope.Auth = Auth;
