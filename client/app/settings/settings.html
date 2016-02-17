@@ -8,7 +8,7 @@
 
 
           <div class="sample" layout="column" ng-cloak>
-      <md-content class="md-padding">
+     <md-content class="md-padding">
         <md-tabs md-selected="selectedIndex" md-border-bottom md-dynamic-height md-autoselect>
           <!-- tab1 html -->
           <md-tab label="Main">
@@ -97,6 +97,10 @@
               </div>
             </div>
           </md-tab>
+          <md-tab label="Practices" ng-if="varia">
+            <div class="demo-tab tab">
+            </div>
+          </md-tab>
           <!-- tab4 html -->
           <md-tab label="Services">
             <div class="demo-tab tab" style="padding: 25px;">
@@ -104,25 +108,25 @@
                 <h3>NOTE: SELECT THE SERVICES OFFERED BY YOU</h3>
               </div>
               <div layout="row" layout-wrap>
-                <md-checkbox class="checkBox" ng-model="user.service">Physician</md-checkbox>
+                <md-checkbox class="checkBox" ng-model="user.service.physician">Physician</md-checkbox>
               </div>
               <div layout="row" layout-wrap>
-                <md-checkbox class="checkBox" ng-model="user.service">Cardiology</md-checkbox>
+                <md-checkbox class="checkBox" ng-model="user.service.cardiology">Cardiology</md-checkbox>
               </div>
               <div layout="row" layout-wrap>
-                <md-checkbox class="checkBox" ng-model="user.service">Pediatrics</md-checkbox>
+                <md-checkbox class="checkBox" ng-model="user.service.pediatrics">Pediatrics</md-checkbox>
               </div>
               <div layout="row" layout-wrap>
-                <md-checkbox class="checkBox" ng-model="user.service">Orthopedics</md-checkbox>
+                <md-checkbox class="checkBox" ng-model="user.service.orthopedics">Orthopedics</md-checkbox>
               </div>
               <div layout="row" layout-wrap>
-                <md-checkbox class="checkBox" ng-model="user.service">Nuero Surgery</md-checkbox>
+                <md-checkbox class="checkBox" ng-model="user.service.neuroSurgery">Nuero Surgery</md-checkbox>
               </div>
               <div layout="row" layout-wrap>
-                <md-checkbox class="checkBox" ng-model="user.service">Obstetrics and Gynecology</md-checkbox>
+                <md-checkbox class="checkBox" ng-model="user.service.Obstertrics">Obstetrics and Gynecology</md-checkbox>
               </div>
               <div layout="row" layout-wrap>
-                <md-checkbox class="checkBox" ng-model="user.service">ENT</md-checkbox>
+                <md-checkbox class="checkBox" ng-model="user.service.ENT">ENT</md-checkbox>
               </div>
             </div>
           </md-tab>
@@ -158,6 +162,43 @@
               </div>
             </div>
           </md-tab>
+          <md-tab label="References" ng-if="varia">
+            <div class="demo-tab tab" style="padding: 25px;">
+              <div class='row'>
+                <h3>NOTE: SELECT THE SERVICES OFFERED BY YOU</h3>
+              </div>
+              <div class='row'>
+                <h3>Reference1:</h3>
+              </div>
+              <div layout="row" layout-wrap>
+                <md-input-container class="md-block" flex-sm="40" flex-md="40" flex-xs="80">
+                  <label>Name</label>
+                  <input ng-model="user.reference1.name">
+                </md-input-container>
+              </div>
+              <div layout="row" layout-wrap>
+                <md-input-container class="md-block" flex-sm="40" flex-md="40" flex-xs="80">
+                  <label>ID</label>
+                  <input ng-model="user.reference1.ID">
+                </md-input-container>
+              </div>
+              <div class='row'>
+                <h3>Reference2:</h3>
+              </div>
+              <div layout="row" layout-wrap>
+                <md-input-container class="md-block" flex-sm="40" flex-md="40" flex-xs="80">
+                  <label>Name</label>
+                  <input ng-model="user.reference2.name">
+                </md-input-container>
+              </div>
+              <div layout="row" layout-wrap>
+                <md-input-container class="md-block" flex-sm="40" flex-md="40" flex-xs="80">
+                  <label>ID</label>
+                  <input ng-model="user.reference2.ID">
+                </md-input-container>
+              </div>
+            </div>
+          </md-tab>
           <!-- tab6 html -->
           <md-tab label="NHS systems">
             <div class="demo-tab tab" style="padding: 25px;">
@@ -165,26 +206,30 @@
                 <h3>NOTE: SELECT NHS SYSTEM YOU BELONG TO</h3>
               </div>
               <div layout="row" layout-wrap>
-                <md-checkbox class="checkBox" ng-model="user.NHS">NHS SYSTEM1</md-checkbox>
+                <md-checkbox class="checkBox" ng-model="user.NHS1">NHS SYSTEM1</md-checkbox>
               </div>
               <div layout="row" layout-wrap>
-                <md-checkbox class="checkBox" ng-model="user.NHS">NHS SYSTEM2</md-checkbox>
+                <md-checkbox class="checkBox" ng-model="user.NHS2">NHS SYSTEM2</md-checkbox>
               </div>
               <div layout="row" layout-wrap>
-                <md-checkbox class="checkBox" ng-model="user.NHS">NHS SYSTEM3</md-checkbox>
+                <md-checkbox class="checkBox" ng-model="user.NHS3">NHS SYSTEM3</md-checkbox>
               </div>
               <div layout="row" layout-wrap>
-                <md-checkbox class="checkBox" ng-model="user.NHS">NHS SYSTEM4</md-checkbox>
+                <md-checkbox class="checkBox" ng-model="user.NHS4">NHS SYSTEM4</md-checkbox>
               </div>
               <div layout="row" layout-wrap>
-                <md-checkbox class="checkBox" ng-model="user.NHS">NHS SYSTEM5</md-checkbox>
+                <md-checkbox class="checkBox" ng-model="user.NHS5">NHS SYSTEM5</md-checkbox>
               </div>
               <div layout="row" layout-wrap>
-                <md-checkbox class="checkBox" ng-model="user.NHS">NHS SYSTEM6</md-checkbox>
+                <md-checkbox class="checkBox" ng-model="user.NHS6">NHS SYSTEM6</md-checkbox>
               </div>
               <div layout="row" layout-wrap>
-                <md-checkbox class="checkBox" ng-model="user.NHS">NHS SYSTEM7</md-checkbox>
+                <md-checkbox class="checkBox" ng-model="user.NHS7">NHS SYSTEM7</md-checkbox>
               </div>
+            </div>
+          </md-tab>
+          <md-tab label="Session & Rates" ng-if="varia">
+            <div class="demo-tab tab">
             </div>
           </md-tab>
           <!-- tab7 html -->
@@ -197,8 +242,8 @@
           </md-tab>
 
         </md-tabs>
-        <md-button class="md-primary md-raised" ng-click="nextTab()" ng-if="selectedIndex != 6">Save & continue</md-button>
-        <md-button class="md-primary md-raised" ng-click="save()" ng-if="selectedIndex == 6">Save</md-button>
+        <md-button class="md-primary md-raised" ng-click="nextTab()" ng-if="selectedIndex != tabsLength">Continue</md-button>
+        <md-button class="md-primary md-raised" ng-click="save()" ng-if="selectedIndex == tabsLength">Save</md-button>
       </md-content>
     </div>
 

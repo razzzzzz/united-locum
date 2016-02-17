@@ -7,7 +7,8 @@
 import Thing from '../api/thing/thing.model';
 import User from '../api/user/user.model';
 import Vacancy from '../api/vacancy/vacancy.model';
-import Userprofile from '../api/profile/profile.model'
+import Userprofile from '../api/profile/profile.model';
+import Dairy from '../api/dairy/dairy.model';
 
 Thing.find({}).removeAsync()
   .then(() => {
@@ -99,6 +100,45 @@ Vacancy.find({}).removeAsync()
       console.log('finished populating vacancy');
     });
   });
+
+
+
+
+
+
+Dairy.find({}).removeAsync()
+  .then(()=> {
+   Dairy.createAsync(
+   {
+         locumId: 'l001',
+         lName: 'Locum1',
+         practiceId: 'p001',
+         pName: 'Practice1',
+         skill: 'Dentist',
+         skillId: 'Den',
+         date: new Date(),
+         time: new Date(),
+         state: [],
+         stateId: 'lreq',
+         activity: 'Attending wedding',
+         vacancy: 5,
+         rate: 10,
+         text: 'Health Problem',
+         colorcode: [],
+         category: [],
+         jobDescription: "job Description",
+         zipCode: 523264,
+         typeHealthcare: "primary Health care center"
+
+   }).then(() => {
+      console.log('finished populating Dairy');
+    })
+   });
+
+
+
+
+
 Userprofile.find({}).removeAsync()
   .then(()=> {
    Userprofile.createAsync(
