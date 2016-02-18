@@ -157,7 +157,7 @@ angular.module('clickeatApp')
       $scope.items = data;
       var modalInstance = $modal.open({
         animation: true,
-        templateUrl: 'app/locum/locumtask.html',
+        templateUrl: 'app/practice/practicereq.html',
         controller: 'ModalInstanceCtrl1',
         size: 'lg',
         resolve: {

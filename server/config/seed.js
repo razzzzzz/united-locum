@@ -9,6 +9,7 @@ import User from '../api/user/user.model';
 import Vacancy from '../api/vacancy/vacancy.model';
 import Userprofile from '../api/profile/profile.model';
 import Dairy from '../api/dairy/dairy.model';
+import Notification from '../api/notification/notification.model';
 
 Thing.find({}).removeAsync()
   .then(() => {
@@ -41,7 +42,32 @@ Thing.find({}).removeAsync()
              'and openshift subgenerators'
     });
   });
+  Notification.find({}).removeAsync()
+  .then(() => {
 
+    Notification.createAsync({
+    targetId: '10011',
+    requestId: '10128',
+    requestName: {  
+      first: 'Jhon',
+      last: 'Doe'
+      },
+    pic: 'URL',
+    subject: {
+      Skill: 'Physician',
+      Rate: 10000,
+      RequestTime: new Date()
+      },
+    body: 'Predefined text',
+    notifyTimeStamp: new Date(),
+    deliveryStatus: 1,
+    readStatus: 0
+
+    })
+    .then(() => {
+     console.log('finished populating Notification');
+    });
+  });
 User.find({}).removeAsync()
   .then(() => {
 
