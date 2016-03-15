@@ -16,17 +16,17 @@
               <div layout="row" layout-wrap>
                 <md-input-container class="md-block" flex-sm="40" flex-md="40" flex-xs="80">
                   <label>First name</label>
-                  <input ng-model="user.main.firstName">
+                  <input ng-model="user.fname">
                 </md-input-container>
                 <md-input-container class="md-block" flex-sm="40" flex-md="40" flex-xs="80">
                   <label>Last name</label>
-                  <input ng-model="user.main.lastName">
+                  <input ng-model="user.lname">
                 </md-input-container>
               </div>
               <div layout="row" layout-wrap>
                 <md-input-container class="md-block" flex-sm="40" flex-md="40" flex-xs="80">
                   <label>Email ID</label>
-                  <input ng-model="user.main.mailID">
+                  <input ng-model="user.email">
                 </md-input-container>
               </div>
               <div layout="row" layout-wrap>
@@ -46,14 +46,28 @@
               <div layout="row" layout-wrap>
                 <md-input-container class="md-block" flex-sm="40" flex-md="40" flex-xs="80">
                   <label>Phone Number</label>
-                  <input ng-model="user.main.phoneNum">
+                  <input ng-model="user.mobile">
                 </md-input-container>
               </div>
               <div layout="row" layout-wrap>
                 <md-input-container class="md-block" flex-sm="40" flex-md="40" flex-xs="80">
                   <label>Category</label>
-                  <input ng-model="user.main.cateogry" disabled>
+                  <input ng-model="user.cateogry" disabled>
                 </md-input-container>
+              </div>
+              <div layout="row" layout-wrap>
+                  <md-content layout-padding layout="row" layout-align="start end">
+
+<md-input-container>
+  <label>Color</label>
+  <input class="file-upload" type="file" ng-model="color" accept="image/*" required  ng-change="upload_change()">
+</md-input-container>
+
+
+                   <!--  <img class="profile-pic" src="avatar.jpg" />
+                    <div class="upload-button" ng-click="uploadClick()">Upload Image</div>
+                    <input submit-required="true" ng-model="abcl" class="file-upload" type="file" accept="image/*" ng-click="uploadChange()"/> -->
+                  </md-content>
               </div>
             </div>
           </md-tab>

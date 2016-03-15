@@ -20,15 +20,6 @@ angular.module('clickeatApp').controller('SettingsController', function($scope, 
       }
     }
 
-    var currentUser = Auth.getCurrentUser();
-    $http.get('/api/profiles/'+currentUser._id).then(function(res){
-      //debugger;
-    },function(err){
-
-    });
-
-
-
  var selected = null,
         previous = null;
     $scope.selectedIndex = 0;
@@ -45,13 +36,35 @@ angular.module('clickeatApp').controller('SettingsController', function($scope, 
     $scope.save = function () {
       
     };
-    $scope.user = {
-      "main":{
-        
-      }
-    };
-    $scope.user.main = {};
-    $scope.user.main.cateogry = "Student";
     $scope.varia = true;
     $scope.tabsLength = 8;
+    $scope.user = Auth.getCurrentUser();
+    $scope.user.cateogry = "Student";
+
+
+
+      var readURL = function(input) {
+          if (input.files && input.files[0]) {
+              var reader = new FileReader();
+
+              reader.onload = function (e) {
+                  $('.profile-pic').attr('src', e.target.result);
+              }
+      
+              reader.readAsDataURL(input.files[0]);
+          }
+      }
+      
+
+      $scope.upload_change = function(){
+          readURL(this);
+      };
+      
+   /*   $(".upload-button").on('click', function() {
+      });*/
+      $scope.uploadClick = function(){
+       // angular.element(".file-upload").trigger("change");
+      };
+
+
 });

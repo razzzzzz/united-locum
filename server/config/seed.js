@@ -80,7 +80,47 @@ User.find({}).removeAsync()
       category: [],
       email: 'practice@example.com',
       role: 'practice',
-      password: 'practice'
+      password: 'practice',
+            profileSummary: 'doctor',
+      qualifications: [],
+      currentAddress:{
+        houseNumber: 'b24',
+        line1: 'c-lane',
+        line2: 'manchester',
+        line3: 'manch post',
+        town: 'manchester',
+        country: 'london',
+        zipCode : 12345
+      },
+      sa: true,
+      billingAddress:{
+        houseNumber: 'b24',
+        line1: 'c-lane',
+        line2: 'manchester',
+        line3: 'manch post',
+        town: 'manchester',
+        country: 'london',
+        zipCode : 512345
+      },
+      documents: [],
+      practices: [],
+      services: 'Basic',
+      socialAccount:{
+        fb: 'fb.com/kp',
+        linkedin: 'linkedin.com/kp',
+        skype: 'ghmc',
+        twitter: 'tweet',
+        pinterest: 'pinte'
+      },
+      references: [],
+      nhsSys:[],
+      sessionRates: {
+        session1: [{ frm: new Date(), to: new Date(), rate:120 }],
+        session2: [{ frm: new Date(), to: new Date(), rate:320 }],
+        session3: [{ frm: new Date() , to: new Date(), rate:400 }],
+        dayrate: 510,
+        outOfOffice: 300 
+      } 
     },{
       provider: 'local',
       fname: 'Locum ',
@@ -90,7 +130,47 @@ User.find({}).removeAsync()
       category: [],
       email: 'locum@example.com',
       role: 'locum',
-      password: 'locum'
+      password: 'locum',
+            profileSummary: 'doctor',
+      qualifications: [],
+      currentAddress:{
+        houseNumber: 'b24',
+        line1: 'c-lane',
+        line2: 'manchester',
+        line3: 'manch post',
+        town: 'manchester',
+        country: 'london',
+        zipCode : 12345
+      },
+      sa: true,
+      billingAddress:{
+        houseNumber: 'b24',
+        line1: 'c-lane',
+        line2: 'manchester',
+        line3: 'manch post',
+        town: 'manchester',
+        country: 'london',
+        zipCode : 512345
+      },
+      documents: [],
+      practices: [],
+      services: 'Basic',
+      socialAccount:{
+        fb: 'fb.com/kp',
+        linkedin: 'linkedin.com/kp',
+        skype: 'ghmc',
+        twitter: 'tweet',
+        pinterest: 'pinte'
+      },
+      references: [],
+      nhsSys:[],
+      sessionRates: {
+        session1: [{ frm: new Date(), to: new Date(), rate:120 }],
+        session2: [{ frm: new Date(), to: new Date(), rate:320 }],
+        session3: [{ frm: new Date() , to: new Date(), rate:400 }],
+        dayrate: 510,
+        outOfOffice: 300 
+      } 
     }, {
       provider: 'local',
       role: 'admin',
@@ -98,7 +178,47 @@ User.find({}).removeAsync()
       fname: 'Admin',
       lname: 'User',
       email: 'admin@example.com',
-      password: 'admin'
+      password: 'admin',
+            profileSummary: 'doctor',
+      qualifications: [],
+      currentAddress:{
+        houseNumber: 'b24',
+        line1: 'c-lane',
+        line2: 'manchester',
+        line3: 'manch post',
+        town: 'manchester',
+        country: 'london',
+        zipCode : 12345
+      },
+      sa: true,
+      billingAddress:{
+        houseNumber: 'b24',
+        line1: 'c-lane',
+        line2: 'manchester',
+        line3: 'manch post',
+        town: 'manchester',
+        country: 'london',
+        zipCode : 512345
+      },
+      documents: [],
+      practices: [],
+      services: 'Basic',
+      socialAccount:{
+        fb: 'fb.com/kp',
+        linkedin: 'linkedin.com/kp',
+        skype: 'ghmc',
+        twitter: 'tweet',
+        pinterest: 'pinte'
+      },
+      references: [],
+      nhsSys:[],
+      sessionRates: {
+        session1: [{ frm: new Date(), to: new Date(), rate:120 }],
+        session2: [{ frm: new Date(), to: new Date(), rate:320 }],
+        session3: [{ frm: new Date() , to: new Date(), rate:400 }],
+        dayrate: 510,
+        outOfOffice: 300 
+      } 
     })
     .then(() => {
       console.log('finished populating users');
