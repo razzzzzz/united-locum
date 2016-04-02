@@ -30,6 +30,10 @@ Run `grunt build` for building and `grunt serve` for preview.
 
 Running `npm test` will run the unit tests with karma.
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 91f41f4d9d14f5fba52d6fd8db57b379525cb6d9
 ## Plain Task
 
 Find the link that give full idea on plain task
