@@ -23,6 +23,11 @@
         <!-- <li ng-hide="isLoggedIn()" ui-sref-active="active"><a ui-sref="signup">Sign up</a></li> -->
         <!-- <li ng-hide="isLoggedIn()" ui-sref-active="active"><a ui-sref="login">Login</a></li> -->
         <li ng-show="Auth.isLoggedIn()"><p class="navbar-text">Hello {{ Auth.getCurrentUser().fname+" "+Auth.getCurrentUser().lname }}</p> </li>
+        <li ng-show="Auth.isLoggedIn()" ui-sref-active="active">
+          <a ui-sref="notifications">
+            <span class="glyphicon glyphicon-globe"></span>
+          </a>
+        </li>
         <li ng-show="Auth.isLoggedIn()" ui-sref-active="active"><a ui-sref="settings"><span class="glyphicon glyphicon-cog"></span></a></li>
         <li ng-show="Auth.isLoggedIn()"><a ui-sref="logout">Logout</a></li>
       </ul>

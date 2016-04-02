@@ -29,3 +29,23 @@ Run `grunt build` for building and `grunt serve` for preview.
 ## Testing
 
 Running `npm test` will run the unit tests with karma.
+
+## Plain Task
+
+Find the link that give full idea on plain task
+https://github.com/aziz/PlainTasks
+
+## Git
+
+Some basics of git
+
+1. Create new directory that hold source files 
+2. Open cmd and go to the directory
+2. execute cmd `git clone https://github.com/razzzzzz/united-locum.git`
+3. now follow the "Developing" instructions like npm install
+
+## Guide Lines
+
+use sublime editor .https://www.sublimetext.com/3
+
+Add your own task in todo.todo file in your block
