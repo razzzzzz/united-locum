@@ -38,3 +38,9 @@
   padding: 0.2em 0;
 }
 
+.navbar-brand{
+  padding: 1px;
+}
+.navbar-brand img{
+  width: 48px;
+}
