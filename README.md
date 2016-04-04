@@ -39,6 +39,8 @@ https://github.com/aziz/PlainTasks
 ## Git
 
 Some basics of git
+
+
 a. git repositery checkout
 
 1. Create new directory that hold source files 
