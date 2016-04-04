@@ -39,7 +39,7 @@ https://github.com/aziz/PlainTasks
 ## Git
 
 Some basics of git
-a.git repositery checkout
+a. git repositery checkout
 
 1. Create new directory that hold source files 
 2. Open cmd and go to the directory
@@ -47,23 +47,23 @@ a.git repositery checkout
 3. now follow the "Developing" instructions like npm install
  
 
-b.local changes checking
+b. local changes checking
 
-1.open git bash
-2.user cd "ur dirve name"
-3.goto repositery directory name
-4.hit gitk 
-5.it will open one document in that document select uncommit file with red color in top
-6.down check your changes really necessary or not
-7.if not require change the files
+1. open git bash
+2. user cd "ur dirve name"
+3. goto repositery directory name
+4. hit gitk 
+5. it will open one document in that document select uncommit file with red color in top
+6. down check your changes really necessary or not
+7. if not require change the files
 
-c.commiting code and pulling from git
+c. commiting code and pulling from git
 
-1.after checking local changes hit 'git add .'
-2.then 'git commit -m "message here what u have changed"'
-3.then 'git pull'( this will take updates from git repositery from github.com)
+1. after checking local changes hit 'git add .'
+2. then 'git commit -m "message here what u have changed"'
+3. then 'git pull'( this will take updates from git repositery from github.com)
 
-d.pushing code
+d. pushing code
 
 1. after doing a,b,c ur code ready to push
 2. use 'git push origin master' command
