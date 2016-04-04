@@ -30,10 +30,7 @@ Run `grunt build` for building and `grunt serve` for preview.
 
 Running `npm test` will run the unit tests with karma.
 
-<<<<<<< HEAD
-=======
 
->>>>>>> 91f41f4d9d14f5fba52d6fd8db57b379525cb6d9
 ## Plain Task
 
 Find the link that give full idea on plain task
@@ -42,11 +39,37 @@ https://github.com/aziz/PlainTasks
 ## Git
 
 Some basics of git
+a.git repositery checkout
 
 1. Create new directory that hold source files 
 2. Open cmd and go to the directory
 2. execute cmd `git clone https://github.com/razzzzzz/united-locum.git`
 3. now follow the "Developing" instructions like npm install
+ 
+
+b.local changes checking
+
+1.open git bash
+2.user cd "ur dirve name"
+3.goto repositery directory name
+4.hit gitk 
+5.it will open one document in that document select uncommit file with red color in top
+6.down check your changes really necessary or not
+7.if not require change the files
+
+c.commiting code and pulling from git
+
+1.after checking local changes hit 'git add .'
+2.then 'git commit -m "message here what u have changed"'
+3.then 'git pull'( this will take updates from git repositery from github.com)
+
+d.pushing code
+
+1. after doing a,b,c ur code ready to push
+2. use 'git push origin master' command
+3. it will ask for userid and password
+4. while typeing password cmd don't show any thing
+5. wow now ur changes in github..Thanks:)
 
 ## Guide Lines
 
