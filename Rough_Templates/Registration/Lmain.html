@@ -1,0 +1,79 @@
+ <label>First name</label>
+                  <input ng-model="user.fname">
+                </md-input-container>
+                <md-input-container class="md-block" flex-sm="40" flex-md="40" flex-xs="80">
+                  <label>Last name</label>
+                  <input ng-model="user.lname">
+                </md-input-container>
+              </div>
+              <div layout="row" layout-wrap>
+                <md-input-container class="md-block" flex-sm="40" flex-md="40" flex-xs="80">
+                  <label>Email ID</label>
+                  <input ng-model="user.email">
+                </md-input-container>
+              </div>
+              <div layout="row" layout-wrap>
+                <md-input-container class="md-block" flex-sm="40" flex-md="40" flex-xs="80">
+                  <label>Old Password</label>
+                  <input ng-model="user.main.oldPwd">
+                </md-input-container>
+                <md-input-container class="md-block" flex-sm="40" flex-md="40" flex-xs="80">
+                  <label>New Password</label>
+                  <input ng-model="user.main.newPwd">
+                </md-input-container>
+                <md-input-container class="md-block" flex-sm="40" flex-md="40" flex-xs="80">
+                  <label>Reenter New Password</label>
+                  <input ng-model="user.main.renewPwd">
+                </md-input-container>
+              </div>
+              <div layout="row" layout-wrap>
+                <md-input-container class="md-block" flex-sm="40" flex-md="40" flex-xs="80">
+                  <label>Phone Number</label>
+                  <input ng-model="user.mobile">
+                </md-input-container>
+              </div>
+              <div layout="row" layout-wrap>
+                <md-input-container class="md-block" flex-sm="40" flex-md="40" flex-xs="80">
+                  <label>Category</label>
+                  <input ng-model="user.cateogry" disabled>
+                </md-input-container>
+              </div>
+              <div layout="row" layout-wrap>
+                  <md-content layout-padding layout="row" layout-align="start end">
+
+<md-input-container>
+  <label>Color</label>
+  <input class="file-upload" type="file" ng-model="color" accept="image/*" required  ng-change="upload_change()">
+</md-input-container><br>
+
+<label>GPGMC/GMC/HCPC/NMC Number<label><input type="text"><!-- ALPHANUMERIC--><br>
+
+<label>WORK-MOBILE</label><input type="text" ><!-- Numeric --><br>
+
+<input type="checkbox"><label>Do you operate as a Limited Company</label><br>
+<label>Company-Number</label><input type="text" ><!-- ALPHANUMERIC --><!--this content is asked when checkbox is selected -->
+<br>
+<label>NI NUMBER</label><input type="text"><!-- ALPHANUMERIC--><br>
+<br>
+<label>gender</label><input type="radio">male<input type="radio">female<input type="radio">other <br>
+<br>
+<label>Qualifications</label><select name="Qualification" multiple>
+								<option value="MBBS">M.B.B.S</option>
+								<option value="BDS">B.D.S</option>
+								<option value="DNB">D.N.B</option>
+								<option value="MLT">M.L.T</option>
+							 </select><br>
+							 
+<label>English Proficiency</label><input type="radio">Excellent<input type="radio">Better<input type="radio">Good <br>
+<br>
+<label>Other Languages</label><select name="Languages" multiple>
+								<option value="Chinese">Chinese</option>
+								<option value="French">French</option>
+								<option value="Hindi">Hindi</option>
+								<option value="Russian">Russian</option>
+							 </select><br>
+							 
+<label>Profile-Summary</label><textarea rows="5" cols="50"></textarea><br>
+
+<input type="checkbox" Checked><label>Are You British Citizen</label>
+<label>Eligibility to work in UK</label><input type=""text><!--IT should be present when NOT a british citizen-->
