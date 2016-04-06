@@ -11,7 +11,8 @@ angular.module('clickeatApp', [
   'ui.bootstrap',
   'validation.match',
   'ngAnimate',
-  'ui.calendar'
+  'ui.calendar',
+  'angularjs-dropdown-multiselect'
 ])
   .config(function($urlRouterProvider, $locationProvider) {
     $urlRouterProvider

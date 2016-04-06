@@ -15,7 +15,8 @@
     "lodash": "~2.4.1",
     "angular-ui-router": "~0.2.15",
     "angular-validation-match": "~1.5.2",
-    "angular-ui-calendar": "latest"
+    "angular-ui-calendar": "latest",
+    "angularjs-dropdown-multiselect":"latest"
   },
   "devDependencies": {
     "angular-mocks": "~1.4.0"

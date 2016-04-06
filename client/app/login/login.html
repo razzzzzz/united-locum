@@ -2,8 +2,6 @@
 <div class="container" >
   <div class="row">
     <div class="col-sm-12">
-      <!-- <h1>Login</h1> -->
-      <!-- <p>Accounts are reset on server restart from <code>server/config/seed.js</code>. Default account is <code>locum@example.com</code> / <code>locum</code>fg<code>practice@example.com</code> / <code>practice</code>Admin account is <code>admin@example.com</code> / <code>admin</code></p> -->
       <label>
         <input type="radio" ng-model="user" ng-value="dummyUsers[0]"/>locum
       </label>
@@ -36,6 +34,7 @@
             Register
           </a>
         </div>
+        <a ng-click="forgetPassword()" class="forgetPassword">Forget Password</a>
       </form>
         <div class="form-group has-error">
           <p class="help-block" ng-show="form.email.$error.required && form.password.$error.required && submitted">

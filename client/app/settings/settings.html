@@ -309,10 +309,64 @@
       </accordion-group>
       <accordion-group is-open="$parent.step7">
         <accordion-heading>Referances<i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': step7, 'glyphicon-chevron-right': !step7}"></i></accordion-heading>
+            <div class="col-xs-12 col-lg-12">
+              <div class="form-group">
+                <label for="inputEmail" class="col-md-4 col-lg-2 control-label">Name:</label>
+                <div class="col-md-8 col-lg-4">
+                  <input type="text" class="form-control" id="inputEmail" placeholder="Name">
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-12 col-lg-12">
+              <div class="form-group">
+                <label for="inputEmail" class="col-md-4 col-lg-2 control-label">ID:</label>
+                <div class="col-md-8 col-lg-4">
+                  <input type="text" class="form-control" id="inputEmail" placeholder="Id">
+                </div>
+              </div>
+            </div>
         <a class="btn btn-success pull-right" ng-click="openTwo('8')">Next</a>
       </accordion-group>
       <accordion-group is-open="$parent.step8">
         <accordion-heading>NHS System<i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': step8, 'glyphicon-chevron-right': !step8}"></i></accordion-heading>
+
+        <div class="row">
+          <div class="col-xs-12 col-lg-2">
+            <div class="form-group">
+              <label> <input type="checkbox" name="package" value="base" /> NHS SYSTEM1 </label>
+            </div>
+          </div>
+          <div class="col-xs-12 col-lg-2">
+            <div class="form-group">
+              <label> <input type="checkbox" name="package" value="base" /> NHS SYSTEM2 </label>
+            </div>
+          </div>
+          <div class="col-xs-12 col-lg-2">
+            <div class="form-group">
+              <label> <input type="checkbox" name="package" value="base" /> NHS SYSTEM3 </label>
+            </div>
+          </div>
+          <div class="col-xs-12 col-lg-2">
+            <div class="form-group">
+              <label> <input type="checkbox" name="package" value="base" /> NHS SYSTEM4 </label>
+            </div>
+          </div>
+          <div class="col-xs-12 col-lg-2">
+            <div class="form-group">
+              <label> <input type="checkbox" name="package" value="base" /> NHS SYSTEM5 </label>
+            </div>
+          </div>
+          <div class="col-xs-12 col-lg-2">
+            <div class="form-group">
+              <label> <input type="checkbox" name="package" value="base" /> NHS SYSTEM6 </label>
+            </div>
+          </div>
+          <div class="col-xs-12 col-lg-2">
+            <div class="form-group">
+              <label> <input type="checkbox" name="package" value="base" /> NHS SYSTEM7 </label>
+            </div>
+          </div>
+        </div>
         <a class="btn btn-success pull-right" ng-click="openTwo('9')">Next</a>
       </accordion-group>
       <accordion-group is-open="$parent.step9">

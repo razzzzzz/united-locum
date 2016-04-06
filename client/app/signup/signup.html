@@ -130,12 +130,8 @@
                                             'has-error': form.category.$invalid && submitted }">
           <label class="control-label col-sm-3">Category</label>
           <div class="col-sm-9">
-            <select class="form-control" name="category" id="category" ng-model="user.category" required>
-              <option value="GP">GP</option>
-              <option value="Dentist">Dentist</option>
-              <option value="Nurse(Dental)">Nurse(Dental)</option>
-              <option value="Nurse(Non-Dental)">Nurse(Non-Dental)</option>
-            </select>
+            <div ng-if="user.role!='locum'" ng-dropdown-multiselect="" options="example1data" selected-model="user.category"></div>
+            <select ng-if="user.role=='locum'" ng-model="user.category" class="form-control" ng-options="color.label for color in example1data"></select>
             <label ng-if="user.role=='locum'" class="checkbox-inline certified" >
               <input type="checkbox" ng-model='user.certified' />NHS CERTIFIED
             </label>
@@ -145,6 +141,7 @@
             </p>
           </div>
         </div>
+
         <div class="form-group form-inline" ng-class="{ 'has-success': form.catNumber.$valid && submitted,
                                             'has-error': form.catNumber.$invalid && submitted }">
           <label class="control-label col-sm-3"> </label>

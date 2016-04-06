@@ -12,14 +12,15 @@ angular.module('clickeatApp').controller('SignupController', function($scope, Au
                     category:'GP'
                   };
 */
+$scope.example1data = [ {id: 1, label: "GP"}, {id: 2, label: "Dentist"}, {id: 3, label: "Nurse(Dental)"},{id:4,label:"Nurse(Non-Dental)"}];
     $scope.user = {
                     role:'locum',
-                    category:'GP'
+                    category:$scope.example1data[0]
                   }
     $scope.resetForm = function(){
       $scope.user = {
                     role:'locum',
-                    category:'GP'
+                    category:$scope.example1data[0]
                   }  
       $scope.submitted = false;
     }
@@ -60,11 +61,17 @@ angular.module('clickeatApp').controller('SignupController', function($scope, Au
 
     $scope.roleChange = function(){
       if($scope.user.role=='locum'){
-        $("#category").removeAttr("multiple")
+       // $("#category").removeAttr("multiple")
+        $scope.user.category = $scope.example1data[0];
       }else{
-        $("#category").attr("multiple",true);      
+        $scope.user.category = [];
+       // $("#category").attr("multiple",true);      
       }
     }
+
+
+
+
 
 });
 

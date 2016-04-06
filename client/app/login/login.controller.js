@@ -45,4 +45,10 @@ angular.module('clickeatApp')
         });
       }
     }
+
+    $scope.forgetPassword = function(){
+      if(!$scope.user.email){
+        alert("Enter User id");
+      }
+    }
   });
