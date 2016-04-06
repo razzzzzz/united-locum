@@ -12,11 +12,14 @@
 
  ✔ adding folder in git repositery to hold html templates @done (16-04-03 22:57)
 
- ☐ Github Login details 
+ ✔ Github Login details  @done (16-04-07 02:29)
 
  ☐ Notification schema in Diary Collection
 
  ☐ Profile html should be refresh
+
+ ☐ have to implement usecase for forget password 
+  
 Document maintenance:
  ☐  Doument upload html template with vocablary
 Irfan:
