@@ -10,7 +10,6 @@ angular.module('clickeatApp', [
   'ui.router',
   'ui.bootstrap',
   'validation.match',
-  'ngMaterial',
   'ngAnimate',
   'ui.calendar'
 ])

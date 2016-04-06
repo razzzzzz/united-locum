@@ -15,8 +15,7 @@
     "lodash": "~2.4.1",
     "angular-ui-router": "~0.2.15",
     "angular-validation-match": "~1.5.2",
-    "angular-ui-calendar": "latest",
-    "angular-material": "latest"
+    "angular-ui-calendar": "latest"
   },
   "devDependencies": {
     "angular-mocks": "~1.4.0"
