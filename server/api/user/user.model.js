@@ -10,6 +10,13 @@ var UserSchema = new Schema({
   category: {
     type: Array
   },
+  gender: String,
+  idnumber: String,
+  package: String,
+  performarnumber: String,
+  addagency: {
+    type: Object
+  },
   email: {
     type: String,
     lowercase: true
