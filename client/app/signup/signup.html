@@ -1,14 +1,8 @@
 <div class="container">
     <div class="row">
-      <form class="form" name="form" ng-submit="register(form)" novalidate>
-        <div class="form-group col-lg-12 form-inline" ng-class="{ 'has-success': form.optradio.$valid && submitted,
-                                            'has-error': form.optradio.$invalid && submitted }">
-          <label class="control-label">Sign up as</label>
-          <label class="radio-inline"><input type="radio" ng-model="user.role" value="locum" name="optradio" ng-change="roleChange()">Locum</label>
-          <label class="radio-inline"><input type="radio" ng-model="user.role" value="practice" name="optradio" ng-change="roleChange()">Practice</label>
-           <p class="help-block" ng-show="form.optradio.$error.required && submitted">
-            Role is required
-          </p>
+      <form class="form form-horizontal" name="form" ng-submit="register(form)" novalidate>
+        <div class="form-group col-lg-12 form-inline">
+          <label class="control-label">Locum Registration</label>
         </div>
         <div class="form-group form-inline" ng-class="{ 'has-success': form.name.$valid && submitted,
                                             'has-error': form.name.$invalid && submitted }">
@@ -19,12 +13,19 @@
             <input type="text" name="name" class="form-control" ng-model="user.lname"
                    required placeholder="Last name"/>
             <p class="help-block" ng-show="form.name.$error.required && submitted">
-              A name is required
+              A Frist name and Last name is required
             </p>
           </div>
         </div>
-        <div class="form-group form-inline" ng-class="{ 'has-success': form.email.$valid && submitted,
-                                            'has-error': form.email.$invalid && submitted }">
+
+       <div class="form-group form-inline" ng-class="{ 'has-success': form.gender.$valid && submitted, 'has-error': form.gender.$invalid && submitted }">
+                <label class="control-label col-sm-3">Gender</label>
+                <div class="col-sm-9">
+                <label class="radio-inline"><input type="radio" ng-model="user.gender" value="male" name="gender" ng-change="roleChange()" required />Male</label>
+                <label class="radio-inline"><input type="radio" ng-model="user.gender" value="female" name="gender" ng-change="roleChange()" required />Female</label>
+                </div>
+      </div>
+        <div class="form-group form-inline" ng-class="{ 'has-success': form.email.$valid && submitted,   'has-error': form.email.$invalid && submitted }">
           <label class="control-label col-sm-3">Email id</label>
           <div class="col-sm-9">
             <input type="email" name="email" class="form-control" ng-model="user.email"
@@ -130,11 +131,7 @@
                                             'has-error': form.category.$invalid && submitted }">
           <label class="control-label col-sm-3">Category</label>
           <div class="col-sm-9">
-            <div ng-if="user.role!='locum'" ng-dropdown-multiselect="" options="example1data" selected-model="user.category"></div>
-            <select ng-if="user.role=='locum'" ng-model="user.category" class="form-control" ng-options="color.label for color in example1data"></select>
-            <label ng-if="user.role=='locum'" class="checkbox-inline certified" >
-              <input type="checkbox" ng-model='user.certified' />NHS CERTIFIED
-            </label>
+            <select ng-model="user.category" class="form-control" ng-options="color.label for color in example1data"></select>
             <p class="help-block"
                ng-show="form.category.$error.required && submitted">
               Should select category.
@@ -142,24 +139,61 @@
           </div>
         </div>
 
-        <div class="form-group form-inline" ng-class="{ 'has-success': form.catNumber.$valid && submitted,
-                                            'has-error': form.catNumber.$invalid && submitted }">
-          <label class="control-label col-sm-3"> </label>
+        <div class="form-group form-inline" ng-class="{ 'has-success': form.idNumber.$valid && submitted,
+                                            'has-error': form.idNumber.$invalid && submitted }">
+          <label class="control-label col-sm-3"> {{user.category.label}}</label>
           <div class="col-sm-9">
-              <input type="number" name="catNumber" class="form-control" ng-model="user.catNumber"
+              <input type="number" name="idNumber" class="form-control" ng-model="user.idNumber"
                      required placeholder="Number"
                      mongoose-error/>
-            <p class="help-block" ng-show="form.catNumber.$error.catNumber && submitted">
+            <p class="help-block" ng-show="form.idNumber.$error.idNumber && submitted">
               Doesn't look like a valid.
             </p>
-            <p class="help-block" ng-show="form.catNumber.$error.required && submitted">
-              What's your catNumber ?
+            <p class="help-block" ng-show="form.idNumber.$error.required && submitted">
+              What's your idNumber ?
             </p>
-            <p class="help-block" ng-show="form.catNumber.$error.mongoose">
+            <p class="help-block" ng-show="form.idNumber.$error.mongoose">
               {{ errors.mob }}
             </p>
           </div>
         </div>
+
+
+       <div class="form-group form-inline" ng-class="{ 'has-success': form.performanceNumber.$valid && submitted, 'has-error': form.performanceNumber.$invalid && submitted }">
+          <label class="control-label col-sm-3"> Performar list number</label>
+          <div class="col-sm-9">
+            <input type="text" class="form-control" ng-model="user.performanceNumber" placeholder="Performar list number" />
+          </div>
+      </div>
+
+       <div class="form-group form-inline" ng-class="{ 'has-success': form.package.$valid && submitted,
+                                            'has-error': form.package.$invalid && submitted }">
+          <label class="control-label col-sm-3"> Package-Selection</label>
+          <div class="col-sm-9">
+
+          <label class="radio-inline"><input type="radio" ng-model="user.package" value="basic" name="package" ng-change="roleChange()">Basic</label>
+          <label class="radio-inline"><input type="radio" ng-model="user.package" value="enterprise" name="package" ng-change="roleChange()">Enterprise</label>
+          </div>
+      </div>
+
+        <div class="form-group form-inline" ng-class="{ 'has-success': form.addagency.$valid && submitted,
+                                            'has-error': form.addagency.$invalid && submitted }">
+          <label class="control-label col-sm-3">How do you know about us </label>
+          <div class="col-sm-9">
+              <select  ng-model="user.addagency" class="form-control" ng-options="color.label for color in howdouknow"></select>
+            <p class="help-block" ng-show="form.addagency.$error.addagency && submitted">
+              Doesn't look like a valid.
+            </p>
+            <p class="help-block" ng-show="form.addagency.$error.required && submitted">
+              What's your addagency ?
+            </p>
+            <p class="help-block" ng-show="form.addagency.$error.mongoose">
+              {{ errors.mob }}
+            </p>
+          </div>
+        </div>
+
+
         <div class="form-group form-inline col-sm-9 col-sm-offset-3"  ng-class="{ 'has-success': form.tc.$valid && submitted,'has-error': form.tc.$invalid && submitted }">
           <label class="checkbox-inline">
             <input type="checkbox" name="tc" ng-model="user.tc" 
@@ -176,9 +210,9 @@
           <button class="btn btn-md btn-primary" type="submit">
             Sign up
           </button>
-          <a class="btn btn-success btn-md btn-login" ui-sref="main">
+         <!--  <a class="btn btn-success btn-md btn-login" ui-sref="main">
             Login
-          </a>
+          </a> -->
           <a class="btn btn-md btn-danger" ng-click="resetForm()">Reset</a>
         </div>
 

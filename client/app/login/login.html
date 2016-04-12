@@ -27,11 +27,14 @@
           <input type="password" name="password" class="form-control" ng-model="user.password" required>
         </div>
         <div class="form-group">
-          <button class="btn btn-inverse btn-md btn-login" type="submit">
+          <button class="btn btn-success btn-md btn-login" type="submit">
             Login
           </button>
           <a class="btn btn-default btn-md btn-register" ui-sref="signup">
-            Register
+            Register as Locum
+          </a>
+          <a class="btn btn-default btn-md btn-register" ui-sref="practicesignup">
+            Register as Practice
           </a>
         </div>
         <a ng-click="forgetPassword()" class="forgetPassword">Forget Password</a>

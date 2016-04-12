@@ -1,5 +1,5 @@
 'use strict';
-angular.module('clickeatApp').controller('SignupController', function($scope, Auth, $state){
+angular.module('clickeatApp').controller('PracticeSignupController', function($scope, Auth, $state){
 /*    $scope.user = {
                     role:'locum',
                     fname:'ganesh',
@@ -16,12 +16,12 @@ $scope.example1data = [ {id: 1, label: "GP"}, {id: 2, label: "Dentist"}, {id: 3,
 $scope.howdouknow = [ {id: 1, label: "FaceBook"}, {id: 2, label: "Google+"}, {id: 3, label: "Twitter"},{id:4,label:"LinkedIn"},{id:5,label:"Other"}];
     $scope.user = {
                     role:'locum',
-                    category:$scope.example1data[0]
+                    category:[$scope.example1data[0]]
                   }
     $scope.resetForm = function(){
       $scope.user = {
                     role:'locum',
-                    category:$scope.example1data[0]
+                    category:[$scope.example1data[0]]
                   }  
       $scope.submitted = false;
     }

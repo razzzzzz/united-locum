@@ -29,7 +29,13 @@ angular.module('clickeatApp')
         url: '/settings',
         template: '<settings></settings>',
         authenticate: true
+      })
+      .state('practicesignup', {
+        url: '/practicesignup',
+        template: '<practicesignup></practicesignup>'
       });
+
+      
   })
   .run(function($rootScope) {
     $rootScope.$on('$stateChangeStart', function(event, next, nextParams, current) {
