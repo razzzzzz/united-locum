@@ -49,3 +49,19 @@
   .file-upload {
      /* display: none !important;*/
   }
+.trash{
+  color: red;
+}
+.over{
+  cursor: pointer;
+  text-decoration: none;
+}
+.over:hover{
+  text-decoration: none;
+}
+.table-condensed{
+  border: 1px solid silver;
+}
+.dropdown-custom .dropdown-menu-form{
+  position: relative;
+}

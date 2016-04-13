@@ -25,8 +25,32 @@ Document maintenance:
 Irfan:
 
 Profile_Maintenance(reddy):
- ☐  making locum profile templates
- ☐  Verifying registraion done as per the sr document
+ ✔  making locum profile templates @done (16-04-12 21:27)
+ ✔  Verifying registraion done as per the sr document @done (16-04-12 21:27)
+ ✔ social media icons profile @done (16-04-12 21:59)
+ ✔ alingn package in locum profile @done (16-04-12 22:01)
+ ✔ 1)Add References is button that should open  a tab... @done (16-04-13 07:12)
+
+ ✔ 2)Name,Mobile Number,ID Should be provided as data @done (16-04-13 07:12)
+
+ ✔ 3)Each reference should contain EDIT/VIEW/DELETE buttons after added to  @done (16-04-13 07:12)
+
+ ✔ Reference page @done (16-04-13 07:12)
+ ✔ Locum-NHS Multi-select Catalogue box @done (16-04-13 07:32)
+ ✔ gender @done (16-04-13 07:40)
+ ✔ gp number @done (16-04-13 07:54)
+ ✔ performer list num @done (16-04-13 07:54)
+ ✔ work mobile @done (16-04-13 07:57)
+ ✔ checkbox-Do you operate as limited company, If yes then company Number should be captured @done (16-04-13 08:12)
+ ✔ NI Number @done (16-04-13 08:23)
+ ✔ Qualifications-Multiselect catalogue box @done (16-04-13 08:24)
+ ✔ Language proficiency English-Radio buttons for Expert,Intermediate,Beginner @done (16-04-13 08:28)
+ ✔ 11)Any Other languages known-Multi select catalogue box @done (16-04-13 09:13)
+ ☐ Photo Upload in profile edting.
+ ☐ have to implement capther robo image.
+ ✔ 13)Are you British citizen-checkbox @done (16-04-13 09:17)
+ ✔ 14)Eligible to work in UK-checkbox @done (16-04-13 09:17)
+ ✔ 15)Profile Summary-text area @done (16-04-13 09:05)
 Raju (midie):
 
 Siva prasad (practice dairy):
