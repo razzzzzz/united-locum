@@ -334,6 +334,31 @@
       <accordion-group is-open="$parent.step3">
         <accordion-heading>Documents<i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': step3, 'glyphicon-chevron-right': !step3}"></i></accordion-heading>
         
+<h5>GPS</h5>
+  <table class="table table-condensed">
+    <thead>
+      <tr>
+        <th>Certificate</th>
+        <th>Upload</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="certificate in certificates['GPS']">
+        <td>{{certificate}}</td>
+        <td><input type="file" /></td>
+        <td>
+          <button class="btn btn-default">View</button>
+          <button class="btn btn-default">Email</button>
+          <button class="btn btn-default">Modify</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div>
+    <button class="btn btn-default">Submit</button>
+    <button class="btn btn-default">Reset</button>
+  </div>
         <a class="btn btn-success pull-right" ng-click="openTwo('4')">Next</a>
       </accordion-group>
       <accordion-group is-open="$parent.step4">

@@ -25,6 +25,12 @@ angular.module('clickeatApp').controller('SettingsController', function($scope){
     $scope.nhsdata = [ {id: 1, label: "NHS SYSTEM1"}, {id: 2, label: "NHS SYSTEM2"}, {id: 3, label: "NHS SYSTEM3"},{id:4,label:"NHS SYSTEM4"},{id:5,label:"NHS SYSTEM5"},{id:6,label:"NHS SYSTEM6"}];
     $scope.languages = [ {id: 1, label: "Telugu"}, {id: 2, label: "French"}, {id: 3, label: "Jerman"}];
     $scope.currentRef = {};
+    $scope.certificates = {
+    		'GPS':['GMC Registration Certificate','Latest Performer List Report','Indemnity Insurance Certificate',' Passport/Work Permit/EEA card','Current DBS','Latest CV','Passport / Driving License'],
+			'Dentist':['GDC Registration Certificate','Performer List Report','Indemnity Insurance Certificate', 'Passport / Work Permit','Current DBS' ,'Latest CV','Passport / Driving License'],
+			'Nurses (Dental / Non-Dental)':['NMC Registration Certificate','Passport / EEA card/ Work Permit','Current DBS','Latest CV','Passport / Driving License','Qualifications Certificate']
+	
+    }
     $scope.openTwo = function(i){
 
       $scope['step'+i] = true;
