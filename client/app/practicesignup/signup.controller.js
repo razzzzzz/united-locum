@@ -16,7 +16,11 @@ $scope.example1data = [ {id: 1, label: "GP"}, {id: 2, label: "Dentist"}, {id: 3,
 $scope.howdouknow = [ {id: 1, label: "FaceBook"}, {id: 2, label: "Google+"}, {id: 3, label: "Twitter"},{id:4,label:"LinkedIn"},{id:5,label:"Other"}];
     $scope.user = {
                     role:'locum',
-                    category:[$scope.example1data[0]]
+                    itsystems:[$scope.example1data[0]],
+                    package:'basic',
+                    country:'UK',
+                    ccg:'CCG1',
+                    category:'GP Practice'
                   }
     $scope.resetForm = function(){
       $scope.user = {
@@ -35,15 +39,28 @@ $scope.howdouknow = [ {id: 1, label: "FaceBook"}, {id: 2, label: "Google+"}, {id
 
       if (form.$valid) {
         $scope.Auth.createUser({
-          fname: $scope.user.fname,
-          lname: $scope.user.lname,
+          practicecode: $scope.user.pcode,
+          country: $scope.user.country,
+          hname:$scope.user.hname,
+          address1:$scope.user.address1,
+          address2:$scope.user.address2,
+          address3:$scope.user.address3,
+          town:$scope.user.town,
+          city:$scope.user.city,
+          county:$scope.user.county,
+          zip:$scope.user.zip,
+          ccg:$scope.user.ccg,
+          itsystems:$scope.user.itsystems,
+        /*  category:$scope.user.category,*/
+          category: Array.isArray($scope.user.category)?$scope.user.category:[$scope.user.category],
+          contactfname: $scope.user.contactfname,
+          contactlname: $scope.user.contactlname,
+          mobile: $scope.user.mobile,
           email: $scope.user.email,
           password: $scope.user.password,
-          category: Array.isArray($scope.user.category)?$scope.user.category:[$scope.user.category],
-          mobile: $scope.user.mobile,
+          package:$scope.user.package,
           role:$scope.user.role,
-          tc:$scope.user.tc,
-          certified: $scope.user.certified
+          tc:$scope.user.tc
         }).then(function () {
           // Account created, redirect to home
           $scope.$state.go('main');

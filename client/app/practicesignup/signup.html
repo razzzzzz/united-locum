@@ -4,13 +4,13 @@
         <div class="form-group col-lg-12 form-inline">
           <label class="control-label">Practice Registration</label>
         </div>
-        <div class="form-group form-inline" ng-class="{ 'has-success': form.name.$valid && submitted,
-                                            'has-error': form.name.$invalid && submitted }">
+        <div class="form-group form-inline" ng-class="{ 'has-success': form.pcode.$valid && submitted,
+                                            'has-error': form.pcode.$invalid && submitted }">
           <label class="control-label col-sm-3">Practice Code</label>
           <div class="col-sm-9">
-            <input type="text" name="name" class="form-control" ng-model="user.pcode"
-                   required placeholder="First name"/>
-            <p class="help-block" ng-show="form.name.$error.required && submitted">
+            <input type="text" name="pcode" class="form-control" ng-model="user.pcode"
+                   required placeholder="Practice Code" />
+            <p class="help-block" ng-show="form.pcode.$error.required && submitted">
               A Practice Code is required
             </p>
           </div>
@@ -24,149 +24,141 @@
         </div>
 
 
-        <div class="form-group form-inline" ng-class="{ 'has-success': form.name.$valid && submitted,
-                                            'has-error': form.name.$invalid && submitted }">
+        <div class="form-group form-inline" ng-class="{ 'has-success': form.country.$valid && submitted,
+                                            'has-error': form.country.$invalid && submitted }">
           <label class="control-label col-sm-3">Country:</label>
           <div class="col-sm-9">
-              <select name="Country" value="UK" class="form-control">
+              <select name="country" class="form-control" ng-model="user.country">
                 <option value="UK">UK</option>
-                <option >ENGLAND</option>
-                <option >SCOTLAND</option>
-                <option >WALES</option>
-                <option >NORTHERN IRELAND</option>
+                <option value="ENGLAND">ENGLAND</option>
+                <option value="SCOTLAND">SCOTLAND</option>
+                <option value="WALES">WALES</option>
+                <option value="NORTHERN IRELAND">NORTHERN IRELAND</option>
              </select>
-            <p class="help-block" ng-show="form.name.$error.required && submitted">
-              A Practice Code is required
+            <p class="help-block" ng-show="form.country.$error.required && submitted">
+              Country is required
             </p>
           </div>
         </div>
 
-
-        <div class="form-group form-inline" ng-class="{ 'has-success': form.name.$valid && submitted,
-                                            'has-error': form.name.$invalid && submitted }">
+        <div class="form-group form-inline" ng-class="{ 'has-success': form.hname.$valid && submitted,
+                                            'has-error': form.hname.$invalid && submitted }">
           <label class="control-label col-sm-3">House Name:</label>
           <div class="col-sm-9">
-              <input type="Number" class="form-control" id="inputEmail" placeholder="House Name" />
-            <p class="help-block" ng-show="form.name.$error.required && submitted">
-              A Practice Code is required
+              <input type="text" class="form-control" ng-model="user.hname" name="hname"  placeholder="House Name" />
+            <p class="help-block" ng-show="form.hname.$error.required && submitted">
+              House Name is required
             </p>
           </div>
         </div>
 
-
-
-
-
-
-
-
-        <div class="form-group form-inline" ng-class="{ 'has-success': form.name.$valid && submitted,
-                                            'has-error': form.name.$invalid && submitted }">
+        <div class="form-group form-inline" ng-class="{ 'has-success': form.address1.$valid && submitted,
+                                            'has-error': form.address1.$invalid && submitted }">
           <label class="control-label col-sm-3">Address Line1:</label>
           <div class="col-sm-9">
-            <input type="Number" class="form-control" id="inputEmail" placeholder="Address Line1" />
-            <p class="help-block" ng-show="form.name.$error.required && submitted">
-              A Practice Code is required
+            <input type="text" name="address1" class="form-control" ng-model="user.address1" placeholder="Address Line1" />
+            <p class="help-block" ng-show="form.address1.$error.required && submitted">
+              Address Line1 is required
             </p>
           </div>
         </div>
-        <div class="form-group form-inline" ng-class="{ 'has-success': form.name.$valid && submitted,
-                                            'has-error': form.name.$invalid && submitted }">
+        <div class="form-group form-inline" ng-class="{ 'has-success': form.address2.$valid && submitted,
+                                            'has-error': form.address2.$invalid && submitted }">
           <label class="control-label col-sm-3">Address Line2:</label>
           <div class="col-sm-9">
-            <input type="Number" class="form-control" id="inputEmail" placeholder="Address Line2" />
-            <p class="help-block" ng-show="form.name.$error.required && submitted">
-              A Practice Code is required
+            <input type="text" class="form-control" name="address2" ng-model="user.address2" placeholder="Address Line2" />
+            <p class="help-block" ng-show="form.address2.$error.required && submitted">
+             Address Line2 is required
             </p>
           </div>
         </div>
-        <div class="form-group form-inline" ng-class="{ 'has-success': form.name.$valid && submitted,
-                                            'has-error': form.name.$invalid && submitted }">
+        <div class="form-group form-inline" ng-class="{ 'has-success': form.address3.$valid && submitted,
+                                            'has-error': form.address3.$invalid && submitted }">
           <label class="control-label col-sm-3">Address Line3:</label>
           <div class="col-sm-9">
-            <input type="Number" class="form-control" id="inputEmail" placeholder="Address Line3" />
-            <p class="help-block" ng-show="form.name.$error.required && submitted">
-              A Practice Code is required
+            <input type="text" name="address3" ng-model="user.address3" class="form-control"  placeholder="Address Line3" />
+            <p class="help-block" ng-show="form.address3.$error.required && submitted">
+              Address Line3 is required
             </p>
           </div>
         </div>
-        <div class="form-group form-inline" ng-class="{ 'has-success': form.name.$valid && submitted,
-                                            'has-error': form.name.$invalid && submitted }">
+        <div class="form-group form-inline" ng-class="{ 'has-success': form.town.$valid && submitted,
+                                            'has-error': form.town.$invalid && submitted }">
           <label class="control-label col-sm-3">Town:</label>
           <div class="col-sm-9">
-            <input type="Number" class="form-control" id="inputEmail" placeholder="Town" />
-            <p class="help-block" ng-show="form.name.$error.required && submitted">
-              A Practice Code is required
+            <input type="text" class="form-control" name="town" ng-model="user.town"  placeholder="Town" />
+            <p class="help-block" ng-show="form.town.$error.required && submitted">
+              Town is required
             </p>
           </div>
         </div>
-        <div class="form-group form-inline" ng-class="{ 'has-success': form.name.$valid && submitted,
-                                            'has-error': form.name.$invalid && submitted }">
+        <div class="form-group form-inline" ng-class="{ 'has-success': form.city.$valid && submitted,
+                                            'has-error': form.city.$invalid && submitted }">
           <label class="control-label col-sm-3">City:</label>
           <div class="col-sm-9">
-            <input type="Number" class="form-control" id="inputEmail" placeholder="City" />
-            <p class="help-block" ng-show="form.name.$error.required && submitted">
-              A Practice Code is required
+            <input type="text" class="form-control" name="city" ng-model="user.city" placeholder="City" />
+            <p class="help-block" ng-show="form.city.$error.required && submitted">
+              City is required
             </p>
           </div>
         </div>
-        <div class="form-group form-inline" ng-class="{ 'has-success': form.name.$valid && submitted,
-                                            'has-error': form.name.$invalid && submitted }">
+        <div class="form-group form-inline" ng-class="{ 'has-success': form.county.$valid && submitted,
+                                            'has-error': form.county.$invalid && submitted }">
           <label class="control-label col-sm-3">County:</label>
           <div class="col-sm-9">
-            <input type="Number" class="form-control" id="inputEmail" placeholder="County" />
-            <p class="help-block" ng-show="form.name.$error.required && submitted">
-              A Practice Code is required
+            <input type="text" class="form-control" ng-model="user.county"  placeholder="County" />
+            <p class="help-block" ng-show="form.county.$error.required && submitted">
+              County is required
             </p>
           </div>
         </div>
-        <div class="form-group form-inline" ng-class="{ 'has-success': form.name.$valid && submitted,
-                                            'has-error': form.name.$invalid && submitted }">
+        <div class="form-group form-inline" ng-class="{ 'has-success': form.zip.$valid && submitted,
+                                            'has-error': form.zip.$invalid && submitted }">
           <label class="control-label col-sm-3">Post-Code:</label>
           <div class="col-sm-9">
-            <input type="Number" class="form-control" id="inputEmail" placeholder="Post-Code" />
-            <p class="help-block" ng-show="form.name.$error.required && submitted">
-              A Practice Code is required
+            <input type="Number" class="form-control" name="zip" ng-model="user.zip" placeholder="Post-Code" />
+            <p class="help-block" ng-show="form.zip.$error.required && submitted">
+              zip Code is required
             </p>
           </div>
         </div>
-        <div class="form-group form-inline" ng-class="{ 'has-success': form.name.$valid && submitted,
-                                            'has-error': form.name.$invalid && submitted }">
+        <div class="form-group form-inline" ng-class="{ 'has-success': form.ccg.$valid && submitted,
+                                            'has-error': form.ccg.$invalid && submitted }">
           <label class="control-label col-sm-3">CCG:</label>
           <div class="col-sm-9">
-              <select name="Country" value="UK" class="form-control">
-                <option value="UK">CCG1</option>
-                <option >CCG2</option>
-                <option >CCG3</option>
-                <option >CCG4</option>
-                <option >CCG5</option>
+              <select name="ccg" ng-model="user.ccg" class="form-control">
+                <option value="CCG1">CCG1</option>
+                <option value="CCG2">CCG2</option>
+                <option value="CCG3">CCG3</option>
+                <option value="CCG4">CCG4</option>
+                <option value="CCG5">CCG5</option>
              </select>
-            <p class="help-block" ng-show="form.name.$error.required && submitted">
-              A Practice Code is required
+            <p class="help-block" ng-show="form.ccg.$error.required && submitted">
+              CCG is required
+            </p>
+          </div>
+        </div>
+        <div class="form-group form-inline" ng-class="{ 'has-success': form.itsystems.$valid && submitted,
+                                            'has-error': form.itsystems.$invalid && submitted }">
+          <label class="control-label col-sm-3">IT Systems</label>
+          <div class="col-sm-9">
+            <div ng-dropdown-multiselect="" options="example1data" selected-model="user.itsystems"></div>
+            <p class="help-block"
+               ng-show="form.itsystems.$error.required && submitted">
+              IT Systems is required.
             </p>
           </div>
         </div>
         <div class="form-group form-inline" ng-class="{ 'has-success': form.category.$valid && submitted,
                                             'has-error': form.category.$invalid && submitted }">
-          <label class="control-label col-sm-3">IT Systems</label>
-          <div class="col-sm-9">
-            <div ng-dropdown-multiselect="" options="example1data" selected-model="user.category"></div>
-            <p class="help-block"
-               ng-show="form.category.$error.required && submitted">
-              Should select category.
-            </p>
-          </div>
-        </div>
-        <div class="form-group form-inline" ng-class="{ 'has-success': form.name.$valid && submitted,
-                                            'has-error': form.name.$invalid && submitted }">
           <label class="control-label col-sm-3">Category:</label>
           <div class="col-sm-9">
-              <select name="Country" value="UK" class="form-control">
-                <option value="UK">GP Practice</option>
-                <option >Dental PracticeCCG2</option> 
-             </select>
-            <p class="help-block" ng-show="form.name.$error.required && submitted">
-              A Practice Code is required
+              <select category="category" ng-model="user.category" value="UK" class="form-control">
+                <option value="GP Practice">GP Practice</option>
+                <option value="Dental Practice">Dental Practice</option> 
+              </select>
+            <p class="help-block" ng-show="form.category.$error.required && submitted">
+              Category is required.
             </p>
           </div>
         </div>
@@ -174,9 +166,9 @@
                                             'has-error': form.name.$invalid && submitted }">
           <label class="control-label col-sm-3">Contact Name</label>
           <div class="col-sm-9">
-            <input type="text" name="name" class="form-control" ng-model="user.fname"
+            <input type="text" name="contactfname" class="form-control" ng-model="user.contactfname"
                    required placeholder="First name"/>
-            <input type="text" name="name" class="form-control" ng-model="user.lname"
+            <input type="text" name="name" class="form-control" ng-model="user.contactlname"
                    required placeholder="Last name"/>
             <p class="help-block" ng-show="form.name.$error.required && submitted">
               A Frist name and Last name is required
@@ -187,12 +179,9 @@
                                             'has-error': form.mobile.$invalid && submitted }">
           <label class="control-label col-sm-3">Phone number: </label>
           <div class="col-sm-9">
-            <!-- <div class="input-group">
-              <div class="input-group-addon">+91</div> -->
               <input type="number" name="mobile" class="form-control" ng-model="user.mobile"
                      required placeholder="Phone number"
                      mongoose-error/>
-           <!--  </div> -->
             <p class="help-block" ng-show="form.mob.$error.mobile && submitted">
               Doesn't look like a valid mob.
             </p>
@@ -288,8 +277,8 @@
           <label class="control-label col-sm-3"> Package-Selection</label>
           <div class="col-sm-9">
 
-          <label class="radio-inline"><input type="radio" ng-model="user.package" value="basic" name="package" >Basic</label>
-          <label class="radio-inline"><input type="radio" ng-model="user.package" value="enterprise" name="package" >Enterprise</label>
+          <label class="radio-inline"><input type="radio" ng-model="user.package" value="basic" name="package" required />Basic</label>
+          <label class="radio-inline"><input type="radio" ng-model="user.package" value="enterprise" name="package" required />Enterprise</label>
           </div>
       </div>
 
