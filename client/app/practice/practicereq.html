@@ -1,5 +1,5 @@
         <div class="modal-header">
-            <h3 class="modal-title">Requisition
+            <h3 class="modal-title">{{dairy.heading}}
               <button class="pull-right close" ng-click="cancel()">&times;</button>
             </h3>
         </div>
@@ -7,20 +7,27 @@
             <form class="form" name="form" ng-submit="makeRequest(form)" novalidate>
                 <div class="form-group form-inline" ng-class="{ 'has-success': form.category.$valid && submitted,
                                                     'has-error': form.category.$invalid && submitted }">
-                  <label>Category</label>
-
-                  <input type="text" name="category" class="form-control" ng-model="req.category"
-                         required placeholder="Category"/>
+                  <label>Category:</label>
+                  <select name="category" class="form-control" ng-model="req.category"
+                         required>
+                    <option value="volvo">Doctor</option>
+                    <option value="saab">Nurse</option>
+                    <option value="opel">dentist</option>
+                   </select>
                   <p class="help-block" ng-show="form.category.$error.required && submitted">
                     Category is required
                   </p>
                 </div>
                 <div class="form-group form-inline" ng-class="{ 'has-success': form.skill.$valid && submitted,
                                                     'has-error': form.skill.$invalid && submitted }">
-                  <label>Skill</label>
-
-                  <input type="text" name="skill" class="form-control" ng-model="req.skill"
-                         required placeholder="Skill"/>
+                  <label>Skill:</label>
+                  <select name="skill" class="form-control" ng-model="req.skill"
+                         required>
+                    <option value="volvo">Audiologist</option>
+                    <option value="saab">Allergist</option>
+                    <option value="opel">Cardiologist</option>
+                    <option value="audi">Gynecologist</option>
+                  </select>
                   <p class="help-block" ng-show="form.skill.$error.required && submitted">
                     Skill is required
                   </p>
@@ -28,15 +35,15 @@
                 <div class="form-group form-inline" ng-class="{ 'has-success': form.desc.$valid && submitted,
                                                     'has-error': form.desc.$invalid && submitted }">
                   <label>Job Description</label>
-                  <input type="text" name="desc" class="form-control" ng-model="req.desc"
-                         required placeholder="Job Description"/>
+                  <textarea name="desc" class="form-control" ng-model="req.desc"
+                         required placeholder="Job Description"></textarea>
                   <p class="help-block" ng-show="form.desc.$error.required && submitted">
                     Desc is required
                   </p>
                 </div>
                 <div class="form-group form-inline" ng-class="{ 'has-success': form.count.$valid && submitted,
                                                     'has-error': form.count.$invalid && submitted }">
-                  <label>No. of Requirments</label>
+                  <label>No of Requirements</label>
 
                   <input type="number" name="count" class="form-control" ng-model="req.count"
                          required placeholder="No. of Requirments"/>
@@ -75,10 +82,10 @@
                     A rate is required
                   </p>
                 </div>
-                <button ng-hide="updateEnable" class="btn btn-inverse btn-md btn-register" type="submit">
+                <button ng-show="dairy.type=='newevent'" class="btn btn-default" type="submit">
                     Submit
                 </button>
-                <button ng-show="updateEnable" class="btn btn-inverse btn-md btn-register" type="submit">
+                <button ng-show="dairy.type=='editevent'" class="btn btn-default" type="submit">
                     Update
                 </button>
             </form> 

@@ -1,4 +1,4 @@
- ☐ openshift{}
+ ☐ openshift
 
  ☐ Ask for terms and conditions doc for client
 
@@ -23,8 +23,12 @@
 Document maintenance:
  ✔  Doument upload html template with vocablary @done (16-04-13 22:30)
  ☐ gmailid to send document to target mailid
+ ☐ 
 Irfan:
-
+ ☐ have to prepare db fields
+ ☐ have to make template for different requirements
+ ☐ no of req default 1 not editable
+ ☐ from tome to time with am pm
 Profile_Maintenance(reddy):
  ✔  making locum profile templates @done (16-04-12 21:27)
  ✔  Verifying registraion done as per the sr document @done (16-04-12 21:27)
@@ -54,6 +58,7 @@ Profile_Maintenance(reddy):
  ✔ 15)Profile Summary-text area @done (16-04-13 09:05)
  ☐ order of the fields
  ☐ validation
+ ☐ error message vocablary
 Raju (midie):
 
 Siva prasad (practice dairy):

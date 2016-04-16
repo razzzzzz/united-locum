@@ -11,8 +11,8 @@ angular.module('clickeatApp')
     /* event source that pulls from google.com */
     $scope.eventSource = {
             url: "http://www.google.com/calendar/feeds/usa__en%40holiday.calendar.google.com/public/basic",
-            className: 'gcal-event',           // an option!
-            currentTimezone: 'America/Chicago' // an option!
+            className: 'gcal-event',           
+            currentTimezone: 'America/Chicago' 
     };
     /* event source that contains custom events on the scope */
     $scope.events = [
@@ -22,13 +22,13 @@ angular.module('clickeatApp')
         endTime:new Date(y,m,1),
         rate:30,
         locumName:"Locum name",
-        pname:"Practice name"
+        pname:"Practice name",title: 'Lunch'
       },
-      {pname: 'Long Event',start: new Date(y, m, d - 5),end: new Date(y, m, d - 2)},
-      {id: 999,pname: 'Repeating Event',start: new Date(y, m, d - 3, 16, 0),allDay: false},
-      {id: 999,pname: 'Repeating Event',start: new Date(y, m, d + 4, 16, 0),allDay: false},
-      {pname: 'Birthday Party',start: new Date(y, m, d + 1, 19, 0),end: new Date(y, m, d + 1, 22, 30),allDay: false},
-      {pname: 'Click for Google',start: new Date(y, m, 28),end: new Date(y, m, 29),url: 'http://google.com/'}
+      {pname: 'Long Event',title: 'Lunch',start: new Date(y, m, d - 5),end: new Date(y, m, d - 2)},
+      {id: 999,title: 'Lunch',pname: 'Repeating Event',start: new Date(y, m, d - 3, 16, 0),allDay: false},
+      {id: 999,title: 'Lunch',pname: 'Repeating Event',start: new Date(y, m, d + 4, 16, 0),allDay: false},
+      {pname: 'Birthday Party',title: 'Lunch',start: new Date(y, m, d + 1, 19, 0),end: new Date(y, m, d + 1, 22, 30),allDay: false},
+      {pname: 'Click for Google',title: 'Lunch',start: new Date(y, m, 28),end: new Date(y, m, 29),url: 'http://google.com/'}
     ];
     /* event source that calls a function on every view switch */
     $scope.eventsF = function (start, end, timezone, callback) {
@@ -49,11 +49,16 @@ angular.module('clickeatApp')
         ]
     };
     /* alert on eventClick */
-    $scope.alertOnEventClick = function( date, jsEvent, view){
-        $scope.alertMessage = (date.title + ' was clicked ');
-        $scope.openModel(date);
+    $scope.alertOnEventClick = function( eventData, jsEvent, view){
+      //  $scope.alertMessage = (date.title + ' was clicked ');
+        eventData.type = 'editevent';
+        eventData.heading = 'edit vacancy';
+        $scope.openModel(eventData);
 
     };
+    $scope.alertMessage = function(data){
+      console.log(data);
+    }
     /* alert on Drop */
      $scope.alertOnDrop = function(event, delta, revertFunc, jsEvent, ui, view){
        $scope.alertMessage = ('Event Droped to make dayDelta ' + delta);
@@ -105,7 +110,11 @@ angular.module('clickeatApp')
         $compile(element)($scope);
     };
     $scope.dayClick = function(date, jsEvent, view) {
-     $scope.openModel();
+      var eventData = {
+        type: 'newevent',
+        heading:'create new vacancy'
+      }
+     $scope.openModel(eventData);
     }
     /* config object */
     $scope.uiConfig = {
@@ -141,7 +150,7 @@ angular.module('clickeatApp')
     /* event sources array*/
     $scope.eventSources = [];
     $scope.eventSources2 = [];
-    var events = [$scope.events, $scope.eventSource, $scope.eventsF];
+    var events = [$scope.events, $scope.eventsF];
     for(var i=0;i<events.length;i++){
       $scope.eventSources.push(events[i])  
     }
@@ -184,6 +193,12 @@ angular.module('clickeatApp')
     if($scope.dairy){
       $scope.updateEnable = true;
     }
+
+    $scope.cat = {
+      'Doctor':['Audiologist','Allergist','Cardiologist','Dermetologist','Gynecologist','Microbiologist'],
+      'Dentist':['Pediatric Dentist','Endodonist','Orthodontist','Periodontist','Prosthodontist'],
+      'Nurse':['Cardiac Nursing','Dialysis Nursing','Forensic Nursing','Neonatal Nursing''Legal Nursing' ]
+    };
   //console.log(items);
     $scope.selected = {
       newvacancy: $scope.newvacancy
