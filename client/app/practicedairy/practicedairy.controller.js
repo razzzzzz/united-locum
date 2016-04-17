@@ -112,7 +112,7 @@ angular.module('clickeatApp')
     $scope.dayClick = function(date, jsEvent, view) {
       var eventData = {
         type: 'newevent',
-        heading:'create new vacancy'
+        heading:'Create New Vacancy'
       }
      $scope.openModel(eventData);
     }
@@ -178,7 +178,7 @@ angular.module('clickeatApp')
 
       modalInstance.result.then(function (updatevacancy) {
         if(updatevacancy.newvacancy){
-      $scope.vacancyList.push(updatevacancy.newvacancy);
+      //$scope.vacancyList.push(updatevacancy.newvacancy);
         }else if(updatevacancy.updatevacancy){
           //$scope.vacancyList.filter
         }
@@ -187,23 +187,52 @@ angular.module('clickeatApp')
        // $log.info('Modal dismissed at: ' + new Date());
       });
     }
-  }).controller('ModalInstanceCtrl1', function ($scope, $modalInstance, items) {
-
+  }).controller('ModalInstanceCtrl1', function ($scope, $modalInstance, items, $http, User) {
     $scope.dairy = items;
     if($scope.dairy){
       $scope.updateEnable = true;
     }
-
-    $scope.cat = {
-      'Doctor':['Audiologist','Allergist','Cardiologist','Dermetologist','Gynecologist','Microbiologist'],
-      'Dentist':['Pediatric Dentist','Endodonist','Orthodontist','Periodontist','Prosthodontist'],
-      'Nurse':['Cardiac Nursing','Dialysis Nursing','Forensic Nursing','Neonatal Nursing''Legal Nursing' ]
+    $scope.today = function() {
+      $scope.dt = new Date();
     };
+    $scope.today();
+    $scope.popup1 = {
+      opened: false
+    };
+    $scope.open1 = function() {
+      $scope.popup1.opened = true;
+    };
+     $scope.format = 'dd-MMMM-yyyy';
+    $scope.init = function(){
+    $scope.currentUser = User.get();
+      $scope.cat = [
+         {id: '1', name: 'Doctor',drilldown:['Audiologist','Allergist','Cardiologist','Dermetologist','Gynecologist','Microbiologist']},
+         {id: '2', name: 'Dentist',drilldown:['Pediatric Dentist','Endodonist','Orthodontist','Periodontist','Prosthodontist']},
+         {id: '3', name: 'Nurse',drilldown:['Cardiac Nursing','Dialysis Nursing','Forensic Nursing','Neonatal Nursing','Legal Nursing']}
+       ];
+      $scope.req = {
+        count: 1,
+        category: $scope.cat[0],
+        from: new Date(),
+        to: new Date()
+      };
+      $scope.hstep = 1;
+      $scope.mstep = 15;
+
+      $scope.options = {
+        hstep: [1, 2, 3],
+        mstep: [1, 5, 10, 15, 25, 30]
+      };
+      $scope.req.skills = $scope.req.category.drilldown[0];
+    }
+    $scope.init();
   //console.log(items);
     $scope.selected = {
       newvacancy: $scope.newvacancy
     };
-
+    $scope.categoryChange = function(){
+      $scope.req.skills = $scope.req.category.drilldown[0];
+    }
     $scope.ok = function () {
       $modalInstance.close($scope.selected);
     };
@@ -216,21 +245,22 @@ angular.module('clickeatApp')
       $scope.submitted = true;
       if(form.$valid){
        var vacancyObj = {
-          'category': $scope.req.category,
+        'category': $scope.req.category.name,
         'desc': $scope.req.desc,
         'skill': $scope.req.skill,
         'count': $scope.req.count,
         'rate': $scope.req.rate,
-        'date': $scope.req.date,
-        'time': $scope.req.mytime,
-        'practiceId': $scope.user._id,
+        'from':$scope.req.from,
+        'to':$scope.req.to,
+        'date': $scope.dt,
+        'practiceId': $scope.currentUser._id/*,
         'practiceEmail': $scope.user.email ,
         'practiceFname': $scope.user.fname,
         'practiceLname':  $scope.user.lname,
         'practiceTel':  $scope.user.mobile,
-        'practiceAdd':  '$scope.user.address'
+        'practiceAdd':  '$scope.user.address'*/
         };
-        if($scope.updateEnable){//update the existing vacancy
+        if($scope.dairy.type == 'editevent'){//update the existing vacancy
           $http.patch('/api/vacancys/'+$scope.req._id,vacancyObj).then(
             function(res){
               $scope.updatevacancy = res.data;

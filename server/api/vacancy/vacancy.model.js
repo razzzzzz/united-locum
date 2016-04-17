@@ -9,8 +9,9 @@ var VacancySchema = new mongoose.Schema({
   count: Number,
   rate: Number,
   date: Date,
-  time: Date,
-  practiceId: String,
+  from: Date,
+  to: Date,
+  practiceId: String/*,
   practiceEmail:  {
 		    type: String,
 		    lowercase: true
@@ -18,7 +19,7 @@ var VacancySchema = new mongoose.Schema({
   practiceFname: String,
   practiceLname: String,
   practiceTel: Number,
-  practiceAdd: String
+  practiceAdd: String*/
 });
 
 export default mongoose.model('Vacancy', VacancySchema);

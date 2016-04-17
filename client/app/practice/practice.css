@@ -13,3 +13,13 @@ table.table-hover,.table-hover tbody{
 .timer table{
 	display: inline-table;
 }
+.timer-container .btn{
+	padding: 0px;
+}
+.timer-container .form-control{
+	padding: 0px;
+	height: 20px;
+}
+.timer-container .btn-link{
+	line-height: 1;
+}
