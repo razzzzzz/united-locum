@@ -14,9 +14,9 @@
         <li ng-repeat="item in menu" ui-sref-active="active">
             <a ui-sref="{{item.state}}">{{item.title}}</a>
         </li>
-        <li ng-show="Auth.isPractice()" ui-sref-active="active"><a ui-sref="practicedairy">Dairy</a></li>
+        <li ng-show="Auth.isPractice()" ui-sref-active="active"><a ui-sref="practicedairy">Diary</a></li>
         <li ng-show="Auth.isPractice()" ui-sref-active="active"><a ui-sref="vacancy">Vacancy</a></li>
-        <li ng-show="Auth.isLocum()" ui-sref-active="active"><a ui-sref="locumdairy">Dairy</a></li>
+        <li ng-show="Auth.isLocum()" ui-sref-active="active"><a ui-sref="locumdairy">Diary</a></li>
         <li ng-show="Auth.isAdmin()" ui-sref-active="active"><a ui-sref="admin">Admin</a></li>
       </ul>
 
