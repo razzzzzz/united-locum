@@ -29,7 +29,8 @@
             <span class="glyphicon glyphicon-globe"></span>
           </a>
         </li>
-        <li ng-show="Auth.isLoggedIn()" ui-sref-active="active"><a ui-sref="settings"><span class="glyphicon glyphicon-cog"></span></a></li>
+        <li ng-show="Auth.isLoggedIn()&&Auth.isLocum()" ui-sref-active="active"><a ui-sref="settings"><span class="glyphicon glyphicon-cog"></span></a></li>
+        <li ng-show="Auth.isLoggedIn()&&Auth.isPractice()" ui-sref-active="active"><a ui-sref="practicesettings"><span class="glyphicon glyphicon-cog"></span></a></li>
         <li ng-show="Auth.isLoggedIn()"><a ui-sref="logout">Logout</a></li>
       </ul>
     </div>

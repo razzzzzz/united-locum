@@ -1,0 +1,789 @@
+
+<div class="container form-horizontal">
+    <accordion close-others="true">
+    
+      <accordion-group is-open="$parent.step1">
+          <accordion-heading>Main<i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': step1, 'glyphicon-chevron-right': !step1}"></i></accordion-heading>
+          
+
+          <div class="row">
+
+            <div class="col-xs-12 col-lg-6">
+              <div class="form-group">
+                <label for="inputEmail" class="col-md-4 control-label">First Name:</label>
+                <div class="col-md-8">
+                  <input type="text" class="form-control" id="inputEmail" placeholder="First Name">
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-12 col-lg-6">
+              <div class="form-group">
+                <label for="inputEmail" class="col-md-4 control-label">Last Name:</label>
+                <div class="col-md-8">
+                  <input type="text" class="form-control" id="inputEmail" placeholder="Last Name">
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-12 col-lg-12">
+              <div class="form-group">
+                <label for="inputEmail" class="col-md-4 col-lg-2 control-label">Gender</label>
+                <div class="col-md-8 col-lg-4">
+                  <label class="radio-inline"><input type="radio" ng-model="user.gender" value="male" name="gender" ng-change="roleChange()" required />Male</label>
+                  <label class="radio-inline"><input type="radio" ng-model="user.gender" value="female" name="gender" ng-change="roleChange()" required />Female</label>
+                  <label class="radio-inline"><input type="radio" ng-model="user.gender" value="others" name="gender" ng-change="roleChange()" required />Others</label>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-12 col-lg-6">
+              <div class="form-group">
+                <label for="inputEmail" class="col-md-4 control-label">Email Id:</label>
+                <div class="col-md-8">
+                  <input type="email" class="form-control" id="inputEmail" placeholder="Email Id">
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-12 col-lg-6">
+              <div class="form-group">
+                <label for="inputEmail" class="col-md-4 control-label">Alternate Email Id:</label>
+                <div class="col-md-8">
+                  <input type="email" class="form-control" id="inputEmail" placeholder="Alternate Email Id">
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-12 col-lg-12">
+              <div class="form-group">
+                <label for="inputEmail" class="col-md-4 col-lg-2 control-label">Phone No:</label>
+                <div class="col-md-8 col-lg-4">
+                  <input type="Number" class="form-control" id="inputEmail" placeholder="Phone No">
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-12 col-lg-12">
+              <div class="form-group">
+                <label for="inputEmail" class="col-md-4 col-lg-2 control-label">Category:</label>
+                <div class="col-md-8 col-lg-4">
+                  <input type="Number" class="form-control" id="inputEmail" placeholder="Category">
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-12 col-lg-12">
+              <div class="form-group">
+                <label for="inputEmail" class="col-md-4 col-lg-2 control-label">GP/Dentist</label>
+                <div class="col-md-8 col-lg-4">
+                  <input type="Number" class="form-control" id="inputEmail" placeholder="Number">
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-12 col-lg-12">
+              <div class="form-group">
+                <label for="inputEmail" class="col-md-4 col-lg-2 control-label">Performar List Number</label>
+                <div class="col-md-8 col-lg-4">
+                  <input type="Number" class="form-control" id="inputEmail" placeholder="Performar List Number">
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-12 col-lg-12">
+              <div class="form-group">
+                <label for="inputEmail" class="col-md-4 col-lg-2 control-label">Work Mobile Number</label>
+                <div class="col-md-8 col-lg-4">
+                  <input type="Number" class="form-control" id="inputEmail" placeholder="Work Mobile Number">
+                </div>
+              </div>
+            </div>            
+            <div class="col-xs-12 col-lg-12">
+              <div class="form-group">
+                <label for="inputEmail" class="radio-inline control-label">Do you operate as limited company?</label>
+                <label class="radio-inline"><input type="radio" ng-model="user.limited" value="yes" name="limited"  required />Yes</label>
+                  <label class="radio-inline"><input type="radio" ng-model="user.limited" value="no" name="limited"  required />No</label>
+              </div>
+            </div>
+            <div class="col-xs-12 col-lg-12" ng-if="user.limited=='yes'">
+              <div class="form-group">
+                <label for="inputEmail" class="col-md-4 col-lg-2 control-label">Company Number</label>
+                <div class="col-md-8 col-lg-4">
+                  <input type="Number" class="form-control" id="inputEmail" placeholder="Company Number">
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-12 col-lg-12">
+              <div class="form-group">
+                <label for="inputEmail" class="col-md-4 col-lg-2 control-label">NI Number</label>
+                <div class="col-md-8 col-lg-4">
+                  <input type="Number" class="form-control" id="inputEmail" placeholder="NI Number">
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-12 col-lg-12">
+              <div class="form-group dropdown-custom">
+                <label for="inputEmail" class="col-md-4 col-lg-2 control-label">Qualifications</label>
+                <div class="col-md-8 col-lg-4">
+                  <div  ng-dropdown-multiselect="" options="qualifications" selected-model="user.qualification">
+                </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-12 col-lg-12">
+              <div class="form-group">
+                <label for="inputEmail" class="col-md-4 col-lg-2 control-label">Language proficiency</label>
+                <div class="col-md-8 col-lg-4">
+                  <label class="radio-inline"><input type="radio" ng-model="user.englishlevel" value="expert" name="lng" required />Expert</label>
+                  <label class="radio-inline"><input type="radio" ng-model="user.englishlevel" value="intermediate" name="lng" required />Intermediate</label>
+                  <label class="radio-inline"><input type="radio" ng-model="user.englishlevel" value="beginner" name="lng" required />Beginner</label>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-12 col-lg-12">
+              <div class="form-group">
+                <label for="inputEmail" class="radio-inline control-label">Do you Any Other languages?</label>
+                <label class="radio-inline"><input type="radio" ng-model="user.lang" value="yes" name="lang"  required />Yes</label>
+                <label class="radio-inline"><input type="radio" ng-model="user.lang" value="no" name="lang"  required />No</label>
+              </div>
+            </div>
+            <div class="col-xs-12 col-lg-12" ng-if="user.lang=='yes'">
+              <div class="form-group dropdown-custom">
+                <label for="inputEmail" class="col-md-4 col-lg-2 control-label">Languages</label>
+                <div class="col-md-8 col-lg-4">
+                  <div  ng-dropdown-multiselect="" options="languages" selected-model="user.languages">
+                </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-12 col-lg-12">
+              <div class="form-group">
+                <label for="inputEmail" class="radio-inline control-label">Are you British citizen?</label>
+                <label class="radio-inline"><input type="radio" ng-model="user.citizen" value="yes" name="citizen"  required />Yes</label>
+                <label class="radio-inline"><input type="radio" ng-model="user.citizen" value="no" name="citizen"  required />No</label>
+              </div>
+            </div>
+            <div class="col-xs-12 col-lg-12" ng-if="user.citizen=='no'">
+              <div class="form-group dropdown-custom">
+                <label for="inputEmail" class="radio-inline control-label">Eligible to work in UK?</label>
+                <label class="radio-inline"><input type="radio" ng-model="user.eligiblity" value="yes" name="eligiblity"  required />Yes</label>
+                <label class="radio-inline"><input type="radio" ng-model="user.eligiblity" value="no" name="eligiblity"  required />No</label>
+              </div>
+            </div>
+            <div class="col-xs-12 col-lg-12">
+              <div class="form-group">
+                <label for="inputEmail" class="col-md-4 col-lg-2 control-label">Profile Summary</label>
+                <div class="col-md-8 col-lg-4">
+                <textarea class="form-control" rows="4" cols="50" placeholder="Profile Summary"></textarea>
+                </div>
+              </div>
+            </div>
+          </div>
+          <a class="btn btn-success pull-right" ng-click="openTwo('2')">Next</a>
+      </accordion-group>
+      
+      <accordion-group is-open="$parent.step2">
+          <accordion-heading>Location<i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': step2, 'glyphicon-chevron-right': !step2}"></i></accordion-heading>
+
+          <dir class="row">
+
+                      <div class="col-xs-12 col-lg-12">
+                        <div class="form-group">
+                          <label for="inputEmail" class="col-md-4 col-lg-2 control-label">Country:</label>
+                          <div class="col-md-8 col-lg-4">
+                            <select name="Country" value="UK" class="form-control">
+                              <option value="UK">UK</option>
+                              <option >ENGLAND</option>
+                              <option >SCOTLAND</option>
+                              <option >WALES</option>
+                              <option >NORTHERN IRELAND</option>
+                           </select>  
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-xs-12 col-lg-12">
+                        <div class="form-group">
+                          <label for="inputEmail" class="col-md-4 col-lg-2 control-label">House Name:</label>
+                          <div class="col-md-8 col-lg-4">
+                            <input type="Number" class="form-control" id="inputEmail" placeholder="House Name">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-xs-12 col-lg-12">
+                        <div class="form-group">
+                          <label for="inputEmail" class="col-md-4 col-lg-2 control-label">Address Line1:</label>
+                          <div class="col-md-8 col-lg-4">
+                            <input type="Number" class="form-control" id="inputEmail" placeholder="Address Line1">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-xs-12 col-lg-12">
+                        <div class="form-group">
+                          <label for="inputEmail" class="col-md-4 col-lg-2 control-label">Address Line2:</label>
+                          <div class="col-md-8 col-lg-4">
+                            <input type="Number" class="form-control" id="inputEmail" placeholder="Address Line2">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-xs-12 col-lg-12">
+                        <div class="form-group">
+                          <label for="inputEmail" class="col-md-4 col-lg-2 control-label">Address Line3:</label>
+                          <div class="col-md-8 col-lg-4">
+                            <input type="Number" class="form-control" id="inputEmail" placeholder="Address Line3">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-xs-12 col-lg-12">
+                        <div class="form-group">
+                          <label for="inputEmail" class="col-md-4 col-lg-2 control-label">Town:</label>
+                          <div class="col-md-8 col-lg-4">
+                            <input type="Number" class="form-control" id="inputEmail" placeholder="Town">
+                          </div>
+                        </div>
+                      </div>
+                     <div class="col-xs-12 col-lg-12">
+                        <div class="form-group">
+                          <label for="inputEmail" class="col-md-4 col-lg-2 control-label">City:</label>
+                          <div class="col-md-8 col-lg-4">
+                            <input type="Number" class="form-control" id="inputEmail" placeholder="City">
+                          </div>
+                        </div>
+                      </div>
+                     <div class="col-xs-12 col-lg-12">
+                        <div class="form-group">
+                          <label for="inputEmail" class="col-md-4 col-lg-2 control-label">County:</label>
+                          <div class="col-md-8 col-lg-4">
+                            <input type="Number" class="form-control" id="inputEmail" placeholder="County">
+                          </div>
+                        </div>
+                      </div>
+                     <div class="col-xs-12 col-lg-12">
+                        <div class="form-group">
+                          <label for="inputEmail" class="col-md-4 col-lg-2 control-label">Post-Code:</label>
+                          <div class="col-md-8 col-lg-4">
+                            <input type="Number" class="form-control" id="inputEmail" placeholder="Post-Code">
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-xs-12 col-lg-12">
+                        <div class="form-group col-xs-12 col-lg-12">
+                          <label><input type="checkbox" checked>Is this Business(Billing) Address?</label>
+                        </div>
+                      </div>
+                                  <div class="col-xs-12 col-lg-12">
+                        <div class="form-group">
+                          <label for="inputEmail" class="col-md-4 col-lg-2 control-label">House Name:</label>
+                          <div class="col-md-8 col-lg-4">
+                            <input type="Number" class="form-control" id="inputEmail" placeholder="House Name">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-xs-12 col-lg-12">
+                        <div class="form-group">
+                          <label for="inputEmail" class="col-md-4 col-lg-2 control-label">Address Line1:</label>
+                          <div class="col-md-8 col-lg-4">
+                            <input type="Number" class="form-control" id="inputEmail" placeholder="Address Line1">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-xs-12 col-lg-12">
+                        <div class="form-group">
+                          <label for="inputEmail" class="col-md-4 col-lg-2 control-label">Address Line2:</label>
+                          <div class="col-md-8 col-lg-4">
+                            <input type="Number" class="form-control" id="inputEmail" placeholder="Address Line2">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-xs-12 col-lg-12">
+                        <div class="form-group">
+                          <label for="inputEmail" class="col-md-4 col-lg-2 control-label">Address Line3:</label>
+                          <div class="col-md-8 col-lg-4">
+                            <input type="Number" class="form-control" id="inputEmail" placeholder="Address Line3">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-xs-12 col-lg-12">
+                        <div class="form-group">
+                          <label for="inputEmail" class="col-md-4 col-lg-2 control-label">Town:</label>
+                          <div class="col-md-8 col-lg-4">
+                            <input type="Number" class="form-control" id="inputEmail" placeholder="Town">
+                          </div>
+                        </div>
+                      </div>
+                     <div class="col-xs-12 col-lg-12">
+                        <div class="form-group">
+                          <label for="inputEmail" class="col-md-4 col-lg-2 control-label">City:</label>
+                          <div class="col-md-8 col-lg-4">
+                            <input type="Number" class="form-control" id="inputEmail" placeholder="City">
+                          </div>
+                        </div>
+                      </div>
+                     <div class="col-xs-12 col-lg-12">
+                        <div class="form-group">
+                          <label for="inputEmail" class="col-md-4 col-lg-2 control-label">County:</label>
+                          <div class="col-md-8 col-lg-4">
+                            <input type="Number" class="form-control" id="inputEmail" placeholder="County">
+                          </div>
+                        </div>
+                      </div>
+                     <div class="col-xs-12 col-lg-12">
+                        <div class="form-group">
+                          <label for="inputEmail" class="col-md-4 col-lg-2 control-label">Post-Code:</label>
+                          <div class="col-md-8 col-lg-4">
+                            <input type="Number" class="form-control" id="inputEmail" placeholder="Post-Code">
+                          </div>
+                        </div>
+                      </div>
+          </dir>
+          <a class="btn btn-success pull-right" ng-click="openTwo('3')">Next</a>
+      </accordion-group>
+      
+      <accordion-group is-open="$parent.step3">
+        <accordion-heading>Documents<i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': step3, 'glyphicon-chevron-right': !step3}"></i></accordion-heading>
+        
+<h5>GPS</h5>
+  <table class="table table-condensed">
+    <thead>
+      <tr>
+        <th>Certificate</th>
+        <th>Upload</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="certificate in certificates['GPS']">
+        <td>{{certificate}}</td>
+        <td><input type="file" /></td>
+        <td>
+          <button class="btn btn-default">View</button>
+          <button class="btn btn-default">Email</button>
+          <button class="btn btn-default">Modify</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div>
+    <button class="btn btn-default">Submit</button>
+    <button class="btn btn-default">Reset</button>
+  </div>
+        <a class="btn btn-success pull-right" ng-click="openTwo('6')">Next</a>
+      </accordion-group>
+      <accordion-group is-open="$parent.step5">
+        <accordion-heading>Services<i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': step5, 'glyphicon-chevron-right': !step5}"></i></accordion-heading>
+
+        <div class="col-lg-12">
+          <div class="col-xs-12 col-lg-2">
+            <div class="form-group">
+              <label> <input type="radio" name="package" value="base" /> Base Package </label>
+            </div>
+          </div>
+          <div class="col-xs-12 col-lg-6">
+            <div class="form-group">
+              <label> <input type="radio"  name="package" value="enterprise" /> Enterprise Package </label>
+            </div>
+          </div>
+        </div>
+
+
+        <a class="btn btn-success pull-right" ng-click="openTwo('6')">Next</a>
+      </accordion-group>
+      <accordion-group is-open="$parent.step6">
+        <accordion-heading>Social ACC<i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': step6, 'glyphicon-chevron-right': !step6}"></i></accordion-heading>
+          <div class="row">
+           <div class="col-xs-12 col-lg-12">
+              <div class="form-group">
+                <label for="inputEmail" class="col-md-4 col-lg-2 control-label">Facebook:</label>
+                <div class="col-md-8 col-lg-4">
+                  <div class="input-group">
+                    <span class="input-group-addon btn-facebook" id="basic-addon1">
+                      <span class="fa fa-facebook"></span>
+                    </span>
+                    <input type="text" class="form-control" placeholder="Facebook" aria-describedby="basic-addon1">
+                  </div>
+                </div>
+              </div>
+            </div>
+           <div class="col-xs-12 col-lg-12">
+              <div class="form-group">
+                <label for="inputEmail" class="col-md-4 col-lg-2 control-label">Twitter:</label>
+                <div class="col-md-8 col-lg-4">
+                  <div class="input-group">
+                    <span class="input-group-addon btn-twitter" id="basic-addon1">
+                      <span class="fa fa-twitter"></span>
+                    </span>
+                    <input type="text" class="form-control" placeholder="Twitter" aria-describedby="basic-addon1">
+                  </div>
+                </div>
+              </div>
+            </div>
+           <div class="col-xs-12 col-lg-12">
+              <div class="form-group">
+                <label for="inputEmail" class="col-md-4 col-lg-2 control-label">Google+:</label>
+                <div class="col-md-8 col-lg-4">
+                <div class="input-group">
+                  <span class="input-group-addon btn-google" id="basic-addon1">
+                      <span class="fa fa-google"></span>
+                    </span>
+                    <input type="text" class="form-control" placeholder="Google+" aria-describedby="basic-addon1">
+                  </div>
+                </div>
+              </div>
+            </div>
+           <div class="col-xs-12 col-lg-12">
+              <div class="form-group">
+                <label for="inputEmail" class="col-md-4 col-lg-2 control-label">Linkedin:</label>
+                <div class="col-md-8 col-lg-4">
+                <div class="input-group">
+                  <span class="input-group-addon btn-linkedin" id="basic-addon1">
+                      <span class="fa fa-linkedin"></span>
+                    </span>
+                    <input type="text" class="form-control" placeholder="Linkedin" aria-describedby="basic-addon1">
+                  </div>
+                </div>
+              </div>
+            </div>
+           <div class="col-xs-12 col-lg-12"> 
+              <div class="form-group">
+                <label for="inputEmail" class="col-md-4 col-lg-2 control-label">SKYPE-ID:</label>
+                <div class="col-md-8 col-lg-4">
+                <div class="input-group">
+                  <span class="input-group-addon btn-skype" id="basic-addon1">
+                      <span class="fa fa-skype"></span>
+                    </span>
+                    <input type="text" class="form-control" placeholder="Skype" aria-describedby="basic-addon1">
+                  </div>
+                </div>
+              </div>
+            </div>
+           <div class="col-xs-12 col-lg-12">
+              <div class="form-group">
+                <label for="inputEmail" class="col-md-4 col-lg-2 control-label">PINTEREST:</label>
+                <div class="col-md-8 col-lg-4">
+                <div class="input-group">
+                  <span class="input-group-addon btn-pinterest" id="basic-addon1">
+                      <span class="fa fa-pinterest"></span>
+                    </span>
+                    <input type="text" class="form-control" placeholder="Pinterest" aria-describedby="basic-addon1">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-12 col-lg-12">
+              <div class="form-group">
+                <label for="inputEmail" class="col-md-4 col-lg-2 control-label">XING:</label>
+                <div class="col-md-8 col-lg-4">
+                <div class="input-group">
+                  <span class="input-group-addon btn-xing" id="basic-addon1">
+                      <span class="fa fa-xing"></span>
+                    </span>
+                    <input type="text" class="form-control" placeholder="XING" aria-describedby="basic-addon1">
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+        <a class="btn btn-success pull-right" ng-click="openTwo('7')">Next</a>
+      </accordion-group>
+      <accordion-group is-open="$parent.step7">
+        <accordion-heading>Referances<i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': step7, 'glyphicon-chevron-right': !step7}"></i></accordion-heading>
+            <div class="col-xs-12 col-lg-12">
+              <table class="table table-condensed">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Mobile</th>
+                    <th>Id</th>
+                    <th>Operation</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr ng-repeat="ref in user.referance">
+                    <td>{{ref.name}}</td>
+                    <td>{{ref.mobile}}</td>
+                    <td>{{ref.id}}</td>
+                    <td>
+                      <a class="glyphicon glyphicon-pencil over " ng-click="edit($index)"></a>
+                      &nbsp;&nbsp;&nbsp;
+                      <a class="glyphicon glyphicon-trash over trash" ng-click="trash($index)"></a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="form-group">
+                <label for="inputEmail" class="col-md-4 col-lg-2 control-label">Name:</label>
+                <div class="col-md-8 col-lg-4">
+                  <input type="text" class="form-control" id="inputEmail" ng-model="currentRef.name" placeholder="Name">
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-12 col-lg-12">
+              <div class="form-group">
+                <label for="inputEmail" class="col-md-4 col-lg-2 control-label">Mobile:</label>
+                <div class="col-md-8 col-lg-4">
+                  <input type="number" class="form-control" id="inputEmail" ng-model="currentRef.mobile" placeholder="Mobile">
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-12 col-lg-12">
+              <div class="form-group">
+                <label for="inputEmail" class="col-md-4 col-lg-2 control-label">ID:</label>
+                <div class="col-md-8 col-lg-4">
+                  <input type="text" class="form-control" id="inputEmail" ng-model="currentRef.id" placeholder="Id">
+                </div>
+              </div>
+            </div>
+              <div class="col-xs-12 col-lg-12">
+              <div class="form-group">
+              <label for="inputEmail" class="col-md-4 col-lg-2 control-label"></label>
+                <div class="col-md-8 col-lg-4">
+                  <button class="btn btn-default" ng-click="add()">Add/Update</button>
+                  <button class="btn btn-default" ng-click="reset()">Reset</button>
+                </div>
+              </div>
+              </div>
+        <a class="btn btn-success pull-right" ng-click="openTwo('8')">Next</a>
+      </accordion-group>
+      <accordion-group is-open="$parent.step8">
+        <accordion-heading>NHS System<i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': step8, 'glyphicon-chevron-right': !step8}"></i></accordion-heading>
+
+        <div class="row">
+          <div class="col-xs-12 col-lg-2">
+            <div class="form-group dropdown-custom">
+              <div ng-dropdown-multiselect="" options="nhsdata" selected-model="user.nhssystem">
+              </div>
+            </div>
+          </div>
+        </div>
+        <a class="btn btn-success pull-right" ng-click="openTwo('9')">Next</a>
+      </accordion-group>
+      <accordion-group is-open="$parent.step9">
+        <accordion-heading>Session & Rates<i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': step9, 'glyphicon-chevron-right': !step9}"></i></accordion-heading>
+        <table style="width:100%">
+          <tr>
+            <td>
+              <select name="From" value="00" class="form-control">
+                        <option value="00">FROM</option>
+                        <option >1:00</option>
+                        <option >2:00</option>
+                        <option >3:00</option>
+                        <option >4:00</option>
+                        <option >5:00</option>
+                        <option >6:00</option>
+                        <option >7:00</option>
+                        <option >8:00</option>
+                        <option >9:00</option>
+                        <option >10:00</option>
+                        <option >11:00</option>
+                        <option >12:00</option>
+                        <option >13:00</option>
+                        <option >14:00</option>
+                        <option >15:00</option>
+                        <option >16:00</option>
+                        <option >17:00</option>
+                        <option >18:00</option>
+                        <option >19:00</option>
+                        <option >20:00</option>
+                        <option >21:00</option>
+                        <option >22:00</option>
+                        <option >23:00</option>
+                        <option >00:00</option>
+              </select>
+            </td>
+            <td>
+              <select name="To" value="00" class="form-control">
+                        <option value="00">TO</option>
+                        <option >1:00</option>
+                        <option >2:00</option>
+                        <option >3:00</option>
+                        <option >4:00</option>
+                        <option >5:00</option>
+                        <option >6:00</option>
+                        <option >7:00</option>
+                        <option >8:00</option>
+                        <option >9:00</option>
+                        <option >10:00</option>
+                        <option >11:00</option>
+                        <option >12:00</option>
+                        <option >13:00</option>
+                        <option >14:00</option>
+                        <option >15:00</option>
+                        <option >16:00</option>
+                        <option >17:00</option>
+                        <option >18:00</option>
+                        <option >19:00</option>
+                        <option >20:00</option>
+                        <option >21:00</option>
+                        <option >22:00</option>
+                        <option >23:00</option>
+                        <option >00:00</option>
+              </select>
+            </td>   
+            <td>
+              <input type="text" placeholder="Enter Amount" class="form-control"/>
+            </td>
+            <td>
+              <select name="To" value="00" class="form-control">
+                        <option value="00">GBP</option>
+                        <option >EURO</option>
+                        <option >DOLLAR</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <select name="From" value="00" class="form-control">
+                        <option value="00">FROM</option>
+                        <option >1:00</option>
+                        <option >2:00</option>
+                        <option >3:00</option>
+                        <option >4:00</option>
+                        <option >5:00</option>
+                        <option >6:00</option>
+                        <option >7:00</option>
+                        <option >8:00</option>
+                        <option >9:00</option>
+                        <option >10:00</option>
+                        <option >11:00</option>
+                        <option >12:00</option>
+                        <option >13:00</option>
+                        <option >14:00</option>
+                        <option >15:00</option>
+                        <option >16:00</option>
+                        <option >17:00</option>
+                        <option >18:00</option>
+                        <option >19:00</option>
+                        <option >20:00</option>
+                        <option >21:00</option>
+                        <option >22:00</option>
+                        <option >23:00</option>
+                        <option >00:00</option>
+              </select>
+            </td>
+            <td>
+              <select name="To" value="00" class="form-control">
+                        <option value="00">TO</option>
+                        <option >1:00</option>
+                        <option >2:00</option>
+                        <option >3:00</option>
+                        <option >4:00</option>
+                        <option >5:00</option>
+                        <option >6:00</option>
+                        <option >7:00</option>
+                        <option >8:00</option>
+                        <option >9:00</option>
+                        <option >10:00</option>
+                        <option >11:00</option>
+                        <option >12:00</option>
+                        <option >13:00</option>
+                        <option >14:00</option>
+                        <option >15:00</option>
+                        <option >16:00</option>
+                        <option >17:00</option>
+                        <option >18:00</option>
+                        <option >19:00</option>
+                        <option >20:00</option>
+                        <option >21:00</option>
+                        <option >22:00</option>
+                        <option >23:00</option>
+                        <option >00:00</option>
+              </select>
+            </td>   
+            <td>
+              <input type="text" placeholder="Enter Amount" class="form-control">
+            </td>
+            <td>
+              <select name="To" value="00" class="form-control">
+                        <option value="00">GBP</option>
+                        <option >EURO</option>
+                        <option >DOLLAR</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <select name="From" value="00" class="form-control">
+                        <option value="00">FROM</option>
+                        <option >1:00</option>
+                        <option >2:00</option>
+                        <option >3:00</option>
+                        <option >4:00</option>
+                        <option >5:00</option>
+                        <option >6:00</option>
+                        <option >7:00</option>
+                        <option >8:00</option>
+                        <option >9:00</option>
+                        <option >10:00</option>
+                        <option >11:00</option>
+                        <option >12:00</option>
+                        <option >13:00</option>
+                        <option >14:00</option>
+                        <option >15:00</option>
+                        <option >16:00</option>
+                        <option >17:00</option>
+                        <option >18:00</option>
+                        <option >19:00</option>
+                        <option >20:00</option>
+                        <option >21:00</option>
+                        <option >22:00</option>
+                        <option >23:00</option>
+                        <option >00:00</option>
+                </select>
+            </td>
+            <td>
+              <select name="To" value="00"  class="form-control">
+                        <option value="00">TO</option>
+                        <option >1:00</option>
+                        <option >2:00</option>
+                        <option >3:00</option>
+                        <option >4:00</option>
+                        <option >5:00</option>
+                        <option >6:00</option>
+                        <option >7:00</option>
+                        <option >8:00</option>
+                        <option >9:00</option>
+                        <option >10:00</option>
+                        <option >11:00</option>
+                        <option >12:00</option>
+                        <option >13:00</option>
+                        <option >14:00</option>
+                        <option >15:00</option>
+                        <option >16:00</option>
+                        <option >17:00</option>
+                        <option >18:00</option>
+                        <option >19:00</option>
+                        <option >20:00</option>
+                        <option >21:00</option>
+                        <option >22:00</option>
+                        <option >23:00</option>
+                        <option >00:00</option>
+              </select>
+            </td>   
+            <td>
+              <input type="text" placeholder="Enter Amount"  class="form-control">
+            </td>
+            <td>
+                <select name="To" value="00" class="form-control">
+                        <option value="00">GBP</option>
+                        <option >EURO</option>
+                        <option >DOLLAR</option>
+                </select>
+            </td>
+          </tr>
+        </table>
+          <div class="row">
+            <div class="form-group">
+              <label for="inputEmail" class="col-md-4 col-lg-3 control-label">Day rate (fixed from 9am to 6pm) :</label>
+              <div class="col-md-8 col-lg-4">
+                <input type="currency" class="form-control" id="inputEmail" placeholder="Address Line1">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+          <div class="form-group">
+            <label for="inputEmail" class="col-md-4 col-lg-3 control-label">Out of Office (fixed after 6pm) : </label>
+            <div class="col-md-8 col-lg-4">
+              <input type="currency" class="form-control" id="inputEmail" placeholder="Address Line1">
+            </div>
+          </div>
+        </div>
+        <a class="btn btn-success pull-right" ng-click="openTwo('10')">Next</a>
+      </accordion-group>
+      <accordion-group is-open="$parent.step10">
+        <accordion-heading>Payment<i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': step10, 'glyphicon-chevron-right': !step10}"></i></accordion-heading>
+        <a class="btn btn-success pull-right" ng-click="openTwo('1')">Next</a>
+      </accordion-group>
+    </accordion> 
+</div>

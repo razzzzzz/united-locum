@@ -30,6 +30,11 @@ angular.module('clickeatApp')
         template: '<settings></settings>',
         authenticate: true
       })
+      .state('practicesettings', {
+        url: '/practicesettings',
+        template: '<practicesettings></practicesettings>',
+        authenticate: true
+      })
       .state('practicesignup', {
         url: '/practicesignup',
         template: '<practicesignup></practicesignup>'
