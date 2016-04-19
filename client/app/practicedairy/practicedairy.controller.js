@@ -15,7 +15,19 @@ angular.module('clickeatApp')
             currentTimezone: 'America/Chicago' 
     };
     /* event source that contains custom events on the scope */
-    $scope.events = [
+    $http.get('/api/vacancys').then(function(res){
+     // debugger;
+     for (var i = res.data.length - 1; i >= 0; i--) {
+       res.data[i].title = res.data[i].desc;
+       $scope.events.push(res.data[i])
+     }
+     // $scope.events.push({pname: 'Long Event',title: 'Lunch',start: new Date(y, m, d - 5),end: new Date(y, m, d - 2)});
+    },
+      function(err){
+
+      });
+    $scope.events = [];
+/*    $scope.events = [
       {
         start: new Date(y, m, 1),
         startTime:new Date(y, m, 1),
@@ -29,7 +41,7 @@ angular.module('clickeatApp')
       {id: 999,title: 'Lunch',pname: 'Repeating Event',start: new Date(y, m, d + 4, 16, 0),allDay: false},
       {pname: 'Birthday Party',title: 'Lunch',start: new Date(y, m, d + 1, 19, 0),end: new Date(y, m, d + 1, 22, 30),allDay: false},
       {pname: 'Click for Google',title: 'Lunch',start: new Date(y, m, 28),end: new Date(y, m, 29),url: 'http://google.com/'}
-    ];
+    ];*/
     /* event source that calls a function on every view switch */
     $scope.eventsF = function (start, end, timezone, callback) {
       var s = new Date(start).getTime() / 1000;
@@ -178,7 +190,8 @@ angular.module('clickeatApp')
 
       modalInstance.result.then(function (updatevacancy) {
         if(updatevacancy.newvacancy){
-      //$scope.vacancyList.push(updatevacancy.newvacancy);
+         // updatevacancy.newvacancy.title = "Ganesh";
+          $scope.events.push(updatevacancy.newvacancy);
         }else if(updatevacancy.updatevacancy){
           //$scope.vacancyList.filter
         }
@@ -187,7 +200,7 @@ angular.module('clickeatApp')
        // $log.info('Modal dismissed at: ' + new Date());
       });
     }
-  }).controller('ModalInstanceCtrl1', function ($scope, $modalInstance, items, $http, User) {
+  }).controller('ModalInstanceCtrl1', function ($scope, $modalInstance, items, $http, Auth) {
     $scope.dairy = items;
     if($scope.dairy){
       $scope.updateEnable = true;
@@ -204,7 +217,7 @@ angular.module('clickeatApp')
     };
      $scope.format = 'dd-MMMM-yyyy';
     $scope.init = function(){
-    $scope.currentUser = User.get();
+    $scope.currentUser = Auth.currentUser;
       $scope.cat = [
          {id: '1', name: 'Doctor',drilldown:['Audiologist','Allergist','Cardiologist','Dermetologist','Gynecologist','Microbiologist']},
          {id: '2', name: 'Dentist',drilldown:['Pediatric Dentist','Endodonist','Orthodontist','Periodontist','Prosthodontist']},

@@ -31,21 +31,6 @@ $scope.howdouknow = [ {id: 1, label: "FaceBook"}, {id: 2, label: "Google+"}, {id
     $scope.Auth = Auth;
     $scope.$state = $state;
     $scope.register = function(form) {
-console.log({
-          fname: $scope.user.fname,
-          gender: $scope.user.gender,
-          lname: $scope.user.lname,
-          email: $scope.user.email,
-          password: $scope.user.password,
-          category: Array.isArray($scope.user.category)?$scope.user.category:[$scope.user.category],
-          idnumber: $scope.user.idNumber,
-          performarnumber: $scope.user.performarNumber,
-          package: $scope.user.package,          
-          mobile: $scope.user.mobile,
-          role:$scope.user.role,
-          tc:$scope.user.tc,
-          addagency: $scope.user.addagency
-        });
       $scope.submitted = true;
 
       if (form.$valid) {

@@ -1,26 +1,26 @@
 'use strict';
 
-angular.module('clickeatApp').controller('SettingsController', function($scope){
+angular.module('clickeatApp').controller('SettingsController', function($scope,Auth){
   
     $scope.step1 = true;
+    $scope.Auth = Auth;
+    $scope.user = $scope.Auth.currentUser;
+    $scope.user.referance = [
+            {
+                name:'referance1',
+                mobile:9494979407,
+                id:'refId1'
+            },
+            {
+                name:'referance2',
+                mobile:9494979408,
+                id:'refId2'
+            }
+        ];
+        $scope.user.nhssystem = [];
+        $scope.user.qualification = [];
+        $scope.user.languages = [];
 
-    $scope.user = {
-    	'referance':[
-    		{
-    			name:'referance1',
-    			mobile:9494979407,
-    			id:'refId1'
-    		},
-    		{
-    			name:'referance2',
-    			mobile:9494979408,
-    			id:'refId2'
-    		}
-    	],
-    	'nhssystem':[],
-    	'qualification':[],
-    	'languages':[]
-    };
     $scope.qualifications = [ {id: 1, label: "MBBS"}, {id: 2, label: "BSC Nursing"}, {id: 3, label: "10"},{id:4,label:"10+2"}];
     $scope.nhsdata = [ {id: 1, label: "NHS SYSTEM1"}, {id: 2, label: "NHS SYSTEM2"}, {id: 3, label: "NHS SYSTEM3"},{id:4,label:"NHS SYSTEM4"},{id:5,label:"NHS SYSTEM5"},{id:6,label:"NHS SYSTEM6"}];
     $scope.languages = [ {id: 1, label: "Telugu"}, {id: 2, label: "French"}, {id: 3, label: "Jerman"}];
