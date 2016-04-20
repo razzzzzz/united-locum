@@ -230,17 +230,195 @@ Vacancy.find({}).removeAsync()
   .then(() => {
 
     Vacancy.createAsync({
-       category: "cat",
+       category: "Nurse",
       desc: "desc",
-      skill: "skill",
+      skill: "Ambulatory Case Nursing",
       count: 1,
-      rate: 3,
-      date: new Date(),
+      rate: 16,
+      date:new Date(),
       from: new Date(),
       to:new Date(),
       practiceId: "String"
   
-    })
+    },
+  {
+    category: "Doctor",
+      desc: "desc",
+      skill: "Microbiologist",
+      count: 1,
+      rate: 27,
+      date:new Date(),
+      from: new Date(),
+      to:new Date(),
+      practiceId: "String"
+  
+    },{
+  category: "Dentist",
+      desc: "desc",
+      skill: "Endodonist",
+      count: 1,
+      rate: 27,
+      date:new Date(),
+      from: new Date(),
+      to:new Date(),
+      practiceId: "String"
+  
+    },{
+  category: "Doctor",
+      desc: "desc",
+      skill: "Cardiologist",
+      count: 1,
+      rate: 24,
+      date:new Date(),
+      from: new Date(),
+      to:new Date(),
+      practiceId: "String"
+  
+    },{
+  category: "Nurse",
+      desc: "desc",
+      skill: "Dialysis Nursing",
+      count: 1,
+      rate: 15,
+      date:new Date(),
+      from: new Date(),
+      to:new Date(),
+      practiceId: "String"
+  
+    },{
+  category: "Dentist",
+      desc: "desc",
+      skill: "Pediatric Dentist",
+      count: 1,
+      rate: 25,
+      date:new Date(),
+      from: new Date(),
+      to:new Date(),
+      practiceId: "String"
+  
+    },{
+  category: "Doctor",
+      desc: "desc",
+      skill: "Gynecologist",
+      count: 1,
+      rate: 25,
+      date:new Date(),
+      from: new Date(),
+      to:new Date(),
+      practiceId: "String"
+  
+    },{
+  category: "Nurse",
+      desc: "desc",
+      skill: "Cardiac Nursing",
+      count: 1,
+      rate: 15,
+      date:new Date(),
+      from: new Date(),
+      to:new Date(),
+      practiceId: "String"
+  
+    },{
+  category: "Nurse",
+      desc: "desc",
+      skill: "Forensic Nursing",
+      count: 1,
+      rate: 13,
+      date:new Date(),
+      from: new Date(),
+      to:new Date(),
+      practiceId: "String"
+  
+    },{
+  category: "Nurse",
+      desc: "desc",
+      skill: "Legal Nursing",
+      count: 1,
+      rate: 14,
+      date:new Date(),
+      from: new Date(),
+      to:new Date(),
+      practiceId: "String"
+  
+    },{
+  category: "Dentist",
+      desc: "desc",
+      skill: "Prosthodontist",
+      count: 1,
+      rate: 18,
+      date:new Date(),
+      from: new Date(),
+      to:new Date(),
+      practiceId: "String"
+  
+    },{
+  category: "Dentist",
+      desc: "desc",
+      skill: "Orthodontist",
+      count: 1,
+      rate: 20,
+      date:new Date(),
+      from: new Date(),
+      to:new Date(),
+      practiceId: "String"
+  
+    },{
+  category: "Dentist",
+      desc: "desc",
+      skill: "Endodonist",
+      count: 1,
+      rate: 19,
+      date:new Date(),
+      from: new Date(),
+      to:new Date(),
+      practiceId: "String"
+  
+    },{ 
+  category: "Dentist",
+      desc: "desc",
+      skill: "Periodontist",
+      count: 1,
+      rate: 16,
+      date:new Date(),
+      from: new Date(),
+      to:new Date(),
+      practiceId: "String"
+  
+    },{
+  category: "Doctor",
+      desc: "desc",
+      skill: "Allergist",
+      count: 1,
+      rate: 20,
+      date:new Date(),
+      from: new Date(),
+      to:new Date(),
+      practiceId: "String"
+  
+    },{
+  category: "Doctor",
+      desc: "desc",
+      skill: "Allergist",
+      count: 1,
+      rate: 17,
+      date:new Date(),
+      from: new Date(),
+      to:new Date(),
+      practiceId: "String"
+  
+    },{
+  category: "doctor",
+      desc: "desc",
+      skill: "Audiologist",
+      count: 1,
+      rate: 15,
+      date:new Date(),
+      from: new Date(),
+      to:new Date(),
+      practiceId: "String"
+  
+    }
+)
     .then(() => {
       console.log('finished populating vacancy');
     });
@@ -261,7 +439,7 @@ Dairy.find({}).removeAsync()
          pName: 'Practice1',
          skill: 'Dentist',
          skillId: 'Den',
-         date: new Date(),
+         date:new Date(),
          time: new Date(),
          state: [],
          stateId: 'lreq',
