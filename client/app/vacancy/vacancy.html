@@ -1,5 +1,5 @@
 <div class="container">
-<div class="form-group form-inline" >
+<!-- <div class="form-group form-inline" >
 Category: <select class="form-control form-inline">
   <option value="Dc">Doctor</option>
   <option value="Nr">Nurse</option>
@@ -43,5 +43,53 @@ Skill : <select class="form-control form-inline">
       </td>
    </tr>
   </tbody>
-</table>
+</table> -->
+
+<table st-set-filter="customFilter" st-table="displayed" st-safe-src="collection" class="table table-condensed">
+      <thead>
+        <tr>
+          <th st-sort="category">Category</th>
+          <th st-sort="skill">Skill</th>
+          <th st-sort="count">No.of Requirements&nbsp;&nbsp;&nbsp;<span class="fa fa-sort"></span></th>
+          <th st-sort="from">Date</th>
+          <th st-sort="rate">Rate&nbsp;&nbsp;&nbsp;<span class="fa fa-sort"></span></th>
+          <th>Action</th>
+        </tr>
+        <tr>
+          <th>
+            <st-select-distinct collection="collection" predicate="category"></st-select-distinct>
+          </th>
+          <th>
+            <st-select-distinct collection="collection" predicate="skill"></st-select-distinct>
+          </th>
+          <th>
+            
+          </th>
+          <th>
+            
+          </th>
+          <th>
+            
+          </th>
+          <th>
+            
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="row in displayed">
+          <td>{{row.category}}</td>
+          <td>{{row.skill | uppercase}}</td>
+          <td>{{row.count}}</td>
+          <td>{{row.from}}</td>
+          <td>{{row.rate}}</td>
+          <td>
+            <a class="glyphicon glyphicon-pencil over " ng-click="edit($index)"></a>
+            &nbsp;&nbsp;&nbsp;
+            <a class="glyphicon glyphicon-trash over trash" ng-click="trash($index)"></a>
+          </td>
+        </tr>
+      </tbody>
+      <tfoot></tfoot>
+    </table>
 </div>

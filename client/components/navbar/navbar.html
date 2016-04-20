@@ -15,9 +15,18 @@
             <a ui-sref="{{item.state}}">{{item.title}}</a>
         </li>
         <li ng-show="Auth.isPractice()" ui-sref-active="active"><a ui-sref="practicedairy">Diary</a></li>
-        <li ng-show="Auth.isPractice()" ui-sref-active="active"><a ui-sref="vacancy">Vacancy</a></li>
         <li ng-show="Auth.isLocum()" ui-sref-active="active"><a ui-sref="locumdairy">Diary</a></li>
         <li ng-show="Auth.isAdmin()" ui-sref-active="active"><a ui-sref="admin">Admin</a></li>
+        <li ng-show="Auth.isPractice()">
+          <a class=" dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" ng-click="openMenu($event)">
+            Vacancy
+            <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenu1" ng-show="isMenu">
+            <li ui-sref-active="active"><a ui-sref="practicedairy" >New Vacancy</a></li>
+            <li ui-sref-active="active"><a ui-sref="vacancy">Open Vacancy</a></li>
+          </ul>
+        </li>
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
