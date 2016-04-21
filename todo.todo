@@ -28,10 +28,10 @@ Document maintenance:
  ☐ gmailid to send document to target mailid
  ☐ 
 Irfan:
- ☐ have to prepare db fields
- ☐ have to make template for different requirements
- ☐ no of req default 1 not editable
- ☐ from tome to time with am pm
+ ✔ have to prepare db fields @done (16-04-20 21:37)
+ ✔ have to make template for different requirements @done (16-04-20 21:37)
+ ✔ no of req default 1 not editable @done (16-04-20 21:37)
+ ✔ from tome to time with am pm @done (16-04-20 21:37)
  ☐ new vacancy from menu.
  ☐ once new vacancy is created then diary color sholud appear(if we create new vacancy from menu also diary color should appear). 
  ☐ after open vacancy, they told me to start LOCUM DIARY.
@@ -66,6 +66,12 @@ Profile_Maintenance(reddy):
  ☐ order of the fields
  ☐ validation
  ☐ error message vocablary
+ ☐ tc document
+ ☐ hint text
+ ✔ Address should copy if billing address is same @done (16-04-20 23:34)
+ ✔ nhs system selected data should display @done (16-04-21 22:17)
+ ☐ adding list of practice in profile
+ ☐ bug in auto profile filling
 Raju (midie):
 
 Siva prasad (practice dairy):

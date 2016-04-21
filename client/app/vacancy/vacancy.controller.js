@@ -32,7 +32,6 @@ angular.module('clickeatApp').controller('VacancyComponent',function($scope,$htt
   	];
 
     $http.get('/api/vacancys').then(function(res){
-      console.log(res.data);
       $scope.collection = res.data;
     },function(err){
 

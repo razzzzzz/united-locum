@@ -45,10 +45,10 @@
           </div>
         </div>
         <div class="form-group form-inline" ng-class="{ 'has-success': form.confirmemail.$valid && submitted,     'has-error': form.confirmemail.$invalid && submitted }">
-          <label class="control-label col-sm-3">Conform Email id</label>
+          <label class="control-label col-sm-3">Confirm Mail id</label>
           <div class="col-sm-9">
             <input type="email" name="confirmemail" class="form-control" ng-model="user.confirmemail"
-                   required placeholder="Conform Email ID"
+                   required placeholder="Confirm Mail ID"
                    match="user.email"
                    mongoose-error/>
             <span class="help-inline help-text" tooltip="Mail id require for get password in case you forget">&nbsp;?&nbsp;</span>
@@ -120,7 +120,7 @@
           <label class="control-label col-sm-3">Confirm Password</label>
           <div class="col-sm-9">
             <input type="password" name="confirmPassword" class="form-control" ng-model="user.confirmPassword"
-                   match="user.password" placeholder="Conform Password"
+                   match="user.password" placeholder="Confirm Password"
                    ng-minlength="3" required/>
             <p class="help-block"
                ng-show="form.confirmPassword.$error.match && submitted">
@@ -144,7 +144,7 @@
                                             'has-error': form.idNumber.$invalid && submitted }">
           <label class="control-label col-sm-3"> {{user.category.label}}</label>
           <div class="col-sm-9">
-              <input type="number" name="idNumber" class="form-control" ng-model="user.idNumber"
+              <input type="text" name="idNumber" class="form-control" ng-model="user.idNumber"
                      required placeholder="Number"
                      mongoose-error/>
             <p class="help-block" ng-show="form.idNumber.$error.idNumber && submitted">
@@ -161,9 +161,9 @@
 
 
        <div class="form-group form-inline" ng-class="{ 'has-success': form.performarNumber.$valid && submitted, 'has-error': form.performarNumber.$invalid && submitted }">
-          <label class="control-label col-sm-3"> Performar list number</label>
+          <label class="control-label col-sm-3"> Performer list number</label>
           <div class="col-sm-9">
-            <input type="text" class="form-control" ng-model="user.performarNumber" placeholder="Performar list number" />
+            <input type="text" class="form-control" ng-model="user.performarNumber" placeholder="Performer list number" />
           </div>
       </div>
 
@@ -196,6 +196,7 @@
 
 
         <div class="form-group form-inline col-sm-9 col-sm-offset-3"  ng-class="{ 'has-success': form.tc.$valid && submitted,'has-error': form.tc.$invalid && submitted }">
+          <label class="control-label col-sm-3"> </label>
           <label class="checkbox-inline">
             <input type="checkbox" name="tc" ng-model="user.tc" 
             required
