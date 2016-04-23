@@ -62,23 +62,24 @@
               <div class="form-group">
                 <label for="inputEmail" class="col-md-4 col-lg-2 control-label">Category:</label>
                 <div class="col-md-8 col-lg-4">
-                  <input type="Number" class="form-control"  placeholder="Category">
+                  <input type="text" class="form-control" ng-model="user.category[0].label"  placeholder="Category">
                 </div>
               </div>
             </div>
             <div class="col-xs-12 col-lg-12">
               <div class="form-group">
-                <label for="inputEmail" class="col-md-4 col-lg-2 control-label">GP/Dentist</label>
+                <label for="inputEmail" class="col-md-4 col-lg-2 control-label">{{user.category[0].label}}</label>
                 <div class="col-md-8 col-lg-4">
-                  <input type="Number" class="form-control"  placeholder="Number">
+                  <input type="text" class="form-control" ng-model="user.idnumber
+"  placeholder="Number">
                 </div>
               </div>
             </div>
             <div class="col-xs-12 col-lg-12">
               <div class="form-group">
-                <label for="inputEmail" class="col-md-4 col-lg-2 control-label">Performar List Number</label>
+                <label for="inputEmail" class="col-md-4 col-lg-2 control-label">Performer List Number</label>
                 <div class="col-md-8 col-lg-4">
-                  <input type="Number" class="form-control"  placeholder="Performar List Number">
+                  <input type="text" class="form-control" ng-model="user.performarnumber"  placeholder="Performer List Number">
                 </div>
               </div>
             </div>
@@ -86,7 +87,7 @@
               <div class="form-group">
                 <label for="inputEmail" class="col-md-4 col-lg-2 control-label">Work Mobile Number</label>
                 <div class="col-md-8 col-lg-4">
-                  <input type="Number" class="form-control"  placeholder="Work Mobile Number">
+                  <input type="Number" class="form-control" ng-model="user.mobile" placeholder="Work Mobile Number">
                 </div>
               </div>
             </div>            
@@ -134,7 +135,7 @@
             </div>
             <div class="col-xs-12 col-lg-12">
               <div class="form-group">
-                <label for="inputEmail" class="radio-inline control-label">Do you Any Other languages?</label>
+                <label for="inputEmail" class="radio-inline control-label">Do you Know any other languages?</label>
                 <label class="radio-inline"><input type="radio" ng-model="user.lang" value="yes" name="lang"  required />Yes</label>
                 <label class="radio-inline"><input type="radio" ng-model="user.lang" value="no" name="lang"  required />No</label>
               </div>
@@ -177,7 +178,7 @@
       <accordion-group is-open="$parent.step2">
           <accordion-heading>Location<i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': step2, 'glyphicon-chevron-right': !step2}"></i></accordion-heading>
 
-          <dir class="row">
+          <div class="row">
 
                       <div class="col-xs-12 col-lg-12">
                         <div class="form-group">
@@ -328,7 +329,7 @@
                           </div>
                         </div>
                       </div>
-          </dir>
+          </div>
           <a class="btn btn-success pull-right" ng-click="openTwo('3')">Next</a>
       </accordion-group>
       
@@ -483,7 +484,7 @@
         <a class="btn btn-success pull-right" ng-click="openTwo('7')">Next</a>
       </accordion-group>
       <accordion-group is-open="$parent.step7">
-        <accordion-heading>Referances<i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': step7, 'glyphicon-chevron-right': !step7}"></i></accordion-heading>
+        <accordion-heading>References<i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': step7, 'glyphicon-chevron-right': !step7}"></i></accordion-heading>
             <div class="col-xs-12 col-lg-12">
               <table class="table table-condensed">
                 <thead>
@@ -510,7 +511,7 @@
               <div class="form-group">
                 <label for="inputEmail" class="col-md-4 col-lg-2 control-label">Name:</label>
                 <div class="col-md-8 col-lg-4">
-                  <input type="text" class="form-control"  ng-model="currentRef.name" placeholder="Name">
+                  <input type="text" class="form-control" id="inputEmail" ng-model="currentRef.name" placeholder="Name">
                 </div>
               </div>
             </div>
@@ -518,7 +519,7 @@
               <div class="form-group">
                 <label for="inputEmail" class="col-md-4 col-lg-2 control-label">Mobile:</label>
                 <div class="col-md-8 col-lg-4">
-                  <input type="number" class="form-control"  ng-model="currentRef.mobile" placeholder="Mobile">
+                  <input type="number" class="form-control" id="inputEmail" ng-model="currentRef.mobile" placeholder="Mobile">
                 </div>
               </div>
             </div>
@@ -526,7 +527,7 @@
               <div class="form-group">
                 <label for="inputEmail" class="col-md-4 col-lg-2 control-label">ID:</label>
                 <div class="col-md-8 col-lg-4">
-                  <input type="text" class="form-control"  ng-model="currentRef.id" placeholder="Id">
+                  <input type="text" class="form-control" id="inputEmail" ng-model="currentRef.id" placeholder="Id">
                 </div>
               </div>
             </div>

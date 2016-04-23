@@ -217,7 +217,7 @@ angular.module('clickeatApp')
     };
      $scope.format = 'dd-MMMM-yyyy';
     $scope.init = function(){
-    $scope.currentUser = Auth.currentUser;
+    $scope.currentUser = Auth.getCurrentUser();
       $scope.cat = [
          {id: '1', name: 'Doctor',drilldown:['Audiologist','Allergist','Cardiologist','Dermetologist','Gynecologist','Microbiologist']},
          {id: '2', name: 'Dentist',drilldown:['Pediatric Dentist','Endodonist','Orthodontist','Periodontist','Prosthodontist']},

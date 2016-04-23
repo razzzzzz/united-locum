@@ -1,9 +1,8 @@
 'use strict';
 
 angular.module('clickeatApp').controller('SettingsController', function($scope,Auth,$timeout){
-    $scope.step8 = true;
-    $scope.Auth = Auth;
-    $scope.user = $scope.Auth.currentUser;
+    $scope.step1 = true;
+    $scope.user = Auth.getCurrentUser();
     $scope.user.referance = [
             {
                 name:'referance1',

@@ -6,10 +6,9 @@
     var safeCb = Util.safeCb;
     var currentUser = {};
     var userRoles = appConfig.userRoles || [];
-    currentUser = User.get();
-   /* if ($cookies.get('token') && $location.path() !== '/logout') {
+    if ($cookies.get('token') && $location.path() !== '/logout') {
       currentUser = User.get();
-    }*/
+    }
     //Auth.currentUser = currentUser;
     var Auth = {
       currentUser:currentUser,

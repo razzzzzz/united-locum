@@ -45,7 +45,9 @@
 .navbar-brand img{
   width: 48px;
 }
-
+.dropdown-menu-navbar{
+   display: inline-block;
+ }
 .dropdown-toggle{
   cursor: pointer;
 }

@@ -7,6 +7,6 @@ angular.module('clickeatApp')
       restrict: 'EA',
       link: function (scope, element, attrs) {
       },
-      controller:'PracticesSettingsController'
+      controller:'SettingsController'
     };
   });

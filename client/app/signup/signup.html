@@ -181,7 +181,7 @@
                                             'has-error': form.addagency.$invalid && submitted }">
           <label class="control-label col-sm-3">How do you know about us </label>
           <div class="col-sm-9">
-              <select  ng-model="user.addagency" class="form-control" ng-options="color.label for color in howdouknow"></select>
+              <select  ng-model="user.addagency" ng-init="user.addagency = howdouknow[0] " class="form-control" ng-options="color.label for color in howdouknow" placeholder="select"></select>
             <p class="help-block" ng-show="form.addagency.$error.addagency && submitted">
               Doesn't look like a valid.
             </p>

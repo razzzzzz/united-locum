@@ -172,7 +172,15 @@ User.find({}).removeAsync()
         session3: [{ frm: new Date() , to: new Date(), rate:400 }],
         dayrate: 510,
         outOfOffice: 300 
-      } 
+      } ,
+      category:[
+                {
+                    "label" : "GP",
+                    "id" : 1
+                }
+            ],
+      "idnumber" : "gano",
+      performarnumber:'performar123'
     }, {
       provider: 'local',
       role: 'admin',

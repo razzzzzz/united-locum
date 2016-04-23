@@ -13,7 +13,7 @@ angular.module('clickeatApp').controller('SignupController', function($scope, Au
                   };
 */
 $scope.example1data = [ {id: 1, label: "GP"}, {id: 2, label: "Dentist"}, {id: 3, label: "Nurse(Dental)"},{id:4,label:"Nurse(Non-Dental)"}];
-$scope.howdouknow = [ {id: 1, label: "FaceBook"}, {id: 2, label: "Google+"}, {id: 3, label: "Twitter"},{id:4,label:"LinkedIn"},{id:5,label:"Other"}];
+$scope.howdouknow = [ {id: 0, label: "Select"},{id: 1, label: "FaceBook"}, {id: 2, label: "Google+"}, {id: 3, label: "Twitter"},{id:4,label:"LinkedIn"},{id:5,label:"Other"}];
     $scope.user = {
                     role:'locum',
                     category:$scope.example1data[0],

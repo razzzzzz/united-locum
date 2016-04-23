@@ -63,15 +63,17 @@ Profile_Maintenance(reddy):
  ✔ 13)Are you British citizen-checkbox @done (16-04-13 09:17)
  ✔ 14)Eligible to work in UK-checkbox @done (16-04-13 09:17)
  ✔ 15)Profile Summary-text area @done (16-04-13 09:05)
- ☐ order of the fields
+ ✔ order of the fields @done (16-04-21 22:32)
  ☐ validation
  ☐ error message vocablary
- ☐ tc document
- ☐ hint text
+ ☐ tc document(pending at client side)
+ ☐ hint text(pending at client side)
  ✔ Address should copy if billing address is same @done (16-04-20 23:34)
  ✔ nhs system selected data should display @done (16-04-21 22:17)
  ☐ adding list of practice in profile
  ☐ bug in auto profile filling
+ ✔ how fill about us default message should select first @done (16-04-21 23:07)
+ ☐ if editing of category added as text box then he may not know remining category(info)
 Raju (midie):
 
 Siva prasad (practice dairy):
@@ -134,6 +136,8 @@ commit   4 hours//Commits on Apr 17, 2016
 commit   2 hours//Commits on Apr 18, 2016
 commit   2 hours//Commits on Apr 19, 2016
 commit   6 hours//Commits on Apr 20, 2016
+commit   5 hours//Commits on Apr 21, 2016
+commit   8 hours//Commits on Apr 23, 2016
 
 
 
