@@ -32,10 +32,11 @@ Irfan:
  ✔ have to make template for different requirements @done (16-04-20 21:37)
  ✔ no of req default 1 not editable @done (16-04-20 21:37)
  ✔ from tome to time with am pm @done (16-04-20 21:37)
- ☐ new vacancy from menu.
+ ✔ new vacancy from menu. @done (16-04-24 01:18)
  ☐ once new vacancy is created then diary color sholud appear(if we create new vacancy from menu also diary color should appear). 
  ☐ after open vacancy, they told me to start LOCUM DIARY.
- ☐ per one day we can create only 2 new vacancies..(morning and afternoon)
+ ☐ per one day we can create only 2 new vacancies.(morning and afternoon)
+ ☐ splling mistakes, camil case, validations, headings, order of fields
 Profile_Maintenance(reddy):
  ✔  making locum profile templates @done (16-04-12 21:27)
  ✔  Verifying registraion done as per the sr document @done (16-04-12 21:27)
@@ -138,6 +139,7 @@ commit   2 hours//Commits on Apr 19, 2016
 commit   6 hours//Commits on Apr 20, 2016
 commit   5 hours//Commits on Apr 21, 2016
 commit   8 hours//Commits on Apr 23, 2016
+commit   2 hours//Commits on Apr 24, 2016
 
 
 

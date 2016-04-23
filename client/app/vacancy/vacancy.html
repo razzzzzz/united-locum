@@ -1,95 +1,45 @@
 <div class="container">
-<!-- <div class="form-group form-inline" >
-Category: <select class="form-control form-inline">
-  <option value="Dc">Doctor</option>
-  <option value="Nr">Nurse</option>
-  <option value="Dn">dentist</option>
-  
-</select> 
-Skill : <select class="form-control form-inline">
-  <option value="volvo">Audiologist</option>
-  <option value="saab">Allergist</option>
-  <option value="opel">Cardiologist</option>
-  <option value="audi">Dermetologist</option>
-  <option value="audi">Gynecologist</option>
-  <option value="audi">Microbiologist</option>
-</select>
-<button type="button" class="btn btn-default">Rate</button>
-<button type="button" class="btn btn-default">Date</button>
-<input type="submit" value="Submit" class="btn btn-default" >
-</div>
-<table class="table table-condensed">
-  <thead>
-    <tr>
-      <th>Category</th>
-      <th>Skill</th>
-      <th>No.of Requirements</th>
-      <th>Date</th>
-      <th>Rate</th>
-      <th>Options</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr ng-repeat = "vacancy in vacancys">
-      <td>{{vacancy.category}}</td>
-      <td>{{vacancy.skill}}</td>
-      <td>{{vacancy.count}}</td>
-      <td>{{vacancy.from}}</td>
-      <td>{{vacancy.rate}}</td>
-      <td>
-        <a class="glyphicon glyphicon-pencil over " ng-click="edit($index)"></a>
-        &nbsp;&nbsp;&nbsp;
-        <a class="glyphicon glyphicon-trash over trash" ng-click="trash($index)"></a>
-      </td>
-   </tr>
-  </tbody>
-</table> -->
-
-<table st-set-filter="customFilter" st-table="displayed" st-safe-src="collection" class="table table-condensed">
-      <thead>
-        <tr>
-          <th st-sort="category">Category</th>
-          <th st-sort="skill">Skill</th>
-          <th st-sort="count">No.of Requirements&nbsp;&nbsp;&nbsp;<span class="fa fa-sort"></span></th>
-          <th st-sort="from">Date</th>
-          <th st-sort="rate">Rate&nbsp;&nbsp;&nbsp;<span class="fa fa-sort"></span></th>
-          <th>Action</th>
-        </tr>
-        <tr>
-          <th>
-            <st-select-distinct collection="collection" predicate="category"></st-select-distinct>
-          </th>
-          <th>
-            <st-select-distinct collection="collection" predicate="skill"></st-select-distinct>
-          </th>
-          <th>
-            
-          </th>
-          <th>
-            
-          </th>
-          <th>
-            
-          </th>
-          <th>
-            
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr ng-repeat="row in displayed">
-          <td>{{row.category}}</td>
-          <td>{{row.skill | uppercase}}</td>
-          <td>{{row.count}}</td>
-          <td>{{row.from}}</td>
-          <td>{{row.rate}}</td>
-          <td>
-            <a class="glyphicon glyphicon-pencil over " ng-click="edit($index)"></a>
-            &nbsp;&nbsp;&nbsp;
-            <a class="glyphicon glyphicon-trash over trash" ng-click="trash($index)"></a>
-          </td>
-        </tr>
-      </tbody>
-      <tfoot></tfoot>
+    <table st-set-filter="customFilter" st-table="displayed" st-safe-src="collection" class="table table-condensed">
+        <thead>
+            <tr>
+                <th st-sort="category">Category</th>
+                <th st-sort="skill">Skill</th>
+                <th st-sort="count">No.of Requirements&nbsp;&nbsp;&nbsp;<span class="fa fa-sort"></span></th>
+                <th st-sort="date">Date</th>
+                <th st-sort="rate">Rate&nbsp;&nbsp;&nbsp;<span class="fa fa-sort"></span></th>
+                <th>Action</th>
+            </tr>
+            <tr>
+                <th>
+                    <st-select-distinct collection="collection" predicate="category"></st-select-distinct>
+                </th>
+                <th>
+                    <st-select-distinct collection="collection" predicate="skill"></st-select-distinct>
+                </th>
+                <th>
+                </th>
+                <th>
+                </th>
+                <th>
+                </th>
+                <th>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="row in displayed">
+                <td>{{row.category}}</td>
+                <td>{{row.skill | uppercase}}</td>
+                <td>{{row.count}}</td>
+                <td>{{row.date | date:'yyyy-MM-dd'}}</td>
+                <td>{{row.rate}}</td>
+                <td>
+                    <a class="glyphicon glyphicon-pencil over " ng-click="edit($index)"></a>
+                    &nbsp;&nbsp;&nbsp;
+                    <a class="glyphicon glyphicon-trash over trash" ng-click="trash($index)"></a>
+                </td>
+            </tr>
+        </tbody>
+        <tfoot></tfoot>
     </table>
 </div>

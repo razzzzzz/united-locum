@@ -243,7 +243,7 @@ Vacancy.find({}).removeAsync()
       skill: "Ambulatory Case Nursing",
       count: 1,
       rate: 16,
-      date:new Date(),
+      date:new Date().setDate(new Date().getDate() + 1),
       from: new Date(),
       to:new Date(),
       practiceId: "String"
@@ -255,7 +255,7 @@ Vacancy.find({}).removeAsync()
       skill: "Microbiologist",
       count: 1,
       rate: 27,
-      date:new Date(),
+      date:new Date().setDate(new Date().getDate() + 1),
       from: new Date(),
       to:new Date(),
       practiceId: "String"
@@ -266,7 +266,7 @@ Vacancy.find({}).removeAsync()
       skill: "Endodonist",
       count: 1,
       rate: 27,
-      date:new Date(),
+      date:new Date().setDate(new Date().getDate() + 2),
       from: new Date(),
       to:new Date(),
       practiceId: "String"
@@ -277,7 +277,7 @@ Vacancy.find({}).removeAsync()
       skill: "Cardiologist",
       count: 1,
       rate: 24,
-      date:new Date(),
+      date:new Date().setDate(new Date().getDate() + 2),
       from: new Date(),
       to:new Date(),
       practiceId: "String"
@@ -288,7 +288,7 @@ Vacancy.find({}).removeAsync()
       skill: "Dialysis Nursing",
       count: 1,
       rate: 15,
-      date:new Date(),
+      date:new Date().setDate(new Date().getDate() + 3),
       from: new Date(),
       to:new Date(),
       practiceId: "String"
@@ -299,7 +299,7 @@ Vacancy.find({}).removeAsync()
       skill: "Pediatric Dentist",
       count: 1,
       rate: 25,
-      date:new Date(),
+      date:new Date().setDate(new Date().getDate() + 3),
       from: new Date(),
       to:new Date(),
       practiceId: "String"
@@ -310,7 +310,7 @@ Vacancy.find({}).removeAsync()
       skill: "Gynecologist",
       count: 1,
       rate: 25,
-      date:new Date(),
+      date:new Date().setDate(new Date().getDate() + 4),
       from: new Date(),
       to:new Date(),
       practiceId: "String"
@@ -321,7 +321,7 @@ Vacancy.find({}).removeAsync()
       skill: "Cardiac Nursing",
       count: 1,
       rate: 15,
-      date:new Date(),
+      date:new Date().setDate(new Date().getDate() + 4),
       from: new Date(),
       to:new Date(),
       practiceId: "String"
@@ -332,7 +332,7 @@ Vacancy.find({}).removeAsync()
       skill: "Forensic Nursing",
       count: 1,
       rate: 13,
-      date:new Date(),
+      date:new Date().setDate(new Date().getDate() + 5),
       from: new Date(),
       to:new Date(),
       practiceId: "String"
@@ -343,7 +343,7 @@ Vacancy.find({}).removeAsync()
       skill: "Legal Nursing",
       count: 1,
       rate: 14,
-      date:new Date(),
+      date:new Date().setDate(new Date().getDate() + 5),
       from: new Date(),
       to:new Date(),
       practiceId: "String"
@@ -354,7 +354,7 @@ Vacancy.find({}).removeAsync()
       skill: "Prosthodontist",
       count: 1,
       rate: 18,
-      date:new Date(),
+      date:new Date().setDate(new Date().getDate() + 6),
       from: new Date(),
       to:new Date(),
       practiceId: "String"
@@ -365,7 +365,7 @@ Vacancy.find({}).removeAsync()
       skill: "Orthodontist",
       count: 1,
       rate: 20,
-      date:new Date(),
+      date:new Date().setDate(new Date().getDate() + 6),
       from: new Date(),
       to:new Date(),
       practiceId: "String"
@@ -376,7 +376,7 @@ Vacancy.find({}).removeAsync()
       skill: "Endodonist",
       count: 1,
       rate: 19,
-      date:new Date(),
+      date:new Date().setDate(new Date().getDate() + 7),
       from: new Date(),
       to:new Date(),
       practiceId: "String"
@@ -387,7 +387,7 @@ Vacancy.find({}).removeAsync()
       skill: "Periodontist",
       count: 1,
       rate: 16,
-      date:new Date(),
+      date:new Date().setDate(new Date().getDate() + 7),
       from: new Date(),
       to:new Date(),
       practiceId: "String"
@@ -398,7 +398,7 @@ Vacancy.find({}).removeAsync()
       skill: "Allergist",
       count: 1,
       rate: 20,
-      date:new Date(),
+      date:new Date().setDate(new Date().getDate() + 8),
       from: new Date(),
       to:new Date(),
       practiceId: "String"
@@ -409,7 +409,7 @@ Vacancy.find({}).removeAsync()
       skill: "Allergist",
       count: 1,
       rate: 17,
-      date:new Date(),
+      date:new Date().setDate(new Date().getDate() + 8),
       from: new Date(),
       to:new Date(),
       practiceId: "String"
@@ -420,7 +420,7 @@ Vacancy.find({}).removeAsync()
       skill: "Audiologist",
       count: 1,
       rate: 15,
-      date:new Date(),
+      date:new Date().setDate(new Date().getDate() + 9),
       from: new Date(),
       to:new Date(),
       practiceId: "String"
@@ -447,7 +447,7 @@ Dairy.find({}).removeAsync()
          pName: 'Practice1',
          skill: 'Dentist',
          skillId: 'Den',
-         date:new Date(),
+         date:new Date().setDate(new Date().getDate() + 1),
          time: new Date(),
          state: [],
          stateId: 'lreq',

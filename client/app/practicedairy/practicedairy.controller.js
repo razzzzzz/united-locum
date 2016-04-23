@@ -1,12 +1,12 @@
 'use strict';
 
 angular.module('clickeatApp')
-  .controller('PracticedairyCtrl', function ($scope,$http,$compile,uiCalendarConfig,$modal) {
+  .controller('PracticedairyCtrl', function ($scope,$http,$compile,uiCalendarConfig,$modal,$state, $stateParams) {
   var date = new Date();
     var d = date.getDate();
     var m = date.getMonth();
     var y = date.getFullYear();
-    
+    console.log($stateParams.openpopup+":::::");
     $scope.changeTo = 'Hungarian';
     /* event source that pulls from google.com */
     $scope.eventSource = {
@@ -199,8 +199,15 @@ angular.module('clickeatApp')
       }, function () {
        // $log.info('Modal dismissed at: ' + new Date());
       });
-    }
-  }).controller('ModalInstanceCtrl1', function ($scope, $modalInstance, items, $http, Auth) {
+    };
+
+    $scope.init = function(){
+      if(parseInt($stateParams.openpopup)){
+        $scope.openModel({type: 'newevent',heading:'Create New Vacancy'}); 
+      }
+    };
+    $scope.init();
+  }).controller('ModalInstanceCtrl1', function ($scope, $modalInstance, items, $http, Auth,$state) {
     $scope.dairy = items;
     if($scope.dairy){
       $scope.updateEnable = true;
@@ -247,13 +254,17 @@ angular.module('clickeatApp')
       $scope.req.skills = $scope.req.category.drilldown[0];
     }
     $scope.ok = function () {
+      $scope.changeStateRoute();
       $modalInstance.close($scope.selected);
     };
 
     $scope.cancel = function () {
+      $scope.changeStateRoute();
       $modalInstance.dismiss('cancel');
     };  
-   
+    $scope.changeStateRoute = function(){
+      $state.transitionTo('practicedairy', {openpopup: 0}, { notify: false });
+    }
     $scope.makeRequest = function(form){
       $scope.submitted = true;
       if(form.$valid){
