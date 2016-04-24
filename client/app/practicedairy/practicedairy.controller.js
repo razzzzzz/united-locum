@@ -6,7 +6,6 @@ angular.module('clickeatApp')
     var d = date.getDate();
     var m = date.getMonth();
     var y = date.getFullYear();
-    console.log($stateParams.openpopup+":::::");
     $scope.changeTo = 'Hungarian';
     /* event source that pulls from google.com */
     $scope.eventSource = {

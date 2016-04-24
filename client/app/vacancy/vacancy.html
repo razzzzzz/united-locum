@@ -2,11 +2,11 @@
     <table st-set-filter="customFilter" st-table="displayed" st-safe-src="collection" class="table table-condensed">
         <thead>
             <tr>
-                <th st-sort="category">Category</th>
-                <th st-sort="skill">Skill</th>
+                <th st-sort="category">Category&nbsp;&nbsp;&nbsp;<span class="fa fa-sort"></span></th>
+                <th st-sort="skill">Skill&nbsp;&nbsp;&nbsp;<span class="fa fa-sort"></span></th>
                 <th st-sort="count">No.of Requirements&nbsp;&nbsp;&nbsp;<span class="fa fa-sort"></span></th>
-                <th st-sort="date">Date</th>
-                <th st-sort="rate">Rate&nbsp;&nbsp;&nbsp;<span class="fa fa-sort"></span></th>
+                <th st-sort="date">Date&nbsp;&nbsp;&nbsp;<span class="fa fa-sort"></span></th>
+                <th st-sort="rate">Rate&nbsp;(£)&nbsp;&nbsp;<span class="fa fa-sort"></span></th>
                 <th>Action</th>
             </tr>
             <tr>
@@ -35,8 +35,7 @@
                 <td>{{row.rate}}</td>
                 <td>
                     <a class="glyphicon glyphicon-pencil over " ng-click="edit($index)"></a>
-                    &nbsp;&nbsp;&nbsp;
-                    <a class="glyphicon glyphicon-trash over trash" ng-click="trash($index)"></a>
+                    &nbsp;&nbsp;&nbsp;<a class="glyphicon glyphicon-trash over trash" ng-click="trash($index)"></a>
                 </td>
             </tr>
         </tbody>

@@ -1,0 +1,40 @@
+<div class="container">
+    <div class="row">
+    <div class="row">
+        <label class="col-lg-5"><span class="col-lg-4">Date</span>
+            <p class="input-group col-lg-8">
+                <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="dt" is-open="popup1.opened" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+                <span class="input-group-btn">
+                  <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-calendar"></i></button>
+                </span>
+            </p>
+        </label>
+        <label class="control-label col-lg-7">Skill:{{user.category[0].label}}</label>
+    </div> 
+    </div>
+    <div>
+         <table st-table="displayed" st-safe-src="collection" class="table table-condensed">
+        <thead>
+            <tr>
+                <th st-sort="practiceId">Practice&nbsp;&nbsp;<span class="fa fa-sort"></span></th>
+                <th st-sort="from">Time&nbsp;&nbsp;<span class="fa fa-sort"></span></th>
+                <th st-sort="date">Date&nbsp;&nbsp;<span class="fa fa-sort"></span></th>
+                <th st-sort="rate">Rate&nbsp;(£)&nbsp;&nbsp;<span class="fa fa-sort"></span></th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="row in displayed">
+                <td>{{row.practiceId}}</td>
+                <td>{{row.from | date:'h:mma'}}-{{row.to | date:'h:mma'}}</td>
+                <td>{{row.date | date:'yyyy-MM-dd'}}</td>
+                <td>{{row.rate}}</td>
+                <td>
+                    <a class="btn btn-default" ng-click="sendRequest(row._id)">Send Request</a>
+                </td>
+            </tr>
+        </tbody>
+        <tfoot></tfoot>
+    </table>
+    </div>  
+</div>
