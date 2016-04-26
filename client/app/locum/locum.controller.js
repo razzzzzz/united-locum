@@ -19,11 +19,11 @@ angular.module('clickeatApp')
     
     $scope.changeTo = 'Hungarian';
     /* event source that pulls from google.com */
-    $scope.eventSource = {
+  /*  $scope.eventSource = {
             url: "http://www.google.com/calendar/feeds/usa__en%40holiday.calendar.google.com/public/basic",
             className: 'gcal-event',           // an option!
             currentTimezone: 'America/Chicago' // an option!
-    };
+    };*/
     /* event source that contains custom events on the scope */
     $scope.events = [
       {
@@ -37,8 +37,7 @@ angular.module('clickeatApp')
       {pname: 'Long Event',start: new Date(y, m, d - 5),end: new Date(y, m, d - 2)},
       {id: 999,pname: 'Repeating Event',start: new Date(y, m, d - 3, 16, 0),allDay: false},
       {id: 999,pname: 'Repeating Event',start: new Date(y, m, d + 4, 16, 0),allDay: false},
-      {pname: 'Birthday Party',start: new Date(y, m, d + 1, 19, 0),end: new Date(y, m, d + 1, 22, 30),allDay: false},
-      {pname: 'Click for Google',start: new Date(y, m, 28),end: new Date(y, m, 29),url: 'http://google.com/'}
+      {pname: 'Birthday Party',start: new Date(y, m, d + 1, 19, 0),end: new Date(y, m, d + 1, 22, 30),allDay: false}
     ];
     /* event source that calls a function on every view switch */
     $scope.eventsF = function (start, end, timezone, callback) {
@@ -54,8 +53,7 @@ angular.module('clickeatApp')
        textColor: 'yellow',
        events: [ 
           {type:'party',title: 'Lunch',start: new Date(y, m, d, 12, 0),end: new Date(y, m, d, 14, 0),allDay: false},
-          {type:'party',title: 'Lunch 2',start: new Date(y, m, d, 12, 0),end: new Date(y, m, d, 14, 0),allDay: false},
-          {type:'party',title: 'Click for Google',start: new Date(y, m, 28),end: new Date(y, m, 29),url: 'http://google.com/'}
+          {type:'party',title: 'Lunch 2',start: new Date(y, m, d, 12, 0),end: new Date(y, m, d, 14, 0),allDay: false}
         ]
     };
     /* alert on eventClick */
@@ -151,7 +149,7 @@ angular.module('clickeatApp')
     /* event sources array*/
     $scope.eventSources = [];
     $scope.eventSources2 = [];
-    var events = [$scope.events, $scope.eventSource, $scope.eventsF];
+    var events = [$scope.events, $scope.eventsF];
     for(var i=0;i<events.length;i++){
       $scope.eventSources.push(events[i])  
     }
@@ -191,8 +189,8 @@ angular.module('clickeatApp')
 
   }).controller('ModalInstanceCtrl1', function ($scope, $modalInstance, items) {
 
-    $scope.dairy = items;
-    if($scope.dairy){
+    $scope.diary = items;
+    if($scope.diary){
       $scope.updateEnable = true;
     }
   //console.log(items);

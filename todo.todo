@@ -26,7 +26,7 @@
 Document maintenance:
  ✔  Doument upload html template with vocablary @done (16-04-13 22:30)
  ☐ gmailid to send document to target mailid
- ☐ 
+
 Irfan:
  ✔ have to prepare db fields @done (16-04-20 21:37)
  ✔ have to make template for different requirements @done (16-04-20 21:37)
@@ -37,6 +37,7 @@ Irfan:
  ☐ after open vacancy, they told me to start LOCUM DIARY.
  ☐ per one day we can create only 2 new vacancies.(morning and afternoon)
  ☐ splling mistakes, camil case, validations, headings, order of fields
+
 Profile_Maintenance(reddy):
  ✔  making locum profile templates @done (16-04-12 21:27)
  ✔  Verifying registraion done as per the sr document @done (16-04-12 21:27)
@@ -81,6 +82,7 @@ Siva prasad (practice dairy):
  ☐  html pages in different states
 Srinivas (Locum Diary):
 ☐  html pages in different states
+☐ have to introduce date in booking popup
 
 
 
@@ -139,7 +141,8 @@ commit   2 hours//Commits on Apr 19, 2016
 commit   6 hours//Commits on Apr 20, 2016
 commit   5 hours//Commits on Apr 21, 2016
 commit   8 hours//Commits on Apr 23, 2016
-commit   2 hours//Commits on Apr 24, 2016
+commit   10 hours//Commits on Apr 24, 2016
+commit   3 hours//Commits on Apr 26, 2016
 
 
 

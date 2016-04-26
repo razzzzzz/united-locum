@@ -1,16 +1,16 @@
 'use strict';
 
-describe('Controller: PracticedairyCtrl', function () {
+describe('Controller: LocumdiaryCtrl', function () {
 
   // load the controller's module
   beforeEach(module('clickeatApp'));
 
-  var PracticedairyCtrl, scope;
+  var LocumdiaryCtrl, scope;
 
   // Initialize the controller and a mock scope
   beforeEach(inject(function ($controller, $rootScope) {
     scope = $rootScope.$new();
-    PracticedairyCtrl = $controller('PracticedairyCtrl', {
+    LocumdiaryCtrl = $controller('LocumdiaryCtrl', {
       $scope: scope
     });
   }));

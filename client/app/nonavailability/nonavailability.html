@@ -1,0 +1,51 @@
+<div class="container">
+    <form class="form form-horizontal" name="form" ng-submit="makeRequest(form)" novalidate>
+        <div class="form-group " ng-class="{ 'has-success': form.date.$valid && submitted,
+                                                    'has-error': form.date.$invalid && submitted }">
+            <label class="control-label col-lg-3">Date</label>
+            <div class="col-lg-9">
+                <p class="input-group">
+                    <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="dt" is-open="popup1.opened" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+                    <span class="input-group-btn">
+                      <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </p>
+                <p class="help-block" ng-show="form.date.$error.required && submitted">
+                    Date is required
+                </p>
+            </div>
+        </div>
+        <div class="form-group  timer" ng-class="{ 'has-success': form.mytime.$valid && submitted,
+                                                    'has-error': form.mytime.$invalid && submitted }">
+            <label class="control-label col-lg-3">Time</label>
+            <div class="col-lg-9 timer-container">
+                <div class="col-lg-6">
+                    <label>From</label>
+                    <timepicker ng-model="req.from" ng-change="changed()" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></timepicker>
+                </div>
+                <div class="col-lg-6">
+                    <label>To</label>
+                    <timepicker ng-model="req.to" ng-change="changed()" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></timepicker>
+                </div>
+                <p class="help-block" ng-show="form.mytime.$error.required && submitted">
+                    Time is required
+                </p>
+            </div>
+        </div>
+        <div class="form-group" ng-class="{ 'has-success': form.mytime.$valid && submitted,
+                                                    'has-error': form.mytime.$invalid && submitted }">
+            <label class="control-label col-lg-3">Activity</label>
+            <div class="col-lg-9">
+                <select name="mySelect" id="mySelect" ng-options="option.name for option in nonavailabilityreasons track by option.id" name="category" class="form-control" ng-model="req.category" ng-change="categoryChange()" placeholder="-Select-">  
+                <option value="">- Please Choose -</option>
+                  </select>
+                <p class="help-block" ng-show="form.mytime.$error.required && submitted">
+                    Time is required
+                </p>
+            </div>
+        </div>
+        <div class="text-center">
+          <button type="submit" class="btn btn-default">Update Dairy</button>
+        </div>
+    </form>
+</div>

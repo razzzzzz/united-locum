@@ -1,54 +1,60 @@
-        <div class="modal-header">
-            <h3 class="modal-title">Appointment
+<div class="modal-header">
+    <h3 class="modal-title">Appointment
               <button class="pull-right close" ng-click="cancel()">&times;</button>
             </h3>
-        </div>
-        <div class="modal-body">
-            <form class="form" name="form" ng-submit="makeRequest(form)" novalidate>
-                <div class="form-group form-inline" ng-class="{ 'has-success': form.pname.$valid && submitted,
-                                                    'has-error': form.pname.$invalid && submitted }">
-                  <label>Practice Name</label>
-
-                  <input type="text" name="pname" class="form-control" ng-model="dairy.pname"
-                         required placeholder="Name"/>
-                  <p class="help-block" ng-show="form.pname.$error.required && submitted">
-                    Category is required
-                  </p>
-                </div>
-                <div class="form-group form-inline" ng-class="{ 'has-success': form.rate.$valid && submitted,
+</div>
+<div class="modal-body">
+    <form class="form form-inline row form-horizontal" name="form" ng-submit="makeRequest(form)" novalidate>
+        <div class="form-group col-lg-12 " ng-class="{ 'has-success': form.rate.$valid && submitted,
                                                     'has-error': form.rate.$invalid && submitted }">
-                  <label>Rate</label>
-
-                  <input type="number" name="rate" class="form-control" ng-model="dairy.rate"
-                         required placeholder="Rate"/>
-                  <p class="help-block" ng-show="form.rate.$error.required && submitted">
-                    Count is required
-                  </p>
-                </div>
-                <div class="form-group form-inline timer" ng-class="{ 'has-success': form.startTime.$valid && submitted,
-                                                    'has-error': form.startTime.$invalid && submitted }">
-                  <label>From</label>
-                  <timepicker ng-model="dairy.startTime" ng-change="changed()"  hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></timepicker>
-                  <p class="help-block" ng-show="form.startTime.$error.required && submitted">
-                    Time is required
-                  </p>
-                </div>
-                <div class="form-group form-inline timer" ng-class="{ 'has-success': form.endTime.$valid && submitted,
-                                                    'has-error': form.endTime.$invalid && submitted }">
-                  <label>To</label>
-                  <timepicker ng-model="dairy.endTime" ng-change="changed()"  hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></timepicker>
-                  <p class="help-block" ng-show="form.endTime.$error.required && submitted">
-                    Time is required
-                  </p>
-                </div>
-                <button ng-hide="updateEnable" class="btn btn-inverse btn-md btn-register" type="submit">
-                    Submit
-                </button>
-                <button ng-show="updateEnable" class="btn btn-inverse btn-md btn-register" type="submit">
-                    Update
-                </button>
-            </form> 
+            <label class="control-label col-lg-3">Practice Name</label>
+            <div class="col-lg-9">
+                <input type="text" name="pname" class="form-control" ng-model="diary.pname" required placeholder="Name" />
+                <p class="help-block" ng-show="form.pname.$error.required && submitted">
+                    Category is required
+                </p>
+            </div>
         </div>
+        <div class="form-group col-lg-12 " ng-class="{ 'has-success': form.rate.$valid && submitted,
+                                                    'has-error': form.rate.$invalid && submitted }">
+            <label class="control-label col-lg-3">Rate</label>
+            <div class="col-lg-9">
+                <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon1"><i class="fa fa-gbp"></i></span>
+                    <input type="number" name="rate" class="form-control" ng-model="req.rate" required placeholder="Rate" />
+                </div>
+                <p class="help-block" ng-show="form.rate.$error.required && submitted">
+                    A rate is required
+                </p>
+            </div>
+        </div>
+        <div class="form-group col-lg-12 timer" ng-class="{ 'has-success': form.rate.$valid && submitted,
+                                                    'has-error': form.rate.$invalid && submitted }">
+            <label class="control-label col-lg-3">Time</label>
+            <div class="col-lg-9 timer-container">
+                <div class="col-lg-6">
+                    <label>From</label>
+                    <timepicker ng-model="req.from" ng-change="changed()" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></timepicker>
+                </div>
+                <div class="col-lg-6">
+                    <label>To</label>
+                    <timepicker ng-model="req.to" ng-change="changed()" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></timepicker>
+                </div>
+                <p class="help-block" ng-show="form.mytime.$error.required && submitted">
+                    Time is required
+                </p>
+            </div>
+        </div>
+        <div class="col-lg-12 text-center">
+          <button class="btn btn-inverse btn-md btn-default" ng-click="cancleAppointment()" >
+              Cancle Request
+          </button>
+          <button class="btn btn-inverse btn-md btn-default" ng-click="cancel()" >
+             Ok
+          </button>
+        </div>
+    </form>
+</div>
 <!--         <div class="modal-footer">
             <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
             <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>

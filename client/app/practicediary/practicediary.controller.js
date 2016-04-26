@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('clickeatApp')
-  .controller('PracticedairyCtrl', function ($scope,$http,$compile,uiCalendarConfig,$modal,$state, $stateParams) {
+  .controller('PracticediaryCtrl', function ($scope,$http,$compile,uiCalendarConfig,$modal,$state, $stateParams) {
   var date = new Date();
     var d = date.getDate();
     var m = date.getMonth();
@@ -207,8 +207,8 @@ angular.module('clickeatApp')
     };
     $scope.init();
   }).controller('ModalInstanceCtrl1', function ($scope, $modalInstance, items, $http, Auth,$state) {
-    $scope.dairy = items;
-    if($scope.dairy){
+    $scope.diary = items;
+    if($scope.diary){
       $scope.updateEnable = true;
     }
     $scope.today = function() {
@@ -262,7 +262,7 @@ angular.module('clickeatApp')
       $modalInstance.dismiss('cancel');
     };  
     $scope.changeStateRoute = function(){
-      $state.transitionTo('practicedairy', {openpopup: 0}, { notify: false });
+      $state.transitionTo('practicediary', {openpopup: 0}, { notify: false });
     }
     $scope.makeRequest = function(form){
       $scope.submitted = true;
@@ -283,7 +283,7 @@ angular.module('clickeatApp')
         'practiceTel':  $scope.user.mobile,
         'practiceAdd':  '$scope.user.address'*/
         };
-        if($scope.dairy.type == 'editevent'){//update the existing vacancy
+        if($scope.diary.type == 'editevent'){//update the existing vacancy
           $http.patch('/api/vacancys/'+$scope.req._id,vacancyObj).then(
             function(res){
               $scope.updatevacancy = res.data;

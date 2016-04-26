@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <link data-require="bootstrap-css@3.3.6" data-semver="3.3.6" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css" />
+    <script data-require="angular.js@1.5.0" data-semver="1.5.0" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.js"></script>
+    <script data-require="angular-ui-bootstrap@1.1.2" data-semver="1.1.2" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/1.1.2/ui-bootstrap-tpls.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+  </head>
+<body>
+
+ <div class="form-group form-inline" ng-class="">
+                  <label>Date : Date</label>
+  </div>
+
+<div ng-controller="repeatController">  
+    <label> PracticeName: {{ practice name}}</label>
+</div>
+
+    <div>
+     <label>Time : Time period of schdule</label>
+   </div><br>
+
+<div ng-controller="ExampleController">
+  <label>Rate ($): <span id="currency-default">{{amount | currency}}</span><br></label>
+  </div> <br>
+  
+  
+
+<div>
+ 
+  <table>
+  <tr>
+     <td>
+      <button ng-show="updateEnable" class="btn btn-inverse btn-md btn-register" type="submit">
+     Cancel Req
+  </button></td>
+   
+    <td><button ng-show="updateEnable" class="btn btn-inverse btn-md btn-register" type="submit">
+     Ok
+  </button></td>
+  </tr>
+  </table>
+ </div><br>
+
+ </body>
+
+</html>
+                               
+				
+				
