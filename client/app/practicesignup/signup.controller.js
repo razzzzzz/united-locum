@@ -40,15 +40,16 @@ $scope.howdouknow = [ {id: 1, label: "FaceBook"}, {id: 2, label: "Google+"}, {id
       if (form.$valid) {
         $scope.Auth.createUser({
           practicecode: $scope.user.pcode,
-          country: $scope.user.country,
-          hname:$scope.user.hname,
-          address1:$scope.user.address1,
-          address2:$scope.user.address2,
-          address3:$scope.user.address3,
-          town:$scope.user.town,
-          city:$scope.user.city,
-          county:$scope.user.county,
-          zip:$scope.user.zip,
+          currentAddress: {
+              houseNumber: $scope.user.hname,
+              line1: $scope.user.address1,
+              line2: $scope.user.address2,
+              line3: $scope.user.address3,
+              town: $scope.user.town,
+              country: $scope.user.country,
+              zipCode: $scope.user.zip,
+              county:$scope.user.county
+          },
           ccg:$scope.user.ccg,
           itsystems:$scope.user.itsystems,
         /*  category:$scope.user.category,*/

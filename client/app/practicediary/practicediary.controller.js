@@ -64,7 +64,7 @@ angular.module('clickeatApp')
       //  $scope.alertMessage = (date.title + ' was clicked ');
         eventData.type = 'editevent';
         eventData.heading = 'edit vacancy';
-        $scope.openModel(eventData);
+       // $scope.openModel(eventData);
 
     };
     $scope.alertMessage = function(data){
@@ -123,9 +123,10 @@ angular.module('clickeatApp')
     $scope.dayClick = function(date, jsEvent, view) {
       var eventData = {
         type: 'newevent',
-        heading:'Create New Vacancy'
+        heading:'Create New Vacancy',
+        date:date
       }
-     $scope.openModel(eventData);
+      $scope.openModel(eventData);
     }
     /* config object */
     $scope.uiConfig = {
@@ -213,6 +214,8 @@ angular.module('clickeatApp')
     }
     $scope.today = function() {
       $scope.dt = new Date();
+      if($scope.diary.date)
+        $scope.dt = $scope.diary.date.toDate();
     };
     $scope.today();
     $scope.popup1 = {

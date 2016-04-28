@@ -18,8 +18,23 @@ angular.module('clickeatApp')
           id:3
         }
       ];
+      $scope.dt = new Date();
+      $scope.popup1 = {
+        opened: false
+      };
+     $scope.format = 'dd-MMMM-yyyy';
+      $scope.hstep = 1;
+      $scope.mstep = 15;
+
+      $scope.options = {
+        hstep: [1, 2, 3],
+        mstep: [1, 5, 10, 15, 25, 30]
+      };
     };
-    $scope.init()
+    $scope.init();
+    $scope.openStatus = function() {
+        $scope.popup1.opened = true;
+    };
     $scope.openModel = function(data){
       $scope.items = data;
       var modalInstance = $modal.open({

@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container non-availability">
     <form class="form form-horizontal" name="form" ng-submit="makeRequest(form)" novalidate>
         <div class="form-group " ng-class="{ 'has-success': form.date.$valid && submitted,
                                                     'has-error': form.date.$invalid && submitted }">
@@ -7,7 +7,7 @@
                 <p class="input-group">
                     <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="dt" is-open="popup1.opened" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
                     <span class="input-group-btn">
-                      <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-calendar"></i></button>
+                      <button type="button" class="btn btn-default" ng-click="openStatus()"><i class="glyphicon glyphicon-calendar"></i></button>
                     </span>
                 </p>
                 <p class="help-block" ng-show="form.date.$error.required && submitted">

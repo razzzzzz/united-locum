@@ -65,3 +65,9 @@
 .dropdown-custom .dropdown-menu-form{
   position: relative;
 }
+.auto-suggest{
+  border: 1px solid silver;
+}
+.auto-suggest p{
+  margin: 0px 10px;
+}

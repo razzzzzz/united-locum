@@ -121,3 +121,15 @@ export function me(req, res, next) {
 export function authCallback(req, res, next) {
   res.redirect('/');
 }
+
+/**
+* Search practice to add to locum as per his preferance
+*/
+export function searchPractice(req, res, next){
+  var searchText = parseInt(req.body.searchText);
+    User.findAsync({'currentAddress.zipCode':searchText/*,role:'practice'*/},{_id:1,fname:1})
+    .then(users => {
+      res.status(200).json(users);
+    })
+    .catch(handleError(res));
+}

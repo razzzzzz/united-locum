@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('clickeatApp').controller('SettingsController', function($scope,Auth,$timeout){
-    $scope.step1 = true;
+angular.module('clickeatApp').controller('SettingsController', function($scope,Auth,$timeout, $http){
+    $scope.step4 = true;
     $scope.user = Auth.getCurrentUser();
     $scope.user.referance = [
             {
@@ -106,9 +106,27 @@ angular.module('clickeatApp').controller('SettingsController', function($scope,A
     	}else{
     		alert("id,mobile,name are mandetary fields");
     	}
-    } 
+    };
+
+    $scope.addToPreferedPractice = function(practice){
+        if($scope.user.practice){
+            $scope.user.practice.push(practice);
+        }else{
+            $scope.user.practice = [practice];
+        }
+    };
+
     $scope.reset = function(){
     	$scope.currentIndex = undefined;
     	$scope.currentRef = {};
-    }
+    };
+
+    $scope.searchPractice = function(){
+        $http.post('/api/users/search',{'searchText':$scope.user.searchText})
+        .then(function(response){
+            $scope.autosuggest = response.data;
+        },function(err){
+
+        });
+    };
 });
