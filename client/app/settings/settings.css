@@ -70,4 +70,17 @@
 }
 .auto-suggest p{
   margin: 0px 10px;
+  cursor: pointer;
+}
+.auto-suggest p:hover{
+  background-color: #CABDBD;
+}
+.cross{
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    font-size: 1em;
+}
+.parent-cross{
+  position: relative;
 }

@@ -109,11 +109,38 @@ angular.module('clickeatApp').controller('SettingsController', function($scope,A
     };
 
     $scope.addToPreferedPractice = function(practice){
-        if($scope.user.practice){
-            $scope.user.practice.push(practice);
+        if($scope.user.practices){
+            var flag = true;
+            for(var i=0; i<$scope.user.practices.length;i++){
+                if($scope.user.practices[i]._id==practice._id){
+                    flag = false;
+                    break;
+                }
+            }
+            if(flag){
+                $scope.user.practices.push(practice);
+            }
         }else{
-            $scope.user.practice = [practice];
+            $scope.user.practices = [practice];
         }
+    };
+
+    $scope.removePreferance = function(practice){
+        for(var i=0; i<$scope.user.practices.length;i++){
+            if($scope.user.practices[i]._id==practice._id){
+               $scope.user.practices.splice(i,1);
+                break;
+            }
+        }
+    };
+
+    $scope.updatePracticeInDB = function(){
+        $http.put('/api/users/'+$scope.user._id+'/practices',{'practices':$scope.user.practices})
+        .then(function(response){
+            $scope.autosuggest = response.data;
+        },function(err){
+
+        });
     };
 
     $scope.reset = function(){

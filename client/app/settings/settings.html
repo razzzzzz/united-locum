@@ -382,18 +382,22 @@
                     </span>
                 </div>
                 <div class="auto-suggest" ng-show="autosuggest.length">
-                <p ng-repeat="suggest in autosuggest" ng-click="addToPreferedPractice(suggest)">
-                  {{suggest.fname}}
-                </p>
+                  <p ng-repeat="suggest in autosuggest" ng-click="addToPreferedPractice(suggest)">
+                    {{suggest.fname}}
+                  </p>
                 </div>
               </form>
               <div class="col-lg-6">
-                <div ng-repeat="practice in user.practice" class="panel panel-success inline-block">
-                  <div class="panel-heading inline-block">{{practice.fname}}</div>
+                <div ng-repeat="practice in user.practices" class="panel panel-success inline-block">
+                  <div class="panel-heading inline-block parent-cross">
+                    {{practice.fname}}
+                    <button class="pull-right close cross" ng-click="removePreferance(practice)">×</button>
+                  </div>
                 </div>
               </div>
             </div>
             <a class="btn btn-success pull-right" ng-click="openTwo('5')">Next</a>
+            <a class="btn btn-success pull-right" ng-click="updatePracticeInDB()">Save</a>
         </accordion-group>
         <accordion-group is-open="$parent.step5">
             <accordion-heading>Services<i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': step5, 'glyphicon-chevron-right': !step5}"></i></accordion-heading>

@@ -127,9 +127,27 @@ export function authCallback(req, res, next) {
 */
 export function searchPractice(req, res, next){
   var searchText = parseInt(req.body.searchText);
-    User.findAsync({'currentAddress.zipCode':searchText/*,role:'practice'*/},{_id:1,fname:1})
+    User.findAsync({'currentAddress.zipCode':searchText,role:'practice'},{_id:1,fname:1})
     .then(users => {
       res.status(200).json(users);
     })
     .catch(handleError(res));
+}
+
+/**
+* Updating practices for locum preferances.
+*/
+export function changePractices(req, res, next){
+
+  var userId = req.user._id;
+  var practices = req.body.practices;
+  User.findByIdAsync(userId)
+    .then(user => {
+        user.practices = practices;
+        return user.saveAsync()
+          .then(() => {
+            res.status(204).end();
+          })
+          .catch(validationError(res));
+    });
 }

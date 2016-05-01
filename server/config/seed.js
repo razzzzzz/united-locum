@@ -229,7 +229,1419 @@ User.find({}).removeAsync()
                     dayrate: 510,
                     outOfOffice: 300
                 }
-            })
+            },{
+    "provider": "local",
+ "fname": "THE GARTH",
+                "lname": "User",
+                "mobile": 9494949794,
+                "tc": true,
+                "category": [],
+                "email": "p2ractice@example.com",
+                "role": "practice",
+                "password": "thegrath",
+                "profileSummary": "doctor",
+                "qualifications": [],
+                "currentAddress": {
+                    "houseNumber": "b24",
+                    "line1": "c-lane",
+                    "line2": "manchester",
+                    "line3": "manch post",
+                    "town": "manchester",
+                    "country": "london",
+                    "zipCode": 321321,
+                    "county":"lane name"
+                },
+                "sa": true,
+                "documents": [],
+                "practices": [],
+                "services": "Basic",
+                "socialAccount": {
+                    "fb": "fb.com/kp",
+                    "linkedin": "linkedin.com/kp",
+                    "skype": "ghmc",
+                    "twitter": "tweet",
+                    "pinterest": "pinte"
+                },
+                "references": [],
+                "nhsSys": [],
+                "sessionRates": {
+                    "session1": [{ "frm": new Date(), "to": new Date(), "rate": 120 }],
+                    "session2": [{ "frm": new Date(), "to": new Date(), "rate": 320 }],
+                    "session3": [{ "frm": new Date(), "to": new Date(), "rate": 400 }],
+                    "dayrate": 510,
+                    "outOfOffice": 300
+                }
+            
+},
+{
+    "provider": "local",
+ "fname": "OAKFIELD MEDICAL PRACTICE",
+                "lname": "User",
+                "mobile": 9494949794,
+                "tc": true,
+                "category": [],
+                "email": "p3ractice@example.com",
+                "role": "practice",
+                "password": "oakfieldmedicalpractice",
+                "profileSummary": "doctor",
+                "qualifications": [],
+                "currentAddress": {
+                    "houseNumber": "b24",
+                    "line1": "c-lane",
+                    "line2": "manchester",
+                    "line3": "manch post",
+                    "town": "manchester",
+                    "country": "london",
+                    "zipCode": 321321,
+                    "county":"lane name"
+                },
+                "sa": true,
+                "documents": [],
+                "practices": [],
+                "services": "Basic",
+                "socialAccount": {
+                    "fb": "fb.com/kp",
+                    "linkedin": "linkedin.com/kp",
+                    "skype": "ghmc",
+                    "twitter": "tweet",
+                    "pinterest": "pinte"
+                },
+                "references": [],
+                "nhsSys": [],
+                "sessionRates": {
+                    "session1": [{ "frm": new Date(), "to": new Date(), "rate": 120 }],
+                    "session2": [{ "frm": new Date(), "to": new Date(), "rate": 320 }],
+                    "session3": [{ "frm": new Date(), "to": new Date(), "rate": 400 }],
+                    "dayrate": 510,
+                    "outOfOffice": 300
+                }
+            
+},
+{
+    "provider": "local",
+ "fname": "THORNABY & BARWICK MEDICAL GROUP",
+                "lname": "User",
+                "mobile": 9494949794,
+                "tc": true,
+                "category": [],
+                "email": "p4ractice@example.com",
+                "role": "practice",
+                "password": "thornaby",
+                "profileSummary": "doctor",
+                "qualifications": [],
+                "currentAddress": {
+                    "houseNumber": "b24",
+                    "line1": "c-lane",
+                    "line2": "manchester",
+                    "line3": "manch post",
+                    "town": "manchester",
+                    "country": "london",
+                    "zipCode": 123321,
+                    "county":"lane name"
+                },
+                "sa": true,
+                "documents": [],
+                "practices": [],
+                "services": "Basic",
+                "socialAccount": {
+                    "fb": "fb.com/kp",
+                    "linkedin": "linkedin.com/kp",
+                    "skype": "ghmc",
+                    "twitter": "tweet",
+                    "pinterest": "pinte"
+                },
+                "references": [],
+                "nhsSys": [],
+                "sessionRates": {
+                    "session1": [{ "frm": new Date(), "to": new Date(), "rate": 120 }],
+                    "session2": [{ "frm": new Date(), "to": new Date(), "rate": 320 }],
+                    "session3": [{ "frm": new Date(), "to": new Date(), "rate": 400 }],
+                    "dayrate": 510,
+                    "outOfOffice": 300
+                }
+            
+},
+{
+    "provider": "local",
+ "fname": "NEWLANDS MEDICAL PRACTICE",
+                "lname": "User",
+                "mobile": 9494949794,
+                "tc": true,
+                "category": [],
+                "email": "p5ractice@example.com",
+                "role": "practice",
+                "password": "newlandsmedicalpractice",
+                "profileSummary": "doctor",
+                "qualifications": [],
+                "currentAddress": {
+                    "houseNumber": "b24",
+                    "line1": "c-lane",
+                    "line2": "manchester",
+                    "line3": "manch post",
+                    "town": "manchester",
+                    "country": "london",
+                    "zipCode": 123321,
+                    "county":"lane name"
+                },
+                "sa": true,
+                "documents": [],
+                "practices": [],
+                "services": "Basic",
+                "socialAccount": {
+                    "fb": "fb.com/kp",
+                    "linkedin": "linkedin.com/kp",
+                    "skype": "ghmc",
+                    "twitter": "tweet",
+                    "pinterest": "pinte"
+                },
+                "references": [],
+                "nhsSys": [],
+                "sessionRates": {
+                    "session1": [{ "frm": new Date(), "to": new Date(), "rate": 120 }],
+                    "session2": [{ "frm": new Date(), "to": new Date(), "rate": 320 }],
+                    "session3": [{ "frm": new Date(), "to": new Date(), "rate": 400 }],
+                    "dayrate": 510,
+                    "outOfOffice": 300
+                }
+            
+},
+{
+    "provider": "local",
+ "fname": "NORTON MEDICAL CENTRE",
+                "lname": "User",
+                "mobile": 9494949794,
+                "tc": true,
+                "category": [],
+                "email": "p6ractice@example.com",
+                "role": "practice",
+                "password": "nortonmedicalcentre",
+                "profileSummary": "doctor",
+                "qualifications": [],
+                "currentAddress": {
+                    "houseNumber": "b24",
+                    "line1": "c-lane",
+                    "line2": "manchester",
+                    "line3": "manch post",
+                    "town": "manchester",
+                    "country": "london",
+                    "zipCode": 123321,
+                    "county":"lane name"
+                },
+                "sa": true,
+                "documents": [],
+                "practices": [],
+                "services": "Basic",
+                "socialAccount": {
+                    "fb": "fb.com/kp",
+                    "linkedin": "linkedin.com/kp",
+                    "skype": "ghmc",
+                    "twitter": "tweet",
+                    "pinterest": "pinte"
+                },
+                "references": [],
+                "nhsSys": [],
+                "sessionRates": {
+                    "session1": [{ "frm": new Date(), "to": new Date(), "rate": 120 }],
+                    "session2": [{ "frm": new Date(), "to": new Date(), "rate": 320 }],
+                    "session3": [{ "frm": new Date(), "to": new Date(), "rate": 400 }],
+                    "dayrate": 510,
+                    "outOfOffice": 300
+                }
+            
+},
+{
+    "provider": "local",
+ "fname": "THE ERIMUS PRACTICE",
+                "lname": "User",
+                "mobile": 9494949794,
+                "tc": true,
+                "category": [],
+                "email": "p7ractice@example.com",
+                "role": "practice",
+                "password": "theerimuspractice",
+                "profileSummary": "doctor",
+                "qualifications": [],
+                "currentAddress": {
+                    "houseNumber": "b24",
+                    "line1": "c-lane",
+                    "line2": "manchester",
+                    "line3": "manch post",
+                    "town": "manchester",
+                    "country": "london",
+                    "zipCode": 123321,
+                    "county":"lane name"
+                },
+                "sa": true,
+                "documents": [],
+                "practices": [],
+                "services": "Basic",
+                "socialAccount": {
+                    "fb": "fb.com/kp",
+                    "linkedin": "linkedin.com/kp",
+                    "skype": "ghmc",
+                    "twitter": "tweet",
+                    "pinterest": "pinte"
+                },
+                "references": [],
+                "nhsSys": [],
+                "sessionRates": {
+                    "session1": [{ "frm": new Date(), "to": new Date(), "rate": 120 }],
+                    "session2": [{ "frm": new Date(), "to": new Date(), "rate": 320 }],
+                    "session3": [{ "frm": new Date(), "to": new Date(), "rate": 400 }],
+                    "dayrate": 510,
+                    "outOfOffice": 300
+                }
+            
+},
+{
+    "provider": "local",
+ "fname": "HIRSEL MEDICAL CENTRE",
+                "lname": "User",
+                "mobile": 9494949794,
+                "tc": true,
+                "category": [],
+                "email": "p8ractice@example.com",
+                "role": "practice",
+                "password": "hirselmedicalcentre",
+                "profileSummary": "doctor",
+                "qualifications": [],
+                "currentAddress": {
+                    "houseNumber": "b24",
+                    "line1": "c-lane",
+                    "line2": "manchester",
+                    "line3": "manch post",
+                    "town": "manchester",
+                    "country": "london",
+                    "zipCode": 123321,
+                    "county":"lane name"
+                },
+                "sa": true,
+                "documents": [],
+                "practices": [],
+                "services": "Basic",
+                "socialAccount": {
+                    "fb": "fb.com/kp",
+                    "linkedin": "linkedin.com/kp",
+                    "skype": "ghmc",
+                    "twitter": "tweet",
+                    "pinterest": "pinte"
+                },
+                "references": [],
+                "nhsSys": [],
+                "sessionRates": {
+                    "session1": [{ "frm": new Date(), "to": new Date(), "rate": 120 }],
+                    "session2": [{ "frm": new Date(), "to": new Date(), "rate": 320 }],
+                    "session3": [{ "frm": new Date(), "to": new Date(), "rate": 400 }],
+                    "dayrate": 510,
+                    "outOfOffice": 300
+                }
+            
+},
+{
+    "provider": "local",
+ "fname": "EAGLESCLIFFE MEDICAL PRACTICE",
+                "lname": "User",
+                "mobile": 9494949794,
+                "tc": true,
+                "category": [],
+                "email": "p9ractice@example.com",
+                "role": "practice",
+                "password": "eaglescliffemedicalpractice",
+                "profileSummary": "doctor",
+                "qualifications": [],
+                "currentAddress": {
+                    "houseNumber": "b24",
+                    "line1": "c-lane",
+                    "line2": "manchester",
+                    "line3": "manch post",
+                    "town": "manchester",
+                    "country": "london",
+                    "zipCode": 321123,
+                    "county":"lane name"
+                },
+                "sa": true,
+                "documents": [],
+                "practices": [],
+                "services": "Basic",
+                "socialAccount": {
+                    "fb": "fb.com/kp",
+                    "linkedin": "linkedin.com/kp",
+                    "skype": "ghmc",
+                    "twitter": "tweet",
+                    "pinterest": "pinte"
+                },
+                "references": [],
+                "nhsSys": [],
+                "sessionRates": {
+                    "session1": [{ "frm": new Date(), "to": new Date(), "rate": 120 }],
+                    "session2": [{ "frm": new Date(), "to": new Date(), "rate": 320 }],
+                    "session3": [{ "frm": new Date(), "to": new Date(), "rate": 400 }],
+                    "dayrate": 510,
+                    "outOfOffice": 300
+                }
+            
+},
+{
+    "provider": "local",
+ "fname": "MARSH HOUSE MEDICAL PRACTICE",
+                "lname": "User",
+                "mobile": 9494949794,
+                "tc": true,
+                "category": [],
+                "email": "p10ractice@example.com",
+                "role": "practice",
+                "password": "marshhousemedicalpractice",
+                "profileSummary": "doctor",
+                "qualifications": [],
+                "currentAddress": {
+                    "houseNumber": "b24",
+                    "line1": "c-lane",
+                    "line2": "manchester",
+                    "line3": "manch post",
+                    "town": "manchester",
+                    "country": "london",
+                    "zipCode": 321123,
+                    "county":"lane name"
+                },
+                "sa": true,
+                "documents": [],
+                "practices": [],
+                "services": "Basic",
+                "socialAccount": {
+                    "fb": "fb.com/kp",
+                    "linkedin": "linkedin.com/kp",
+                    "skype": "ghmc",
+                    "twitter": "tweet",
+                    "pinterest": "pinte"
+                },
+                "references": [],
+                "nhsSys": [],
+                "sessionRates": {
+                    "session1": [{ "frm": new Date(), "to": new Date(), "rate": 120 }],
+                    "session2": [{ "frm": new Date(), "to": new Date(), "rate": 320 }],
+                    "session3": [{ "frm": new Date(), "to": new Date(), "rate": 400 }],
+                    "dayrate": 510,
+                    "outOfOffice": 300
+                }
+            
+},
+{
+    "provider": "local",
+ "fname": "HART MEDICAL PRACTICE",
+                "lname": "User",
+                "mobile": 9494949794,
+                "tc": true,
+                "category": [],
+                "email": "p11ractice@example.com",
+                "role": "practice",
+                "password": "hartmedicalpractice",
+                "profileSummary": "doctor",
+                "qualifications": [],
+                "currentAddress": {
+                    "houseNumber": "b24",
+                    "line1": "c-lane",
+                    "line2": "manchester",
+                    "line3": "manch post",
+                    "town": "manchester",
+                    "country": "london",
+                    "zipCode": 321123,
+                    "county":"lane name"
+                },
+                "sa": true,
+                "documents": [],
+                "practices": [],
+                "services": "Basic",
+                "socialAccount": {
+                    "fb": "fb.com/kp",
+                    "linkedin": "linkedin.com/kp",
+                    "skype": "ghmc",
+                    "twitter": "tweet",
+                    "pinterest": "pinte"
+                },
+                "references": [],
+                "nhsSys": [],
+                "sessionRates": {
+                    "session1": [{ "frm": new Date(), "to": new Date(), "rate": 120 }],
+                    "session2": [{ "frm": new Date(), "to": new Date(), "rate": 320 }],
+                    "session3": [{ "frm": new Date(), "to": new Date(), "rate": 400 }],
+                    "dayrate": 510,
+                    "outOfOffice": 300
+                }
+            
+},
+{
+    "provider": "local",
+ "fname": "SOUTH GRANGE MEDICAL CENTRE",
+                "lname": "User",
+                "mobile": 9494949794,
+                "tc": true,
+                "category": [],
+                "email": "p12ractice@example.com",
+                "role": "practice",
+                "password": "southgrangemedicalcentre",
+                "profileSummary": "doctor",
+                "qualifications": [],
+                "currentAddress": {
+                    "houseNumber": "b24",
+                    "line1": "c-lane",
+                    "line2": "manchester",
+                    "line3": "manch post",
+                    "town": "manchester",
+                    "country": "london",
+                    "zipCode": 321123,
+                    "county":"lane name"
+                },
+                "sa": true,
+                "documents": [],
+                "practices": [],
+                "services": "Basic",
+                "socialAccount": {
+                    "fb": "fb.com/kp",
+                    "linkedin": "linkedin.com/kp",
+                    "skype": "ghmc",
+                    "twitter": "tweet",
+                    "pinterest": "pinte"
+                },
+                "references": [],
+                "nhsSys": [],
+                "sessionRates": {
+                    "session1": [{ "frm": new Date(), "to": new Date(), "rate": 120 }],
+                    "session2": [{ "frm": new Date(), "to": new Date(), "rate": 320 }],
+                    "session3": [{ "frm": new Date(), "to": new Date(), "rate": 400 }],
+                    "dayrate": 510,
+                    "outOfOffice": 300
+                }
+            
+},
+{
+    "provider": "local",
+ "fname": "THE MANOR HOUSE SURGERY",
+                "lname": "User",
+                "mobile": 9494949794,
+                "tc": true,
+                "category": [],
+                "email": "p13ractice@example.com",
+                "role": "practice",
+                "password": "themanorhousesurgery",
+                "profileSummary": "doctor",
+                "qualifications": [],
+                "currentAddress": {
+                    "houseNumber": "b24",
+                    "line1": "c-lane",
+                    "line2": "manchester",
+                    "line3": "manch post",
+                    "town": "manchester",
+                    "country": "london",
+                    "zipCode": 321123,
+                    "county":"lane name"
+                },
+                "sa": true,
+                "documents": [],
+                "practices": [],
+                "services": "Basic",
+                "socialAccount": {
+                    "fb": "fb.com/kp",
+                    "linkedin": "linkedin.com/kp",
+                    "skype": "ghmc",
+                    "twitter": "tweet",
+                    "pinterest": "pinte"
+                },
+                "references": [],
+                "nhsSys": [],
+                "sessionRates": {
+                    "session1": [{ "frm": new Date(), "to": new Date(), "rate": 120 }],
+                    "session2": [{ "frm": new Date(), "to": new Date(), "rate": 320 }],
+                    "session3": [{ "frm": new Date(), "to": new Date(), "rate": 400 }],
+                    "dayrate": 510,
+                    "outOfOffice": 300
+                }
+            
+},
+{
+    "provider": "local",
+ "fname": "MCKENZIE HOUSE SURGERY",
+                "lname": "User",
+                "mobile": 9494949794,
+                "tc": true,
+                "category": [],
+                "email": "p14ractice@example.com",
+                "role": "practice",
+                "password": "mckenziehousesurgery",
+                "profileSummary": "doctor",
+                "qualifications": [],
+                "currentAddress": {
+                    "houseNumber": "b24",
+                    "line1": "c-lane",
+                    "line2": "manchester",
+                    "line3": "manch post",
+                    "town": "manchester",
+                    "country": "london",
+                    "zipCode": 312213,
+                    "county":"lane name"
+                },
+                "sa": true,
+                "documents": [],
+                "practices": [],
+                "services": "Basic",
+                "socialAccount": {
+                    "fb": "fb.com/kp",
+                    "linkedin": "linkedin.com/kp",
+                    "skype": "ghmc",
+                    "twitter": "tweet",
+                    "pinterest": "pinte"
+                },
+                "references": [],
+                "nhsSys": [],
+                "sessionRates": {
+                    "session1": [{ "frm": new Date(), "to": new Date(), "rate": 120 }],
+                    "session2": [{ "frm": new Date(), "to": new Date(), "rate": 320 }],
+                    "session3": [{ "frm": new Date(), "to": new Date(), "rate": 400 }],
+                    "dayrate": 510,
+                    "outOfOffice": 300
+                }
+            
+},
+{
+    "provider": "local",
+ "fname": "THE COATHAM ROAD SURGERY",
+                "lname": "User",
+                "mobile": 9494949794,
+                "tc": true,
+                "category": [],
+                "email": "p15ractice@example.com",
+                "role": "practice",
+                "password": "thecoathamroadsurgery",
+                "profileSummary": "doctor",
+                "qualifications": [],
+                "currentAddress": {
+                    "houseNumber": "b24",
+                    "line1": "c-lane",
+                    "line2": "manchester",
+                    "line3": "manch post",
+                    "town": "manchester",
+                    "country": "london",
+                    "zipCode": 312213,
+                    "county":"lane name"
+                },
+                "sa": true,
+                "documents": [],
+                "practices": [],
+                "services": "Basic",
+                "socialAccount": {
+                    "fb": "fb.com/kp",
+                    "linkedin": "linkedin.com/kp",
+                    "skype": "ghmc",
+                    "twitter": "tweet",
+                    "pinterest": "pinte"
+                },
+                "references": [],
+                "nhsSys": [],
+                "sessionRates": {
+                    "session1": [{ "frm": new Date(), "to": new Date(), "rate": 120 }],
+                    "session2": [{ "frm": new Date(), "to": new Date(), "rate": 320 }],
+                    "session3": [{ "frm": new Date(), "to": new Date(), "rate": 400 }],
+                    "dayrate": 510,
+                    "outOfOffice": 300
+                }
+            
+},
+{
+    "provider": "local",
+ "fname": "WOODLANDS FAMILY MEDICAL CENTRE",
+                "lname": "User",
+                "mobile": 9494949794,
+                "tc": true,
+                "category": [],
+                "email": "p16ractice@example.com",
+                "role": "practice",
+                "password": "woodlandsfamilymedicalcentre",
+                "profileSummary": "doctor",
+                "qualifications": [],
+                "currentAddress": {
+                    "houseNumber": "b24",
+                    "line1": "c-lane",
+                    "line2": "manchester",
+                    "line3": "manch post",
+                    "town": "manchester",
+                    "country": "london",
+                    "zipCode": 312213,
+                    "county":"lane name"
+                },
+                "sa": true,
+                "documents": [],
+                "practices": [],
+                "services": "Basic",
+                "socialAccount": {
+                    "fb": "fb.com/kp",
+                    "linkedin": "linkedin.com/kp",
+                    "skype": "ghmc",
+                    "twitter": "tweet",
+                    "pinterest": "pinte"
+                },
+                "references": [],
+                "nhsSys": [],
+                "sessionRates": {
+                    "session1": [{ "frm": new Date(), "to": new Date(), "rate": 120 }],
+                    "session2": [{ "frm": new Date(), "to": new Date(), "rate": 320 }],
+                    "session3": [{ "frm": new Date(), "to": new Date(), "rate": 400 }],
+                    "dayrate": 510,
+                    "outOfOffice": 300
+                }
+            
+},
+{
+    "provider": "local",
+ "fname": "MARSKE MEDICAL CENTRE",
+                "lname": "User",
+                "mobile": 9494949794,
+                "tc": true,
+                "category": [],
+                "email": "p17ractice@example.com",
+                "role": "practice",
+                "password": "marskemedicalcentre",
+                "profileSummary": "doctor",
+                "qualifications": [],
+                "currentAddress": {
+                    "houseNumber": "b24",
+                    "line1": "c-lane",
+                    "line2": "manchester",
+                    "line3": "manch post",
+                    "town": "manchester",
+                    "country": "london",
+                    "zipCode": 312213,
+                    "county":"lane name"
+                },
+                "sa": true,
+                "documents": [],
+                "practices": [],
+                "services": "Basic",
+                "socialAccount": {
+                    "fb": "fb.com/kp",
+                    "linkedin": "linkedin.com/kp",
+                    "skype": "ghmc",
+                    "twitter": "tweet",
+                    "pinterest": "pinte"
+                },
+                "references": [],
+                "nhsSys": [],
+                "sessionRates": {
+                    "session1": [{ "frm": new Date(), "to": new Date(), "rate": 120 }],
+                    "session2": [{ "frm": new Date(), "to": new Date(), "rate": 320 }],
+                    "session3": [{ "frm": new Date(), "to": new Date(), "rate": 400 }],
+                    "dayrate": 510,
+                    "outOfOffice": 300
+                }
+            
+},
+{
+    "provider": "local",
+ "fname": "ZETLAND MEDICAL PRACTICE",
+                "lname": "User",
+                "mobile": 9494949794,
+                "tc": true,
+                "category": [],
+                "email": "p18ractice@example.com",
+                "role": "practice",
+                "password": "zetlandmedicalpractice",
+                "profileSummary": "doctor",
+                "qualifications": [],
+                "currentAddress": {
+                    "houseNumber": "b24",
+                    "line1": "c-lane",
+                    "line2": "manchester",
+                    "line3": "manch post",
+                    "town": "manchester",
+                    "country": "london",
+                    "zipCode": 312213,
+                    "county":"lane name"
+                },
+                "sa": true,
+                "documents": [],
+                "practices": [],
+                "services": "Basic",
+                "socialAccount": {
+                    "fb": "fb.com/kp",
+                    "linkedin": "linkedin.com/kp",
+                    "skype": "ghmc",
+                    "twitter": "tweet",
+                    "pinterest": "pinte"
+                },
+                "references": [],
+                "nhsSys": [],
+                "sessionRates": {
+                    "session1": [{ "frm": new Date(), "to": new Date(), "rate": 120 }],
+                    "session2": [{ "frm": new Date(), "to": new Date(), "rate": 320 }],
+                    "session3": [{ "frm": new Date(), "to": new Date(), "rate": 400 }],
+                    "dayrate": 510,
+                    "outOfOffice": 300
+                }
+            
+},
+{
+    "provider": "local",
+ "fname": "KINGS MEDICAL CENTRE",
+                "lname": "User",
+                "mobile": 9494949794,
+                "tc": true,
+                "category": [],
+                "email": "p19ractice@example.com",
+                "role": "practice",
+                "password": "kingsmedicalcentre",
+                "profileSummary": "doctor",
+                "qualifications": [],
+                "currentAddress": {
+                    "houseNumber": "b24",
+                    "line1": "c-lane",
+                    "line2": "manchester",
+                    "line3": "manch post",
+                    "town": "manchester",
+                    "country": "london",
+                    "zipCode": 213312,
+                    "county":"lane name"
+                },
+                "sa": true,
+                "documents": [],
+                "practices": [],
+                "services": "Basic",
+                "socialAccount": {
+                    "fb": "fb.com/kp",
+                    "linkedin": "linkedin.com/kp",
+                    "skype": "ghmc",
+                    "twitter": "tweet",
+                    "pinterest": "pinte"
+                },
+                "references": [],
+                "nhsSys": [],
+                "sessionRates": {
+                    "session1": [{ "frm": new Date(), "to": new Date(), "rate": 120 }],
+                    "session2": [{ "frm": new Date(), "to": new Date(), "rate": 320 }],
+                    "session3": [{ "frm": new Date(), "to": new Date(), "rate": 400 }],
+                    "dayrate": 510,
+                    "outOfOffice": 300
+                }
+            
+},
+{
+    "provider": "local",
+ "fname": "CAMBRIDGE MEDICAL GROUP",
+                "lname": "User",
+                "mobile": 9494949794,
+                "tc": true,
+                "category": [],
+                "email": "p20ractice@example.com",
+                "role": "practice",
+                "password": "cambridgemedicalgroup",
+                "profileSummary": "doctor",
+                "qualifications": [],
+                "currentAddress": {
+                    "houseNumber": "b24",
+                    "line1": "c-lane",
+                    "line2": "manchester",
+                    "line3": "manch post",
+                    "town": "manchester",
+                    "country": "london",
+                    "zipCode": 213312,
+                    "county":"lane name"
+                },
+                "sa": true,
+                "documents": [],
+                "practices": [],
+                "services": "Basic",
+                "socialAccount": {
+                    "fb": "fb.com/kp",
+                    "linkedin": "linkedin.com/kp",
+                    "skype": "ghmc",
+                    "twitter": "tweet",
+                    "pinterest": "pinte"
+                },
+                "references": [],
+                "nhsSys": [],
+                "sessionRates": {
+                    "session1": [{ "frm": new Date(), "to": new Date(), "rate": 120 }],
+                    "session2": [{ "frm": new Date(), "to": new Date(), "rate": 320 }],
+                    "session3": [{ "frm": new Date(), "to": new Date(), "rate": 400 }],
+                    "dayrate": 510,
+                    "outOfOffice": 300
+                }
+            
+},
+{
+    "provider": "local",
+ "fname": "THE GREEN HOUSE SURGERY",
+                "lname": "User",
+                "mobile": 9494949794,
+                "tc": true,
+                "category": [],
+                "email": "p21ractice@example.com",
+                "role": "practice",
+                "password": "thegreenhousesurgery",
+                "profileSummary": "doctor",
+                "qualifications": [],
+                "currentAddress": {
+                    "houseNumber": "b24",
+                    "line1": "c-lane",
+                    "line2": "manchester",
+                    "line3": "manch post",
+                    "town": "manchester",
+                    "country": "london",
+                    "zipCode": 213312,
+                    "county":"lane name"
+                },
+                "sa": true,
+                "documents": [],
+                "practices": [],
+                "services": "Basic",
+                "socialAccount": {
+                    "fb": "fb.com/kp",
+                    "linkedin": "linkedin.com/kp",
+                    "skype": "ghmc",
+                    "twitter": "tweet",
+                    "pinterest": "pinte"
+                },
+                "references": [],
+                "nhsSys": [],
+                "sessionRates": {
+                    "session1": [{ "frm": new Date(), "to": new Date(), "rate": 120 }],
+                    "session2": [{ "frm": new Date(), "to": new Date(), "rate": 320 }],
+                    "session3": [{ "frm": new Date(), "to": new Date(), "rate": 400 }],
+                    "dayrate": 510,
+                    "outOfOffice": 300
+                }
+            
+},
+{
+    "provider": "local",
+ "fname": "WOODSIDE SURGERY",
+                "lname": "User",
+                "mobile": 9494949794,
+                "tc": true,
+                "category": [],
+                "email": "p22ractice@example.com",
+                "role": "practice",
+                "password": "woodsidesurgery",
+                "profileSummary": "doctor",
+                "qualifications": [],
+                "currentAddress": {
+                    "houseNumber": "b24",
+                    "line1": "c-lane",
+                    "line2": "manchester",
+                    "line3": "manch post",
+                    "town": "manchester",
+                    "country": "london",
+                    "zipCode": 213312,
+                    "county":"lane name"
+                },
+                "sa": true,
+                "documents": [],
+                "practices": [],
+                "services": "Basic",
+                "socialAccount": {
+                    "fb": "fb.com/kp",
+                    "linkedin": "linkedin.com/kp",
+                    "skype": "ghmc",
+                    "twitter": "tweet",
+                    "pinterest": "pinte"
+                },
+                "references": [],
+                "nhsSys": [],
+                "sessionRates": {
+                    "session1": [{ "frm": new Date(), "to": new Date(), "rate": 120 }],
+                    "session2": [{ "frm": new Date(), "to": new Date(), "rate": 320 }],
+                    "session3": [{ "frm": new Date(), "to": new Date(), "rate": 400 }],
+                    "dayrate": 510,
+                    "outOfOffice": 300
+                }
+            
+},
+{
+    "provider": "local",
+ "fname": "THE SALTSCAR SURGERY",
+                "lname": "User",
+                "mobile": 9494949794,
+                "tc": true,
+                "category": [],
+                "email": "p23ractice@example.com",
+                "role": "practice",
+                "password": "thesaltscarsurgery",
+                "profileSummary": "doctor",
+                "qualifications": [],
+                "currentAddress": {
+                    "houseNumber": "b24",
+                    "line1": "c-lane",
+                    "line2": "manchester",
+                    "line3": "manch post",
+                    "town": "manchester",
+                    "country": "london",
+                    "zipCode": 213312,
+                    "county":"lane name"
+                },
+                "sa": true,
+                "documents": [],
+                "practices": [],
+                "services": "Basic",
+                "socialAccount": {
+                    "fb": "fb.com/kp",
+                    "linkedin": "linkedin.com/kp",
+                    "skype": "ghmc",
+                    "twitter": "tweet",
+                    "pinterest": "pinte"
+                },
+                "references": [],
+                "nhsSys": [],
+                "sessionRates": {
+                    "session1": [{ "frm": new Date(), "to": new Date(), "rate": 120 }],
+                    "session2": [{ "frm": new Date(), "to": new Date(), "rate": 320 }],
+                    "session3": [{ "frm": new Date(), "to": new Date(), "rate": 400 }],
+                    "dayrate": 510,
+                    "outOfOffice": 300
+                }
+            
+},
+{
+    "provider": "local",
+ "fname": "MELROSE SURGERY",
+                "lname": "User",
+                "mobile": 9494949794,
+                "tc": true,
+                "category": [],
+                "email": "p24ractice@example.com",
+                "role": "practice",
+                "password": "melrosesurgery",
+                "profileSummary": "doctor",
+                "qualifications": [],
+                "currentAddress": {
+                    "houseNumber": "b24",
+                    "line1": "c-lane",
+                    "line2": "manchester",
+                    "line3": "manch post",
+                    "town": "manchester",
+                    "country": "london",
+                    "zipCode": 132231,
+                    "county":"lane name"
+                },
+                "sa": true,
+                "documents": [],
+                "practices": [],
+                "services": "Basic",
+                "socialAccount": {
+                    "fb": "fb.com/kp",
+                    "linkedin": "linkedin.com/kp",
+                    "skype": "ghmc",
+                    "twitter": "tweet",
+                    "pinterest": "pinte"
+                },
+                "references": [],
+                "nhsSys": [],
+                "sessionRates": {
+                    "session1": [{ "frm": new Date(), "to": new Date(), "rate": 120 }],
+                    "session2": [{ "frm": new Date(), "to": new Date(), "rate": 320 }],
+                    "session3": [{ "frm": new Date(), "to": new Date(), "rate": 400 }],
+                    "dayrate": 510,
+                    "outOfOffice": 300
+                }
+            
+},
+{
+    "provider": "local",
+ "fname": "KINGSWAY MEDICAL CENTRE",
+                "lname": "User",
+                "mobile": 9494949794,
+                "tc": true,
+                "category": [],
+                "email": "p25ractice@example.com",
+                "role": "practice",
+                "password": "kingswaymedicalcentre",
+                "profileSummary": "doctor",
+                "qualifications": [],
+                "currentAddress": {
+                    "houseNumber": "b24",
+                    "line1": "c-lane",
+                    "line2": "manchester",
+                    "line3": "manch post",
+                    "town": "manchester",
+                    "country": "london",
+                    "zipCode": 132231,
+                    "county":"lane name"
+                },
+                "sa": true,
+                "documents": [],
+                "practices": [],
+                "services": "Basic",
+                "socialAccount": {
+                    "fb": "fb.com/kp",
+                    "linkedin": "linkedin.com/kp",
+                    "skype": "ghmc",
+                    "twitter": "tweet",
+                    "pinterest": "pinte"
+                },
+                "references": [],
+                "nhsSys": [],
+                "sessionRates": {
+                    "session1": [{ "frm": new Date(), "to": new Date(), "rate": 120 }],
+                    "session2": [{ "frm": new Date(), "to": new Date(), "rate": 320 }],
+                    "session3": [{ "frm": new Date(), "to": new Date(), "rate": 400 }],
+                    "dayrate": 510,
+                    "outOfOffice": 300
+                }
+            
+},
+{
+    "provider": "local",
+ "fname": "COULBY MEDICAL PRACTICE",
+                "lname": "User",
+                "mobile": 9494949794,
+                "tc": true,
+                "category": [],
+                "email": "p26ractice@example.com",
+                "role": "practice",
+                "password": "coulbymedicalpractice",
+                "profileSummary": "doctor",
+                "qualifications": [],
+                "currentAddress": {
+                    "houseNumber": "b24",
+                    "line1": "c-lane",
+                    "line2": "manchester",
+                    "line3": "manch post",
+                    "town": "manchester",
+                    "country": "london",
+                    "zipCode": 132231,
+                    "county":"lane name"
+                },
+                "sa": true,
+                "documents": [],
+                "practices": [],
+                "services": "Basic",
+                "socialAccount": {
+                    "fb": "fb.com/kp",
+                    "linkedin": "linkedin.com/kp",
+                    "skype": "ghmc",
+                    "twitter": "tweet",
+                    "pinterest": "pinte"
+                },
+                "references": [],
+                "nhsSys": [],
+                "sessionRates": {
+                    "session1": [{ "frm": new Date(), "to": new Date(), "rate": 120 }],
+                    "session2": [{ "frm": new Date(), "to": new Date(), "rate": 320 }],
+                    "session3": [{ "frm": new Date(), "to": new Date(), "rate": 400 }],
+                    "dayrate": 510,
+                    "outOfOffice": 300
+                }
+            
+},
+{
+    "provider": "local",
+ "fname": "THE KOH PRACTICE",
+                "lname": "User",
+                "mobile": 9494949794,
+                "tc": true,
+                "category": [],
+                "email": "p27ractice@example.com",
+                "role": "practice",
+                "password": "thekohpractice",
+                "profileSummary": "doctor",
+                "qualifications": [],
+                "currentAddress": {
+                    "houseNumber": "b24",
+                    "line1": "c-lane",
+                    "line2": "manchester",
+                    "line3": "manch post",
+                    "town": "manchester",
+                    "country": "london",
+                    "zipCode": 132231,
+                    "county":"lane name"
+                },
+                "sa": true,
+                "documents": [],
+                "practices": [],
+                "services": "Basic",
+                "socialAccount": {
+                    "fb": "fb.com/kp",
+                    "linkedin": "linkedin.com/kp",
+                    "skype": "ghmc",
+                    "twitter": "tweet",
+                    "pinterest": "pinte"
+                },
+                "references": [],
+                "nhsSys": [],
+                "sessionRates": {
+                    "session1": [{ "frm": new Date(), "to": new Date(), "rate": 120 }],
+                    "session2": [{ "frm": new Date(), "to": new Date(), "rate": 320 }],
+                    "session3": [{ "frm": new Date(), "to": new Date(), "rate": 400 }],
+                    "dayrate": 510,
+                    "outOfOffice": 300
+                }
+            
+},
+{
+    "provider": "local",
+ "fname": "THE HEADLAND MEDICAL CENTRE",
+                "lname": "User",
+                "mobile": 9494949794,
+                "tc": true,
+                "category": [],
+                "email": "p28ractice@example.com",
+                "role": "practice",
+                "password": "theheadlandmedicalcentre",
+                "profileSummary": "doctor",
+                "qualifications": [],
+                "currentAddress": {
+                    "houseNumber": "b24",
+                    "line1": "c-lane",
+                    "line2": "manchester",
+                    "line3": "manch post",
+                    "town": "manchester",
+                    "country": "london",
+                    "zipCode": 132231,
+                    "county":"lane name"
+                },
+                "sa": true,
+                "documents": [],
+                "practices": [],
+                "services": "Basic",
+                "socialAccount": {
+                    "fb": "fb.com/kp",
+                    "linkedin": "linkedin.com/kp",
+                    "skype": "ghmc",
+                    "twitter": "tweet",
+                    "pinterest": "pinte"
+                },
+                "references": [],
+                "nhsSys": [],
+                "sessionRates": {
+                    "session1": [{ "frm": new Date(), "to": new Date(), "rate": 120 }],
+                    "session2": [{ "frm": new Date(), "to": new Date(), "rate": 320 }],
+                    "session3": [{ "frm": new Date(), "to": new Date(), "rate": 400 }],
+                    "dayrate": 510,
+                    "outOfOffice": 300
+                }
+            
+},
+{
+    "provider": "local",
+ "fname": "THE DISCOVERY PRACTICE",
+                "lname": "User",
+                "mobile": 9494949794,
+                "tc": true,
+                "category": [],
+                "email": "p29ractice@example.com",
+                "role": "practice",
+                "password": "thediscoverypractice",
+                "profileSummary": "doctor",
+                "qualifications": [],
+                "currentAddress": {
+                    "houseNumber": "b24",
+                    "line1": "c-lane",
+                    "line2": "manchester",
+                    "line3": "manch post",
+                    "town": "manchester",
+                    "country": "london",
+                    "zipCode": 231132,
+                    "county":"lane name"
+                },
+                "sa": true,
+                "documents": [],
+                "practices": [],
+                "services": "Basic",
+                "socialAccount": {
+                    "fb": "fb.com/kp",
+                    "linkedin": "linkedin.com/kp",
+                    "skype": "ghmc",
+                    "twitter": "tweet",
+                    "pinterest": "pinte"
+                },
+                "references": [],
+                "nhsSys": [],
+                "sessionRates": {
+                    "session1": [{ "frm": new Date(), "to": new Date(), "rate": 120 }],
+                    "session2": [{ "frm": new Date(), "to": new Date(), "rate": 320 }],
+                    "session3": [{ "frm": new Date(), "to": new Date(), "rate": 400 }],
+                    "dayrate": 510,
+                    "outOfOffice": 300
+                }
+            
+},
+{
+    "provider": "local",
+ "fname": "THE ESTON SURGERY",
+                "lname": "User",
+                "mobile": 9494949794,
+                "tc": true,
+                "category": [],
+                "email": "p30ractice@example.com",
+                "role": "practice",
+                "password": "theestonsurgery",
+                "profileSummary": "doctor",
+                "qualifications": [],
+                "currentAddress": {
+                    "houseNumber": "b24",
+                    "line1": "c-lane",
+                    "line2": "manchester",
+                    "line3": "manch post",
+                    "town": "manchester",
+                    "country": "london",
+                    "zipCode": 231132,
+                    "county":"lane name"
+                },
+                "sa": true,
+                "documents": [],
+                "practices": [],
+                "services": "Basic",
+                "socialAccount": {
+                    "fb": "fb.com/kp",
+                    "linkedin": "linkedin.com/kp",
+                    "skype": "ghmc",
+                    "twitter": "tweet",
+                    "pinterest": "pinte"
+                },
+                "references": [],
+                "nhsSys": [],
+                "sessionRates": {
+                    "session1": [{ "frm": new Date(), "to": new Date(), "rate": 120 }],
+                    "session2": [{ "frm": new Date(), "to": new Date(), "rate": 320 }],
+                    "session3": [{ "frm": new Date(), "to": new Date(), "rate": 400 }],
+                    "dayrate": 510,
+                    "outOfOffice": 300
+                }
+            
+},
+
+{
+    "provider": "local",
+ "fname": "PARK LANE SURGERY",
+                "lname": "User",
+                "mobile": 9494949794,
+                "tc": true,
+                "category": [],
+                "email": "p31ractice@example.com",
+                "role": "practice",
+                "password": "parklanesurgery",
+                "profileSummary": "doctor",
+                "qualifications": [],
+                "currentAddress": {
+                    "houseNumber": "b24",
+                    "line1": "c-lane",
+                    "line2": "manchester",
+                    "line3": "manch post",
+                    "town": "manchester",
+                    "country": "london",
+                    "zipCode": 231132,
+                    "county":"lane name"
+                },
+                "sa": true,
+                "documents": [],
+                "practices": [],
+                "services": "Basic",
+                "socialAccount": {
+                    "fb": "fb.com/kp",
+                    "linkedin": "linkedin.com/kp",
+                    "skype": "ghmc",
+                    "twitter": "tweet",
+                    "pinterest": "pinte"
+                },
+                "references": [],
+                "nhsSys": [],
+                "sessionRates": {
+                    "session1": [{ "frm": new Date(), "to": new Date(), "rate": 120 }],
+                    "session2": [{ "frm": new Date(), "to": new Date(), "rate": 320 }],
+                    "session3": [{ "frm": new Date(), "to": new Date(), "rate": 400 }],
+                    "dayrate": 510,
+                    "outOfOffice": 300
+                }
+            
+},
+
+{
+    "provider": "local",
+ "fname": "ALMA MEDICAL CENTRE",
+                "lname": "User",
+                "mobile": 9494949794,
+                "tc": true,
+                "category": [],
+                "email": "p32ractice@example.com",
+                "role": "practice",
+                "password": "almamedicalpractice",
+                "profileSummary": "doctor",
+                "qualifications": [],
+                "currentAddress": {
+                    "houseNumber": "b24",
+                    "line1": "c-lane",
+                    "line2": "manchester",
+                    "line3": "manch post",
+                    "town": "manchester",
+                    "country": "london",
+                    "zipCode": 231132,
+                    "county":"lane name"
+                },
+                "sa": true,
+                "documents": [],
+                "practices": [],
+                "services": "Basic",
+                "socialAccount": {
+                    "fb": "fb.com/kp",
+                    "linkedin": "linkedin.com/kp",
+                    "skype": "ghmc",
+                    "twitter": "tweet",
+                    "pinterest": "pinte"
+                },
+                "references": [],
+                "nhsSys": [],
+                "sessionRates": {
+                    "session1": [{ "frm": new Date(), "to": new Date(), "rate": 120 }],
+                    "session2": [{ "frm": new Date(), "to": new Date(), "rate": 320 }],
+                    "session3": [{ "frm": new Date(), "to": new Date(), "rate": 400 }],
+                    "dayrate": 510,
+                    "outOfOffice": 300
+                }
+            
+},
+
+
+
+{
+    "provider": "local",
+ "fname": "RAINBOW SURGERY",
+                "lname": "User",
+                "mobile": 9494949794,
+                "tc": true,
+                "category": [],
+                "email": "p33ractice@example.com",
+                "role": "practice",
+                "password": "rainbowsurgery",
+                "profileSummary": "doctor",
+                "qualifications": [],
+                "currentAddress": {
+                    "houseNumber": "b24",
+                    "line1": "c-lane",
+                    "line2": "manchester",
+                    "line3": "manch post",
+                    "town": "manchester",
+                    "country": "london",
+                    "zipCode": 231132,
+                    "county":"lane name"
+                },
+                "sa": true,
+                "documents": [],
+                "practices": [],
+                "services": "Basic",
+                "socialAccount": {
+                    "fb": "fb.com/kp",
+                    "linkedin": "linkedin.com/kp",
+                    "skype": "ghmc",
+                    "twitter": "tweet",
+                    "pinterest": "pinte"
+                },
+                "references": [],
+                "nhsSys": [],
+                "sessionRates": {
+                    "session1": [{ "frm": new Date(), "to": new Date(), "rate": 120 }],
+                    "session2": [{ "frm": new Date(), "to": new Date(), "rate": 320 }],
+                    "session3": [{ "frm": new Date(), "to": new Date(), "rate": 400 }],
+                    "dayrate": 510,
+                    "outOfOffice": 300
+                }
+            
+})
             .then(() => {
                 console.log('finished populating users');
             });
