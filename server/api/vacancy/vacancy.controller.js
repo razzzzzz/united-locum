@@ -22,6 +22,7 @@ function respondWithResult(res, statusCode) {
 }
 
 function saveUpdates(updates) {
+  console.log("updated:::");
   return function(entity) {
     var updated = _.merge(entity, updates);
     return updated.saveAsync()
@@ -99,4 +100,8 @@ export function destroy(req, res) {
     .then(handleEntityNotFound(res))
     .then(removeEntity(res))
     .catch(handleError(res));
+}
+
+export function getVacancy(req, res){
+  
 }

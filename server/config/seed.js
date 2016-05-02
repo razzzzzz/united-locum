@@ -1650,72 +1650,6 @@ Vacancy.find({}).removeAsync()
     .then(() => {
 
         Vacancy.createAsync({
-                category: "Nurse",
-                desc: "desc",
-                skill: "Ambulatory Case Nursing",
-                count: 1,
-                rate: 16,
-                date: new Date().setDate(new Date().getDate() + 1),
-                from: new Date(),
-                to: new Date(),
-                practiceId: "String"
-
-            }, {
-                category: "Doctor",
-                desc: "desc",
-                skill: "Microbiologist",
-                count: 1,
-                rate: 27,
-                date: new Date().setDate(new Date().getDate() + 1),
-                from: new Date(),
-                to: new Date(),
-                practiceId: "String"
-
-            }, {
-                category: "Dentist",
-                desc: "desc",
-                skill: "Endodonist",
-                count: 1,
-                rate: 27,
-                date: new Date().setDate(new Date().getDate() + 2),
-                from: new Date(),
-                to: new Date(),
-                practiceId: "String"
-
-            }, {
-                category: "Doctor",
-                desc: "desc",
-                skill: "Cardiologist",
-                count: 1,
-                rate: 24,
-                date: new Date().setDate(new Date().getDate() + 2),
-                from: new Date(),
-                to: new Date(),
-                practiceId: "String"
-
-            }, {
-                category: "Nurse",
-                desc: "desc",
-                skill: "Dialysis Nursing",
-                count: 1,
-                rate: 15,
-                date: new Date().setDate(new Date().getDate() + 3),
-                from: new Date(),
-                to: new Date(),
-                practiceId: "String"
-
-            }, {
-                category: "Dentist",
-                desc: "desc",
-                skill: "Pediatric Dentist",
-                count: 1,
-                rate: 25,
-                date: new Date().setDate(new Date().getDate() + 3),
-                from: new Date(),
-                to: new Date(),
-                practiceId: "String"
-
-            }, {
                 category: "Doctor",
                 desc: "desc",
                 skill: "Gynecologist",
@@ -1724,119 +1658,398 @@ Vacancy.find({}).removeAsync()
                 date: new Date().setDate(new Date().getDate() + 4),
                 from: new Date(),
                 to: new Date(),
-                practiceId: "String"
+                practiceId: "THE GARTH"
 
-            }, {
-                category: "Nurse",
-                desc: "desc",
-                skill: "Cardiac Nursing",
-                count: 1,
-                rate: 15,
-                date: new Date().setDate(new Date().getDate() + 4),
-                from: new Date(),
-                to: new Date(),
-                practiceId: "String"
+            },
 
-            }, {
-                category: "Nurse",
+{
+                category: "Doctor",
                 desc: "desc",
-                skill: "Forensic Nursing",
+                skill: "Gynecologist",
                 count: 1,
-                rate: 13,
+                rate: 25,
                 date: new Date().setDate(new Date().getDate() + 5),
                 from: new Date(),
                 to: new Date(),
-                practiceId: "String"
+                practiceId: "OAKFIELD MEDICAL PRACTICE"
 
-            }, {
-                category: "Nurse",
+            },
+{
+                category: "Doctor",
                 desc: "desc",
-                skill: "Legal Nursing",
+                skill: "Gynecologist",
                 count: 1,
-                rate: 14,
-                date: new Date().setDate(new Date().getDate() + 5),
-                from: new Date(),
-                to: new Date(),
-                practiceId: "String"
-
-            }, {
-                category: "Dentist",
-                desc: "desc",
-                skill: "Prosthodontist",
-                count: 1,
-                rate: 18,
+                rate: 25,
                 date: new Date().setDate(new Date().getDate() + 6),
                 from: new Date(),
                 to: new Date(),
-                practiceId: "String"
+                practiceId: "THE HEADLAND MEDICAL CENTRE"
 
-            }, {
-                category: "Dentist",
-                desc: "desc",
-                skill: "Orthodontist",
-                count: 1,
-                rate: 20,
-                date: new Date().setDate(new Date().getDate() + 6),
-                from: new Date(),
-                to: new Date(),
-                practiceId: "String"
+            },
 
-            }, {
-                category: "Dentist",
+{
+                category: "Doctor",
                 desc: "desc",
-                skill: "Endodonist",
+                skill: "Gynecologist",
                 count: 1,
-                rate: 19,
+                rate: 25,
                 date: new Date().setDate(new Date().getDate() + 7),
                 from: new Date(),
                 to: new Date(),
-                practiceId: "String"
+                practiceId: "THE DISCOVERY PRACTICE"
 
-            }, {
-                category: "Dentist",
-                desc: "desc",
-                skill: "Periodontist",
-                count: 1,
-                rate: 16,
-                date: new Date().setDate(new Date().getDate() + 7),
-                from: new Date(),
-                to: new Date(),
-                practiceId: "String"
+            },
 
-            }, {
+{
                 category: "Doctor",
                 desc: "desc",
-                skill: "Allergist",
+                skill: "MICROBIOLOGIST",
                 count: 1,
-                rate: 20,
+                rate: 25,
                 date: new Date().setDate(new Date().getDate() + 8),
                 from: new Date(),
                 to: new Date(),
-                practiceId: "String"
+                practiceId: "THORNABY & BARWICK MEDICAL GROUP"
 
-            }, {
+            },
+
+{
                 category: "Doctor",
                 desc: "desc",
-                skill: "Allergist",
+                skill: "CARDIOLOGIST",
                 count: 1,
-                rate: 17,
-                date: new Date().setDate(new Date().getDate() + 8),
-                from: new Date(),
-                to: new Date(),
-                practiceId: "String"
-
-            }, {
-                category: "doctor",
-                desc: "desc",
-                skill: "Audiologist",
-                count: 1,
-                rate: 15,
+                rate: 25,
                 date: new Date().setDate(new Date().getDate() + 9),
                 from: new Date(),
                 to: new Date(),
-                practiceId: "String"
+                practiceId: "NEWLANDS MEDICAL PRACTICE"
 
-            })
+            },
+{
+                category: "Doctor",
+                desc: "desc",
+                skill: "MICROBIOLOGIST",
+                count: 1,
+                rate: 25,
+                date: new Date().setDate(new Date().getDate() + 10),
+                from: new Date(),
+                to: new Date(),
+                practiceId: "THE ESTON SURGERY"
+
+            },
+
+{
+                category: "Doctor",
+                desc: "desc",
+                skill: "CARDIOLOGIST",
+                count: 1,
+                rate: 25,
+                date: new Date().setDate(new Date().getDate() + 11),
+                from: new Date(),
+                to: new Date(),
+                practiceId: "PARK LANE SURGERY"
+
+            },
+
+{
+                category: "Doctor",
+                desc: "desc",
+                skill: "ALLERGIST",
+                count: 1,
+                rate: 25,
+                date: new Date().setDate(new Date().getDate() + 12),
+                from: new Date(),
+                to: new Date(),
+                practiceId: "NORTON MEDICAL CENTRE"
+
+            },
+
+
+{
+                category: "Doctor",
+                desc: "desc",
+                skill: "AUDIOLOGIST",
+                count: 1,
+                rate: 25,
+                date: new Date().setDate(new Date().getDate() + 13),
+                from: new Date(),
+                to: new Date(),
+                practiceId: "THE ERIMUS PRACTICE"
+
+            },
+{
+                category: "Doctor",
+                desc: "desc",
+                skill: "ALLERGIST",
+                count: 1,
+                rate: 25,
+                date: new Date().setDate(new Date().getDate() + 14),
+                from: new Date(),
+                to: new Date(),
+                practiceId: "ALMA MEDICAL CENTRE"
+
+            },
+
+
+ {
+                category: "Doctor",
+                desc: "desc",
+                skill: "AUDIOLOGIST",
+                count: 1,
+                rate: 25,
+                date: new Date().setDate(new Date().getDate() + 15),
+                from: new Date(),
+                to: new Date(),
+                practiceId: "MARSKE MEDICAL CENTRE"
+
+            },
+ {
+                category: "Doctor",
+                desc: "desc",
+                skill: "AUDIOLOGIST",
+                count: 1,
+                rate: 25,
+                date: new Date().setDate(new Date().getDate() + 16),
+                from: new Date(),
+                to: new Date(),
+                practiceId: "ZETLAND MEDICAL PRACTICE"
+
+            },
+
+{
+                category: "Dentist",
+                desc: "desc",
+                skill: "ENDODONIST",
+                count: 1,
+                rate: 25,
+                date: new Date().setDate(new Date().getDate() + 17),
+                from: new Date(),
+                to: new Date(),
+                practiceId: "HIRSEL MEDICAL CENTRE"
+
+            },
+
+
+{
+                category: "Dentist",
+                desc: "desc",
+                skill: "ENDODONIST",
+                count: 1,
+                rate: 25,
+                date: new Date().setDate(new Date().getDate() + 18),
+                from: new Date(),
+                to: new Date(),
+                practiceId: "KINGS MEDICAL CENTRE"
+
+            },
+{
+                category: "Dentist",
+                desc: "desc",
+                skill: "PEDIATRIC DENTIST",
+                count: 1,
+                rate: 25,
+                date: new Date().setDate(new Date().getDate() + 19),
+                from: new Date(),
+                to: new Date(),
+                practiceId: "EAGLESCLIFFE MEDICAL PRACTICE"
+
+            },
+
+{
+                category: "Dentist",
+                desc: "desc",
+                skill: "ORTHODONTIST",
+                count: 1,
+                rate: 25,
+                date: new Date().setDate(new Date().getDate() + 20),
+                from: new Date(),
+                to: new Date(),
+                practiceId: "MARSH HOUSE MEDICAL PRACTICE"
+
+            },
+{
+                category: "Dentist",
+                desc: "desc",
+                skill: "ORTHODONTIST",
+                count: 1,
+                rate: 25,
+                date: new Date().setDate(new Date().getDate() + 21),
+                from: new Date(),
+                to: new Date(),
+                practiceId: "CAMBRIDGE MEDICAL GROUP"
+
+            },
+
+{
+                category: "Dentist",
+                desc: "desc",
+                skill: "PERIODONTIST",
+                count: 1,
+                rate: 25,
+                date: new Date().setDate(new Date().getDate() + 22),
+                from: new Date(),
+                to: new Date(),
+                practiceId: "HART MEDICAL PRACTICE"
+
+            },
+
+{
+                category: "Dentist",
+                desc: "desc",
+                skill: "PERIODONTIST",
+                count: 1,
+                rate: 25,
+                date: new Date().setDate(new Date().getDate() + 23),
+                from: new Date(),
+                to: new Date(),
+                practiceId: "THE GREEN HOUSE SURGERY"
+
+            },
+
+{
+                category: "Nurse",
+                desc: "desc",
+                skill: "AMBULATORY CASE NURSING",
+                count: 1,
+                rate: 25,
+                date: new Date().setDate(new Date().getDate() + 24),
+                from: new Date(),
+                to: new Date(),
+                practiceId: "SOUTH GRANGE MEDICAL CENTRE"
+
+            },
+
+{
+                category: "Nurse",
+                desc: "desc",
+                skill: "AMBULATORY CASE NURSING",
+                count: 1,
+                rate: 25,
+                date: new Date().setDate(new Date().getDate() + 25),
+                from: new Date(),
+                to: new Date(),
+                practiceId: "WOODSIDE SURGERY"
+
+            },
+
+{
+                category: "Nurse",
+                desc: "desc",
+                skill: "DIALYSIS NURSING",
+                count: 1,
+                rate: 25,
+                date: new Date().setDate(new Date().getDate() + 26),
+                from: new Date(),
+                to: new Date(),
+                practiceId: "THE MANOR HOUSE SURGERY"
+
+            },
+
+{
+                category: "Nurse",
+                desc: "desc",
+                skill: "DIALYSIS NURSING",
+                count: 1,
+                rate: 25,
+                date: new Date().setDate(new Date().getDate() + 27),
+                from: new Date(),
+                to: new Date(),
+                practiceId: "THE SALTSCAR SURGERY"
+
+            },
+
+{
+                category: "Nurse",
+                desc: "desc",
+                skill: "CARDIAC NURSING",
+                count: 1,
+                rate: 25,
+                date: new Date().setDate(new Date().getDate() + 28),
+                from: new Date(),
+                to: new Date(),
+                practiceId: "MCKENZIE HOUSE SURGERY"
+
+            },
+
+{
+                category: "Nurse",
+                desc: "desc",
+                skill: "CARDIAC NURSING",
+                count: 1,
+                rate: 25,
+                date: new Date().setDate(new Date().getDate() + 29),
+                from: new Date(),
+                to: new Date(),
+                practiceId: "MELROSE SURGERY"
+
+            },
+
+{
+                category: "Nurse",
+                desc: "desc",
+                skill: "FORENSIC NURSING",
+                count: 1,
+                rate: 25,
+                date: new Date().setDate(new Date().getDate() + 30),
+                from: new Date(),
+                to: new Date(),
+                practiceId: "THE COATHAM ROAD SURGERY"
+
+            },
+
+{
+                category: "Nurse",
+                desc: "desc",
+                skill: "FORENSIC NURSING",
+                count: 1,
+                rate: 25,
+                date: new Date().setDate(new Date().getDate() + 31),
+                from: new Date(),
+                to: new Date(),
+                practiceId: "KINGSWAY MEDICAL CENTRE"
+
+            },
+
+{
+                category: "Nurse",
+                desc: "desc",
+                skill: "LEGAL NURSING",
+                count: 1,
+                rate: 25,
+                date: new Date().setDate(new Date().getDate() + 32),
+                from: new Date(),
+                to: new Date(),
+                practiceId: "COULBY MEDICAL PRACTICE"
+
+            },
+
+
+
+{
+                category: "Nurse",
+                desc: "desc",
+                skill: "LEGAL NURSING",
+                count: 1,
+                rate: 25,
+                date: new Date().setDate(new Date().getDate() + 33),
+                from: new Date(),
+                to: new Date(),
+                practiceId: "WOODLANDS FAMILY MEDICAL CENTRE"
+
+            },
+{
+                category: "Nurse",
+                desc: "desc",
+                skill: "LEGAL NURSING",
+                count: 1,
+                rate: 25,
+                date: new Date().setDate(new Date().getDate() + 34),
+                from: new Date(),
+                to: new Date(),
+                practiceId: "THE KOH PRACTICE"
+
+            }
+)
             .then(() => {
                 console.log('finished populating vacancy');
             });

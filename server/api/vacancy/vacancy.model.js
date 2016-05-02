@@ -11,15 +11,10 @@ var VacancySchema = new mongoose.Schema({
   date: Date,
   from: Date,
   to: Date,
-  practiceId: String/*,
-  practiceEmail:  {
-		    type: String,
-		    lowercase: true
-		  },
-  practiceFname: String,
-  practiceLname: String,
-  practiceTel: Number,
-  practiceAdd: String*/
+  practiceId: String,
+  proposedUsers: {
+        type: Array
+    }
 });
 
 export default mongoose.model('Vacancy', VacancySchema);

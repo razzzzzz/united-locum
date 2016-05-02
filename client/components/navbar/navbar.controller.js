@@ -2,8 +2,9 @@
 
 
 angular.module('clickeatApp')
-  .controller('NavbarController', function($scope,Auth,$window){
+  .controller('NavbarController', function($scope,Auth,$window,$http,notification){
     $scope.Auth = Auth;
+    $scope.notification = notification;
     $scope.isCollapsed = true;
     $scope.menu = [{
     'title': 'Home',
@@ -17,6 +18,6 @@ angular.module('clickeatApp')
        $scope.$apply();
       angular.element($window).off('click');
     });
-  }
+  };
   
   });

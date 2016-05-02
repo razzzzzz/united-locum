@@ -33,8 +33,13 @@ angular.module('clickeatApp').controller('BookingCtrl', function($scope, $http, 
         practiceId: "id123455"
     }, ];
     $scope.user = Auth.getCurrentUser();
-    $scope.sendRequest = function(id){
-        alert('vacancys id:'+id);
+    $scope.sendRequest = function(id) {
+        $http.put('/api/vacancys/' + id, { proposedUsers: { locumId: $scope.user._id, locumName: $scope.user.fname,read:false } })
+            .then(function(res) {
+                alert("your request send successfully..");
+            }, function(err) {
+
+            });
     };
     $scope.init = function() {
         $scope.dt = new Date();

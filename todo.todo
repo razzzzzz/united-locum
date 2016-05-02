@@ -80,7 +80,8 @@ Profile_Maintenance(reddy):
  ☐ if editing of category added as text box then he may not know remining category(info)
  ✔ current location query with client. @done (16-04-28 20:53)
 Raju (midie):
-
+ ☐ notification should shown bosed in socket io events.
+ ☐ id,name,skill,time,date,cat,rate,desc
 Siva prasad (practice dairy):
  ☐  html pages in different states
 Srinivas (Locum Diary):
@@ -147,6 +148,7 @@ commit   8 hours//Commits on Apr 23, 2016
 commit   10 hours//Commits on Apr 24, 2016
 commit   3 hours//Commits on Apr 26, 2016
 commit   4 hours//Commits on Apr 29, 2016
+commit   4 hours//Commits on May 1, 2016
 
 
 

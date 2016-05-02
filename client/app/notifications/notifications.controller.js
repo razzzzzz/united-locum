@@ -1,6 +1,7 @@
 'use strict';
 
-angular.module('clickeatApp').controller('NotificationsController', function($scope, Auth,$http){
-   
-
+angular.module('clickeatApp').controller('NotificationsController', function($scope, notification){
+  
+	$scope.notification = notification;
+	
 });
