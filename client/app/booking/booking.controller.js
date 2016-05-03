@@ -36,7 +36,7 @@ angular.module('clickeatApp').controller('BookingCtrl', function($scope, $http, 
     $scope.sendRequest = function(id) {
         $http.put('/api/vacancys/' + id, { proposedUsers: { locumId: $scope.user._id, locumName: $scope.user.fname,read:false } })
             .then(function(res) {
-                alert("your request send successfully..");
+//                alert("your request send successfully..");
             }, function(err) {
 
             });

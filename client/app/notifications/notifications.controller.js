@@ -7,7 +7,7 @@ angular.module('clickeatApp').controller('NotificationsController', function($sc
 		$scope.notification.notificationsList[doc_index].vacancy.proposedUsers[user_index].status = status;
 			$http.put('/api/vacancys/reqstatus/' + $scope.notification.notificationsList[doc_index].vacancy._id, { proposedUsers: $scope.notification.notificationsList[doc_index].vacancy.proposedUsers })
             .then(function(res) {
-                alert("your request send successfully..");
+               // alert("your request send successfully..");
             }, function(err) {
 
             });
