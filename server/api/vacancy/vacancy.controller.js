@@ -22,7 +22,6 @@ function respondWithResult(res, statusCode) {
 }
 
 function saveUpdates(updates) {
-  console.log("updated:::");
   return function(entity) {
     var updated = _.merge(entity, updates);
     return updated.saveAsync()
@@ -93,6 +92,17 @@ export function update(req, res) {
     .then(respondWithResult(res))
     .catch(handleError(res));
 }
+//updating reject and accept
+export function updateStatus(req, res) {
+  if (req.body._id) {
+    delete req.body._id;
+  }
+  Vacancy.findByIdAndUpdateAsync(req.params.id,{'$set':{'proposedUsers':req.body.proposedUsers}},{ "new": true })
+    .then(function(response){
+      res.status(204).end();
+    });
+}
+
 
 // Deletes a Vacancy from the DB
 export function destroy(req, res) {
