@@ -8,3 +8,6 @@
 	display: table;
     width: 100%;
 }
+.panel-body-custom{
+	padding: 0px 15px;
+}

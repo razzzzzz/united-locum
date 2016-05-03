@@ -117,6 +117,8 @@ commit   6 hours  //Commits on Feb 16, 2016
 commit   10 hours  //Commits on Feb 17, 2016
 commit   4 hours   //Commits on Feb 18, 2016
 
+total = 43
+
 March
 
 
@@ -124,7 +126,7 @@ commit  0 hours //Commits on Mar 7, 2016
 commit  4 hours  //Commits on Mar 15, 2016
 commit  0 hours  //Commits on Mar 30, 2016
 
-
+total = 4
 April
 
 commit   0 hours //Commits on Apr 1, 2016
@@ -148,7 +150,12 @@ commit   8 hours//Commits on Apr 23, 2016
 commit   10 hours//Commits on Apr 24, 2016
 commit   3 hours//Commits on Apr 26, 2016
 commit   4 hours//Commits on Apr 29, 2016
+
+total = 68
+
+May
 commit   4 hours//Commits on May 1, 2016
+commit   7 hours//Commits on May 2, 2016
 
 
 
