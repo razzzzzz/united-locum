@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('clickeatApp').controller('SettingsController', function($scope,Auth,$timeout, $http){
-    $scope.step4 = true;
+angular.module('clickeatApp').controller('SettingsController', function($scope,Auth,$timeout, $http, Upload){
+    $scope.step3 = true;
     $scope.user = Auth.getCurrentUser();
     $scope.user.referance = [
             {
@@ -24,9 +24,33 @@ angular.module('clickeatApp').controller('SettingsController', function($scope,A
     $scope.languages = [ {id: 1, label: "Telugu"}, {id: 2, label: "French"}, {id: 3, label: "Jerman"}];
     $scope.currentRef = {};
     $scope.certificates = {
-    		'GPS':['GMC Registration Certificate','Latest Performer List Report','Indemnity Insurance Certificate',' Passport/Work Permit/EEA card','Current DBS','Latest CV','Passport / Driving License'],
-			'Dentist':['GDC Registration Certificate','Performer List Report','Indemnity Insurance Certificate', 'Passport / Work Permit','Current DBS' ,'Latest CV','Passport / Driving License'],
-			'Nurses (Dental / Non-Dental)':['NMC Registration Certificate','Passport / EEA card/ Work Permit','Current DBS','Latest CV','Passport / Driving License','Qualifications Certificate']
+    		'GPS':[
+                    {label:'GMC Registration Certificate',name:'GMCReg'},
+                    {label:'Latest Performer List Report',name:'GPPerformerList'},
+                    {label:'Indemnity Insurance Certificate', name:'GPIndemnityInsurance'},
+                    {label:' Passport/Work Permit/EEA card',name:'GPEligibility'},
+                    {label:'Current DBS',name:'GPDBS'},
+                    {label:'Latest CV',name:'GPCV'},
+                    {label:'Passport / Driving License',name:'GPId'}
+                ],
+			'Dentist':[
+                        {label:'GDC Registration Certificate',name:'GDCReg'},
+                        {label:'Performer List Report',name:'DentPerformerList'},
+                        {label:'Indemnity Insurance Certificate',name:'DentIndemnityInsurance'},
+                        {label:'Passport / Work Permit',name:'DentEligibility'},
+                        {label:'Current DBS',name:'DentDBS '} ,
+                        {label:'Latest CV',name:'DentCV'},
+                        {label:'Passport / Driving License',name:'DentId'}
+                ],
+			'Nurses (Dental / Non-Dental)':[
+                        {label:'NMC Registration Certificate',name:'NMCReg'},
+                        {label:'Passport / EEA card/ Work Permit',name:'NurseEligibility'},
+                        {label:'Current DBS',name:'NurseDBS'},
+                        {label:'Latest CV',name:'NurseCV'},
+                        {label:'Passport / Driving License',name:'NurseID'},
+                        {label:'Qualifications Certificate',name:'NurseQualifications'},
+                        {label:'Training Certificate',name:'NurseTrainCert'}
+                    ]
 	
     };
     $scope.selectedList = [];
@@ -156,4 +180,30 @@ angular.module('clickeatApp').controller('SettingsController', function($scope,A
 
         });
     };
+       $scope.uploadFile = function(fname, model){ //function to call on form submit 
+            if (/*$scope.GMC_form.GMC.$valid &&*/ model) { //check if from is valid
+                $scope.upload(model,fname); //call upload function
+            }
+        }
+        
+        $scope.upload = function (file,fname) {
+            Upload.upload({
+                url: '/api/users/'+$scope.user._id+'/'+fname+'/documents', //webAPI exposed to upload the file
+                data:{file:file} //pass file as data, should be user ng-model
+            }).then(function (resp) { //upload function returns a promise
+                if(resp.data.error_code === 0){ //validate success
+                    alert('Success ' + resp.config.data.file.name + 'uploaded. Response: ');
+                } else {
+                    alert('an error occured');
+                }
+            }, function (resp) { //catch error
+                console.log('Error status: ' + resp.status);
+                alert('Error status: ' + resp.status);
+            }, function (evt) { 
+                console.log(evt);
+                var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
+                console.log('progress: ' + progressPercentage + '% ' + evt.config.data.file.name);
+                $scope.progress = 'progress: ' + progressPercentage + '% '; // capture upload progress
+            });
+        };
 });

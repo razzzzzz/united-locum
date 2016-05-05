@@ -26,6 +26,8 @@ module.exports = function(config) {
       'client/bower_components/fullcalendar/dist/fullcalendar.js',
       'client/bower_components/angular-ui-calendar/src/calendar.js',
       'client/bower_components/angularjs-dropdown-multiselect/src/angularjs-dropdown-multiselect.js',
+      'client/bower_components/angular-smart-table/dist/smart-table.js',
+      'client/bower_components/ng-file-upload/ng-file-upload.js',
       'client/bower_components/angular-mocks/angular-mocks.js',
       // endbower
       'client/app/app.js',

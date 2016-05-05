@@ -62,7 +62,26 @@ var UserSchema = new Schema({
         zipCode: Number
     },
     documents: {
-        type: Array
+        'GMCReg':String,
+        'GPPerformerList':String,
+        'GPIndemnityInsurance':String,
+        'GPEligibility':String,
+        'GPDBS':String,
+        'GPCV':String,
+        'GPId':String,
+        'GDCReg':String,
+        'DentPerformerList':String,
+        'DentIndemnityInsurance':String,
+        'DentEligibility':String,
+        'DentCV':String,
+        'DentId':String,
+        'NMCReg':String,
+        'NurseEligibility':String,
+        'NurseDBS':String,
+        'NurseCV':String,
+        'NurseID':String,
+        'NurseQualifications':String,
+        'NurseTrainCert':String
     },
     practices: {
         type: Array

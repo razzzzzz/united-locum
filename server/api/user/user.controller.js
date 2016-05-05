@@ -4,6 +4,13 @@ import User from './user.model';
 import passport from 'passport';
 import config from '../../config/environment';
 import jwt from 'jsonwebtoken';
+import multer from 'multer';
+import fs from 'fs';
+var basePath = './uploads';
+
+if (!fs.existsSync(basePath)){
+    fs.mkdirSync(basePath);
+}
 
 function validationError(res, statusCode) {
   statusCode = statusCode || 422;
@@ -150,4 +157,45 @@ export function changePractices(req, res, next){
           })
           .catch(validationError(res));
     });
+}
+
+/**
+* uploading user documents
+*/
+export function upladDocuments(req, res, next){
+  var storage = multer.diskStorage({
+      destination: function (req, file, cb) {
+        var dir = basePath+'/'+req.params.id;
+        if (!fs.existsSync(dir)){
+            fs.mkdirSync(dir);
+        }
+        cb(null, dir);
+      },
+      filename: function (req, file, cb) {
+          var datetimestamp = Date.now();
+          var fname = req.params.type + '-' + datetimestamp + '.' + file.originalname.split('.')[file.originalname.split('.').length -1];
+
+        User.findByIdAsync(req.params.id)
+        .then(user => {
+            user.documents[req.params.type] = basePath+'/'+fname;
+            return user.saveAsync()
+              .then(() => {
+               // res.status(204).end();
+              })
+              .catch(validationError(res));
+        });
+          cb(null, fname);
+      }
+  });
+    var upload = multer({ //multer settings
+                    storage: storage
+                }).single('file');
+
+    upload(req,res,function(err){
+            if(err){
+                 res.json({error_code:1,err_desc:err});
+                 return;
+            }
+             res.json({error_code:0,err_desc:null});
+        });
 }

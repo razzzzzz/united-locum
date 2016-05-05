@@ -19,7 +19,8 @@
     "angularjs-dropdown-multiselect":"latest",
     "bootstrap-social":"latest",
     "components-font-awesome":"latest",
-    "angular-smart-table":"latest"
+    "angular-smart-table":"latest",
+    "ng-file-upload":"latest"
   },
   "devDependencies": {
     "angular-mocks": "~1.4.0"

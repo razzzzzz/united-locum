@@ -42,6 +42,7 @@ Thing.find({}).removeAsync()
                 'and openshift subgenerators'
         });
     });
+
 Notification.find({}).removeAsync()
     .then(() => {
 
@@ -103,7 +104,7 @@ User.find({}).removeAsync()
                     country: 'london',
                     zipCode: 512345
                 },
-                documents: [],
+                documents: {},
                 practices: [],
                 services: 'Basic',
                 socialAccount: {
@@ -156,7 +157,7 @@ User.find({}).removeAsync()
                     country: 'london',
                     zipCode: 512345
                 },
-                documents: [],
+                documents: {},
                 practices: [],
                 services: 'Basic',
                 socialAccount: {
@@ -210,7 +211,7 @@ User.find({}).removeAsync()
                     country: 'london',
                     zipCode: 512345
                 },
-                documents: [],
+                documents: {},
                 practices: [],
                 services: 'Basic',
                 socialAccount: {
@@ -2118,7 +2119,7 @@ Userprofile.find({}).removeAsync()
                 country: 'london',
                 zipCode: 512345
             },
-            documents: [],
+            documents: {},
             practices: [],
             services: 'Basic',
             socialAccount: {

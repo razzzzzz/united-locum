@@ -102,8 +102,6 @@ export function updateStatus(req, res) {
       res.status(204).end();
     });
 }
-
-
 // Deletes a Vacancy from the DB
 export function destroy(req, res) {
   Vacancy.findByIdAsync(req.params.id)

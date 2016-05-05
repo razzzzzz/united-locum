@@ -14,5 +14,6 @@ router.put('/:id/practices', auth.isAuthenticated(), controller.changePractices)
 router.get('/:id', auth.isAuthenticated(), controller.show);
 router.post('/', controller.create);
 router.post('/search', controller.searchPractice);
+router.post('/:id/:type/documents', controller.upladDocuments);
 
 export default router;

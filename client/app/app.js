@@ -13,7 +13,8 @@ angular.module('clickeatApp', [
   'ngAnimate',
   'ui.calendar',
   'angularjs-dropdown-multiselect',
-  'smart-table'
+  'smart-table',
+  'ngFileUpload'
 ])
   .config(function($urlRouterProvider, $locationProvider) {
     $urlRouterProvider
