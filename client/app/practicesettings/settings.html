@@ -345,22 +345,22 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr ng-repeat="certificate in certificates['GPS']">
+                    <tr ng-repeat="certificate in certificates['contract']">
                         <td>{{certificate.label}}</td>
                         <td>
                             <form name="GMC_form" class="form-inline">
                                 <input 
                                    type="file" 
                                    ngf-select 
-                                   ng-model="user[certificate.name]" 
-                                   name="{{certificate.name}}" 
+                                   ng-model="user['contract']" 
+                                   name="contract" 
                                    accept="image/*,application/pdf,.pdf" 
                                    ngf-max-size="5MB" 
                                    style="display: inline-block;"
                                    class="btn btn-default"
                                    />
                                 <!-- Image thumbnail: <img style="width:100px;" ngf-thumbnail="user.GMC || '/thumb.jpg'"/> -->
-                                <button type="submit" class="btn btn-default" ng-click="uploadFile(certificate.name,user[certificate.name])">
+                                <button type="submit" class="btn btn-default" ng-click="uploadFile(certificate.name,user['contract'])">
                                         submit
                                     </button>
                                 <!-- <p>{{progress}}</p> -->

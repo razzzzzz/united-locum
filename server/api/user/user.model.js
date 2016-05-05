@@ -81,7 +81,8 @@ var UserSchema = new Schema({
         'NurseCV':String,
         'NurseID':String,
         'NurseQualifications':String,
-        'NurseTrainCert':String
+        'NurseTrainCert':String,
+        'contract':String
     },
     practices: {
         type: Array

@@ -340,7 +340,7 @@
         </accordion-group>
         <accordion-group is-open="$parent.step3">
             <accordion-heading>Documents<i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': step3, 'glyphicon-chevron-right': !step3}"></i></accordion-heading>
-            <h5>GPS</h5>
+            <h5>{{user.category[0].label}}</h5>
              
 
         <!--form name="GMC_form" class="form-inline">
@@ -371,7 +371,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr ng-repeat="certificate in certificates['GPS']">
+                    <tr ng-repeat="certificate in certificates[user.category[0].label]">
                         <td>{{certificate.label}}</td>
                         <td>
                             <form name="GMC_form" class="form-inline">

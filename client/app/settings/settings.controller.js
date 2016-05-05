@@ -24,7 +24,7 @@ angular.module('clickeatApp').controller('SettingsController', function($scope,A
     $scope.languages = [ {id: 1, label: "Telugu"}, {id: 2, label: "French"}, {id: 3, label: "Jerman"}];
     $scope.currentRef = {};
     $scope.certificates = {
-    		'GPS':[
+    		'GP':[
                     {label:'GMC Registration Certificate',name:'GMCReg'},
                     {label:'Latest Performer List Report',name:'GPPerformerList'},
                     {label:'Indemnity Insurance Certificate', name:'GPIndemnityInsurance'},
@@ -50,9 +50,14 @@ angular.module('clickeatApp').controller('SettingsController', function($scope,A
                         {label:'Passport / Driving License',name:'NurseID'},
                         {label:'Qualifications Certificate',name:'NurseQualifications'},
                         {label:'Training Certificate',name:'NurseTrainCert'}
-                    ]
+                    ],
+            'contract':[
+
+                    {label:'Contract Certificate',name:'contract'}
+            ]
 	
     };
+    $scope.contract = 
     $scope.selectedList = [];
 
     $scope.myEventListeners = {
