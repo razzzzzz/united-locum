@@ -42,7 +42,16 @@ angular.module('clickeatApp').controller('SettingsController', function($scope,A
                         {label:'Latest CV',name:'DentCV'},
                         {label:'Passport / Driving License',name:'DentId'}
                 ],
-			'Nurses (Dental / Non-Dental)':[
+            'Nurse(Dental)':[
+                        {label:'NMC Registration Certificate',name:'NMCReg'},
+                        {label:'Passport / EEA card/ Work Permit',name:'NurseEligibility'},
+                        {label:'Current DBS',name:'NurseDBS'},
+                        {label:'Latest CV',name:'NurseCV'},
+                        {label:'Passport / Driving License',name:'NurseID'},
+                        {label:'Qualifications Certificate',name:'NurseQualifications'},
+                        {label:'Training Certificate',name:'NurseTrainCert'}
+                    ],
+            'Nurse(Non-Dental)':[
                         {label:'NMC Registration Certificate',name:'NMCReg'},
                         {label:'Passport / EEA card/ Work Permit',name:'NurseEligibility'},
                         {label:'Current DBS',name:'NurseDBS'},

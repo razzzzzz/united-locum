@@ -15,9 +15,7 @@
  ✔ Github Login details  @done (16-04-07 02:29)
 
  ☐ Notification schema in Diary Collection
-
  ☐ Profile html should be refresh
-
  ☐ have to implement usecase for forget password 
  ☐ have to implement profile for practice
  ☐ hava to implement auto filling for profile data
@@ -85,8 +83,11 @@ Raju (midie):
 Siva prasad (practice dairy):
  ☐  html pages in different states
 Srinivas (Locum Diary):
-☐  html pages in different states
+✔  html pages in different states @done (16-05-05 21:54)
 ☐ have to introduce date in booking popup
+☐ Booking list shows only prefered practices defined in Locum profile
+☐ Booking list add Multiselect for practice filter
+☐ Availability - White Booked - Green Non-Availability - Grey Locum Request - Amber (Orange) Practice Request - Red
 
 
 

@@ -6,11 +6,11 @@
 .whitebox{
 	border: 1px solid black;
 }
-.pinkbox{
-	background-color: pink;
+.amberbox{
+	background-color: #FFC200;
 }
-.bluebox{
-	background-color: blue;
+.greybox{
+	background-color: #808080;
 }
 .greenbox{
 	background-color: green;
