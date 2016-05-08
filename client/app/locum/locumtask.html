@@ -9,7 +9,7 @@
                                                     'has-error': form.rate.$invalid && submitted }">
             <label class="control-label col-lg-3">Practice Name</label>
             <div class="col-lg-9">
-                <input type="text" name="pname" class="form-control" ng-model="diary.pname" required placeholder="Name" />
+                <input type="text" name="pname" class="form-control" ng-model="diary.practiceId" required placeholder="Name" />
                 <p class="help-block" ng-show="form.pname.$error.required && submitted">
                     Category is required
                 </p>
@@ -21,7 +21,7 @@
             <div class="col-lg-9">
                 <div class="input-group">
                     <span class="input-group-addon" id="basic-addon1"><i class="fa fa-gbp"></i></span>
-                    <input type="number" name="rate" class="form-control" ng-model="req.rate" required placeholder="Rate" />
+                    <input type="number" name="rate" class="form-control" ng-model="diary.rate" required placeholder="Rate" />
                 </div>
                 <p class="help-block" ng-show="form.rate.$error.required && submitted">
                     A rate is required

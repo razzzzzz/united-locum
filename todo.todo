@@ -80,14 +80,20 @@ Profile_Maintenance(reddy):
 Raju (midie):
  ☐ notification should shown bosed in socket io events.
  ☐ id,name,skill,time,date,cat,rate,desc
+ ☐ -->Decrement the count of Notification after action(either accept or reject) was performed in practice side Notifications
+ ☐ -->skip the count of notification to zero in Locum side Notifications, when Locum reads the Notifications once
+ ☐ -->Auto hide the Action buttons (Accept or Reject) once appropriate action was performed
+ ☐ -->update the color of dairy after action was performed
+ ☐ -->try to implement the read status of notification
 Siva prasad (practice dairy):
  ☐  html pages in different states
 Srinivas (Locum Diary):
 ✔  html pages in different states @done (16-05-05 21:54)
 ☐ have to introduce date in booking popup
-☐ Booking list shows only prefered practices defined in Locum profile
+✔ Booking list shows only prefered practices defined in Locum profile @done (16-05-05 23:52)
 ☐ Booking list add Multiselect for practice filter
-☐ Availability - White Booked - Green Non-Availability - Grey Locum Request - Amber (Orange) Practice Request - Red
+☐ have to add to dairy
+✔ Availability - White Booked - Green Non-Availability - Grey Locum Request - Amber (Orange) Practice Request - Red @done (16-05-05 23:07)
 
 
 
@@ -159,6 +165,7 @@ commit   4 hours//Commits on May 1, 2016
 commit   7 hours//Commits on May 2, 2016
 commit   6 hours//Commits on May 3, 2016
 commit   16 hours//Commits on May 5, 2016
+commit   8 hours//Commits on May 9, 2016
 
 
 

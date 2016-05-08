@@ -83,6 +83,7 @@ User.find({}).removeAsync()
                 role: 'practice',
                 password: 'practice',
                 profileSummary: 'doctor',
+                ccg:'ccg1',
                 qualifications: [],
                 currentAddress: {
                     houseNumber: 'b24',

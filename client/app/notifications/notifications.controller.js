@@ -4,8 +4,8 @@ angular.module('clickeatApp').controller('NotificationsController', function($sc
   	$scope.Auth = Auth;
 	$scope.notification = notification;
 	$scope.changeStatus = function(status,user_index,doc_index){
-		$scope.notification.notificationsList[doc_index].vacancy.proposedUsers[user_index].status = status;
-			$http.put('/api/vacancys/reqstatus/' + $scope.notification.notificationsList[doc_index].vacancy._id, { proposedUsers: $scope.notification.notificationsList[doc_index].vacancy.proposedUsers })
+		$scope.notification.notificationsList[doc_index].proposedUsers[user_index].status = status;
+			$http.put('/api/vacancys/reqstatus/' + $scope.notification.notificationsList[doc_index]._id, { proposedUsers: $scope.notification.notificationsList[doc_index].proposedUsers })
             .then(function(res) {
                // alert("your request send successfully..");
             }, function(err) {

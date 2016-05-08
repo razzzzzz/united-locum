@@ -5,172 +5,97 @@
       <accordion-group is-open="$parent.step1">
           <accordion-heading>Main<i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': step1, 'glyphicon-chevron-right': !step1}"></i></accordion-heading>
           
-
-          <div class="row">
-
-            <div class="col-xs-12 col-lg-6">
-              <div class="form-group">
-                <label for="inputEmail" class="col-md-4 control-label">First Name:</label>
-                <div class="col-md-8">
-                  <input type="text" class="form-control" id="inputEmail" placeholder="First Name">
+            <div class="row">
+                <div class="col-xs-12 col-lg-6">
+                    <div class="form-group">
+                        <label for="inputEmail" class="col-md-4 control-label">Practice Name:</label>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" ng-model="user.fname" placeholder="First Name">
+                        </div>
+                    </div>
                 </div>
-              </div>
-            </div>
-            <div class="col-xs-12 col-lg-6">
-              <div class="form-group">
-                <label for="inputEmail" class="col-md-4 control-label">Last Name:</label>
-                <div class="col-md-8">
-                  <input type="text" class="form-control" id="inputEmail" placeholder="Last Name">
+                <div class="col-xs-12 col-lg-6">
+                    <div class="form-group">
+                        <label for="inputEmail" class="col-md-4 control-label">Practice Code:</label>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" ng-model="user.practicecode" placeholder="Practice Code">
+                        </div>
+                    </div>
                 </div>
-              </div>
-            </div>
-            <div class="col-xs-12 col-lg-12">
-              <div class="form-group">
-                <label for="inputEmail" class="col-md-4 col-lg-2 control-label">Gender</label>
-                <div class="col-md-8 col-lg-4">
-                  <label class="radio-inline"><input type="radio" ng-model="user.gender" value="male" name="gender" ng-change="roleChange()" required />Male</label>
-                  <label class="radio-inline"><input type="radio" ng-model="user.gender" value="female" name="gender" ng-change="roleChange()" required />Female</label>
-                  <label class="radio-inline"><input type="radio" ng-model="user.gender" value="others" name="gender" ng-change="roleChange()" required />Others</label>
+                <div class="col-xs-12 col-lg-6">
+                    <div class="form-group">
+                        <label for="inputEmail" class="col-md-4 control-label">Email Id:</label>
+                        <div class="col-md-8">
+                            <input type="email" class="form-control" ng-model="user.email" placeholder="Email Id">
+                        </div>
+                    </div>
                 </div>
-              </div>
-            </div>
-            <div class="col-xs-12 col-lg-6">
-              <div class="form-group">
-                <label for="inputEmail" class="col-md-4 control-label">Email Id:</label>
-                <div class="col-md-8">
-                  <input type="email" class="form-control" id="inputEmail" placeholder="Email Id">
+                <div class="col-xs-12 col-lg-6">
+                    <div class="form-group">
+                        <label for="inputEmail" class="col-md-4 control-label">Alternate Email Id:</label>
+                        <div class="col-md-8">
+                            <input type="email" class="form-control" placeholder="Alternate Email Id">
+                        </div>
+                    </div>
                 </div>
-              </div>
-            </div>
-            <div class="col-xs-12 col-lg-6">
-              <div class="form-group">
-                <label for="inputEmail" class="col-md-4 control-label">Alternate Email Id:</label>
-                <div class="col-md-8">
-                  <input type="email" class="form-control" id="inputEmail" placeholder="Alternate Email Id">
+                <div class="col-xs-12 col-lg-12">
+                    <div class="form-group">
+                        <label for="inputEmail" class="col-md-4 col-lg-2 control-label">Phone No:</label>
+                        <div class="col-md-8 col-lg-4">
+                            <input type="Number" class="form-control" ng-model="user.mobile" placeholder="Phone No">
+                        </div>
+                    </div>
                 </div>
-              </div>
-            </div>
-            <div class="col-xs-12 col-lg-12">
-              <div class="form-group">
-                <label for="inputEmail" class="col-md-4 col-lg-2 control-label">Phone No:</label>
-                <div class="col-md-8 col-lg-4">
-                  <input type="Number" class="form-control" id="inputEmail" placeholder="Phone No">
+                <div class="col-xs-12 col-lg-12">
+                    <div class="form-group">
+                        <label for="inputEmail" class="col-md-4 col-lg-2 control-label">CCG:</label>
+                        <div class="col-md-8 col-lg-4">
+                            <input type="text" class="form-control" ng-model="user.ccg" placeholder="CCG">
+                        </div>
+                    </div>
                 </div>
-              </div>
-            </div>
-            <div class="col-xs-12 col-lg-12">
-              <div class="form-group">
-                <label for="inputEmail" class="col-md-4 col-lg-2 control-label">Category:</label>
-                <div class="col-md-8 col-lg-4">
-                  <input type="text" class="form-control" id="inputEmail" placeholder="Category">
+                <div class="col-xs-12 col-lg-12">
+                    <div class="form-group">
+                        <label for="inputEmail" class="col-md-4 col-lg-2 control-label">ITsystems:</label>
+                        <div class="col-md-8 col-lg-4">
+                            <input type="text" class="form-control" ng-model="user.itsystems[0].label" placeholder="itsystems">
+                        </div>
+                    </div>
                 </div>
-              </div>
-            </div>
-            <div class="col-xs-12 col-lg-12">
-              <div class="form-group">
-                <label for="inputEmail" class="col-md-4 col-lg-2 control-label">GP/Dentist</label>
-                <div class="col-md-8 col-lg-4">
-                  <input type="text" class="form-control" id="inputEmail" placeholder="Number">
+                <div class="col-xs-12 col-lg-12">
+                    <div class="form-group">
+                        <label for="inputEmail" class="col-md-4 col-lg-2 control-label">Category:</label>
+                        <div class="col-md-8 col-lg-4">
+                            <input type="text" class="form-control" ng-model="user.category[0]" placeholder="Category">
+                        </div>
+                    </div>
                 </div>
-              </div>
-            </div>
-            <div class="col-xs-12 col-lg-12">
-              <div class="form-group">
-                <label for="inputEmail" class="col-md-4 col-lg-2 control-label">Performer List Number</label>
-                <div class="col-md-8 col-lg-4">
-                  <input type="text" class="form-control" id="inputEmail" placeholder="Performer List Number">
+                <div class="col-xs-12 col-lg-12">
+                    <div class="form-group">
+                        <label for="inputEmail" class="col-md-4 col-lg-2 control-label">Work Mobile Number</label>
+                        <div class="col-md-8 col-lg-4">
+                            <input type="Number" class="form-control" ng-model="user.mobile" placeholder="Work Mobile Number">
+                        </div>
+                    </div>
                 </div>
-              </div>
-            </div>
-            <div class="col-xs-12 col-lg-12">
-              <div class="form-group">
-                <label for="inputEmail" class="col-md-4 col-lg-2 control-label">Work Mobile Number</label>
-                <div class="col-md-8 col-lg-4">
-                  <input type="Number" class="form-control" id="inputEmail" placeholder="Work Mobile Number">
+                <div class="col-xs-12 col-lg-12" ng-if="user.lang=='yes'">
+                    <div class="form-group dropdown-custom">
+                        <label for="inputEmail" class="col-md-4 col-lg-2 control-label">Languages</label>
+                        <div class="col-md-8 col-lg-4">
+                            <div ng-dropdown-multiselect="" options="languages" selected-model="user.languages">
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
-            </div>            
-            <div class="col-xs-12 col-lg-12">
-              <div class="form-group">
-                <label for="inputEmail" class="radio-inline control-label">Do you operate as limited company?</label>
-                <label class="radio-inline"><input type="radio" ng-model="user.limited" value="yes" name="limited"  required />Yes</label>
-                  <label class="radio-inline"><input type="radio" ng-model="user.limited" value="no" name="limited"  required />No</label>
-              </div>
-            </div>
-            <div class="col-xs-12 col-lg-12" ng-if="user.limited=='yes'">
-              <div class="form-group">
-                <label for="inputEmail" class="col-md-4 col-lg-2 control-label">Company Number</label>
-                <div class="col-md-8 col-lg-4">
-                  <input type="text" class="form-control" id="inputEmail" placeholder="Company Number">
+                <div class="col-xs-12 col-lg-12">
+                    <div class="form-group">
+                        <label for="inputEmail" class="col-md-4 col-lg-2 control-label">Profile Summary</label>
+                        <div class="col-md-8 col-lg-4">
+                            <textarea class="form-control" rows="4" cols="50" ng-model="user.profileSummary" placeholder="Profile Summary"></textarea>
+                        </div>
+                    </div>
                 </div>
-              </div>
             </div>
-            <div class="col-xs-12 col-lg-12">
-              <div class="form-group">
-                <label for="inputEmail" class="col-md-4 col-lg-2 control-label">NI Number</label>
-                <div class="col-md-8 col-lg-4">
-                  <input type="text" class="form-control" id="inputEmail" placeholder="NI Number">
-                </div>
-              </div>
-            </div>
-            <div class="col-xs-12 col-lg-12">
-              <div class="form-group dropdown-custom">
-                <label for="inputEmail" class="col-md-4 col-lg-2 control-label">Qualifications</label>
-                <div class="col-md-8 col-lg-4">
-                  <div  ng-dropdown-multiselect="" options="qualifications" selected-model="user.qualification">
-                </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-xs-12 col-lg-12">
-              <div class="form-group">
-                <label for="inputEmail" class="col-md-4 col-lg-2 control-label">Language proficiency</label>
-                <div class="col-md-8 col-lg-4">
-                  <label class="radio-inline"><input type="radio" ng-model="user.englishlevel" value="expert" name="lng" required />Expert</label>
-                  <label class="radio-inline"><input type="radio" ng-model="user.englishlevel" value="intermediate" name="lng" required />Intermediate</label>
-                  <label class="radio-inline"><input type="radio" ng-model="user.englishlevel" value="beginner" name="lng" required />Beginner</label>
-                </div>
-              </div>
-            </div>
-            <div class="col-xs-12 col-lg-12">
-              <div class="form-group">
-                <label for="inputEmail" class="radio-inline control-label">Do you Any Other languages?</label>
-                <label class="radio-inline"><input type="radio" ng-model="user.lang" value="yes" name="lang"  required />Yes</label>
-                <label class="radio-inline"><input type="radio" ng-model="user.lang" value="no" name="lang"  required />No</label>
-              </div>
-            </div>
-            <div class="col-xs-12 col-lg-12" ng-if="user.lang=='yes'">
-              <div class="form-group dropdown-custom">
-                <label for="inputEmail" class="col-md-4 col-lg-2 control-label">Languages</label>
-                <div class="col-md-8 col-lg-4">
-                  <div  ng-dropdown-multiselect="" options="languages" selected-model="user.languages">
-                </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-xs-12 col-lg-12">
-              <div class="form-group">
-                <label for="inputEmail" class="radio-inline control-label">Are you British citizen?</label>
-                <label class="radio-inline"><input type="radio" ng-model="user.citizen" value="yes" name="citizen"  required />Yes</label>
-                <label class="radio-inline"><input type="radio" ng-model="user.citizen" value="no" name="citizen"  required />No</label>
-              </div>
-            </div>
-            <div class="col-xs-12 col-lg-12" ng-if="user.citizen=='no'">
-              <div class="form-group dropdown-custom">
-                <label for="inputEmail" class="radio-inline control-label">Eligible to work in UK?</label>
-                <label class="radio-inline"><input type="radio" ng-model="user.eligiblity" value="yes" name="eligiblity"  required />Yes</label>
-                <label class="radio-inline"><input type="radio" ng-model="user.eligiblity" value="no" name="eligiblity"  required />No</label>
-              </div>
-            </div>
-            <div class="col-xs-12 col-lg-12">
-              <div class="form-group">
-                <label for="inputEmail" class="col-md-4 col-lg-2 control-label">Profile Summary</label>
-                <div class="col-md-8 col-lg-4">
-                <textarea class="form-control" rows="4" cols="50" placeholder="Profile Summary"></textarea>
-                </div>
-              </div>
-            </div>
-          </div>
           <a class="btn btn-success pull-right" ng-click="openTwo('2')">Next</a>
       </accordion-group>
       
@@ -357,22 +282,22 @@
                                    accept="image/*,application/pdf,.pdf" 
                                    ngf-max-size="5MB" 
                                    style="display: inline-block;"
-                                   class="btn btn-default"
+                                   class="btn btn-default btn-xs"
                                    />
                                 <!-- Image thumbnail: <img style="width:100px;" ngf-thumbnail="user.GMC || '/thumb.jpg'"/> -->
-                                <button type="submit" class="btn btn-default" ng-click="uploadFile(certificate.name,user['contract'])">
+                                <button type="submit" class="btn btn-default btn-xs" ng-click="uploadFile(certificate.name,user['contract'])">
                                         submit
                                     </button>
                                 <!-- <p>{{progress}}</p> -->
                             </form>
-                                <i ng-show="GMC_form.GMC.$error.required">*required</i><br>
+                                <i ng-show="GMC_form.GMC.$error.required">*required</i>
                                 <i ng-show="GMC_form.GMC.$error.maxSize">File too large 
                                 {{user.GMC.size / 1000000|number:1}}MB: max 5M</i>
                         </td>
                         <td>
-                            <button class="btn btn-default">View</button>
-                            <button class="btn btn-default">Email</button>
-                            <button class="btn btn-default">Modify</button>
+                            <button class="btn btn-default btn-xs">View</button>
+                            <button class="btn btn-default btn-xs">Email</button>
+                            <button class="btn btn-default btn-xs">Modify</button>
                         </td>
                     </tr>
                 </tbody>

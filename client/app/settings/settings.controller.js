@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('clickeatApp').controller('SettingsController', function($scope,Auth,$timeout, $http, Upload){
-    $scope.step3 = true;
+    $scope.step1 = true;
     $scope.user = Auth.getCurrentUser();
     $scope.user.referance = [
             {

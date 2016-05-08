@@ -8,11 +8,10 @@ angular.module('clickeatApp.auth')
       $http.get('/api/vacancys').then(function(res){
         if(Auth.isPractice()){
          for (var i = res.data.length - 1; i >= 0; i--) {
-            var proposedUsers = res.data[i].proposedUsers;
-            if(proposedUsers){
-              for(var j=0; j<proposedUsers.length;j++){
-                if(!proposedUsers[j].read){
-                  notifications.notificationsList.push({vacancy:res.data[i],user:proposedUsers[j]});
+            if(res.data[i].proposedUsers.length){
+              for(var j=0; j<res.data[i].proposedUsers.length;j++){
+                if(!res.data[i].proposedUsers[j].read){
+                  notifications.notificationsList.push(res.data[i]);
                 }
               }
             }
@@ -20,13 +19,22 @@ angular.module('clickeatApp.auth')
         }else{
          var currentUserId = Auth.getCurrentUser()._id;
          for (var i = res.data.length - 1; i >= 0; i--) {
-            var proposedUsers = res.data[i].proposedUsers;
-            if(proposedUsers){
-              for(var j=0; j<proposedUsers.length;j++){
-
-                if(proposedUsers[j].locumId==currentUserId&&proposedUsers[j].status){
-                  notifications.notificationsList.push({vacancy:res.data[i],user:proposedUsers[j]});
+            if(res.data[i].proposedUsers.length){
+              var flag =true;
+              for(var j=0; j<res.data[i].proposedUsers.length;j++){
+                if(res.data[i].proposedUsers[j].locumId==currentUserId&&res.data[i].proposedUsers[j].status){
+                  if(res.data[i].proposedUsers[j].status=='Accept'){
+                    res.data[i].className = 'greenbox';
+                  }else{
+                    res.data[i].className = 'redbox';
+                  }
+                  notifications.notificationsList.push(res.data[i]);
+                  flag = false;
                 }
+              }
+              if(flag){
+                res.data[i].className = 'amberbox';
+                notifications.notificationsList.push(res.data[i]);
               }
             }
          }    
@@ -39,10 +47,34 @@ angular.module('clickeatApp.auth')
 
       });
     };
+    var getFilteredVacency = function(obj){
+        $http.post('/api/vacancys/getfiltered',obj)
+        .then(function(res) {
+            notifications.getFilteredVacencyList = res.data;
+        }, function(err) {
+
+        });
+    };
+    var sendRequestForVacancy = function(id, obj){
+        $http.put('/api/vacancys/' + id, obj)
+            .then(function(res) {
+                for(var i=0;i<notifications.notificationsList.length;i++){
+                  if(notifications.notificationsList[i]._id==res.data._id){
+                    notifications.notificationsList[i] = res.data;
+                    break;
+                  }
+                }
+            }, function(err) {
+
+        });
+    }
     var notifications = {
       notificationsList:[],
-      getNotifications:getNotifications
-    }
+      getNotifications:getNotifications,
+      getFilteredVacency:getFilteredVacency,
+      getFilteredVacencyList:[],
+      sendRequestForVacancy:sendRequestForVacancy
+    };
     return notifications;
 
   });

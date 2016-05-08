@@ -1,30 +1,16 @@
 'use strict';
 
 angular.module('clickeatApp')
-  .controller('LocumdiaryCtrl', function ($scope,$http,$compile,uiCalendarConfig,$modal) {
+  .controller('LocumdiaryCtrl', function ($scope,$http,$compile,uiCalendarConfig,$modal,notification) {
    var date = new Date();
     var d = date.getDate();
     var m = date.getMonth();
     var y = date.getFullYear();
-    
     $scope.changeTo = 'Hungarian';
+    $scope.notification = notification;
     /* event source that pulls from google.com */
-
+    $scope.events = $scope.notification.notificationsList;
     /* event source that contains custom events on the scope */
-    $scope.events = [
-      {
-        start: new Date(y, m, 1),
-        startTime:new Date(y, m, 1),
-        endTime:new Date(y,m,1),
-        rate:30,
-        locumName:"Locum name",
-        pname:"Practice name"
-      },
-      {pname: 'Long Event',start: new Date(y, m, d - 5),end: new Date(y, m, d - 2)},
-      {id: 999,pname: 'Repeating Event',start: new Date(y, m, d - 3, 16, 0),allDay: false},
-      {id: 999,pname: 'Repeating Event',start: new Date(y, m, d + 4, 16, 0),allDay: false},
-      {pname: 'Birthday Party',start: new Date(y, m, d + 1, 19, 0),end: new Date(y, m, d + 1, 22, 30),allDay: false}
-    ];
     /* event source that calls a function on every view switch */
     $scope.eventsF = function (start, end, timezone, callback) {
       var s = new Date(start).getTime() / 1000;

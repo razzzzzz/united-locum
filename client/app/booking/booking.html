@@ -13,7 +13,7 @@
     </div> 
     </div>
     <div>
-         <table st-table="displayed" st-safe-src="collection" class="table table-condensed">
+         <table st-table="displayed" st-safe-src="notification.getFilteredVacencyList" class="table table-condensed">
         <thead>
             <tr>
                 <th st-sort="practiceId">Practice&nbsp;&nbsp;<span class="fa fa-sort"></span></th>
@@ -30,7 +30,7 @@
                 <td>{{row.date | date:'yyyy-MM-dd'}}</td>
                 <td>{{row.rate}}</td>
                 <td>
-                    <a class="btn btn-default btn-xs" ng-click="sendRequest(row._id)">Send Request</a>
+                    <a class="btn btn-default btn-xs" ng-click="notification.sendRequestForVacancy(row._id,{ proposedUsers: { locumId: user._id, locumName:user.fname,read:false } })">Send Request</a>
                 </td>
             </tr>
         </tbody>

@@ -111,5 +111,11 @@ export function destroy(req, res) {
 }
 
 export function getVacancy(req, res){
-  
+  var inObj = [];
+  for(var i=0;i<req.body.practices.length;i++){
+    inObj.push(req.body.practices[i].fname);
+  }
+  Vacancy.findAsync({practiceId:{'$in':inObj}})
+  .then(respondWithResult(res))
+  .catch(handleError(res));
 }

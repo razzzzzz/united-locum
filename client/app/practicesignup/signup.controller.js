@@ -21,10 +21,9 @@ $scope.howdouknow = [ {id: 1, label: "FaceBook"}, {id: 2, label: "Google+"}, {id
                     country:'UK',
                     ccg:'CCG1',
                     category:'GP Practice'
-                  }
+                  };
     $scope.resetForm = function(){
       $scope.user = {
-                    role:'locum',
                     category:[$scope.example1data[0]]
                   }  
       $scope.submitted = false;
@@ -33,7 +32,7 @@ $scope.howdouknow = [ {id: 1, label: "FaceBook"}, {id: 2, label: "Google+"}, {id
     $scope.submitted = false;
     $scope.Auth = Auth;
     $scope.$state = $state;
-    $scope.register = function(form) {
+    $scope.register = function(form,role) {
 
       $scope.submitted = true;
 
@@ -60,7 +59,7 @@ $scope.howdouknow = [ {id: 1, label: "FaceBook"}, {id: 2, label: "Google+"}, {id
           email: $scope.user.email,
           password: $scope.user.password,
           package:$scope.user.package,
-          role:$scope.user.role,
+          role:role,
           tc:$scope.user.tc
         }).then(function () {
           // Account created, redirect to home
