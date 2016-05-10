@@ -18,3 +18,6 @@
 .redbox{
 	background-color: red;
 }
+.fc-event.fc-draggable{
+	border:2px red;
+}

@@ -1,6 +1,6 @@
 <div class="container">
     <div class="panel-group">
-        <div class="panel panel-success" ng-repeat="req in notification.notificationsList" ng-if="Auth.isPractice()">
+        <div class="panel" ng-class="req.proposedUsers[0].status?(req.proposedUsers[0].status=='Reject'?'panel-danger':'panel-success'):'panel-default'" ng-repeat="req in notification.notificationsList" ng-if="Auth.isPractice()">
             <div class="panel-heading">Requirement Details ({{req._id}})</div>
             <div class="panel-body panel-body-custom">
                 <div class="row">

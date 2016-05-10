@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('clickeatApp')
-  .controller('PracticediaryCtrl', function ($scope,$http,$compile,uiCalendarConfig,$modal,$state, $stateParams) {
+  .controller('PracticediaryCtrl', function ($scope,$http,$compile,uiCalendarConfig,$modal,$state, $stateParams,notification) {
   var date = new Date();
     var d = date.getDate();
     var m = date.getMonth();
@@ -13,19 +13,8 @@ angular.module('clickeatApp')
             className: 'gcal-event',           
             currentTimezone: 'America/Chicago' 
     };
-    /* event source that contains custom events on the scope */
-    $http.get('/api/vacancys').then(function(res){
-     // debugger;
-     for (var i = res.data.length - 1; i >= 0; i--) {
-       res.data[i].title = res.data[i].desc;
-       $scope.events.push(res.data[i])
-     }
-     // $scope.events.push({pname: 'Long Event',title: 'Lunch',start: new Date(y, m, d - 5),end: new Date(y, m, d - 2)});
-    },
-      function(err){
-
-      });
-    $scope.events = [];
+    $scope.notification = notification;
+    $scope.events = $scope.notification.notificationsList;
 /*    $scope.events = [
       {
         start: new Date(y, m, 1),

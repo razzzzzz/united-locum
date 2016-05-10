@@ -10,10 +10,18 @@ angular.module('clickeatApp.auth')
          for (var i = res.data.length - 1; i >= 0; i--) {
             if(res.data[i].proposedUsers.length){
               for(var j=0; j<res.data[i].proposedUsers.length;j++){
+                  if(res.data[i].proposedUsers[j].status=='Accept'){
+                    res.data[i].className = 'greenbox';
+                  }else{
+                    res.data[i].className = 'redbox';
+                  }
                 if(!res.data[i].proposedUsers[j].read){
                   notifications.notificationsList.push(res.data[i]);
                 }
               }
+            }else{
+              res.data[i].className = 'amberbox';
+              notifications.notificationsList.push(res.data[i]);            
             }
          }
         }else{
