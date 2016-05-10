@@ -35,10 +35,10 @@
         <!-- <li ng-hide="isLoggedIn()" ui-sref-active="active"><a ui-sref="signup">Sign up</a></li> -->
         <!-- <li ng-hide="isLoggedIn()" ui-sref-active="active"><a ui-sref="login">Login</a></li> -->
         <li ng-show="Auth.isLoggedIn()"><p class="navbar-text">Hello {{ Auth.getCurrentUser().fname+" "+Auth.getCurrentUser().lname }}</p> </li>
-        <li ng-if="Auth.isLoggedIn()" ui-sref-active="active">
+        <li ng-if="Auth.isLoggedIn()" ui-sref-active="active" ng-click="hideBadge=false">
           <a ui-sref="notifications">
             <span class="glyphicon glyphicon-globe"></span>
-            <span class="badge badge-notify" ng-show="notification.notificationsList.length" ng-init="notification.getNotifications()">
+            <span class="badge badge-notify" ng-show="hideBadge" ng-init="notification.getNotifications()">
             {{notification.notificationsList.length}}
             </span>
           </a>

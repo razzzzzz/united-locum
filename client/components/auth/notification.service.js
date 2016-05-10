@@ -13,14 +13,14 @@ angular.module('clickeatApp.auth')
                   if(res.data[i].proposedUsers[j].status=='Accept'){
                     res.data[i].className = 'greenbox';
                   }else{
-                    res.data[i].className = 'redbox';
+                    res.data[i].className = 'amberbox';
                   }
                 if(!res.data[i].proposedUsers[j].read){
                   notifications.notificationsList.push(res.data[i]);
                 }
               }
             }else{
-              res.data[i].className = 'amberbox';
+              res.data[i].className = 'redbox';
               notifications.notificationsList.push(res.data[i]);            
             }
          }

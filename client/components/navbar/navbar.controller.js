@@ -6,6 +6,7 @@ angular.module('clickeatApp')
     $scope.Auth = Auth;
     $scope.notification = notification;
     $scope.isCollapsed = true;
+    $scope.hideBadge = true;
     $scope.menu = [{
     'title': 'Home',
     'state': 'main'
