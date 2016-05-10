@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('clickeatApp').controller('SettingsController', function($scope,Auth,$timeout, $http, Upload){
-    $scope.step1 = true;
+    $scope.step3 = true;
     $scope.user = Auth.getCurrentUser();
     $scope.user.referance = [
             {
@@ -205,11 +205,10 @@ angular.module('clickeatApp').controller('SettingsController', function($scope,A
                 url: '/api/users/'+$scope.user._id+'/'+fname+'/documents', //webAPI exposed to upload the file
                 data:{file:file} //pass file as data, should be user ng-model
             }).then(function (resp) { //upload function returns a promise
-                if(resp.data.error_code === 0){ //validate success
-                    alert('Success ' + resp.config.data.file.name + 'uploaded. Response: ');
-                } else {
-                    alert('an error occured');
+                if(!$scope.user.documents){
+                    $scope.user.documents = {};
                 }
+                $scope.user.documents[resp.data.fileProp] = resp.data.fileName;
             }, function (resp) { //catch error
                 console.log('Error status: ' + resp.status);
                 alert('Error status: ' + resp.status);

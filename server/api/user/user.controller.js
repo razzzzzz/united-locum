@@ -7,7 +7,7 @@ import jwt from 'jsonwebtoken';
 import multer from 'multer';
 import fs from 'fs';
 var basePath = './uploads';
-
+var fname = '';
 if (!fs.existsSync(basePath)){
     fs.mkdirSync(basePath);
 }
@@ -173,13 +173,14 @@ export function upladDocuments(req, res, next){
       },
       filename: function (req, file, cb) {
           var datetimestamp = Date.now();
-          var fname = req.params.type + '-' + datetimestamp + '.' + file.originalname.split('.')[file.originalname.split('.').length -1];
+          fname = req.params.type + '-' + datetimestamp + '.' + file.originalname.split('.')[file.originalname.split('.').length -1];
 
         User.findByIdAsync(req.params.id)
         .then(user => {
-            user.documents[req.params.type] = basePath+'/'+fname;
+            user.documents[req.params.type] = basePath+'/'+req.params.id+'/'+fname;
             return user.saveAsync()
               .then(() => {
+               // res.json({fileProp:req.params.type,fileName:(basePath+'/'+req.params.id+'/'+fname)});
                // res.status(204).end();
               })
               .catch(validationError(res));
@@ -196,6 +197,6 @@ export function upladDocuments(req, res, next){
                  res.json({error_code:1,err_desc:err});
                  return;
             }
-             res.json({error_code:0,err_desc:null});
+             res.json({fileProp:req.params.type,fileName:(basePath+'/'+req.params.id+'/'+fname)});
         });
 }
