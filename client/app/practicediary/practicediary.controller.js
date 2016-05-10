@@ -53,6 +53,7 @@ angular.module('clickeatApp')
       //  $scope.alertMessage = (date.title + ' was clicked ');
         eventData.type = 'editevent';
         eventData.heading = 'edit vacancy';
+        eventData.templateUrl = 'app/practicediary/editvacency.html';
         $scope.openModel(eventData);
 
     };
@@ -113,7 +114,8 @@ angular.module('clickeatApp')
       var eventData = {
         type: 'newevent',
         heading:'Create New Vacancy',
-        date:date
+        date:date,
+        templateUrl:'app/practicediary/newvacency.html'
       }
       $scope.openModel(eventData);
     }
@@ -167,7 +169,7 @@ angular.module('clickeatApp')
       $scope.items = data;
       var modalInstance = $modal.open({
         animation: true,
-        templateUrl: 'app/practice/practicereq.html',
+        templateUrl: $scope.items.templateUrl,
         controller: 'ModalInstanceCtrl1',
         size: 'lg',
         resolve: {
@@ -192,7 +194,7 @@ angular.module('clickeatApp')
 
     $scope.init = function(){
       if(parseInt($stateParams.openpopup)){
-        $scope.openModel({type: 'newevent',heading:'Create New Vacancy'}); 
+        $scope.openModel({type: 'newevent',heading:'Create New Vacancy',templateUrl:'app/practicediary/newvacency.html'}); 
       }
     };
     $scope.init();
