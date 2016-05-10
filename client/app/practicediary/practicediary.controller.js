@@ -181,7 +181,7 @@ angular.module('clickeatApp')
 
       modalInstance.result.then(function (updatevacancy) {
         if(updatevacancy.newvacancy){
-         // updatevacancy.newvacancy.title = "Ganesh";
+          updatevacancy.newvacancy.className = 'redbox';
           $scope.events.push(updatevacancy.newvacancy);
         }else if(updatevacancy.updatevacancy){
           //$scope.vacancyList.filter
