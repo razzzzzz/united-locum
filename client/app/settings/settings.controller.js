@@ -194,8 +194,8 @@ angular.module('clickeatApp').controller('SettingsController', function($scope,A
 
         });
     };
-       $scope.uploadFile = function(fname, model){ //function to call on form submit 
-            if (/*$scope.GMC_form.GMC.$valid &&*/ model) { //check if from is valid
+       $scope.uploadFile = function(fname, model,GMC_form){ //function to call on form submit 
+            if (GMC_form.$valid && model) { //check if from is valid
                 $scope.upload(model,fname); //call upload function
             }
         }

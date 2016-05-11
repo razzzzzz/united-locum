@@ -170,7 +170,7 @@ angular.module('clickeatApp')
       var modalInstance = $modal.open({
         animation: true,
         templateUrl: $scope.items.templateUrl,
-        controller: 'ModalInstanceCtrl1',
+        controller: 'ModalInstanceCtrl2',
         size: 'lg',
         resolve: {
           items: function () {
@@ -198,7 +198,7 @@ angular.module('clickeatApp')
       }
     };
     $scope.init();
-  }).controller('ModalInstanceCtrl1', function ($scope, $modalInstance, items, $http, Auth,$state) {
+  }).controller('ModalInstanceCtrl2', function ($scope, $modalInstance, items, $http, Auth,$state) {
     $scope.diary = items;
     if($scope.diary){
       $scope.updateEnable = true;
@@ -208,7 +208,7 @@ angular.module('clickeatApp')
       if($scope.diary.date)
         $scope.dt = $scope.diary.date.toDate();
     };
-    //$scope.today();
+    $scope.today();
     $scope.popup1 = {
       opened: false
     };
