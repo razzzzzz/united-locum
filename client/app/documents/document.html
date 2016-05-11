@@ -1,0 +1,18 @@
+<div class="container">
+        <div class="col-xs-12 col-lg-12">
+			<ul class="list-group" ng-repeat="(key, val) in documents">
+			  <li class="list-group-item">{{key}}
+				<li class="list-group-item" ng-repeat="doc in val">
+				  	Display Name:<input ng-model="doc.label" />
+				  	DB FileldName:<input ng-model="doc.name"/>
+				  	<button class="pull-right close" ng-click="remove($index,key)">&times;</button>
+				</li>
+				<li class="list-group-item" >
+				  	Display Name:<input ng-model="label" />
+				  	DB FileldName:<input ng-model="name"/>
+				  	<button class="btn btn-default" ng-click="add(label,name,key);label='';name='';">Add</button>
+				</li>
+			  </li>
+			</ul>
+        </div>
+</div>
