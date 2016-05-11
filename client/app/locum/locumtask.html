@@ -1,5 +1,5 @@
 <div class="modal-header">
-    <h3 class="modal-title">Appointment
+    <h3 class="modal-title">Locum Request
               <button class="pull-right close" ng-click="cancel()">&times;</button>
             </h3>
 </div>
@@ -46,7 +46,7 @@
             </div>
         </div>
         <div class="col-lg-12 text-center">
-          <button class="btn btn-inverse btn-md btn-default" ng-click="cancleAppointment()" >
+          <button class="btn btn-inverse btn-md btn-default" ng-if="diary.className[0]!='greenbox'" ng-click="cancleAppointment()" >
               Cancle Request
           </button>
           <button class="btn btn-inverse btn-md btn-default" ng-click="cancel()" >
