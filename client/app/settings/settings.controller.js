@@ -195,9 +195,14 @@ angular.module('clickeatApp').controller('SettingsController', function($scope,A
         });
     };
        $scope.uploadFile = function(fname, model,GMC_form){ //function to call on form submit 
+           var ext = model.name.split('.').pop();
+           if(ext=="pdf" || ext=="docx" || ext=="doc" || ext=="bmp" || ext == "jpg"){
             if (GMC_form.$valid && model) { //check if from is valid
                 $scope.upload(model,fname); //call upload function
             }
+           } else{
+               alert("It is not supported formate");
+           }
         }
         
         $scope.upload = function (file,fname) {
