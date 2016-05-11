@@ -194,7 +194,11 @@ angular.module('clickeatApp')
 
     $scope.init = function(){
       if(parseInt($stateParams.openpopup)){
-        $scope.openModel({type: 'newevent',heading:'Create New Vacancy',templateUrl:'app/practicediary/newvacency.html'}); 
+        $scope.openModel({
+                          type: 'newevent',
+                          heading:'Create New Vacancy',
+                          templateUrl:'app/practicediary/newvacency.html'
+                        }); 
       }
     };
     $scope.init();
@@ -206,7 +210,7 @@ angular.module('clickeatApp')
     $scope.today = function() {
       $scope.dt = new Date();
       if($scope.diary.date)
-        $scope.dt = $scope.diary.date.toDate();
+        $scope.dt = new Date($scope.diary.date);
     };
     $scope.today();
     $scope.popup1 = {
@@ -264,7 +268,7 @@ angular.module('clickeatApp')
        var vacancyObj = {
         'category': $scope.req.category.name,
         'desc': $scope.req.desc,
-        'skill': $scope.req.skill,
+        'skill': $scope.req.skills,
         'count': $scope.req.count,
         'rate': $scope.req.rate,
         'from':$scope.req.from,

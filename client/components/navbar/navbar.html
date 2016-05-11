@@ -40,8 +40,8 @@
           <a ui-sref="notifications">
             <span class="glyphicon glyphicon-globe"></span>
             <span class="badge badge-notify" ng-show="hideBadge" ng-init="notification.getNotifications()">
-            {{notification.notificationsList.length}}
-            </span>
+           <!--  {{notification.notificationsList.length}} -->
+!            </span>
           </a>
         </li>
         <li ng-show="Auth.isLoggedIn()&&Auth.isLocum()" ui-sref-active="active"><a ui-sref="settings"><span class="glyphicon glyphicon-cog"></span></a></li>
