@@ -1,6 +1,6 @@
 <div class="container">
     <div class="panel-group">
-        <div class="panel" ng-class="req.proposedUsers[0].status?(req.proposedUsers[0].status=='Reject'?'panel-danger':'panel-success'):'panel-default'" ng-repeat="req in notification.notificationsList" ng-if="Auth.isPractice()">
+        <div class="panel" ng-class="req.proposedUsers[0].status?(req.proposedUsers[0].status=='Reject'?'panel-danger':'panel-success'):'panel-default'"  ng-repeat="req in notification.notificationsList" ng-if="Auth.isPractice()" >
             <div class="panel-heading">Requirement Details ({{req._id}})</div>
             <div class="panel-body panel-body-custom">
                 <div class="row">
@@ -19,8 +19,8 @@
 			  		 	<b>Name:</b>&nbsp;{{user.locumName}}
 			  		 </span>
                                 <span class="pull-right">
-			  		 	<button class="btn btn-default btn-xs" ng-click="changeStatus('Accept',$index,$parent.$index)"><i class="green glyphicon glyphicon-ok"></i>&nbsp;Accept</button>
-			  		 	<button class="btn btn-default btn-xs" ng-click="changeStatus('Reject',$index,$parent.$index)"><i class="red glyphicon glyphicon-remove"></i>&nbsp;Reject</button>
+			  		 	<button class="btn btn-default btn-xs" ng-click="changeStatus('Accept',$index,$parent.$index);"><i class="green glyphicon glyphicon-ok"></i>&nbsp;Accept</button>
+			  		 	<button class="btn btn-default btn-xs" ng-click="changeStatus('Reject',$index,$parent.$index);"><i class="red glyphicon glyphicon-remove"></i>&nbsp;Reject</button>
 			  		 </span>
                             </div>
                         </li>
