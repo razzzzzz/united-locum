@@ -398,7 +398,7 @@
                         <td>
                             <a class="btn btn-default btn-xs" target="_blank" ng-href="{{user.documents[certificate.name]}}">View</a>
                             <button class="btn btn-default btn-xs">Email</button>
-                            <button class="btn btn-default btn-xs">Modify</button>
+                            <button class="btn btn-default btn-xs" ng-click="triggerFileClick($event)">Modify</button>
                         </td>
                     </tr>
                 </tbody>
