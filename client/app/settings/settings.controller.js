@@ -194,6 +194,10 @@ angular.module('clickeatApp').controller('SettingsController', function($scope,A
 
         });
     };
+    $scope.triggerFileClick = function($event){
+        angular.element($event.currentTarget).closest("td").prev().find("input").trigger("click");
+    };
+
        $scope.uploadFile = function(fname, model,GMC_form){ //function to call on form submit 
            var ext = model.name.split('.').pop();
            if(ext=="pdf" || ext=="docx" || ext=="doc" || ext=="bmp" || ext == "jpg"){
@@ -224,4 +228,5 @@ angular.module('clickeatApp').controller('SettingsController', function($scope,A
                 $scope.progress = 'progress: ' + progressPercentage + '% '; // capture upload progress
             });
         };
+		$scope.updatePracticeInDB = function(prop){alert(prop);}
 });

@@ -13,7 +13,7 @@
             <input type="text" name="name" class="form-control" ng-model="user.lname"
                    required placeholder="Last name"/>
             <p class="help-block" ng-show="form.name.$error.required && submitted">
-              A Frist name and Last name is required
+              A First name and Last name is required
             </p>
           </div>
         </div>
@@ -51,7 +51,7 @@
                    required placeholder="Confirm Mail ID"
                    match="user.email"
                    mongoose-error/>
-            <span class="help-inline help-text" tooltip="Mail id require for get password in case you forget">&nbsp;?&nbsp;</span>
+            <span class="help-inline help-text" tooltip="Mail id require to get password in case you forget">&nbsp;?&nbsp;</span>
             <p class="help-block"
                ng-show="form.confirmemail.$error.match && submitted">
               Email must match.
@@ -70,7 +70,7 @@
                      mongoose-error/>
            <!--  </div> -->
             <p class="help-block" ng-show="form.mob.$error.mobile && submitted">
-              Doesn't look like a valid mob.
+              Doesn't look like a valid mobile number.
             </p>
             <p class="help-block" ng-show="form.mobile.$error.required && submitted">
               What's your mobile number ?
@@ -86,28 +86,26 @@
           <label class="control-label col-sm-3">Password</label>
           <div class="col-sm-9">
             <input type="password" name="password" class="form-control" ng-model="user.password"
-                   ng-minlength="3"
+                   ng-minlength="5" ng-pattern="/^[a-zA-Z]\w{3,14}$/"
                    required placeholder="Password"
                    mongoose-error/>
-            <span class="help-inline weak"
+	         
+            <span class="help-inline help-text" ng-show="user.password.length<1 form.Password.$dirty && form.Password.$error.pattern" tooltip="Password should be Alphanumeric">&nbsp;?&nbsp;</span>
+			<span class="help-inline weak"
                ng-show="user.password.length<5">
-              Weak !
+              Your password is weak ! 
             </span>
             <span class="help-inline medium bold"
-               ng-show="user.password.length<9&&user.password.length>4">
+               ng-show="user.password.length<7&&user.password.length>5">
               Medium !
             </span>
             <span class="help-inline strong bold"
-               ng-show="user.password.length>8">
-              Strong !
+               ng-show="user.password.length>7">
+              Now Your password is Strong !
             </span>
             <p class="help-block"
                ng-show="(form.password.$error.minlength || form.password.$error.required) && submitted">
-              Password must be at least 3 characters.
-            </p>
-            <p class="help-block"
-               ng-show="(form.password.$error.minlength || form.password.$error.required) && submitted">
-              Password must be at least 3 characters.
+              Password must be at least 6 characters.
             </p>
             <p class="help-block" ng-show="form.password.$error.mongoose">
               {{ errors.password }}
@@ -119,12 +117,12 @@
                                             'has-error': form.confirmPassword.$invalid && submitted }">
           <label class="control-label col-sm-3">Confirm Password</label>
           <div class="col-sm-9">
-            <input type="password" name="confirmPassword" class="form-control" ng-model="user.confirmPassword"
+            <input type="password" name="confirmPassword" class="form-control" ng-pattern="/^[a-zA-Z]\w{3,14}$/" ng-model="user.confirmPassword"
                    match="user.password" placeholder="Confirm Password"
-                   ng-minlength="3" required/>
+                   ng-minlength="5" required/>
             <p class="help-block"
                ng-show="form.confirmPassword.$error.match && submitted">
-              Passwords must match.
+              Passwords must match and should be Alphanumeric.
             </p>
           </div>
         </div>
@@ -201,7 +199,7 @@
             <input type="checkbox" name="tc" ng-model="user.tc" 
             required
             />
-            <a href="">Please Read and Accept Terms & Conditions.</a>
+            <a href="http://unitelocum.com/terms & conditions" target="_blank">Please Read and Accept Terms & Conditions.</a>
           </label>
           <p class="help-block"
              ng-show="form.tc.$error.required && submitted">
@@ -217,6 +215,7 @@
           </a> -->
           <a class="btn btn-md btn-danger" ng-click="resetForm()">Reset</a>
         </div>
+		
 
       </form>
   </div>

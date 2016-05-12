@@ -19,8 +19,8 @@
 			  		 	<b>Name:</b>&nbsp;{{user.locumName}}
 			  		 </span>
                                 <span class="pull-right">
-			  		 	<button class="btn btn-default btn-xs" ng-click="changeStatus('Accept',$index,$parent.$index);"><i class="green glyphicon glyphicon-ok"></i>&nbsp;Accept</button>
-			  		 	<button class="btn btn-default btn-xs" ng-click="changeStatus('Reject',$index,$parent.$index);"><i class="red glyphicon glyphicon-remove"></i>&nbsp;Reject</button>
+			  		 	<button class="btn btn-default btn-xs" ng-click="changeStatus($event,'Accept',$index,$parent.$index);"><i class="green glyphicon glyphicon-ok"></i>&nbsp;Accept</button>
+			  		 	<button class="btn btn-default btn-xs" ng-click="changeStatus($event,'Reject',$index,$parent.$index);"><i class="red glyphicon glyphicon-remove"></i>&nbsp;Reject</button>
 			  		 </span>
                             </div>
                         </li>
