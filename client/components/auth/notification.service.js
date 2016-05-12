@@ -66,6 +66,7 @@ angular.module('clickeatApp.auth')
     var sendRequestForVacancy = function(id, obj){
         $http.put('/api/vacancys/' + id, obj)
             .then(function(res) {
+              alert("Request Sent Successfully");
                 for(var i=0;i<notifications.notificationsList.length;i++){
                   if(notifications.notificationsList[i]._id==res.data._id){
                     notifications.notificationsList[i] = res.data;
