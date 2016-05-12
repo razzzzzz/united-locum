@@ -10,6 +10,8 @@ import Vacancy from '../api/vacancy/vacancy.model';
 import Userprofile from '../api/profile/profile.model';
 import Dairy from '../api/dairy/dairy.model';
 import Notification from '../api/notification/notification.model';
+import Non_availability from '../api/non_availability/non_availability.model';
+import Reason_nonavailability from '../api/reason_nonavailability/reason_nonavailability.model';
 
 Thing.find({}).removeAsync()
     .then(() => {
@@ -2143,3 +2145,67 @@ Userprofile.find({}).removeAsync()
             console.log('finished populating profile');
         })
     });
+Non_availability.find({}).removeAsync()
+    .then(() => {
+
+        Non_availability.createAsync({
+
+                date: new Date().setDate(new Date().getDate() + 1),
+                from: new Date(),
+                to: new Date(),
+                activity: 'Weekend'  
+            },
+
+            {   date: new Date().setDate(new Date().getDate() + 1),
+                from: new Date(),
+                to: new Date(),
+                activity: 'Personal Problem'  
+
+                },
+
+            {  
+                date: new Date().setDate(new Date().getDate() + 1),
+                from: new Date(),
+                to: new Date(),
+                activity: 'Attending Party'  
+
+                }
+
+            )
+            .then(() => {
+                console.log('finished populating Non_availability');
+            });
+    });
+
+Reason_nonavailability.find({}).removeAsync()
+    .then(() => {
+
+        Reason_nonavailability.createAsync({
+
+                date: new Date().setDate(new Date().getDate() + 1),
+                from: new Date(),
+                to: new Date(),
+                activity: 'Weekend'  
+            },
+
+            {   date: new Date().setDate(new Date().getDate() + 1),
+                from: new Date(),
+                to: new Date(),
+                activity: 'Personal Problem'  
+
+                },
+
+            {  
+                date: new Date().setDate(new Date().getDate() + 1),
+                from: new Date(),
+                to: new Date(),
+                activity: 'Attending Party'  
+
+                }
+
+            )
+            .then(() => {
+                console.log('finished populating Reason_nonavailability');
+            });
+    });
+
