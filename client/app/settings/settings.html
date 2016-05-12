@@ -388,7 +388,7 @@
                                    class="btn btn-default btn-xs"
                                    />
                                 <!-- Image thumbnail: <img style="width:100px;" ngf-thumbnail="user.GMC || '/thumb.jpg'"/> -->
-                                <button type="submit" class="btn btn-default btn-xs" ng-click="uploadFile(certificate.name,user[certificate.name],GMC_form)">
+                                <button type="submit" class="btn btn-default btn-xs form-submit-button" ng-click="uploadFile(certificate.name,user[certificate.name],GMC_form)">
                                         submit
                                     </button>
                                 <!-- <p>{{progress}}</p> -->
@@ -430,7 +430,7 @@
                                    class="btn btn-default btn-xs"
                                    />
                                 <!-- Image thumbnail: <img style="width:100px;" ngf-thumbnail="user.GMC || '/thumb.jpg'"/> -->
-                                <button type="submit" class="btn btn-default btn-xs" ng-click="uploadFile(certificate.name,user[certificate.name],GMC_form)">
+                                <button type="submit" class="btn btn-default btn-xs form-submit-button" ng-click="uploadFile(certificate.name,user[certificate.name],GMC_form)">
                                         submit
                                     </button>
                                 <!-- <p>{{progress}}</p> -->
@@ -452,7 +452,7 @@
                 <button class="btn btn-default">Reset</button>
             </div> -->
             <a class="btn btn-success pull-right" ng-click="openTwo('4')">Next</a>
-            <a class="btn btn-success pull-right" ng-click="documentupdate()">Save</a>
+            <a class="btn btn-success pull-right" ng-click="documentupdate($event)">Save</a>
         </accordion-group>
         <accordion-group is-open="$parent.step4">
             <accordion-heading>Practices<i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': step4, 'glyphicon-chevron-right': !step4}"></i></accordion-heading>
