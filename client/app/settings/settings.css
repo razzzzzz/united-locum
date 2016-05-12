@@ -84,3 +84,7 @@
 .parent-cross{
   position: relative;
 }
+.document:after {
+  content:"*";
+  color:red;
+}

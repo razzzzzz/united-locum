@@ -228,5 +228,7 @@ angular.module('clickeatApp').controller('SettingsController', function($scope,A
                 $scope.progress = 'progress: ' + progressPercentage + '% '; // capture upload progress
             });
         };
+
+        $scope.documentupdate = function(prop){alert(prop);}
 		$scope.updateUserProfileInDB = function(prop){alert(prop);}
 });
