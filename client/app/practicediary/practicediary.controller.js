@@ -202,7 +202,7 @@ angular.module('clickeatApp')
       }
     };
     $scope.init();
-  }).controller('ModalInstanceCtrl2', function ($scope, $modalInstance, items, $http, Auth,$state) {
+  }).controller('ModalInstanceCtrl2', function ($scope, $modalInstance, items, $http, Auth,$state,notification) {
     $scope.diary = items;
     if($scope.diary){
       $scope.updateEnable = true;
@@ -294,7 +294,9 @@ angular.module('clickeatApp')
         }else{//creating new vacancy
           $http.post('/api/vacancys',vacancyObj).then(
             function(res){
+              res.data.title = notification.getTitle(res.data.from,res.data.to);
               $scope.selected.newvacancy = res.data;
+
               $scope.ok();
             },
             function(err){
