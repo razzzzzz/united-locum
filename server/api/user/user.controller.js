@@ -160,6 +160,77 @@ function changePractices(req, res, next) {
 }
 
 /**
+ * Updating changeSocialAC for locum &practice.
+ */
+function changeSocialAC(req, res, next) {
+
+    var userId = req.user._id;
+    var socialAccont = req.body.socialAccont;
+    User.findByIdAsync(userId)
+        .then(user => {
+            user.socialAccont = socialAccont;
+            return user.saveAsync()
+                .then(() => {
+                    res.status(204).end();
+                })
+                .catch(validationError(res));
+        });
+}
+
+/**
+ * Updating practices for locum & practice.
+ */
+function changePackage(req, res, next) {
+
+    var userId = req.user._id;
+    var package_type = req.body.package;
+    User.findByIdAsync(userId)
+        .then(user => {
+            user.package = package_type;
+            return user.saveAsync()
+                .then(() => {
+                    res.status(204).end();
+                })
+                .catch(validationError(res));
+        });
+}
+
+/**
+ * Updating changeCurrentAddress for locum & practce.
+ */
+function changeCurrentAddress(req, res, next) {
+
+    var userId = req.user._id;
+    var changeCurrentAddress = req.body.changeCurrentAddress;
+    User.findByIdAsync(userId)
+        .then(user => {
+            user.changeCurrentAddress = changeCurrentAddress;
+            return user.saveAsync()
+                .then(() => {
+                    res.status(204).end();
+                })
+                .catch(validationError(res));
+        });
+}
+/**
+ * Updating changeCurrentAddress for locum & practce.
+ */
+function changeMain(req, res, next) {
+
+    var userId = req.user._id;
+    var changeCurrentAddress = req.body.changeCurrentAddress;
+    User.findByIdAsync(userId)
+        .then(user => {
+            user.changeCurrentAddress = changeCurrentAddress;
+            return user.saveAsync()
+                .then(() => {
+                    res.status(204).end();
+                })
+                .catch(validationError(res));
+        });
+}
+
+/**
  * uploading user documents
  */
 function uploadDocuments(req, res, next) {
@@ -212,7 +283,15 @@ export function updateUserProfile(req, res, next) {
         changeCurrentAddress(req, res, next);
     } else if (req.params.type === 'package') {
         changePackage(req, res, next);
-    } else if (req.params.type === 'socialAC') {
+    } else if (req.params.type === 'socialAccont') {
         changeSocialAC(req, res, next);
+    } else if (req.params.type === 'references') {
+        changeReferences(req, res, next);
+    } else if (req.params.type === 'nhsSys') {
+        changeNHSSys(req, res, next);
+    } else if (req.params.type === 'sessionRates') {
+        changeSessionRates(req, res, next);
+    } else if (req.params.type === 'main') {
+        changeMain(req, res, next);
     }
 }
