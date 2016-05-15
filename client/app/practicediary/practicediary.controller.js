@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('clickeatApp')
+  angular.module('clickeatApp')
   .controller('PracticediaryCtrl', function ($scope,$http,$compile,uiCalendarConfig,$modal,$state, $stateParams,notification) {
   var date = new Date();
     var d = date.getDate();
@@ -39,7 +39,7 @@ angular.module('clickeatApp')
       callback(events);
     };
 
-    $scope.calEventsExt = {
+   /* $scope.calEventsExt = {..........................................
        color: '#f00',
        textColor: 'yellow',
        events: [ 
@@ -57,19 +57,19 @@ angular.module('clickeatApp')
         $scope.openModel(eventData);
 
     };
-    $scope.alertMessage = function(data){
+   /* $scope.alertMessage = function(data){.............
       console.log(data);
     }
     /* alert on Drop */
-     $scope.alertOnDrop = function(event, delta, revertFunc, jsEvent, ui, view){
+    $scope.alertOnDrop = function(event, delta, revertFunc, jsEvent, ui, view){
        $scope.alertMessage = ('Event Droped to make dayDelta ' + delta);
     };
     /* alert on Resize */
-    $scope.alertOnResize = function(event, delta, revertFunc, jsEvent, ui, view ){
+   $scope.alertOnResize = function(event, delta, revertFunc, jsEvent, ui, view ){
        $scope.alertMessage = ('Event Resized to make dayDelta ' + delta);
     };
     /* add and removes an event source of choice */
-    $scope.addRemoveEventSource = function(sources,source) {
+   $scope.addRemoveEventSource = function(sources,source) {
       var canAdd = 0;
       angular.forEach(sources,function(value, key){
         if(sources[key] === source){
