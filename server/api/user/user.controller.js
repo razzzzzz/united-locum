@@ -200,11 +200,11 @@ function changePackage(req, res, next) {
  */
 function changeCurrentAddress(req, res, next) {
 
-    var userId = req.user._id;
-    var changeCurrentAddress = req.body.changeCurrentAddress;
+    var userId = req.params.id;
+    var currentAddress = req.body.currentAddress;
     User.findByIdAsync(userId)
         .then(user => {
-            user.changeCurrentAddress = changeCurrentAddress;
+            user.currentAddress = currentAddress;
             return user.saveAsync()
                 .then(() => {
                     res.status(204).end();

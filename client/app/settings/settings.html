@@ -338,7 +338,7 @@
                 </div>
             </div>
             <a class="btn btn-success pull-right" ng-click="openTwo('3')">Next</a>
-			<a class="btn btn-success pull-right" ng-click="updateUserProfileInDB()">Save</a>
+			<a class="btn btn-success pull-right" ng-click="updateUserProfileInDB('currentAddress',user.currentAddress)">Save</a>
         </accordion-group>
         <accordion-group is-open="$parent.step3">
             <accordion-heading>Documents<i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': step3, 'glyphicon-chevron-right': !step3}"></i></accordion-heading>

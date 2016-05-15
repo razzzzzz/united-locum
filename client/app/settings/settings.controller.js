@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('clickeatApp').controller('SettingsController', function($scope,Auth,$timeout, $http, Upload){
-    $scope.step3 = true;
+    $scope.step2 = true;
     $scope.user = Auth.getCurrentUser();
     $scope.user.referance = [
             {
@@ -251,5 +251,12 @@ angular.module('clickeatApp').controller('SettingsController', function($scope,A
                 i=0;
             }
         }
-		$scope.updateUserProfileInDB = function(prop){alert(prop);}
+		$scope.updateUserProfileInDB = function(prop, obj){
+            $http.post('/api/users/'+$scope.user._id+'/'+prop+'/saltvalue',{[prop]:obj})
+            .then(function(response){
+                $scope.autosuggest = response.data;
+            },function(err){
+
+            });  
+        }
 });
