@@ -3,18 +3,7 @@
 angular.module('clickeatApp').controller('SettingsController', function($scope,Auth,$timeout, $http, Upload){
     $scope.step3 = true;
     $scope.user = Auth.getCurrentUser();
-    $scope.user.referance = [
-            {
-                name:'referance1',
-                mobile:9494979407,
-                id:'refId1'
-            },
-            {
-                name:'referance2',
-                mobile:9494979408,
-                id:'refId2'
-            }
-        ];
+    $scope.user.referance = [];
         $scope.user.nhssystem = [];
         $scope.user.qualification = [];
         $scope.user.languages = [];
