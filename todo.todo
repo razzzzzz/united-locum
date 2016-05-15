@@ -1,25 +1,17 @@
- ☐ openshift
-
- ☐ Ask for terms and conditions doc for client
-
- ☐ popup windows html pages
-
- ☐ notification content to display.
-
  ✔ Logo @done (16-04-03 22:57)
-
  ✔ todo doc @done (16-04-03 22:57)
-
  ✔ adding folder in git repositery to hold html templates @done (16-04-03 22:57)
-
  ✔ Github Login details  @done (16-04-07 02:29)
-
- ☐ Notification schema in Diary Collection
- ☐ Profile html should be refresh
+ ✔ notification content to display. @done (16-05-14 21:22)
+ ✔ popup windows html pages @done (16-05-14 21:22)
+ ✔ Notification schema in Diary Collection @done (16-05-14 21:22)
+ ✔ Profile html should be refresh @done (16-05-14 21:23)
+ ✔ hava to implement auto filling for profile data @done (16-05-14 21:23)
+ ✔ have to implement profile for practice @done (16-05-14 21:23)
+ ✔ have to implement open vahicancy @done (16-05-14 21:23)
+ ☐ Ask for terms and conditions doc for client
+ ☐ openshift
  ☐ have to implement usecase for forget password 
- ☐ have to implement profile for practice
- ☐ hava to implement auto filling for profile data
- ☐ have to implement open vahicancy
   
 Document maintenance:
  ✔  Doument upload html template with vocablary @done (16-04-13 22:30)
@@ -31,11 +23,11 @@ Irfan:
  ✔ no of req default 1 not editable @done (16-04-20 21:37)
  ✔ from tome to time with am pm @done (16-04-20 21:37)
  ✔ new vacancy from menu. @done (16-04-24 01:18)
- ☐ once new vacancy is created then diary color sholud appear(if we create new vacancy from menu also diary color should appear). 
+ ✔ auto filling date while clicking date. @done (16-04-27 21:56)
+ ✔ once new vacancy is created then diary color sholud appear(if we create new vacancy from menu also diary color should appear).  @done (16-05-14 21:26)
  ☐ after open vacancy, they told me to start LOCUM DIARY.
  ☐ per one day we can create only 2 new vacancies.(morning and afternoon)
  ☐ splling mistakes, camel case, validations, headings, order of fields
- ✔ auto filling date while clicking date. @done (16-04-27 21:56)
  ☐ edit and delete functionality.
 
 Profile_Maintenance(reddy):
@@ -44,11 +36,8 @@ Profile_Maintenance(reddy):
  ✔ social media icons profile @done (16-04-12 21:59)
  ✔ alingn package in locum profile @done (16-04-12 22:01)
  ✔ 1)Add References is button that should open  a tab... @done (16-04-13 07:12)
-
  ✔ 2)Name,Mobile Number,ID Should be provided as data @done (16-04-13 07:12)
-
  ✔ 3)Each reference should contain EDIT/VIEW/DELETE buttons after added to  @done (16-04-13 07:12)
-
  ✔ Reference page @done (16-04-13 07:12)
  ✔ Locum-NHS Multi-select Catalogue box @done (16-04-13 07:32)
  ✔ gender @done (16-04-13 07:40)
@@ -60,23 +49,23 @@ Profile_Maintenance(reddy):
  ✔ Qualifications-Multiselect catalogue box @done (16-04-13 08:24)
  ✔ Language proficiency English-Radio buttons for Expert,Intermediate,Beginner @done (16-04-13 08:28)
  ✔ 11)Any Other languages known-Multi select catalogue box @done (16-04-13 09:13)
- ☐ Photo Upload in profile edting.
- ☐ have to implement capther robo image.
  ✔ 13)Are you British citizen-checkbox @done (16-04-13 09:17)
  ✔ 14)Eligible to work in UK-checkbox @done (16-04-13 09:17)
  ✔ 15)Profile Summary-text area @done (16-04-13 09:05)
  ✔ order of the fields @done (16-04-21 22:32)
+ ✔ Address should copy if billing address is same @done (16-04-20 23:34)
+ ✔ nhs system selected data should display @done (16-04-21 22:17)
+ ✔ adding list of practice in profile @done (16-05-14 21:16)
+ ✔ how fill about us default message should select first @done (16-04-21 23:07)
+ ✔ current location query with client. @done (16-04-28 20:53)
+ ☐ have to implement capther robo image.
+ ☐ Photo Upload in profile edting.
  ☐ validation
  ☐ error message vocablary
  ☐ tc document(pending at client side)
  ☐ hint text(pending at client side)
- ✔ Address should copy if billing address is same @done (16-04-20 23:34)
- ✔ nhs system selected data should display @done (16-04-21 22:17)
- ☐ adding list of practice in profile
  ☐ bug in auto profile filling
- ✔ how fill about us default message should select first @done (16-04-21 23:07)
  ☐ if editing of category added as text box then he may not know remining category(info)
- ✔ current location query with client. @done (16-04-28 20:53)
 Raju (midie):
  ☐ notification should shown bosed in socket io events.
  ☐ id,name,skill,time,date,cat,rate,desc
@@ -89,11 +78,11 @@ Siva prasad (practice dairy):
  ☐  html pages in different states
 Srinivas (Locum Diary):
 ✔  html pages in different states @done (16-05-05 21:54)
-☐ have to introduce date in booking popup
 ✔ Booking list shows only prefered practices defined in Locum profile @done (16-05-05 23:52)
+✔ Availability - White Booked - Green Non-Availability - Grey Locum Request - Amber (Orange) Practice Request - Red @done (16-05-05 23:07)
+☐ have to introduce date in booking popup
 ☐ Booking list add Multiselect for practice filter
 ☐ have to add to dairy
-✔ Availability - White Booked - Green Non-Availability - Grey Locum Request - Amber (Orange) Practice Request - Red @done (16-05-05 23:07)
 
 
 
@@ -109,7 +98,8 @@ Srinivas (Locum Diary):
 
 
 
-
+advanced excel financial modeling
+ssc cgl
 
 
 

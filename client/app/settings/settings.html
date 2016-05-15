@@ -182,7 +182,7 @@
                 </div>
             </div>
             <a class="btn btn-success pull-right" ng-click="openTwo('2')">Next</a>
-			<a class="btn btn-success pull-right" ng-click="updatePracticeInDB()">Save</a>
+			<a class="btn btn-success pull-right" ng-click="updateUserProfileInDB()">Save</a>
         </accordion-group>
         <accordion-group is-open="$parent.step2">
             <accordion-heading>Location<i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': step2, 'glyphicon-chevron-right': !step2}"></i></accordion-heading>
@@ -338,7 +338,7 @@
                 </div>
             </div>
             <a class="btn btn-success pull-right" ng-click="openTwo('3')">Next</a>
-			<a class="btn btn-success pull-right" ng-click="updatePracticeInDB(currentAddress)">Save</a>
+			<a class="btn btn-success pull-right" ng-click="updateUserProfileInDB()">Save</a>
         </accordion-group>
         <accordion-group is-open="$parent.step3">
             <accordion-heading>Documents<i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': step3, 'glyphicon-chevron-right': !step3}"></i></accordion-heading>
@@ -374,7 +374,7 @@
                 </thead>
                 <tbody>
                     <tr ng-repeat="certificate in certificates[user.category[0].label]">
-                        <td>{{certificate.label}}</td>
+                        <td class="document">{{certificate.label}}</td>
                         <td>
                             <form name="GMC_form" class="form-inline">
                                 <input 
@@ -388,7 +388,49 @@
                                    class="btn btn-default btn-xs"
                                    />
                                 <!-- Image thumbnail: <img style="width:100px;" ngf-thumbnail="user.GMC || '/thumb.jpg'"/> -->
-                                <button type="submit" class="btn btn-default btn-xs" ng-click="uploadFile(certificate.name,user[certificate.name],GMC_form)">
+                                <button type="submit" class="btn btn-default btn-xs form-submit-button" ng-click="uploadFile(certificate.name,user[certificate.name],GMC_form)">
+                                        submit
+                                    </button>
+                                <!-- <p>{{progress}}</p> -->
+                            </form>
+                                <i ng-show="GMC_form.GMC.$error.required">*required</i>
+                                <i ng-show="GMC_form.$error.maxSize" class="alert-warning">File too large 
+                                {{user.GMC.size / 1000000|number:1}}MB: max 5M</i>
+                        </td>
+                        <td>
+                            <a class="btn btn-default btn-xs" target="_blank" ng-href="{{user.documents[certificate.name]}}">View</a>
+                            <button class="btn btn-default btn-xs">Email</button>
+                            <button class="btn btn-default btn-xs" ng-click="triggerFileClick($event)">Modify</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h5>Contract</h5>
+   <table class="table table-condensed">
+                <thead>
+                    <tr>
+                        <th>Certificate</th>
+                        <th>Upload</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="certificate in certificates['contract']">
+                           <td class="document">{{certificate.label}}</td>
+                        <td>
+                            <form name="GMC_form" class="form-inline">
+                                <input 
+                                   type="file" 
+                                   ngf-select 
+                                   ng-model="user[certificate.name]" 
+                                   name="{{certificate.name}}" 
+                                   accept=".doc,.docx,.jpg,.bmp,.pdf" 
+                                   ngf-max-size="5MB" 
+                                   style="display: inline-block;"
+                                   class="btn btn-default btn-xs"
+                                   />
+                                <!-- Image thumbnail: <img style="width:100px;" ngf-thumbnail="user.GMC || '/thumb.jpg'"/> -->
+                                <button type="submit" class="btn btn-default btn-xs form-submit-button" ng-click="uploadFile(certificate.name,user[certificate.name],GMC_form)">
                                         submit
                                     </button>
                                 <!-- <p>{{progress}}</p> -->
@@ -410,11 +452,12 @@
                 <button class="btn btn-default">Reset</button>
             </div> -->
             <a class="btn btn-success pull-right" ng-click="openTwo('4')">Next</a>
+            <a class="btn btn-success pull-right" ng-click="documentupdate($event)">Save</a>
         </accordion-group>
         <accordion-group is-open="$parent.step4">
             <accordion-heading>Practices<i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': step4, 'glyphicon-chevron-right': !step4}"></i></accordion-heading>
             <div class="col-lg-12">
-              <form class="col-lg-6" ng-submit="searchPractice()">
+              <form class="col-lg-6 col-md-12" ng-submit="searchPractice()">
                 <div class="input-group">
                     <input type="search" class="form-control" ng-model="user.searchText" placeholder="zip code to search practice">
                     <span class="input-group-btn" id="basic-addon1">
@@ -429,7 +472,7 @@
                   </p>
                 </div>
               </form>
-              <div class="col-lg-6">
+              <div class="col-lg-6 col-md-12">
                 <div ng-repeat="practice in user.practices" class="panel panel-success inline-block">
                   <div class="panel-heading inline-block parent-cross">
                     {{practice.fname}}
@@ -458,7 +501,7 @@
                 </div>
             </div>
             <a class="btn btn-success pull-right" ng-click="openTwo('6')">Next</a>
-			<a class="btn btn-success pull-right" ng-click="updatePracticeInDB(package)">Save</a>
+			<a class="btn btn-success pull-right" ng-click="updateUserProfileInDB(package)">Save</a>
 			
         </accordion-group>
         <accordion-group is-open="$parent.step6">
@@ -557,7 +600,7 @@
                 </div>
             </div>
             <a class="btn btn-success pull-right" ng-click="openTwo('7')">Next</a>
-			<a class="btn btn-success pull-right" ng-click="updatePracticeInDB()">Save</a>
+			<a class="btn btn-success pull-right" ng-click="updateUserProfileInDB()">Save</a>
         </accordion-group>
         <accordion-group is-open="$parent.step7">
             <accordion-heading>References<i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': step7, 'glyphicon-chevron-right': !step7}"></i></accordion-heading>
@@ -617,7 +660,7 @@
                 </div>
             </div>
             <a class="btn btn-success pull-right" ng-click="openTwo('8')">Next</a>
-			<a class="btn btn-success pull-right" ng-click="updatePracticeInDB(currentRef)">Save</a>
+			<a class="btn btn-success pull-right" ng-click="updateUserProfileInDB(currentRef)">Save</a>
         </accordion-group>
         <accordion-group is-open="$parent.step8">
             <accordion-heading>NHS System<i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': step8, 'glyphicon-chevron-right': !step8}"></i></accordion-heading>
@@ -637,7 +680,7 @@
                 </div>
             </div>
             <a class="btn btn-success pull-right" ng-click="openTwo('9')">Next</a>
-			<a class="btn btn-success pull-right" ng-click="updatePracticeInDB()">Save</a>
+			<a class="btn btn-success pull-right" ng-click="updateUserProfileInDB()">Save</a>
         </accordion-group>
         <accordion-group is-open="$parent.step9">
             <accordion-heading>Session & Rates<i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': step9, 'glyphicon-chevron-right': !step9}"></i></accordion-heading>
@@ -880,7 +923,7 @@
                 </div>
             </div>
             <a class="btn btn-success pull-right" ng-click="openTwo('10')">Next</a>
-			<a class="btn btn-success pull-right" ng-click="updatePracticeInDB()">Save</a>
+			<a class="btn btn-success pull-right" ng-click="updateUserProfileInDB()">Save</a>
         </accordion-group>
         <accordion-group is-open="$parent.step10">
             <accordion-heading>Payment<i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': step10, 'glyphicon-chevron-right': !step10}"></i></accordion-heading>

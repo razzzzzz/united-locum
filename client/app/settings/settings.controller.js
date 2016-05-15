@@ -173,7 +173,7 @@ angular.module('clickeatApp').controller('SettingsController', function($scope,A
     };
 
     $scope.updatePracticeInDB = function(){
-        $http.put('/api/users/'+$scope.user._id+'/practices',{'practices':$scope.user.practices})
+        $http.post('/api/users/'+$scope.user._id+'/practices/saltvalue',{'practices':$scope.user.practices})
         .then(function(response){
             $scope.autosuggest = response.data;
         },function(err){
@@ -199,6 +199,10 @@ angular.module('clickeatApp').controller('SettingsController', function($scope,A
     };
 
        $scope.uploadFile = function(fname, model,GMC_form){ //function to call on form submit 
+           if(!model){
+            alert("you should upload all documents");
+            return;
+           }
            var ext = model.name.split('.').pop();
            if(ext=="pdf" || ext=="docx" || ext=="doc" || ext=="bmp" || ext == "jpg"){
             if (GMC_form.$valid && model) { //check if from is valid
@@ -211,9 +215,12 @@ angular.module('clickeatApp').controller('SettingsController', function($scope,A
         
         $scope.upload = function (file,fname) {
             Upload.upload({
-                url: '/api/users/'+$scope.user._id+'/'+fname+'/documents', //webAPI exposed to upload the file
+                url: '/api/users/'+$scope.user._id+'/documents/'+fname, //webAPI exposed to upload the file
                 data:{file:file} //pass file as data, should be user ng-model
             }).then(function (resp) { //upload function returns a promise
+                $timeout(function(){
+                    uploadBulkFiles();
+                });
                 if(!$scope.user.documents){
                     $scope.user.documents = {};
                 }
@@ -228,5 +235,21 @@ angular.module('clickeatApp').controller('SettingsController', function($scope,A
                 $scope.progress = 'progress: ' + progressPercentage + '% '; // capture upload progress
             });
         };
-		$scope.updatePracticeInDB = function(prop){alert(prop);}
+        var i=0;
+        var submit_buttons = [];
+        $scope.documentupdate = function($event){
+            submit_buttons = angular.element($event.currentTarget).parent().find(".form-submit-button");
+            $timeout(function(){
+                uploadBulkFiles();
+            });
+        }
+        var uploadBulkFiles = function(){
+            if(submit_buttons.length>i){
+                angular.element(submit_buttons[i]).trigger("click");
+                i++;
+            }else{
+                i=0;
+            }
+        }
+		$scope.updateUserProfileInDB = function(prop){alert(prop);}
 });
