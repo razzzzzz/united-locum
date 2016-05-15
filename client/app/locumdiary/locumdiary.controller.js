@@ -178,7 +178,8 @@ angular.module('clickeatApp')
     };  
    
     $scope.cancleAppointment = function(){
-      alert("have to cancle request");
+    alert("you want to cancle request");
+    //$modalInstance.dismiss('cancel');
     }
     $scope.makeRequest = function(form){
       $scope.submitted = true;
