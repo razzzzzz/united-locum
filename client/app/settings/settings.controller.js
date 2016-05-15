@@ -173,7 +173,7 @@ angular.module('clickeatApp').controller('SettingsController', function($scope,A
     };
 
     $scope.updatePracticeInDB = function(){
-        $http.put('/api/users/'+$scope.user._id+'/practices',{'practices':$scope.user.practices})
+        $http.post('/api/users/'+$scope.user._id+'/practices/saltvalue',{'practices':$scope.user.practices})
         .then(function(response){
             $scope.autosuggest = response.data;
         },function(err){
@@ -215,7 +215,7 @@ angular.module('clickeatApp').controller('SettingsController', function($scope,A
         
         $scope.upload = function (file,fname) {
             Upload.upload({
-                url: '/api/users/'+$scope.user._id+'/'+fname+'/documents', //webAPI exposed to upload the file
+                url: '/api/users/'+$scope.user._id+'/documents/'+fname, //webAPI exposed to upload the file
                 data:{file:file} //pass file as data, should be user ng-model
             }).then(function (resp) { //upload function returns a promise
                 $timeout(function(){
