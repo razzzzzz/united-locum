@@ -93,7 +93,9 @@ var UserSchema = new Schema({
         linkedin: String,
         skype: String,
         twitter: String,
-        pinterest: String
+        pinterest: String,
+        xing: String,
+        google: String
     },
     references: {
         type: Array

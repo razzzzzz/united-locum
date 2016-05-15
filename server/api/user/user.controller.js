@@ -130,7 +130,7 @@ export function authCallback(req, res, next) {
 }
 
 /**
- * Search practice to add to locum as per his preferance
+ * Search practice to add to locum as per his peferences
  */
 export function searchPractice(req, res, next) {
     var searchText = parseInt(req.body.searchText);
@@ -160,11 +160,47 @@ function changePractices(req, res, next) {
 }
 
 /**
+ * Updating practices for locum preferances.
+ */
+function changeNHSSys(req, res, next) {
+
+    var userId = req.params.id;
+    var nhsSys = req.body.nhsSys;
+    User.findByIdAsync(userId)
+        .then(user => {
+            user.nhsSys = nhsSys;
+            return user.saveAsync()
+                .then(() => {
+                    res.status(204).end();
+                })
+                .catch(validationError(res));
+        });
+}
+
+/**
+ * Updating practices for locum preferances.
+ */
+function changeReferences(req, res, next) {
+
+    var userId = req.params.id;
+    var references = req.body.references;
+    User.findByIdAsync(userId)
+        .then(user => {
+            user.references = references;
+            return user.saveAsync()
+                .then(() => {
+                    res.status(204).end();
+                })
+                .catch(validationError(res));
+        });
+}
+
+/**
  * Updating changeSocialAC for locum &practice.
  */
 function changeSocialAC(req, res, next) {
 
-    var userId = req.user._id;
+    var userId = req.params.id;
     var socialAccont = req.body.socialAccont;
     User.findByIdAsync(userId)
         .then(user => {
@@ -182,7 +218,7 @@ function changeSocialAC(req, res, next) {
  */
 function changePackage(req, res, next) {
 
-    var userId = req.user._id;
+    var userId = req.params.id;
     var package_type = req.body.package;
     User.findByIdAsync(userId)
         .then(user => {
@@ -212,13 +248,32 @@ function changeCurrentAddress(req, res, next) {
                 .catch(validationError(res));
         });
 }
+
+/**
+ * Updating changeCurrentAddress for locum & practce.
+ */
+function changeSessionRates(req, res, next) {
+
+    var userId = req.params.id;
+    var sessionRates = req.body.sessionRates;
+    User.findByIdAsync(userId)
+        .then(user => {
+            user.sessionRates = sessionRates;
+            return user.saveAsync()
+                .then(() => {
+                    res.status(204).end();
+                })
+                .catch(validationError(res));
+        });
+}
+
 /**
  * Updating changeCurrentAddress for locum & practce.
  */
 function changeMain(req, res, next) {
 
-    var userId = req.user._id;
-    var changeCurrentAddress = req.body.changeCurrentAddress;
+    var userId = req.params.id;
+    var changeCurrentAddress = req.body.main;
     User.findByIdAsync(userId)
         .then(user => {
             user.changeCurrentAddress = changeCurrentAddress;
