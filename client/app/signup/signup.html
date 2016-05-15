@@ -13,7 +13,7 @@
             <input type="text" name="name" class="form-control" ng-model="user.lname"
                    required placeholder="Last name"/>
             <p class="help-block" ng-show="form.name.$error.required && submitted">
-              A First name and Last name is required
+              A First name and Last name are required
             </p>
           </div>
         </div>
@@ -81,31 +81,31 @@
           </div>
         </div>
 
-        <div class="form-group form-inline" ng-class="{ 'has-success': form.password.$valid && submitted,
+                <div class="form-group form-inline" ng-class="{ 'has-success': form.password.$valid && submitted,
                                             'has-error': form.password.$invalid && submitted }">
           <label class="control-label col-sm-3">Password</label>
           <div class="col-sm-9">
             <input type="password" name="password" class="form-control" ng-model="user.password"
-                   ng-minlength="5" ng-pattern="/^[a-zA-Z]\w{3,14}$/"
+                   ng-minlength="4" ng-pattern="/\w{1,9}\W{1,9}\d{1,9}/"
                    required placeholder="Password"
                    mongoose-error/>
-	         
-            <span class="help-inline help-text" ng-show="user.password.length<1 form.Password.$dirty && form.Password.$error.pattern" tooltip="Password should be Alphanumeric">&nbsp;?&nbsp;</span>
-			<span class="help-inline weak"
-               ng-show="user.password.length<5">
+           
+            <span class="help-inline help-text" ng-show="user.password.length<1 form.Password.$dirty && form.Password.$error.pattern" tooltip="Password should be Alphanumeric and contain atleast one symbol and length should be more than 4 characters">&nbsp;?&nbsp;</span>
+      <span class="help-inline weak"
+               ng-show="user.password.length<=4">
               Your password is weak ! 
             </span>
             <span class="help-inline medium bold"
-               ng-show="user.password.length<7&&user.password.length>5">
+               ng-show="user.password.length<8&&user.password.length>5">
               Medium !
             </span>
             <span class="help-inline strong bold"
-               ng-show="user.password.length>7">
+               ng-show="user.password.length>=8">
               Now Your password is Strong !
             </span>
             <p class="help-block"
                ng-show="(form.password.$error.minlength || form.password.$error.required) && submitted">
-              Password must be at least 6 characters.
+              Password must be at least 4 characters.
             </p>
             <p class="help-block" ng-show="form.password.$error.mongoose">
               {{ errors.password }}
@@ -117,12 +117,12 @@
                                             'has-error': form.confirmPassword.$invalid && submitted }">
           <label class="control-label col-sm-3">Confirm Password</label>
           <div class="col-sm-9">
-            <input type="password" name="confirmPassword" class="form-control" ng-pattern="/^[a-zA-Z]\w{3,14}$/" ng-model="user.confirmPassword"
+            <input type="password" name="confirmPassword" class="form-control" ng-pattern="/\w{1,9}\W{1,9}\d{1,9}/" ng-model="user.confirmPassword"
                    match="user.password" placeholder="Confirm Password"
-                   ng-minlength="5" required/>
+                   ng-minlength="4" required/>
             <p class="help-block"
                ng-show="form.confirmPassword.$error.match && submitted">
-              Passwords must match and should be Alphanumeric.
+              Passwords doesn't matched.
             </p>
           </div>
         </div>
@@ -137,7 +137,6 @@
             </p>
           </div>
         </div>
-
         <div class="form-group form-inline" ng-class="{ 'has-success': form.idNumber.$valid && submitted,
                                             'has-error': form.idNumber.$invalid && submitted }">
           <label class="control-label col-sm-3"> {{user.category.label}}</label>
@@ -200,7 +199,7 @@
             required
             />
             <a href="http://unitelocum.com/terms & conditions" target="_blank">Please Read and Accept Terms & Conditions.</a>
-          </label>
+          </label></br>
           <p class="help-block"
              ng-show="form.tc.$error.required && submitted">
             Accept terms and conditions.
