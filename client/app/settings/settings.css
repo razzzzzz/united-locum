@@ -84,3 +84,10 @@
 .parent-cross{
   position: relative;
 }
+.document:after {
+  content:"*";
+  color:red;
+}
+.form-submit-button{
+  display: none;
+}

@@ -170,7 +170,7 @@
       var modalInstance = $modal.open({
         animation: true,
         templateUrl: $scope.items.templateUrl,
-        controller: 'ModalInstanceCtrl1',
+        controller: 'ModalInstanceCtrl2',
         size: 'lg',
         resolve: {
           items: function () {
@@ -194,11 +194,15 @@
 
     $scope.init = function(){
       if(parseInt($stateParams.openpopup)){
-        $scope.openModel({type: 'newevent',heading:'Create New Vacancy',templateUrl:'app/practicediary/newvacency.html'}); 
+        $scope.openModel({
+                          type: 'newevent',
+                          heading:'Create New Vacancy',
+                          templateUrl:'app/practicediary/newvacency.html'
+                        }); 
       }
     };
     $scope.init();
-  }).controller('ModalInstanceCtrl1', function ($scope, $modalInstance, items, $http, Auth,$state) {
+  }).controller('ModalInstanceCtrl2', function ($scope, $modalInstance, items, $http, Auth,$state,notification) {
     $scope.diary = items;
     if($scope.diary){
       $scope.updateEnable = true;
@@ -206,9 +210,9 @@
     $scope.today = function() {
       $scope.dt = new Date();
       if($scope.diary.date)
-        $scope.dt = $scope.diary.date.toDate();
+        $scope.dt = new Date($scope.diary.date);
     };
-    //$scope.today();
+    $scope.today();
     $scope.popup1 = {
       opened: false
     };
@@ -264,7 +268,7 @@
        var vacancyObj = {
         'category': $scope.req.category.name,
         'desc': $scope.req.desc,
-        'skill': $scope.req.skill,
+        'skill': $scope.req.skills,
         'count': $scope.req.count,
         'rate': $scope.req.rate,
         'from':$scope.req.from,
@@ -290,7 +294,9 @@
         }else{//creating new vacancy
           $http.post('/api/vacancys',vacancyObj).then(
             function(res){
+              res.data.title = notification.getTitle(res.data.from,res.data.to);
               $scope.selected.newvacancy = res.data;
+
               $scope.ok();
             },
             function(err){

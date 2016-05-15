@@ -97,8 +97,8 @@
                 </div>
             </div>
           <a class="btn btn-success pull-right" ng-click="openTwo('2')">Next</a>
+		  <a class="btn btn-success pull-right" ng-click="updateUserProfileInDB()">Save</a> 
       </accordion-group>
-      
       <accordion-group is-open="$parent.step2">
           <accordion-heading>Location<i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': step2, 'glyphicon-chevron-right': !step2}"></i></accordion-heading>
 
@@ -255,6 +255,7 @@
                       </div>
           </div>
           <a class="btn btn-success pull-right" ng-click="openTwo('3')">Next</a>
+		  <a class="btn btn-success pull-right" ng-click="updateUserProfileInDB()">Save</a>
       </accordion-group>
       
       <accordion-group is-open="$parent.step3">
@@ -271,33 +272,33 @@
                 </thead>
                 <tbody>
                     <tr ng-repeat="certificate in certificates['contract']">
-                        <td>{{certificate.label}}</td>
+                           <td class="document">{{certificate.label}}</td>
                         <td>
                             <form name="GMC_form" class="form-inline">
                                 <input 
                                    type="file" 
                                    ngf-select 
-                                   ng-model="user['contract']" 
-                                   name="contract" 
-                                   accept="image/*,application/pdf,.pdf" 
+                                   ng-model="user[certificate.name]" 
+                                   name="{{certificate.name}}" 
+                                   accept=".doc,.docx,.jpg,.bmp,.pdf" 
                                    ngf-max-size="5MB" 
                                    style="display: inline-block;"
                                    class="btn btn-default btn-xs"
                                    />
                                 <!-- Image thumbnail: <img style="width:100px;" ngf-thumbnail="user.GMC || '/thumb.jpg'"/> -->
-                                <button type="submit" class="btn btn-default btn-xs" ng-click="uploadFile(certificate.name,user['contract'])">
+                                <button type="submit" class="btn btn-default btn-xs" ng-click="uploadFile(certificate.name,user[certificate.name],GMC_form)">
                                         submit
                                     </button>
                                 <!-- <p>{{progress}}</p> -->
                             </form>
                                 <i ng-show="GMC_form.GMC.$error.required">*required</i>
-                                <i ng-show="GMC_form.GMC.$error.maxSize">File too large 
+                                <i ng-show="GMC_form.$error.maxSize" class="alert-warning">File too large 
                                 {{user.GMC.size / 1000000|number:1}}MB: max 5M</i>
                         </td>
                         <td>
                             <a class="btn btn-default btn-xs" target="_blank" ng-href="{{user.documents[certificate.name]}}">View</a>
                             <button class="btn btn-default btn-xs">Email</button>
-                            <button class="btn btn-default btn-xs">Modify</button>
+                            <button class="btn btn-default btn-xs" ng-click="triggerFileClick($event)">Modify</button>
                         </td>
                     </tr>
                 </tbody>
@@ -322,6 +323,7 @@
 
 
         <a class="btn btn-success pull-right" ng-click="openTwo('6')">Next</a>
+		<a class="btn btn-success pull-right" ng-click="updateUserProfileInDB()">Save</a>
       </accordion-group>
       <accordion-group is-open="$parent.step6">
         <accordion-heading>Social ACC<i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': step6, 'glyphicon-chevron-right': !step6}"></i></accordion-heading>
@@ -419,6 +421,7 @@
             </div>
         </div>
         <a class="btn btn-success pull-right" ng-click="openTwo('7')">Next</a>
+		<a class="btn btn-success pull-right" ng-click="updateUserProfileInDB()">Save</a>
       </accordion-group>
       <accordion-group is-open="$parent.step7">
         <accordion-heading>References<i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': step7, 'glyphicon-chevron-right': !step7}"></i></accordion-heading>
@@ -478,6 +481,7 @@
               </div>
               </div>
         <a class="btn btn-success pull-right" ng-click="openTwo('8')">Next</a>
+		<a class="btn btn-success pull-right" ng-click="updateUserProfileInDB()">Save</a>
       </accordion-group>
       <accordion-group is-open="$parent.step8">
         <accordion-heading>NHS System<i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': step8, 'glyphicon-chevron-right': !step8}"></i></accordion-heading>
@@ -498,6 +502,7 @@
           </div>
         </div>
         <a class="btn btn-success pull-right" ng-click="openTwo('9')">Next</a>
+		<a class="btn btn-success pull-right" ng-click="updateUserProfileInDB()">Save</a>
       </accordion-group>
       <accordion-group is-open="$parent.step9">
         <accordion-heading>Session & Rates<i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': step9, 'glyphicon-chevron-right': !step9}"></i></accordion-heading>
@@ -506,59 +511,59 @@
             <td>
               <select name="From" value="00" class="form-control">
                         <option value="00">FROM</option>
-                        <option >1:00</option>
-                        <option >2:00</option>
-                        <option >3:00</option>
-                        <option >4:00</option>
-                        <option >5:00</option>
-                        <option >6:00</option>
-                        <option >7:00</option>
-                        <option >8:00</option>
-                        <option >9:00</option>
-                        <option >10:00</option>
-                        <option >11:00</option>
-                        <option >12:00</option>
-                        <option >13:00</option>
-                        <option >14:00</option>
-                        <option >15:00</option>
-                        <option >16:00</option>
-                        <option >17:00</option>
-                        <option >18:00</option>
-                        <option >19:00</option>
-                        <option >20:00</option>
-                        <option >21:00</option>
-                        <option >22:00</option>
-                        <option >23:00</option>
-                        <option >00:00</option>
+                       <option>00:00</option>
+							<option>01:00</option>
+                            <option>02:00</option>
+                            <option>03:00</option>
+                            <option>04:00</option>
+                            <option>05:00</option>
+                            <option>06:00</option>
+                            <option>07:00</option>
+                            <option>08:00</option>
+                            <option>09:00</option>
+                            <option>10:00</option>
+                            <option>11:00</option>
+                            <option>12:00</option>
+                            <option>13:00</option>
+                            <option>14:00</option>
+                            <option>15:00</option>
+                            <option>16:00</option>
+                            <option>17:00</option>
+                            <option>18:00</option>
+                            <option>19:00</option>
+                            <option>20:00</option>
+                            <option>21:00</option>
+                            <option>22:00</option>
+                            <option>23:00</option>
               </select>
             </td>
             <td>
               <select name="To" value="00" class="form-control">
                         <option value="00">TO</option>
-                        <option >1:00</option>
-                        <option >2:00</option>
-                        <option >3:00</option>
-                        <option >4:00</option>
-                        <option >5:00</option>
-                        <option >6:00</option>
-                        <option >7:00</option>
-                        <option >8:00</option>
-                        <option >9:00</option>
-                        <option >10:00</option>
-                        <option >11:00</option>
-                        <option >12:00</option>
-                        <option >13:00</option>
-                        <option >14:00</option>
-                        <option >15:00</option>
-                        <option >16:00</option>
-                        <option >17:00</option>
-                        <option >18:00</option>
-                        <option >19:00</option>
-                        <option >20:00</option>
-                        <option >21:00</option>
-                        <option >22:00</option>
-                        <option >23:00</option>
-                        <option >00:00</option>
+                       <option>00:00</option>
+							<option>01:00</option>
+                            <option>02:00</option>
+                            <option>03:00</option>
+                            <option>04:00</option>
+                            <option>05:00</option>
+                            <option>06:00</option>
+                            <option>07:00</option>
+                            <option>08:00</option>
+                            <option>09:00</option>
+                            <option>10:00</option>
+                            <option>11:00</option>
+                            <option>12:00</option>
+                            <option>13:00</option>
+                            <option>14:00</option>
+                            <option>15:00</option>
+                            <option>16:00</option>
+                            <option>17:00</option>
+                            <option>18:00</option>
+                            <option>19:00</option>
+                            <option>20:00</option>
+                            <option>21:00</option>
+                            <option>22:00</option>
+                            <option>23:00</option>
               </select>
             </td>   
             <td>
@@ -576,59 +581,59 @@
             <td>
               <select name="From" value="00" class="form-control">
                         <option value="00">FROM</option>
-                        <option >1:00</option>
-                        <option >2:00</option>
-                        <option >3:00</option>
-                        <option >4:00</option>
-                        <option >5:00</option>
-                        <option >6:00</option>
-                        <option >7:00</option>
-                        <option >8:00</option>
-                        <option >9:00</option>
-                        <option >10:00</option>
-                        <option >11:00</option>
-                        <option >12:00</option>
-                        <option >13:00</option>
-                        <option >14:00</option>
-                        <option >15:00</option>
-                        <option >16:00</option>
-                        <option >17:00</option>
-                        <option >18:00</option>
-                        <option >19:00</option>
-                        <option >20:00</option>
-                        <option >21:00</option>
-                        <option >22:00</option>
-                        <option >23:00</option>
-                        <option >00:00</option>
+                       <option>00:00</option>
+							<option>01:00</option>
+                            <option>02:00</option>
+                            <option>03:00</option>
+                            <option>04:00</option>
+                            <option>05:00</option>
+                            <option>06:00</option>
+                            <option>07:00</option>
+                            <option>08:00</option>
+                            <option>09:00</option>
+                            <option>10:00</option>
+                            <option>11:00</option>
+                            <option>12:00</option>
+                            <option>13:00</option>
+                            <option>14:00</option>
+                            <option>15:00</option>
+                            <option>16:00</option>
+                            <option>17:00</option>
+                            <option>18:00</option>
+                            <option>19:00</option>
+                            <option>20:00</option>
+                            <option>21:00</option>
+                            <option>22:00</option>
+                            <option>23:00</option>
               </select>
             </td>
             <td>
               <select name="To" value="00" class="form-control">
                         <option value="00">TO</option>
-                        <option >1:00</option>
-                        <option >2:00</option>
-                        <option >3:00</option>
-                        <option >4:00</option>
-                        <option >5:00</option>
-                        <option >6:00</option>
-                        <option >7:00</option>
-                        <option >8:00</option>
-                        <option >9:00</option>
-                        <option >10:00</option>
-                        <option >11:00</option>
-                        <option >12:00</option>
-                        <option >13:00</option>
-                        <option >14:00</option>
-                        <option >15:00</option>
-                        <option >16:00</option>
-                        <option >17:00</option>
-                        <option >18:00</option>
-                        <option >19:00</option>
-                        <option >20:00</option>
-                        <option >21:00</option>
-                        <option >22:00</option>
-                        <option >23:00</option>
-                        <option >00:00</option>
+                        <option>00:00</option>
+							<option>01:00</option>
+                            <option>02:00</option>
+                            <option>03:00</option>
+                            <option>04:00</option>
+                            <option>05:00</option>
+                            <option>06:00</option>
+                            <option>07:00</option>
+                            <option>08:00</option>
+                            <option>09:00</option>
+                            <option>10:00</option>
+                            <option>11:00</option>
+                            <option>12:00</option>
+                            <option>13:00</option>
+                            <option>14:00</option>
+                            <option>15:00</option>
+                            <option>16:00</option>
+                            <option>17:00</option>
+                            <option>18:00</option>
+                            <option>19:00</option>
+                            <option>20:00</option>
+                            <option>21:00</option>
+                            <option>22:00</option>
+                            <option>23:00</option>
               </select>
             </td>   
             <td>
@@ -646,59 +651,59 @@
             <td>
               <select name="From" value="00" class="form-control">
                         <option value="00">FROM</option>
-                        <option >1:00</option>
-                        <option >2:00</option>
-                        <option >3:00</option>
-                        <option >4:00</option>
-                        <option >5:00</option>
-                        <option >6:00</option>
-                        <option >7:00</option>
-                        <option >8:00</option>
-                        <option >9:00</option>
-                        <option >10:00</option>
-                        <option >11:00</option>
-                        <option >12:00</option>
-                        <option >13:00</option>
-                        <option >14:00</option>
-                        <option >15:00</option>
-                        <option >16:00</option>
-                        <option >17:00</option>
-                        <option >18:00</option>
-                        <option >19:00</option>
-                        <option >20:00</option>
-                        <option >21:00</option>
-                        <option >22:00</option>
-                        <option >23:00</option>
-                        <option >00:00</option>
+                        <option>00:00</option>
+							<option>01:00</option>
+                            <option>02:00</option>
+                            <option>03:00</option>
+                            <option>04:00</option>
+                            <option>05:00</option>
+                            <option>06:00</option>
+                            <option>07:00</option>
+                            <option>08:00</option>
+                            <option>09:00</option>
+                            <option>10:00</option>
+                            <option>11:00</option>
+                            <option>12:00</option>
+                            <option>13:00</option>
+                            <option>14:00</option>
+                            <option>15:00</option>
+                            <option>16:00</option>
+                            <option>17:00</option>
+                            <option>18:00</option>
+                            <option>19:00</option>
+                            <option>20:00</option>
+                            <option>21:00</option>
+                            <option>22:00</option>
+                            <option>23:00</option>
                 </select>
             </td>
             <td>
               <select name="To" value="00"  class="form-control">
                         <option value="00">TO</option>
-                        <option >1:00</option>
-                        <option >2:00</option>
-                        <option >3:00</option>
-                        <option >4:00</option>
-                        <option >5:00</option>
-                        <option >6:00</option>
-                        <option >7:00</option>
-                        <option >8:00</option>
-                        <option >9:00</option>
-                        <option >10:00</option>
-                        <option >11:00</option>
-                        <option >12:00</option>
-                        <option >13:00</option>
-                        <option >14:00</option>
-                        <option >15:00</option>
-                        <option >16:00</option>
-                        <option >17:00</option>
-                        <option >18:00</option>
-                        <option >19:00</option>
-                        <option >20:00</option>
-                        <option >21:00</option>
-                        <option >22:00</option>
-                        <option >23:00</option>
-                        <option >00:00</option>
+                        <option>00:00</option>
+							<option>01:00</option>
+                            <option>02:00</option>
+                            <option>03:00</option>
+                            <option>04:00</option>
+                            <option>05:00</option>
+                            <option>06:00</option>
+                            <option>07:00</option>
+                            <option>08:00</option>
+                            <option>09:00</option>
+                            <option>10:00</option>
+                            <option>11:00</option>
+                            <option>12:00</option>
+                            <option>13:00</option>
+                            <option>14:00</option>
+                            <option>15:00</option>
+                            <option>16:00</option>
+                            <option>17:00</option>
+                            <option>18:00</option>
+                            <option>19:00</option>
+                            <option>20:00</option>
+                            <option>21:00</option>
+                            <option>22:00</option>
+                            <option>23:00</option>
               </select>
             </td>   
             <td>
@@ -740,6 +745,7 @@
           </div>
         </div>
         <a class="btn btn-success pull-right" ng-click="openTwo('10')">Next</a>
+		<a class="btn btn-success pull-right" ng-click="updateUserProfileInDB()">Save</a>
       </accordion-group>
       <accordion-group is-open="$parent.step10">
         <accordion-heading>Payment<i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': step10, 'glyphicon-chevron-right': !step10}"></i></accordion-heading>

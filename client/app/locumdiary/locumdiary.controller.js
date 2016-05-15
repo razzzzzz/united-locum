@@ -146,11 +146,18 @@ angular.module('clickeatApp')
           }
         }
       });
-
+       
       modalInstance.result.then(function (updatevacancy) {
         if(updatevacancy.newvacancy){
-      $scope.vacancyList.push(updatevacancy.newvacancy);
-        }else if(updatevacancy.updatevacancy){
+          $scope.vacancyList.push(updatevacancy.newvacancy);
+        }else if(updatevacancy.opr == 'delete'){
+          // have to remove same vacancy from db
+          for(var i=0;i<$scope.events.length;i++){
+            if($scope.events[i]._id==updatevacancy.id){
+              $scope.events.splice(i,1);
+              break;
+            }
+          }
           //$scope.vacancyList.filter
         }
        // $scope.selected = selectedItem;
@@ -178,14 +185,13 @@ angular.module('clickeatApp')
     };  
    
     $scope.cancleAppointment = function(){
-    alert("you want to cancle request");
-    //$modalInstance.dismiss('cancel');
+       $modalInstance.close( {id:$scope.diary._id,opr:'delete'});
     }
     $scope.makeRequest = function(form){
       $scope.submitted = true;
       if(form.$valid){
        var vacancyObj = {
-          'category': $scope.req.category,
+        'category': $scope.req.category,
         'desc': $scope.req.desc,
         'skill': $scope.req.skill,
         'count': $scope.req.count,
