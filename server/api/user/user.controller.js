@@ -6,6 +6,8 @@ import config from '../../config/environment';
 import jwt from 'jsonwebtoken';
 import multer from 'multer';
 import fs from 'fs';
+import _ from 'lodash';
+
 var basePath = './uploads';
 var fname = '';
 if (!fs.existsSync(basePath)) {
@@ -130,7 +132,7 @@ export function authCallback(req, res, next) {
 }
 
 /**
- * Search practice to add to locum as per his preferance
+ * Search practice to add to locum as per his peferences
  */
 export function searchPractice(req, res, next) {
     var searchText = parseInt(req.body.searchText);
@@ -160,11 +162,47 @@ function changePractices(req, res, next) {
 }
 
 /**
+ * Updating practices for locum preferances.
+ */
+function changeNHSSys(req, res, next) {
+
+    var userId = req.params.id;
+    var nhsSys = req.body.nhsSys;
+    User.findByIdAsync(userId)
+        .then(user => {
+            user.nhsSys = nhsSys;
+            return user.saveAsync()
+                .then(() => {
+                    res.status(204).end();
+                })
+                .catch(validationError(res));
+        });
+}
+
+/**
+ * Updating practices for locum preferances.
+ */
+function changeReferences(req, res, next) {
+
+    var userId = req.params.id;
+    var references = req.body.references;
+    User.findByIdAsync(userId)
+        .then(user => {
+            user.references = references;
+            return user.saveAsync()
+                .then(() => {
+                    res.status(204).end();
+                })
+                .catch(validationError(res));
+        });
+}
+
+/**
  * Updating changeSocialAC for locum &practice.
  */
 function changeSocialAC(req, res, next) {
 
-    var userId = req.user._id;
+    var userId = req.params.id;
     var socialAccont = req.body.socialAccont;
     User.findByIdAsync(userId)
         .then(user => {
@@ -182,7 +220,7 @@ function changeSocialAC(req, res, next) {
  */
 function changePackage(req, res, next) {
 
-    var userId = req.user._id;
+    var userId = req.params.id;
     var package_type = req.body.package;
     User.findByIdAsync(userId)
         .then(user => {
@@ -200,11 +238,47 @@ function changePackage(req, res, next) {
  */
 function changeCurrentAddress(req, res, next) {
 
-    var userId = req.user._id;
-    var changeCurrentAddress = req.body.changeCurrentAddress;
+    var userId = req.params.id;
+    var currentAddress = req.body.currentAddress;
     User.findByIdAsync(userId)
         .then(user => {
-            user.changeCurrentAddress = changeCurrentAddress;
+            user.currentAddress = currentAddress;
+            return user.saveAsync()
+                .then(() => {
+                    res.status(204).end();
+                })
+                .catch(validationError(res));
+        });
+}
+
+/**
+ * Updating changeCurrentAddress for locum & practce.
+ */
+function changeSessionRates(req, res, next) {
+
+    var userId = req.params.id;
+    var sessionRates = req.body.sessionRates;
+    User.findByIdAsync(userId)
+        .then(user => {
+            user.sessionRates = sessionRates;
+            return user.saveAsync()
+                .then(() => {
+                    res.status(204).end();
+                })
+                .catch(validationError(res));
+        });
+}
+
+/**
+ * Updating changeCurrentAddress for locum & practce.
+ */
+function changeMain(req, res, next) {
+
+    var userId = req.params.id;
+    var main = req.body.main;
+    User.findByIdAsync(userId)
+        .then(user => {
+            _.merge(user,main);
             return user.saveAsync()
                 .then(() => {
                     res.status(204).end();
@@ -215,13 +289,13 @@ function changeCurrentAddress(req, res, next) {
 /**
  * Updating changeCurrentAddress for locum & practce.
  */
-function changeMain(req, res, next) {
+function changeNonAvailability(req, res, next) {
 
-    var userId = req.user._id;
-    var changeCurrentAddress = req.body.changeCurrentAddress;
+    var userId = req.params.id;
+    var nonAvailability = req.body.nonAvailability;
     User.findByIdAsync(userId)
         .then(user => {
-            user.changeCurrentAddress = changeCurrentAddress;
+            user.nonAvailability = nonAvailability;
             return user.saveAsync()
                 .then(() => {
                     res.status(204).end();
@@ -293,5 +367,7 @@ export function updateUserProfile(req, res, next) {
         changeSessionRates(req, res, next);
     } else if (req.params.type === 'main') {
         changeMain(req, res, next);
+    } else if(req.params.type === 'nonAvailability'){
+      changeNonAvailability(req, res, next);
     }
 }

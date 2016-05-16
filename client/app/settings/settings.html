@@ -182,7 +182,7 @@
                 </div>
             </div>
             <a class="btn btn-success pull-right" ng-click="openTwo('2')">Next</a>
-			<a class="btn btn-success pull-right" ng-click="updateUserProfileInDB()">Save</a>
+			<a class="btn btn-success pull-right" ng-click="updateUserProfileInDB('main',user)">Save</a>
         </accordion-group>
         <accordion-group is-open="$parent.step2">
             <accordion-heading>Location<i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': step2, 'glyphicon-chevron-right': !step2}"></i></accordion-heading>
@@ -338,7 +338,7 @@
                 </div>
             </div>
             <a class="btn btn-success pull-right" ng-click="openTwo('3')">Next</a>
-			<a class="btn btn-success pull-right" ng-click="updateUserProfileInDB()">Save</a>
+			<a class="btn btn-success pull-right" ng-click="updateUserProfileInDB('currentAddress',user.currentAddress)">Save</a>
         </accordion-group>
         <accordion-group is-open="$parent.step3">
             <accordion-heading>Documents<i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': step3, 'glyphicon-chevron-right': !step3}"></i></accordion-heading>
@@ -501,7 +501,7 @@
                 </div>
             </div>
             <a class="btn btn-success pull-right" ng-click="openTwo('6')">Next</a>
-			<a class="btn btn-success pull-right" ng-click="updateUserProfileInDB(package)">Save</a>
+			<a class="btn btn-success pull-right" ng-click="updateUserProfileInDB('package',user.package)">Save</a>
 			
         </accordion-group>
         <accordion-group is-open="$parent.step6">
@@ -515,7 +515,7 @@
                                 <span class="input-group-addon btn-facebook" id="basic-addon1">
                       <span class="fa fa-facebook"></span>
                                 </span>
-                                <input type="text" class="form-control" placeholder="Facebook" aria-describedby="basic-addon1">
+                                <input type="text" class="form-control" placeholder="Facebook" ng-model="user.socialAccont.fb"/>
                             </div>
                         </div>
                     </div>
@@ -528,7 +528,7 @@
                                 <span class="input-group-addon btn-twitter" id="basic-addon1">
                       <span class="fa fa-twitter"></span>
                                 </span>
-                                <input type="text" class="form-control" placeholder="Twitter" aria-describedby="basic-addon1">
+                                <input type="text" class="form-control" placeholder="Twitter" ng-model="user.socialAccont.twitter"/>
                             </div>
                         </div>
                     </div>
@@ -541,7 +541,7 @@
                                 <span class="input-group-addon btn-google" id="basic-addon1">
                       <span class="fa fa-google"></span>
                                 </span>
-                                <input type="text" class="form-control" placeholder="Google+" aria-describedby="basic-addon1">
+                                <input type="text" class="form-control" placeholder="Google+" ng-model="user.socialAccont.google"/>
                             </div>
                         </div>
                     </div>
@@ -554,7 +554,7 @@
                                 <span class="input-group-addon btn-linkedin" id="basic-addon1">
                       <span class="fa fa-linkedin"></span>
                                 </span>
-                                <input type="text" class="form-control" placeholder="Linkedin" aria-describedby="basic-addon1">
+                                <input type="text" class="form-control" placeholder="Linkedin" ng-model="user.socialAccont.linkedin"/>
                             </div>
                         </div>
                     </div>
@@ -567,7 +567,7 @@
                                 <span class="input-group-addon btn-skype" id="basic-addon1">
                       <span class="fa fa-skype"></span>
                                 </span>
-                                <input type="text" class="form-control" placeholder="Skype" aria-describedby="basic-addon1">
+                                <input type="text" class="form-control" placeholder="Skype" ng-model="user.socialAccont.skype"/>
                             </div>
                         </div>
                     </div>
@@ -580,7 +580,7 @@
                                 <span class="input-group-addon btn-pinterest" id="basic-addon1">
                       <span class="fa fa-pinterest"></span>
                                 </span>
-                                <input type="text" class="form-control" placeholder="Pinterest" aria-describedby="basic-addon1">
+                                <input type="text" class="form-control" placeholder="Pinterest" ng-model="user.socialAccont.pinterest"/>
                             </div>
                         </div>
                     </div>
@@ -593,19 +593,19 @@
                                 <span class="input-group-addon btn-xing" id="basic-addon1">
                       <span class="fa fa-xing"></span>
                                 </span>
-                                <input type="text" class="form-control" placeholder="XING" aria-describedby="basic-addon1">
+                                <input type="text" class="form-control" placeholder="XING" ng-model="user.socialAccont.xing"/>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
             <a class="btn btn-success pull-right" ng-click="openTwo('7')">Next</a>
-			<a class="btn btn-success pull-right" ng-click="updateUserProfileInDB()">Save</a>
+			<a class="btn btn-success pull-right" ng-click="updateUserProfileInDB('socialAccont',user.socialAccont)">Save</a>
         </accordion-group>
         <accordion-group is-open="$parent.step7">
             <accordion-heading>References<i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': step7, 'glyphicon-chevron-right': !step7}"></i></accordion-heading>
             <div class="col-xs-12 col-lg-12">
-                <table class="table table-condensed">
+                <table class="table table-condensed" ng-show="user.references.length">
                     <thead>
                         <tr>
                             <th>Name</th>
@@ -615,7 +615,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr ng-repeat="ref in user.referance">
+                        <tr ng-repeat="ref in user.references">
                             <td>{{ref.name}}</td>
                             <td>{{ref.mobile}}</td>
                             <td>{{ref.id}}</td>
@@ -660,7 +660,7 @@
                 </div>
             </div>
             <a class="btn btn-success pull-right" ng-click="openTwo('8')">Next</a>
-			<a class="btn btn-success pull-right" ng-click="updateUserProfileInDB(currentRef)">Save</a>
+			<a class="btn btn-success pull-right" ng-click="updateUserProfileInDB('references',user.references)">Save</a>
         </accordion-group>
         <accordion-group is-open="$parent.step8">
             <accordion-heading>NHS System<i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': step8, 'glyphicon-chevron-right': !step8}"></i></accordion-heading>
@@ -668,7 +668,7 @@
                 <div class="col-xs-12 col-lg-12">
                     <div class="form-group ">
                         <div class="col-md-4 col-lg-2 dropdown-custom">
-                            <div ng-dropdown-multiselect="" options="nhsdata" events="myEventListeners" selected-model="user.nhssystem">
+                            <div ng-dropdown-multiselect="" options="nhsdata" events="myEventListeners" selected-model="user.nhsSys">
                             </div>
                         </div>
                         <div class="col-md-8 col-lg-10">
@@ -680,7 +680,7 @@
                 </div>
             </div>
             <a class="btn btn-success pull-right" ng-click="openTwo('9')">Next</a>
-			<a class="btn btn-success pull-right" ng-click="updateUserProfileInDB()">Save</a>
+			<a class="btn btn-success pull-right" ng-click="updateUserProfileInDB('nhsSys',user.nhsSys)">Save</a>
         </accordion-group>
         <accordion-group is-open="$parent.step9">
             <accordion-heading>Session & Rates<i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': step9, 'glyphicon-chevron-right': !step9}"></i></accordion-heading>
@@ -900,7 +900,7 @@
                 <div class="form-group form-inline">
                     <label for="inputEmail" class="col-md-4 col-lg-3 control-label">Day rate (fixed from 9am to 6pm) :</label>
                     <div class="col-md-8 col-lg-4">
-                        <input type="number" class="form-control" placeholder="Enter Amount">
+                        <input type="number" class="form-control" ng-model="user.sessionRates.dayRate" placeholder="Enter Amount">
                         <select value="00" class="form-control">
                             <option value="00">GBP</option>
                             <option>EURO</option>
@@ -913,7 +913,7 @@
                 <div class="form-group form-inline">
                     <label for="inputEmail" class="col-md-4 col-lg-3 control-label">Out of Office (fixed after 6pm) : </label>
                     <div class="col-md-8 col-lg-4">
-                        <input type="number" class="form-control" placeholder="Enter Amount">
+                        <input type="number" class="form-control" ng-model="user.sessionRates.outOfOffice" placeholder="Enter Amount">
                         <select value="00" class="form-control">
                             <option value="00">GBP</option>
                             <option>EURO</option>
@@ -923,7 +923,7 @@
                 </div>
             </div>
             <a class="btn btn-success pull-right" ng-click="openTwo('10')">Next</a>
-			<a class="btn btn-success pull-right" ng-click="updateUserProfileInDB()">Save</a>
+			<a class="btn btn-success pull-right" ng-click="updateUserProfileInDB('sessionRates',user.sessionRates)">Save</a>
         </accordion-group>
         <accordion-group is-open="$parent.step10">
             <accordion-heading>Payment<i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': step10, 'glyphicon-chevron-right': !step10}"></i></accordion-heading>

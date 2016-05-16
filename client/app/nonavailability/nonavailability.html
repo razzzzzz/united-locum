@@ -1,11 +1,11 @@
 <div class="container non-availability">
-    <form class="form form-horizontal" name="form" ng-submit="makeRequest(form)" novalidate>
+    <form class="form form-horizontal" name="form" ng-submit="addNonAvailibility(form)" novalidate>
         <div class="form-group " ng-class="{ 'has-success': form.date.$valid && submitted,
                                                     'has-error': form.date.$invalid && submitted }">
             <label class="control-label col-lg-3">Date</label>
             <div class="col-lg-9">
                 <p class="input-group">
-                    <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="dt" is-open="popup1.opened" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+                    <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="start" is-open="popup1.opened" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
                     <span class="input-group-btn">
                       <button type="button" class="btn btn-default" ng-click="openStatus()"><i class="glyphicon glyphicon-calendar"></i></button>
                     </span>
@@ -21,11 +21,11 @@
             <div class="col-lg-9 timer-container">
                 <div class="col-lg-6">
                     <label>From</label>
-                    <timepicker ng-model="req.from" ng-change="changed()" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></timepicker>
+                    <timepicker ng-model="from" ng-change="changed()" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></timepicker>
                 </div>
                 <div class="col-lg-6">
                     <label>To</label>
-                    <timepicker ng-model="req.to" ng-change="changed()" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></timepicker>
+                    <timepicker ng-model="to" ng-change="changed()" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></timepicker>
                 </div>
                 <p class="help-block" ng-show="form.mytime.$error.required && submitted">
                     Time is required

@@ -27,7 +27,8 @@ angular.module('clickeatApp.auth')
             }
          }
         }else{
-         var currentUserId = Auth.getCurrentUser()._id;
+         var currentUser = Auth.getCurrentUser();
+         var currentUserId = currentUser._id;
          for (var i = res.data.length - 1; i >= 0; i--) {
             if(res.data[i].proposedUsers.length){
               var flag =true;
@@ -49,7 +50,10 @@ angular.module('clickeatApp.auth')
                 notifications.notificationsList.push(res.data[i]);
               }
             }
-         }    
+         }  
+         for(var j=0;j<currentUser.nonAvailability.length;j++){
+          notifications.notificationsList.push(currentUser.nonAvailability[j]);
+         }
         }
      //  notifications.notificationsList.concat(notificationList);
       // return notificationList;

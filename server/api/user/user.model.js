@@ -10,6 +10,9 @@ var UserSchema = new Schema({
     itsystems: {
         type: Array
     },
+    nonAvailability:{
+        type: Array
+    },
     contactfname: String,
     contactlname: String,
     fname: String,
@@ -93,7 +96,9 @@ var UserSchema = new Schema({
         linkedin: String,
         skype: String,
         twitter: String,
-        pinterest: String
+        pinterest: String,
+        xing: String,
+        google: String
     },
     references: {
         type: Array
