@@ -53,7 +53,13 @@
       //  $scope.alertMessage = (date.title + ' was clicked ');
         eventData.type = 'editevent';
         eventData.heading = 'Appointment Detais';
-        eventData.templateUrl = 'app/practicediary/editvacency.html';
+        if(eventData.className[0]=='redbox'){
+          eventData.templateUrl = 'app/practicediary/editvacancy_new.html';
+        }else if(eventData.className[0]=='greenbox'){
+          eventData.templateUrl = 'app/practicediary/editvacency.html';
+        }else if(eventData.className[0]=='amberbox'){
+          eventData.templateUrl = 'app/practicediary/accept_reject.html';
+        }
         $scope.openModel(eventData);
 
     };
