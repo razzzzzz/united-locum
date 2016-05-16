@@ -52,7 +52,7 @@
     $scope.alertOnEventClick = function( eventData, jsEvent, view){
       //  $scope.alertMessage = (date.title + ' was clicked ');
         eventData.type = 'editevent';
-        eventData.heading = 'edit vacancy';
+        eventData.heading = 'Appointment Detais';
         eventData.templateUrl = 'app/practicediary/editvacency.html';
         $scope.openModel(eventData);
 

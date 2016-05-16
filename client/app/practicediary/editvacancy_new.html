@@ -1,0 +1,115 @@
+        <div class="modal-header">
+            <h3 class="modal-title">
+
+When clicking on Red color
+            {{diary.heading}}
+              <button class="pull-right close" ng-click="cancel()">&times;</button>
+            </h3>
+        </div>
+        <div class="modal-body">
+            <form class="form form-horizontal" name="form" ng-submit="makeRequest(form)" novalidate>
+                <div class="form-group " ng-class="{ 'has-success': form.category.$valid && submitted,
+                                                    'has-error': form.category.$invalid && submitted }">
+                  <label class="control-label col-lg-3">Category:</label>
+                  <div class="col-lg-9">
+                  <select name="mySelect" id="mySelect" ng-options="option.name for option in cat track by option.id" name="category" class="form-control" ng-model="req.category" ng-change="categoryChange()">  
+                  </select>
+                  <p class="help-block" ng-show="form.category.$error.required && submitted">
+                    Category is required
+                  </p>
+                  </div>
+                </div>
+                <div class="form-group " ng-class="{ 'has-success': form.skill.$valid && submitted,
+                                                    'has-error': form.skill.$invalid && submitted }">
+                  <label class="control-label col-lg-3">Skill:</label>
+                  <div class="col-lg-9">
+                  <select ng-options="option for option in req.category.drilldown track by option" name="skills" class="form-control col-lg-8" ng-model="req.skills">  </select>
+                  <p class="help-block" ng-show="form.skill.$error.required && submitted">
+                    Skill is required
+                  </p>
+                  </div>
+                </div>
+                <div class="form-group " ng-class="{ 'has-success': form.desc.$valid && submitted,
+                                                    'has-error': form.desc.$invalid && submitted }">
+                  <label class="control-label col-lg-3">Job Description</label>
+                  <div class="col-lg-9">
+                  <textarea name="desc" class="form-control" ng-model="req.desc"
+                         required placeholder="Job Description"></textarea>
+                  <p class="help-block" ng-show="form.desc.$error.required && submitted">
+                    Desc is required
+                  </p>
+                  </div>
+                </div>
+                <div class="form-group " ng-class="{ 'has-success': form.count.$valid && submitted,
+                                                    'has-error': form.count.$invalid && submitted }">
+                  <label class="control-label col-lg-3">No of Requirements</label>
+                  <div class="col-lg-9">
+                  <input type="number" name="count" class="form-control" ng-model="req.count"
+                         required placeholder="No. of Requirments" disabled/>
+                  <p class="help-block" ng-show="form.count.$error.required && submitted">
+                    Count is required
+                  </p>
+                  </div>
+                </div>
+                <div class="form-group " ng-class="{ 'has-success': form.date.$valid && submitted,
+                                                    'has-error': form.date.$invalid && submitted }">
+                  <label class="control-label col-lg-3">Date</label>
+                  <div class="col-lg-9">
+                  <p class="input-group">
+                    <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="dt" is-open="popup1.opened" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+                    <span class="input-group-btn">
+                      <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                  </p>
+                  <p class="help-block" ng-show="form.date.$error.required && submitted">
+                    Date is required
+                  </p>
+                  </div>
+                </div>
+                <div class="form-group  timer" ng-class="{ 'has-success': form.mytime.$valid && submitted,
+                                                    'has-error': form.mytime.$invalid && submitted }">
+                  <label class="control-label col-lg-3">Time</label>
+                  <div class="col-lg-9 timer-container">
+                  <div class="col-lg-6">
+                    <label>From</label>
+                    <timepicker ng-model="req.from" ng-change="changed()" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></timepicker>
+                  </div>
+                  <div class="col-lg-6">
+                    <label>To</label>
+                    <timepicker ng-model="req.to" ng-change="changed()"  hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></timepicker>
+                  </div>
+                  <p class="help-block" ng-show="form.mytime.$error.required && submitted">
+                    Time is required
+                  </p>
+                  </div>
+                </div>
+                <div class="form-group " ng-class="{ 'has-success': form.rate.$valid && submitted,
+                                                    'has-error': form.rate.$invalid && submitted }">
+                  <label class="control-label col-lg-3">Rate</label>
+                  <div class="col-lg-9">
+                  <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon1"><i class="fa fa-gbp"></i></span>
+                    <input type="number" name="rate" class="form-control" ng-model="req.rate"
+                                           required placeholder="Rate"/>
+                  </div>
+                  
+                  <p class="help-block" ng-show="form.rate.$error.required && submitted">
+                    A rate is required
+                  </p>
+                  </div>
+                </div>
+                <div class="text-center">  
+                  <button ng-show="diary.type=='newevent'" class="btn btn-default" type="submit">
+                      Submit
+                  </button>
+                  <button ng-show="diary.type=='editevent'" class="btn btn-default" type="submit">
+                      Update
+                  </button>
+                  <a class="btn btn-default" ng-click="cancel()">Cancel</a>
+                </div>
+            </form> 
+        </div>
+<!--         <div class="modal-footer">
+            <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
+            <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+        </div> -->
