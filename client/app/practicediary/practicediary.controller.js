@@ -52,8 +52,14 @@
     $scope.alertOnEventClick = function( eventData, jsEvent, view){
       //  $scope.alertMessage = (date.title + ' was clicked ');
         eventData.type = 'editevent';
-        eventData.heading = 'edit vacancy';
-        eventData.templateUrl = 'app/practicediary/editvacency.html';
+        eventData.heading = 'Appointment Detais';
+        if(eventData.className[0]=='redbox'){
+          eventData.templateUrl = 'app/practicediary/editvacancy_new.html';
+        }else if(eventData.className[0]=='greenbox'){
+          eventData.templateUrl = 'app/practicediary/editvacency.html';
+        }else if(eventData.className[0]=='amberbox'){
+          eventData.templateUrl = 'app/practicediary/accept_reject.html';
+        }
         $scope.openModel(eventData);
 
     };
