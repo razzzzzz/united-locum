@@ -6,6 +6,8 @@ import config from '../../config/environment';
 import jwt from 'jsonwebtoken';
 import multer from 'multer';
 import fs from 'fs';
+import _ from 'lodash';
+
 var basePath = './uploads';
 var fname = '';
 if (!fs.existsSync(basePath)) {
@@ -273,10 +275,10 @@ function changeSessionRates(req, res, next) {
 function changeMain(req, res, next) {
 
     var userId = req.params.id;
-    var changeCurrentAddress = req.body.main;
+    var main = req.body.main;
     User.findByIdAsync(userId)
         .then(user => {
-            user.changeCurrentAddress = changeCurrentAddress;
+            _.merge(user,main);
             return user.saveAsync()
                 .then(() => {
                     res.status(204).end();
