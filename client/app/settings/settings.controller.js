@@ -247,7 +247,7 @@ angular.module('clickeatApp').controller('SettingsController', function($scope, 
         $http.post('/api/users/' + $scope.user._id + '/' + prop + '/saltvalue', {
                 [prop]: obj })
             .then(function(response) {
-                $scope.autosuggest = response.data;
+                alert("successfully updated profile");
             }, function(err) {
 
             });

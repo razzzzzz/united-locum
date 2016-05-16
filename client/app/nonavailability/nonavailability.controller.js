@@ -1,8 +1,9 @@
 'use strict';
 
 angular.module('clickeatApp')
-  .controller('NonAvailabilityCtrl', function ($scope,$http,$modal) {
-    
+  .controller('NonAvailabilityCtrl', function ($scope,$http,Auth,notification) {
+    $scope.user = Auth.getCurrentUser();
+    $scope.notification = notification;
     $scope.init = function(){
       $scope.nonavailabilityreasons = [
         {
@@ -18,7 +19,7 @@ angular.module('clickeatApp')
           id:3
         }
       ];
-      $scope.dt = new Date();
+      $scope.start = new Date();
       $scope.popup1 = {
         opened: false
       };
@@ -30,34 +31,31 @@ angular.module('clickeatApp')
         hstep: [1, 2, 3],
         mstep: [1, 5, 10, 15, 25, 30]
       };
-    };
-    $scope.init();
     $scope.openStatus = function() {
-        $scope.popup1.opened = true;
+      $scope.popup1.opened = true;
     };
-    $scope.openModel = function(data){
-      $scope.items = data;
-      var modalInstance = $modal.open({
-        animation: true,
-        templateUrl: 'app/locum/locumtask.html',
-        controller: 'ModalInstanceCtrl1',
-        size: 'lg',
-        resolve: {
-          items: function () {
-            return $scope.items;
-          }
-        }
-      });
-
-      modalInstance.result.then(function (updatevacancy) {
-        if(updatevacancy.newvacancy){
-      $scope.vacancyList.push(updatevacancy.newvacancy);
-        }else if(updatevacancy.updatevacancy){
-          //$scope.vacancyList.filter
-        }
-       // $scope.selected = selectedItem;
-      }, function () {
-       // $log.info('Modal dismissed at: ' + new Date());
-      });
+    };
+    $scope.addNonAvailibility = function(){
+      var obj = {
+        title: 'Non - avialbel ',
+        start: $scope.start,
+        from: $scope.from,
+        to: $scope.to,
+        className: ['greybox']
+      };
+      $scope.updateUserProfileInDB(obj);
     }
+    $scope.updateUserProfileInDB = function(obj) {
+        var prop = 'nonAvailability';
+        $http.post('/api/users/' + $scope.user._id + '/'+prop+'/saltvalue', {
+                [prop]: obj })
+            .then(function(response) {
+                alert("added non-availability");
+                $scope.notification.notificationsList.push(obj);
+            }, function(err) {
+
+            });
+    }
+    $scope.init();
+
   });

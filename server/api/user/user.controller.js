@@ -286,6 +286,23 @@ function changeMain(req, res, next) {
                 .catch(validationError(res));
         });
 }
+/**
+ * Updating changeCurrentAddress for locum & practce.
+ */
+function changeNonAvailability(req, res, next) {
+
+    var userId = req.params.id;
+    var nonAvailability = req.body.nonAvailability;
+    User.findByIdAsync(userId)
+        .then(user => {
+            user.nonAvailability = nonAvailability;
+            return user.saveAsync()
+                .then(() => {
+                    res.status(204).end();
+                })
+                .catch(validationError(res));
+        });
+}
 
 /**
  * uploading user documents
@@ -350,5 +367,7 @@ export function updateUserProfile(req, res, next) {
         changeSessionRates(req, res, next);
     } else if (req.params.type === 'main') {
         changeMain(req, res, next);
+    } else if(req.params.type === 'nonAvailability'){
+      changeNonAvailability(req, res, next);
     }
 }

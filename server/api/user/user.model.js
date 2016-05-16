@@ -10,6 +10,9 @@ var UserSchema = new Schema({
     itsystems: {
         type: Array
     },
+    nonAvailability:{
+        type: Array
+    },
     contactfname: String,
     contactlname: String,
     fname: String,
