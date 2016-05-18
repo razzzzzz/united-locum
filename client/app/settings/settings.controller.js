@@ -195,7 +195,7 @@ angular.module('clickeatApp').controller('SettingsController', function($scope,A
         });
     };
     $scope.triggerFileClick = function($event){
-        angular.element($event.currentTarget).closest("td").prev().find("input").trigger("click");
+        angular.element($event.currentTarget).closest("td").prev().find("input:file").trigger("click");
     };
 
   $scope.sendEmail =function(file,toMail){

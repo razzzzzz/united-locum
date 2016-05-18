@@ -400,7 +400,7 @@
                         <input type="text" class="form-input-file" name="userName" ng-model="usermail" required>
                       </td>
                         <td> 
-                            <button class="btn btn-default btn-xs" ng-click="uploadFile(certificate.name,user[certificate.name],GMC_form)">Submit</button>
+                            <button class="btn btn-default btn-xs form-submit-button" ng-click="uploadFile(certificate.name,user[certificate.name],GMC_form)">Submit</button>
                             <a class="btn btn-default btn-xs" target="_blank" ng-href="{{user.documents[certificate.name]}}">View</a>
                             <button class="btn btn-default btn-xs" ng-click="sendEmail(user[certificate.name],usermail)">Email</button>
                            
