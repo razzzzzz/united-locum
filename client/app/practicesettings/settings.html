@@ -267,7 +267,7 @@
                     <tr>
                         <th>Certificate</th>
                         <th>Upload</th>
-                        <th>Enter Email Id</th>
+                        <th class="form-input-email">Enter Email Id</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -294,8 +294,8 @@
                                 <i ng-show="GMC_form.$error.maxSize" class="alert-warning">File too large 
                                 {{user.GMC.size / 1000000|number:1}}MB: max 5M</i>
                         </td>
-                                 <td>
-                        <input type="text" name="userName" ng-model="usermail" required>
+                                 <td class="form-input-email">
+                        <input type="text" class="form-input-file" name="userName" ng-model="usermail" required>
                       </td>
                         <td><button type="submit" class="btn btn-default btn-xs" ng-click="uploadFile(certificate.name,user[certificate.name],GMC_form)">
                                         submit
