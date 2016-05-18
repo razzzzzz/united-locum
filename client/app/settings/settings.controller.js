@@ -233,7 +233,7 @@ angular.module('clickeatApp').controller('SettingsController', function($scope,A
 
         $scope.upload = function (file,fname) {
             Upload.upload({
-                url: '/api/users/'+$scope.user._id+'/'+fname+'/documents', //webAPI exposed to upload the file
+                url: '/api/users/'+$scope.user._id+'/documents/'+fname+'', //webAPI exposed to upload the file
                 data:{file:file} //pass file as data, should be user ng-model
             }).then(function (resp) { //upload function returns a promise
                 $timeout(function(){
@@ -266,6 +266,7 @@ angular.module('clickeatApp').controller('SettingsController', function($scope,A
                 angular.element(submit_buttons[i]).trigger("click");
                 i++;
             }else{
+                alert("successfully uploaded");
                 i=0;
             }
         }
