@@ -91,3 +91,8 @@
 .form-submit-button{
   display: none;
 }
+@media (max-width: 600px) {
+  .form-input-file{
+    width: 94px;
+  }
+}
