@@ -1,8 +1,5 @@
         <div class="modal-header">
-            <h3 class="modal-title">
-
-When clicking on Red color
-            {{diary.heading}}
+            <h3 class="modal-title">{{diary.heading}}
               <button class="pull-right close" ng-click="cancel()">&times;</button>
             </h3>
         </div>
@@ -105,7 +102,8 @@ When clicking on Red color
                   <button ng-show="diary.type=='editevent'" class="btn btn-default" type="submit">
                       Update
                   </button>
-                  <a class="btn btn-default" ng-click="cancel()">Cancel</a>
+                  <a class="btn btn-default" ng-click="cancel()">OK</a>
+                  <a class="btn btn-default" ng-click="cancel()">Remove Vacancy</a>
                 </div>
             </form> 
         </div>
