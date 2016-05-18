@@ -52,17 +52,6 @@
     $scope.alertOnEventClick = function( eventData, jsEvent, view){
       //  $scope.alertMessage = (date.title + ' was clicked ');
         eventData.type = 'editevent';
-<<<<<<< HEAD
-        
-        if(eventData.className[0]=='redbox'){
-          eventData.heading = 'editvacency';
-          eventData.templateUrl = 'app/practicediary/editvacancy_new.html';
-        }else if(eventData.className[0]=='greenbox'){
-          eventData.heading = 'Appointment Detais';
-          eventData.templateUrl = 'app/practicediary/editvacency.html';
-        }else if(eventData.className[0]=='amberbox'){
-          eventData.heading = 'Locum Request Detais';
-=======
         if(eventData.className[0]=='redbox'){
                   eventData.heading = 'Edit vacancy';
           eventData.templateUrl = 'app/practicediary/editvacancy_new.html';
@@ -71,7 +60,6 @@
           eventData.templateUrl = 'app/practicediary/editvacency.html';
         }else if(eventData.className[0]=='amberbox'){
                   eventData.heading = 'Locum Request Details';
->>>>>>> 07f61ecaebb447b785e4c4637bcca6c3c37da9a5
           eventData.templateUrl = 'app/practicediary/accept_reject.html';
         }
         $scope.openModel(eventData);
