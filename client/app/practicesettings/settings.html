@@ -267,6 +267,7 @@
                     <tr>
                         <th>Certificate</th>
                         <th>Upload</th>
+                        <th>Enter Email Id</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -286,18 +287,21 @@
                                    class="btn btn-default btn-xs"
                                    />
                                 <!-- Image thumbnail: <img style="width:100px;" ngf-thumbnail="user.GMC || '/thumb.jpg'"/> -->
-                                <button type="submit" class="btn btn-default btn-xs" ng-click="uploadFile(certificate.name,user[certificate.name],GMC_form)">
-                                        submit
-                                    </button>
+                                
                                 <!-- <p>{{progress}}</p> -->
                             </form>
                                 <i ng-show="GMC_form.GMC.$error.required">*required</i>
                                 <i ng-show="GMC_form.$error.maxSize" class="alert-warning">File too large 
                                 {{user.GMC.size / 1000000|number:1}}MB: max 5M</i>
                         </td>
-                        <td>
+                                 <td>
+                        <input type="text" name="userName" ng-model="usermail" required>
+                      </td>
+                        <td><button type="submit" class="btn btn-default btn-xs" ng-click="uploadFile(certificate.name,user[certificate.name],GMC_form)">
+                                        submit
+                                    </button>
                             <a class="btn btn-default btn-xs" target="_blank" ng-href="{{user.documents[certificate.name]}}">View</a>
-                            <button class="btn btn-default btn-xs">Email</button>
+                            <button class="btn btn-default btn-xs" ng-click="sendEmail(user[certificate.name],usermail)">Email</button>
                             <button class="btn btn-default btn-xs" ng-click="triggerFileClick($event)">Modify</button>
                         </td>
                     </tr>
